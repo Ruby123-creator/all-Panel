@@ -1,0 +1,39 @@
+[
+    {
+        "userName": "test123",
+        "eventName": "AFGHANISTAN V ENGLAND",
+        "profitloss": 400,
+        "betTypes": "back",
+        "amount": 500,
+        "placeDate": "2025-02-26 04:06:34PM",
+        "MatchDate": "2025-02-21",
+        "accountType": "User",
+        "userRate": "189",
+        "ip": "223.237.28.173",
+        "exposure": 500,
+        "time": "2025-02-26 04:06:34PM",
+        "gameid": "760386962",
+        "evetsType": "fancy",
+        "nation": "Fall of 6th wkt AFG",
+        "section": "cricket",
+        "bhav": "80"
+    },
+    {
+        "userName": "test123",
+        "eventName": "AFGHANISTAN V ENGLAND",
+        "profitloss": 1500,
+        "betTypes": "back",
+        "amount": 500,
+        "placeDate": "2025-02-26 04:19:38PM",
+        "MatchDate": "2025-02-21",
+        "accountType": "User",
+        "userRate": "4",
+        "ip": "223.237.28.173",
+        "exposure": 500,
+        "time": "2025-02-26 04:19:38PM",
+        "gameid": "760386962",
+        "evetsType": "odd",
+        "nation": "Afghanistan",
+        "section": "cricket"
+    }
+]

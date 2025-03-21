@@ -1,0 +1,93 @@
+import axios from 'axios';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { Product } from '../types/Product';
+import { API_ENDPOINTS } from './utils/api-endpoints';
+import { useUI } from '../context/ui.context';
+
+const placingBet = async (data: any) => {
+  const response = await axios.post(`${API_ENDPOINTS.PLACEBET}${data?.sport}/place_bet_api`, data?.data);
+  return response.data;
+};
+
+// React Query Mutation Hook
+export const usePlaceBet = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: placingBet, // Function that makes the API call
+    onSuccess: (data) => {
+      queryClient.invalidateQueries({ queryKey: ["currentbets-detail"] });
+
+      console.log("Bet placed successfully!", data);
+    },
+    onError: (error) => {
+      console.error("Error placing bet:", error);
+    },
+  });
+};
+
+
+const fetchCurrentBetsData = async (user:string) => {
+  try {
+    const response = await axios.get(`${API_ENDPOINTS.CURRENTBETS}?UserName=${user}`);
+    return response.data?.bets;
+  } catch (error) {
+    console.log(error,"ERROR::::::::::")
+  }
+ 
+};
+
+// React Query Hook
+export const useCurrentBetsData = () => {
+  const {userData} = useUI();
+  return useQuery({
+    queryKey: ['currentbets-detail',userData?.UserName], // Include `id` for query uniqueness
+    queryFn: () => fetchCurrentBetsData(userData?.UserName), // Fetch function
+    retry: 3,                 // Retry on failure
+    refetchOnWindowFocus: false, // No auto-refetch on focus
+  });
+};
+
+
+const fetchAllBetsData = async (data:any) => {
+  try {
+    const response = await axios.get(`${API_ENDPOINTS.ALLBETS}?from=${data?.startDate}&to=${data?.endDate}&UserName=${data?.userName}`);
+    return response.data?.data;
+  } catch (error) {
+    console.log(error,"ERROR::::::::::")
+  }
+ 
+};
+
+// React Query Hook
+export const useAllBetsData = (data:any) => {
+  return useQuery({
+    queryKey: ['allBets-detail',data], // Include `id` for query uniqueness
+    queryFn: () => fetchAllBetsData(data), // Fetch function
+    retry: 3,                 // Retry on failure
+    refetchOnWindowFocus: false, // No auto-refetch on focus
+  });
+};
+
+
+
+const fetchAllAccountStatement = async (data:any) => {
+  try {
+    const response = await axios.get(`${API_ENDPOINTS.ACCOUNT_STATEMENT}?from=${data?.startDate}&to=${data?.endDate}&UserName=${data?.userName}&AccountType=USER&type=all`);
+    return response.data?.data;
+  } catch (error) {
+    console.log(error,"ERROR::::::::::")
+  }
+ 
+};
+
+// React Query Hook
+export const useAccountStatementData = (data:any) => {
+  console.log(data,"kinjaruuuu")
+  return useQuery({
+    queryKey: ['allAccountStatement-detail',data], // Include `id` for query uniqueness
+    queryFn: () => fetchAllAccountStatement(data), // Fetch function
+    retry: 3,                 // Retry on failure
+    refetchOnWindowFocus: false, // No auto-refetch on focus
+  });
+};

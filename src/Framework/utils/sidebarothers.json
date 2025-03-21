@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Our Casino",
+    "url": "casino-list/LC/4",
+    "class": "blink_me"
+  },
+  {
+    "name": "Our Virtual",
+    "url": "casino-list/LC/19",
+    "class": "blink_me"
+  },
+  {
+    "name": "Live Casino",
+    "url": "/casino-lobby/casino",
+    "class": ""
+  },
+  {
+    "name": "Slot Game",
+    "url": "/casino-lobby/slot-games",
+    "class": ""
+  },
+  {
+    "name": "Fantasy Game",
+    "url": "/casino-lobby/crash",
+    "class": ""
+  }
+]
