@@ -1,37 +1,24 @@
 import React from "react";
-import Accordian from "../../common/Accordian";
-import CarousalComp from "../../common/carousal";
-import { BsSuitSpadeFill } from "react-icons/bs";
-import { AiOutlineFire } from "react-icons/ai";
-import UpcomingEvents from "../../common/UpComingEvents";
-import {
-  bannerImages,
-  cardGames,
-  carousalImages,
-  casinoProviders,
-  popularGames,
-} from "../../../Framework/utils/static";
-import { Carousel } from "antd";
-import "../../../assets/css/style.css";
-import { MdSportsCricket } from "react-icons/md";
+
 import { MdOutlineLiveTv } from "react-icons/md";
 
-import TrendingGames from "../../common/Tabs";
-import InPlayEvents from "../../common/InPlayEvents";
-import { BiFootball, BiSolidCricketBall } from "react-icons/bi";
-import { IoTennisball } from "react-icons/io5";
-import CasinoProvider from "../../common/casinoProvider";
+
 import { useSportFixture } from "../../../Framework/sportsData";
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
+
 import { useUI } from "../../../context/ui.context";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { extractEventDetails } from "../../../Framework/utils/constant";
+import PageLoader from "../../common/pageLoader";
 const PanelComp: React.FC = () => {
   const { isLogin, setLoginModal, activeNav } = useUI();
+  const {sportsName} = useParams();
   const naviagte = useNavigate();
   const { data, isLoading, isError } = useSportFixture(
-    activeNav?.val
+   sportsName|| activeNav?.val
   );
+  if(isLoading){
+    return (<PageLoader/>)
+  }
   const events = (data || []).sort((a: any, b: any) => {
     if (a?.inPlay === "True" && b?.inPlay !== "True") return -1;
     if (a?.inPlay !== "True" && b?.inPlay === "True") return 1;
@@ -61,7 +48,7 @@ const PanelComp: React.FC = () => {
           </div>
           <div className="bet-table-body">
             {
-              isError ? <div className="bet-table-row">No Record Found</div> : <>
+              (isError || (events||[])?.length === 0) ? <div className="bet-table-row" >No Record Found</div> : <>
                 {(events || []).map((item: any, index: number) => {
               const detail = extractEventDetails(item?.eventName);
               return (

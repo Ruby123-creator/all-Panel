@@ -32,7 +32,7 @@ const BookmakerComp: React.FC<Props> = ({ data, updatedTime }) => {
       
       <div className={`market-odd-box ${className}`}
       onClick={()=>{
-        setMatchedBets({ ...betOdds, odds: price, max: item?.max, runnerName:item?.RunnerName,key:eventKey ,type:betType,betType: "odd",time:updatedTime,min: item?.min})
+        setMatchedBets({ ...betOdds, odds: price, max: item?.max, runnerName:item?.RunnerName,key:eventKey ,type:betType,betType: "bookmaker",time:updatedTime,min: item?.min})
       }}
       >
       <span className="market-odd">{price}</span>

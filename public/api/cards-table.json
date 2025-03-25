@@ -1,0 +1,163 @@
+{
+    "success": true,
+    "update": "2025-03-23 07:04:15",
+    "auto": "01",
+    "mid": " 114250323123234",
+    "img": [
+    "7CC",
+    "6CC",
+    "QDD",
+    "8DD",
+    "10CC",
+    "10HH"
+    ],
+    "t1": [
+    {
+    "nat": "Player 8",
+    "bp": "",
+    "": "",
+    "status": "suspended",
+    "sid": 1
+    },
+    {
+    "nat": "Player 9",
+    "bp": "",
+    "": "",
+    "status": "suspended",
+    "sid": 2
+    },
+    {
+    "nat": "Player 10",
+    "bp": "",
+    "": "",
+    "status": "suspended",
+    "sid": 3
+    },
+    {
+    "nat": "Player 11",
+    "bp": "",
+    "": "",
+    "status": "suspended",
+    "sid": 4
+    },
+    {
+    "nat": "Player 8",
+    "bp": "",
+    "": "",
+    "status": "suspended",
+    "sid": 5
+    },
+    {
+    "nat": "Player 9",
+    "bp": "",
+    "": "",
+    "status": "suspended",
+    "sid": 6
+    },
+    {
+    "nat": "Player 10",
+    "bp": "",
+    "": "",
+    "status": "suspended",
+    "sid": 7
+    },
+    {
+    "nat": "Player 11",
+    "bp": "",
+    "": "",
+    "status": "suspended",
+    "sid": 8
+    },
+    {
+    "nat": "Any 3 Card Black",
+    "bp": "",
+    "": "",
+    "status": "suspended",
+    "sid": 9
+    },
+    {
+    "nat": "Any 3 Card Red",
+    "bp": "",
+    "": "",
+    "status": "suspended",
+    "sid": 10
+    },
+    {
+    "nat": "Two Black Two Red",
+    "bp": "",
+    "": "",
+    "status": "suspended",
+    "sid": 11
+    },
+    {
+    "nat": "8 & 9 Total",
+    "bp": "",
+    "": "",
+    "status": "suspended",
+    "sid": 12
+    },
+    {
+    "nat": "10 & 11 Total",
+    "bp": "",
+    "": "",
+    "status": "suspended",
+    "sid": 13
+    }
+    ],
+    "t2": [
+    {
+    "nat": "Single 1",
+    "bp": "9.5",
+    "status": "suspended",
+    "sid": "15"
+    },
+    {
+    "nat": "Single 2",
+    "bp": "9.5",
+    "status": "suspended",
+    "sid": "16"
+    },
+    {
+    "nat": "Single 3",
+    "bp": "9.5",
+    "status": "suspended",
+    "sid": "17"
+    },
+    {
+    "nat": "Single 4",
+    "bp": "9.5",
+    "status": "suspended",
+    "sid": "18"
+    },
+    {
+    "nat": "Single 5",
+    "bp": "9.5",
+    "status": "suspended",
+    "sid": "19"
+    },
+    {
+    "nat": "Single 6",
+    "bp": "9.5",
+    "status": "suspended",
+    "sid": "20"
+    },
+    {
+    "nat": "Single 7",
+    "bp": "9.5",
+    "status": "suspended",
+    "sid": "21"
+    },
+    {
+    "nat": "Single 8",
+    "bp": "9.5",
+    "status": "suspended",
+    "sid": "22"
+    },
+    {
+    "nat": "Single 9",
+    "bp": "9.5",
+    "status": "suspended",
+    "sid": "23"
+    }
+    ]
+    }

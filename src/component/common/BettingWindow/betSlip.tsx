@@ -95,6 +95,7 @@ const BetSlip: React.FC = () => {
     
     const checkCurrentBet = (getEventData()||[])?.find((item) => (item?.RunnerName === betOdds?.runnerName||item?.nation === betOdds?.runnerName));
    console.log(checkCurrentBet,"CUrrent")
+   console.log(userData,betOdds,checkCurrentBet,getEventData(),sum,"BETDONE")
     if (!userData || !betOdds || !checkCurrentBet) return false;
     if(!(Object.keys(userData||{})?.length)){
       showToasterMessage({ messageType: "error", description: "LOGIN WITH REALID" });
@@ -174,16 +175,16 @@ const BetSlip: React.FC = () => {
 
       if(type === "session"){
           return(
-            (Number(betOdds.size) * (betOdds?.amount))/100
+            (Number(betOdds.size) * (sum))/100
           )
       }
       else if( type === "bookmaker"){
         return(
-          (Number(betOdds.odds) * (betOdds?.amount))/100
+          (Number(betOdds.odds) * sum)/100
         )  
       }
       else{
-         return ( Number(betOdds.odds) * (betOdds?.amount) - (betOdds?.amount));  
+         return ( Number(betOdds.odds) * (sum) - (sum));  
       }
 
     }
@@ -288,7 +289,7 @@ const BetSlip: React.FC = () => {
   // Helper function to handle stack button click
   const handleStackClick = (val: number) => {
     setSum((prevSum) => Number(prevSum) + val);
-    setMatchedBets({ ...betOdds, amount: sum + val });
+    // setMatchedBets({ ...betOdds, amount: sum + val });
   };
 
 
@@ -310,7 +311,7 @@ const BetSlip: React.FC = () => {
             </div>
           </div>
           <div className="place-bet-stake">
-            <input type="number" className="form-control" value={betOdds?.amount} />
+            <input type="number" className="form-control" value={sum||betOdds?.amount} onChange={(e)=>handleStakeChange(e)}/>
           </div>
           <div className="place-bet-profit"> { (calculateProfitLoss(betOdds?.betType)||0).toFixed(2)  }</div>
         </div>
@@ -319,7 +320,7 @@ const BetSlip: React.FC = () => {
              (stacks||[]).map((val:number,i:number)=>{
               return(
                 <button className="btn btn-place-bet" onClick={()=>{
-                  setMatchedBets({...betOdds,amount:val})
+                       handleStackClick(val);
                 }}>{val}</button>
 
               )
@@ -341,6 +342,18 @@ const BetSlip: React.FC = () => {
             <button className="btn btn-success" onClick={()=>handleConfirmBet()}>Submit</button>
           </div>
         </div>
+        <Modal open={betProcessed} closeIcon={null}>
+        <div className="z-2 popUpBoxShadow popUpOpenAnimation absolute w-[95%] z-[900] bg-bg_Quaternary p-2 xs:p-5 rounded-md">
+          <div className="flex flex-col gap-1 align-top items-center">
+            <span className="relative w-max min-w-6 min-h-6 flex items-center justify-center p-2 pt-6">
+              <span className="absolute min-w-14 min-h-14 animate-spin rounded-full border-[2px] border-primary border-dashed"></span>
+               <span className="font-semibold text-text_Ternary">{Number(timer)}</span>
+             </span>
+             <span className="font-semibold mt-[4px]">Your bet is being processed...</span>
+             <span className="font-semibold">Please Wait...</span>
+          </div>
+        </div>
+      </Modal>
     </>
     // <div className="relative">
     //   <div

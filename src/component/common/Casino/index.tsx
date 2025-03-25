@@ -12,7 +12,7 @@ const CasinoComp = () => {
                 return(
                     <div className="casino-list-item" onClick={()=>{
                       navigate(`/casino/${'teenjoker'}`)
-                    }} style={{width:"100px",height:"100px"}}><div className="casino-list-item-banner" style={{backgroundImage:`url(${item?.img})`}}></div><div className="casino-list-name">Teenpatti Joker</div></div>
+                    }} style={{width:"100px",height:"100px"}}><div className="casino-list-item-banner" style={{backgroundImage:`url(${item?.img})`}}></div><div className="casino-list-name">{item?.title}</div></div>
                 )
             })
         }

@@ -114,7 +114,7 @@ const RaceCardPanel: React.FC = () => {
                     <div className="horse-time-detail">
                       {val.timing.map((time, idx) => (
                         <div key={`${time.gameId}-${idx}`} onClick={()=>{
-                          navigate(`/event-page/${activeNav?.val}/${time?.gameId}`)
+                          navigate(`/event-page/${(activeNav?.title||"").toLowerCase().replace(/[^a-z0-9]+/g, '-')}/${time?.gameId}`)
                         }}>
                           <span>{time.time}</span>
                         </div>

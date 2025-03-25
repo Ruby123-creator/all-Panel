@@ -50,19 +50,19 @@ const login = async (data: any) => {
 
 // React Query Mutation Hook
 export const useLoginPassword = () => {
-  const Navigate = useNavigate();
+ 
   return useMutation({
     mutationFn: login, // Function that makes the API call
     onSuccess: ({data,userData}) => {
       const val = { username: (userData?.UserName||'').toLowerCase(), uniqid: data?.uniqid  };
-      console.log(val,data,userData,"RYBUUUU")
+   
         if(data?.status  === "success"){
           localStorage.setItem('credentials', JSON.stringify(val));
           localStorage.setItem('isLogin', 'true');
           showToasterMessage({messageType:"success",description:data?.message})
-        
+          window.location.href = "/home";
 
-        Navigate("/home")
+         
         }
         else{
       showToasterMessage({messageType:"error",description:data?.message})

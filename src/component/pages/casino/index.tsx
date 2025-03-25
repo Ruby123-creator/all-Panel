@@ -38,25 +38,13 @@ const CasinoGames = () => {
       style={{ minHeight: "calc(-54px + 100dvh)" }}
     >
         
-      <div>
+      <div className="iframe-wrapper">
       {
-        data?.url ? <div>
-        <iframe
-          src={`${data?.url}/games/wl-${getUrlQueries()}/wl.games.${getUrlQueries()}`}
-          className=""
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100vw",
-            paddingTop:"110px",
-            height: "100vh",
-            border: "none",
-          }}
-          title="My iFrame"
-          
-        />
-      </div>:""
+        data?.url ?  <iframe
+        src={`${data?.url}/games/wl-${getUrlQueries()}/wl.games.${getUrlQueries()}`}
+        className="game-frame"
+        title="Casino Games"
+      />:<PageLoader/>
       } 
       </div>
     </div>

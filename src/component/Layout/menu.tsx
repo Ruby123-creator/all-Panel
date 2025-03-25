@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoMdHome } from "react-icons/io";
 import { headerMenu, mobileHeaderMenu } from "../../Framework/utils/static";
 import { useUI } from "../../context/ui.context";
@@ -12,8 +12,8 @@ const formatText = (text:string) => {
 const HeaderMenu = () => {
   const {sportsName} = useParams();
   const Navigate = useNavigate();
-  const { isLogin, setLoginModal ,activeNav,setActiveNav} = useUI();
-  const pathlocation = (window.location?.pathname||"").split('/');
+  const { isLogin ,activeNav,setActiveNav} = useUI();
+ 
   return (
     <div className="header-bottom d-xl-block">
     <nav className="navbar navbar-expand">
@@ -22,7 +22,7 @@ const HeaderMenu = () => {
           (headerMenu||[]).map((item:any)=>{
             return(
               <div  className={`nav-link  pointer ${activeNav?.title === item?.title ? 'active' :''}`} onClick={()=>{
-                setActiveNav({title:item?.title,val:sportsName});
+               console.log("CHECKKKKKSS")
                 Navigate(item?.routing);
                 }} >
                 <span className="title">{item?.title}</span>

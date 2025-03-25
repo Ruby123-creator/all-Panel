@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
-import { useCurrentBetsData } from '../../../Framework/placeBet';
+import React, { useState } from "react";
+import { useCurrentBetsData } from "../../../Framework/placeBet";
 
-interface Props{
-  render?:number,
+interface Props {
+  render?: number;
   data?: any;
 }
-const MatchedBets : React.FC<Props> = ({render,data}) => {
-  const [open,setOpen] = useState(true);
+const MatchedBets: React.FC<Props> = () => {
+  const [open, setOpen] = useState(true);
+  const { data, isError, isLoading } = useCurrentBetsData();
   return (
-    
     // <div className=" flex flex-col w-full  gap-1">
     //   <div
     //     id="matched_1"
@@ -36,7 +36,7 @@ const MatchedBets : React.FC<Props> = ({render,data}) => {
     //       {
     //         (data||[])?.length ?   <div className="overflow-x-auto no-scrollbar">
     //         <table className="min-w-full bg-white border border-gray-200 shadow-md rounded-lg">
-              
+
     //           <thead className=" text-text_Quaternary text-xs bg-bg_Secondary">
     //             <tr>
     //             <th className="p-2 text-left">Nation</th>
@@ -45,19 +45,17 @@ const MatchedBets : React.FC<Props> = ({render,data}) => {
     //                 render ?<> <th className="p-2 text-left w-auto whitespace-nowrap">Bet Type</th>
     //               <th className="p-2 text-left w-full w-auto whitespace-nowrap">Market Type</th></> : ""
     //               }
-                 
+
     //               <th className="p-2 text-left w-auto whitespace-nowrap">User Rate</th>
     //               <th className="p-2 text-left">Amount</th>
     //               {
     //                 render ? <> <th className="p-2 text-left w-auto whitespace-nowrap">Profit/Loss</th>
     //                 <th className="p-2 text-left w-auto whitespace-nowra">Place Date</th>
     //                 <th className="p-2 text-left w-auto whitespace-nowra">Match Date</th>
-  
+
     //                 <th className="p-2 text-left w-auto whitespace-nowra">Section</th></>:""
     //               }
-                 
-                 
-                
+
     //             </tr>
     //           </thead>
     //           <tbody>
@@ -72,7 +70,7 @@ const MatchedBets : React.FC<Props> = ({render,data}) => {
     //                   render ? <> <td className="p-2 capitalize">{bet.betTypes}</td>
     //                 <td className="p-2 capitalize">{bet.evetsType}</td></>:""
     //                 }
-                   
+
     //                 <td className="p-2">{bet.userRate}</td>
     //                 <td className="p-2">₹ {bet.amount}</td>
     //                 {
@@ -90,13 +88,10 @@ const MatchedBets : React.FC<Props> = ({render,data}) => {
     //                   {bet.MatchDate}
     //                 </td>
     //                 <td className="p-2 capitalize">{bet.section}</td>
-                    
+
     //                 </>:""
     //                 }
-                  
-                  
-                   
-                   
+
     //               </tr>
     //             ))}
     //           </tbody>
@@ -105,13 +100,44 @@ const MatchedBets : React.FC<Props> = ({render,data}) => {
     //         You have no Matched Bets.
     //       </div>
     //       }
-        
+
     //   </div> : ""
     //   }
-     
-    // </div>
-    <div className="sidebar-box my-bet-container"><div className="sidebar-title"><h4>My Bet</h4></div><div className="my-bets"><div className="table-responsive w-100"><table className="table"><thead><tr><th>Matched Bet</th><th className="text-end">Odds</th><th className="text-end">Stake</th></tr></thead><tbody></tbody></table></div></div></div>
-  )
-}
 
-export default MatchedBets
+    // </div>
+    <div className="sidebar-box my-bet-container">
+      <div className="sidebar-title">
+        <h4>My Bet</h4>
+      </div>
+      <div className="my-bets">
+        <div className="table-responsive w-100">
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Matched Bet</th>
+                <th className="text-end">Odds</th>
+                <th className="text-end">Stake</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                (data||[]).map((bet:any,i:number)=>{
+                  return(
+                    <tr className={bet.betTypes === 'back' ?'back':'lay'}>
+                    <td>{bet.nation}</td>
+                    <td className="text-end">{bet.userRate}</td>
+                    <td className="text-end">₹{bet.amount}</td>
+                  </tr>
+                  )
+                })
+              }
+             
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default MatchedBets;

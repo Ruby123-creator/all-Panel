@@ -1,20 +1,9 @@
-import React from "react";
-import SidebarComp from "../Home/sidebar";
-import PanelComp from "../Home/panel";
-import RightDeskSidebar from "../../common/RightDeskSidebar.tsx";
-import MatchedBets from "../../common/BettingWindow/matchedBet";
+
+
 import { DatePicker, DatePickerProps, Select } from "antd";
-import { CiSearch } from "react-icons/ci";
+
 import { useCurrentBetsData } from "../../../Framework/placeBet";
 
-const onChange: DatePickerProps["onChange"] = (date, dateString) => {};
-const onChange1 = (value: string) => {
-  console.log(`selected ${value}`);
-};
-
-const onSearch = (value: string) => {
-  console.log("search:", value);
-};
 const OpenBets = () => {
   const { data } = useCurrentBetsData();
 

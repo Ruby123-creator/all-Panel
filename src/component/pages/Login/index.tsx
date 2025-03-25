@@ -36,7 +36,7 @@ const UserLogin = () => {
        
 
         localStorage.setItem('isLoginAsDemo', 'true');
-        window.location.reload();
+        // window.location.reload();
 
         Navigate("/home")
         

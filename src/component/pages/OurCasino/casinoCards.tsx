@@ -1,0 +1,45 @@
+import React from "react";
+import { casinoTypes } from "../../../Framework/utils/static";
+import { useParams, useNavigate } from "react-router-dom";
+
+// Define the type for casinoTypes keys
+type CasinoTypeKeys = keyof typeof casinoTypes;
+
+// Define the type of a single casino item
+interface CasinoItem {
+  img: string;
+  title: string;
+}
+
+const CasinoCards: React.FC = () => {
+  const { type } = useParams<{ type?: string }>(); // Ensure type safety
+  const navigate = useNavigate();
+
+  // Get the correct data or default to an empty array
+  const casinoData: CasinoItem[] = casinoTypes[type as CasinoTypeKeys] || [];
+
+  return (
+    <div className="tab-content">
+      <div className="tab-pane active" id="all-casino">
+        <div className="casino-list">
+          {casinoData.map((item, i) => (
+            <div
+              key={i}
+              className="casino-list-item"
+              onClick={() => navigate(`/casino/teenjoker`)}
+              style={{ width: "120px", height: "100px" }}
+            >
+              <div
+                className="casino-list-item-banner"
+                style={{ backgroundImage: `url(${item.img})` }}
+              ></div>
+              
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CasinoCards;

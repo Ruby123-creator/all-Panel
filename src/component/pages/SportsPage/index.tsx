@@ -8,7 +8,7 @@ import { useUI } from "../../../context/ui.context";
 const SportsDetail: React.FC = () => {
  const {activeNav} = useUI();
   return (
-    <div className="flex flex-col transition-all lg:pt-[110px] ease-in-out duration-100 pt-[94px]">
+    <div className="flex flex-col transition-all lg:pt-[110px] ease-in-out duration-100 pt-[94px]" style={{width:"100%",padding:"0 20px"}}>
     <div className="flex items-start justify-start w-full lg:px-12 xl:px-20 xlg:px-24">
       {
 

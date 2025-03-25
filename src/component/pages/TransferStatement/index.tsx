@@ -1,7 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { Link } from "react-router-dom";
-import RightDeskSidebar from "../../common/RightDeskSidebar.tsx";
-import SidebarComp from "../Home/sidebar";
+
 import type { DatePickerProps } from "antd";
 import { DatePicker } from "antd";
 import { format, subDays } from "date-fns";

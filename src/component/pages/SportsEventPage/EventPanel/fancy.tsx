@@ -19,7 +19,7 @@ const FancyComp: React.FC = () => {
       
       <div className={`market-odd-box ${className}`}
       onClick={()=>{
-        setMatchedBets({ ...betOdds, odds: price, max: item?.max, runnerName:item?.RunnerName,key:eventKey ,type:betType,betType: "odd",time: data?.updateTime,min: item?.min})
+        setMatchedBets({ ...betOdds, odds: price, max: item?.max, runnerName:item?.RunnerName,key:eventKey ,type:betType,betType: "session",time: data?.updateTime,min: item?.min})
       }}
       >
       <span className="market-odd">{price}</span>

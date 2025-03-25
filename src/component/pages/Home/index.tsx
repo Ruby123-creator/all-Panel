@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import SidebarComp from './sidebar';
+
 import PanelComp from './panel';
-import RightDeskSidebar from '../../common/RightDeskSidebar.tsx';
+
 import RaceCardPanel from './racecardPanel';
 import { useUI } from '../../../context/ui.context';
 import CasinoComp from '../../common/Casino';
 import { MdSportsCricket } from 'react-icons/md';
 import NavbarComp from './navbar';
+import EventModal from '../../modals/eventModal';
 
 
 const Home: React.FC = () => {
@@ -41,6 +42,7 @@ const Home: React.FC = () => {
     </div>
               <CasinoComp/>
             </div>
+            <EventModal/>
     </>
    
   );

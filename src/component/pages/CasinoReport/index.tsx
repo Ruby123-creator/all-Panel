@@ -9,12 +9,7 @@ const CasinoReport = () => {
      if(isLoading){
         return<PageLoader/>
      }
-    // useEffect(()=>{
-    //     if(data?.url){
-    //         window.location.href = data?.url;
-
-    //     }
-    // },[data])
+   
   return (
     <div className="center-main-container report-page">
     <div className="center-container">
