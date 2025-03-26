@@ -1,0 +1,65 @@
+{
+    "success": true,
+    "update": "2025-03-24 22:29:25",
+    "auto": "01",
+    "mid": " 103250324222655",
+    "img": "QSS,10CC,1",
+    "t1": [
+        {
+            "nat": "Player 1",
+            "bp": "1.98",
+            "status": "suspended",
+            "sid": "1",
+            "img": "3}J{9{"
+        },
+        {
+            "nat": "Player 2",
+            "bp": "1.98",
+            "status": "suspended",
+            "sid": "2",
+            "img": "5[Q]J["
+        },
+        {
+            "nat": "Player 3",
+            "bp": "1.98",
+            "status": "suspended",
+            "sid": "3",
+            "img": "10}8[K{"
+        },
+        {
+            "nat": "Player 4",
+            "bp": "1.98",
+            "status": "suspended",
+            "sid": "4",
+            "img": "A[5}"
+        },
+        {
+            "nat": "Player 5",
+            "bp": "1.98",
+            "status": "suspended",
+            "sid": "5",
+            "img": "9]4["
+        },
+        {
+            "nat": "Player 6",
+            "bp": "1.98",
+            "status": "suspended",
+            "sid": "6",
+            "img": "K[6]"
+        },
+        {
+            "nat": "Player 7",
+            "bp": "1.98",
+            "status": "suspended",
+            "sid": "7",
+            "img": "K}5]"
+        },
+        {
+            "nat": "Player 8",
+            "bp": "1.98",
+            "status": "suspended",
+            "sid": "8",
+            "img": "4]K]"
+        }
+    ]
+}

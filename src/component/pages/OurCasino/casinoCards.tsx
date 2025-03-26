@@ -9,6 +9,7 @@ type CasinoTypeKeys = keyof typeof casinoTypes;
 interface CasinoItem {
   img: string;
   title: string;
+  path: string;
 }
 
 const CasinoCards: React.FC = () => {
@@ -26,7 +27,7 @@ const CasinoCards: React.FC = () => {
             <div
               key={i}
               className="casino-list-item"
-              onClick={() => navigate(`/casino/teenjoker`)}
+              onClick={() => navigate(item?.path)}
               style={{ width: "120px", height: "100px" }}
             >
               <div

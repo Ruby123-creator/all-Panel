@@ -1,0 +1,36 @@
+{
+    "img": "ASS,JCC,JSS,1,1",
+    "mid": " 139250325202718",
+    "autotime": "15",
+    "update_time": "2025-03-25 20:29:30",
+    "t1": [
+        {
+            "nat": "Race to 17",
+            "bp": "25.44",
+            "lp": "28.01",
+            "status": "ACTIVE",
+            "sid": 1
+        },
+        {
+            "nat": "Big Card (7,8,9) - 5",
+            "bp": "3.93",
+            "lp": "4.24",
+            "status": "ACTIVE",
+            "sid": 2
+        },
+        {
+            "nat": "Zero Card - 5",
+            "bp": "3.38",
+            "lp": "3.63",
+            "status": "ACTIVE",
+            "sid": 3
+        },
+        {
+            "nat": "Any Zero",
+            "bp": "0",
+            "lp": "0",
+            "status": "suspended",
+            "sid": 4
+        }
+    ]
+}

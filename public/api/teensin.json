@@ -1,0 +1,67 @@
+{
+    "img": "1,1,1,1,1,1",
+    "mid": " 137250325003202",
+    "autotime": "34",
+    "update_time": "2025-03-25 00:32:07",
+    "t1": [
+        {
+            "nat": "Winner",
+            "bp": "1.98",
+            "sid": "1",
+            "status": "ACTIVE"
+        },
+        {
+            "nat": "High Card",
+            "bp": "1.98",
+            "sid": "2",
+            "status": "ACTIVE"
+        },
+        {
+            "nat": "Pair",
+            "bp": "3.25",
+            "sid": "3",
+            "status": "ACTIVE"
+        },
+        {
+            "nat": "Color Plus",
+            "bp": "2",
+            "sid": "4",
+            "status": "ACTIVE"
+        }
+    ],
+    "t2": [
+        {
+            "nat": "Winner",
+            "bp": "1.98",
+            "sid": "5",
+            "status": "ACTIVE"
+        },
+        {
+            "nat": "High Card",
+            "bp": "1.98",
+            "sid": "6",
+            "status": "ACTIVE"
+        },
+        {
+            "nat": "Pair",
+            "bp": "3.25",
+            "sid": "7",
+            "status": "ACTIVE"
+        },
+        {
+            "nat": "Color Plus",
+            "bp": "2",
+            "sid": "8",
+            "status": "ACTIVE"
+        }
+    ],
+    "t3": [
+        {
+            "nat": "Lucky 9",
+            "bp": "3.25",
+            "lp": "5.1",
+            "sid": "9",
+            "status": "ACTIVE"
+        }
+    ]
+}

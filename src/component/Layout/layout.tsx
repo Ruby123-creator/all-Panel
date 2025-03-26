@@ -7,6 +7,9 @@ import AutoLogout from "../common/autoLogout";
 import { useUI } from "../../context/ui.context";
 import SidebarComp from "./sidebar";
 
+
+
+
 interface LayoutProps {
   children: React.ReactNode;
 }
@@ -34,7 +37,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   }, []);
   return (
     <>
-      {isLogin ? <AutoLogout timeout={180000} /> : ""}
+      {/* {isLogin ? <AutoLogout timeout={180000} /> : ""} */}
 
       {loading ? (
         <PageLoader />

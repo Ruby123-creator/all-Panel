@@ -1,0 +1,54 @@
+{
+    "max": "50000.000000",
+    "ramark": "This is 21 cards game 2,3,4,5,6 x 4 =20 and 1 Queen. Minimum total 10 or queen is required to win.",
+    "img": "3SS,4HH,2SS,3CC",
+    "mid": " 131250326192743",
+    "autotime": "11",
+    "update_time": "2025-03-26 19:29:58",
+    "t1": [
+        {
+            "mid": " 131250326192743",
+            "sid": 1,
+            "nat": "Total 0",
+            "b1": "7.26",
+            "bs1": "1000000",
+            "l1": "7.96",
+            "ls1": "1000000",
+            "gtype": "queen",
+            "gstatus": "ACTIVE"
+        },
+        {
+            "mid": " 131250326192743",
+            "sid": 2,
+            "nat": "Total 1",
+            "b1": "1.93",
+            "bs1": "1000000",
+            "l1": "2.01",
+            "ls1": "1000000",
+            "gtype": "queen",
+            "gstatus": "ACTIVE"
+        },
+        {
+            "mid": " 131250326192743",
+            "sid": 3,
+            "nat": "Total 2",
+            "b1": "7",
+            "bs1": "1000000",
+            "l1": "7.6",
+            "ls1": "1000000",
+            "gtype": "queen",
+            "gstatus": "ACTIVE"
+        },
+        {
+            "mid": " 131250326192743",
+            "sid": 4,
+            "nat": "Total 3",
+            "b1": "4.46",
+            "bs1": "1000000",
+            "l1": "4.75",
+            "ls1": "1000000",
+            "gtype": "queen",
+            "gstatus": "ACTIVE"
+        }
+    ]
+}

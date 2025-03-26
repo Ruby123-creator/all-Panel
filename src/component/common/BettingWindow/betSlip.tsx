@@ -342,18 +342,23 @@ const BetSlip: React.FC = () => {
             <button className="btn btn-success" onClick={()=>handleConfirmBet()}>Submit</button>
           </div>
         </div>
-        <Modal open={betProcessed} closeIcon={null}>
-        <div className="z-2 popUpBoxShadow popUpOpenAnimation absolute w-[95%] z-[900] bg-bg_Quaternary p-2 xs:p-5 rounded-md">
-          <div className="flex flex-col gap-1 align-top items-center">
-            <span className="relative w-max min-w-6 min-h-6 flex items-center justify-center p-2 pt-6">
-              <span className="absolute min-w-14 min-h-14 animate-spin rounded-full border-[2px] border-primary border-dashed"></span>
-               <span className="font-semibold text-text_Ternary">{Number(timer)}</span>
-             </span>
-             <span className="font-semibold mt-[4px]">Your bet is being processed...</span>
-             <span className="font-semibold">Please Wait...</span>
+        <div className="LoaderModal" style={{widows:"200px"}}>
+        <Modal open={betProcessed} footer={null} closable={false} centered>
+      <div className="bet-loader text-center p-4">
+        <div className="bet-div">
+          <div className="position-relative d-flex align-items-center justify-content-center">
+            <div className="loader"></div>
+            <span className="fw-semibold position-absolute text-primary">
+              {Number(timer)}
+            </span>
           </div>
+          <p className="fw-semibold mt-2">Your bet is being processed...</p>
+          <p className="fw-semibold text-muted">Please wait...</p>
         </div>
-      </Modal>
+      </div>
+    </Modal>
+        </div>
+       
     </>
     // <div className="relative">
     //   <div

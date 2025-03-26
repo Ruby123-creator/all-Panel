@@ -1,24 +1,188 @@
 import { useTableCardsFixture } from "../../../Framework/tablecards";
-import React from "react";
+import React, { useState } from "react";
 import FlipClockCountdown from "@leenguyen/react-flip-clock-countdown";
 import "@leenguyen/react-flip-clock-countdown/dist/index.css";
+import { useParams } from "react-router-dom";
+
+import CasinoResultModal from "../../modals/resultModal";
+import { renderTable } from "../../../Framework/utils/static";
+const suspendedData = {
+  success: true,
+  update: "2025-03-25 23:47:07",
+  auto: "28",
+  mid: " 101250325234446",
+  img: "9HH,KDD,1,ASS,KHH,1",
+  t1: [
+    {
+      nat: "Player A Main",
+      status: "suspend",
+      bp: "0",
+      lp: "0",
+      sid: 1,
+    },
+    {
+      nat: "Player A Consecutive",
+      status: "suspend",
+      bp: "0",
+      lp: "0",
+      sid: 2,
+    },
+    {
+      nat: "Player B Main",
+      status: "suspend",
+      bp: "0",
+      lp: "0",
+      sid: 3,
+    },
+    {
+      nat: "Player B Consecutive",
+      status: "suspend",
+      bp: "0",
+      lp: "0",
+      sid: 4,
+    },
+  ],
+  t2: [
+    {
+      nat: "Odd Card 1",
+      bp: "0",
+      status: "suspend",
+      sid: 1,
+      type: "even",
+    },
+    {
+      nat: "Odd Card 2",
+      bp: "0",
+      status: "suspend",
+      sid: 2,
+      type: "even",
+    },
+    {
+      nat: "Odd Card 3",
+      bp: "0",
+      status: "suspend",
+      sid: 3,
+      type: "even",
+    },
+    {
+      nat: "Odd Card 4",
+      bp: "0",
+      status: "suspend",
+      sid: 4,
+      type: "even",
+    },
+    {
+      nat: "Odd Card 5",
+      bp: "1.97",
+      status: "active",
+      sid: 5,
+      type: "even",
+    },
+    {
+      nat: "Odd Card 6",
+      bp: "0",
+      status: "suspend",
+      sid: 6,
+      type: "even",
+    },
+    {
+      nat: "Even Card 1",
+      bp: "0",
+      status: "suspend",
+      sid: 7,
+      type: "even",
+    },
+    {
+      nat: "Even Card 2",
+      bp: "0",
+      status: "suspend",
+      sid: 8,
+      type: "even",
+    },
+    {
+      nat: "Even Card 3",
+      bp: "0",
+      status: "suspend",
+      sid: 9,
+      type: "even",
+    },
+    {
+      nat: "Even Card 4",
+      bp: "0",
+      status: "suspend",
+      sid: 10,
+      type: "even",
+    },
+    {
+      nat: "Even Card 5",
+      bp: "1.97",
+      status: "active",
+      sid: 11,
+      type: "even",
+    },
+    {
+      nat: "Even Card 6",
+      bp: "0",
+      status: "suspend",
+      sid: 12,
+      type: "even",
+    },
+  ],
+};
+const resultData = [
+  {
+    success: true,
+    "Player A": ["6SS", "8DD", "QDD"],
+    "Player B": ["QCC", "6CC", "AHH"],
+    Round_Id: "101250326005612",
+    timestamp: "2025-03-26 01:00:51",
+    result: {
+      "Round Id": "101250326005612",
+      "Match Time": "26/03/2025 00:56:12",
+      Winner: "Player B",
+      "Odd/Even": ["Even", "Even", "Even", "Even", "Even", "Odd"],
+      Consecutive: {
+        "Player A": "No",
+        "Player B": "No",
+      },
+    },
+  },
+  {
+    success: true,
+    "Player A": ["10DD", "8DD", "2DD"],
+    "Player B": ["2HH", "QHH", "ACC"],
+    Round_Id: "101250326005941",
+    timestamp: "2025-03-26 01:03:33",
+    result: {
+      "Round Id": "101250326005941",
+      "Match Time": "26/03/2025 00:59:41",
+      Winner: "Player A",
+      "Odd/Even": ["Even", "Even", "Even", "Even", "Even", "Odd"],
+      Consecutive: {
+        "Player A": "No",
+        "Player B": "Yes",
+      },
+    },
+  },
+];
 const LiveCasino = () => {
-  const { data } = useTableCardsFixture();
+  const { val } = useParams();
+
+  const { data } = useTableCardsFixture(val);
+  const [openResultModal, setOpenResultModal] = useState(false);
+  const [casinoResult,setCasinoresult] = useState({}) 
   // const {t1=[],t2=[]} = data;
-  const playerInfo = (data?.t1 || []);
   
-  console.log(data, playerInfo, "CHECK::::::::::::::::");
-  const playerVal = (playerInfo||[]).filter((val:any)=>(val?.nat||"").includes('Player'));
-  const othercards = (playerInfo||[]).filter((val:any)=>((val?.nat||"").includes('Total')));
-  const cards = (playerInfo||[]).filter((val:any)=>(!((val?.nat||"").includes('Total')||(val?.nat||"").includes('Player'))));
+
+  
 
   return (
     <div className="center-main-container casino-page">
       <div className="center-container">
-        <div className="casino-page-container teenpatti20">
+        <div className="casino-page-container teenpatti1day">
           <div className="casino-header">
             <span className="casino-name">
-              20-20 Teenpatti C{" "}
+              {renderTable(val)?.title}{" "}
               <a className="ms-1">
                 <small>Rules</small>
               </a>
@@ -45,145 +209,61 @@ const LiveCasino = () => {
               </span>
             </div>
           </div>
-
-          <div className="casino-video">
-            <div className="video-box-container">
-              <div className="casino-video-box">
-                <iframe src="/mediaplayer/teen20c/9c87abd8-82be-4a9c-a2ee-87062bc1d1ab?ip=103.44.52.180"></iframe>
+          <div>
+            <div className="casino-video">
+              <div className="video-box-container">
+                <div className="casino-video-box">
+                  <iframe src="/mediaplayer/teen20c/9c87abd8-82be-4a9c-a2ee-87062bc1d1ab?ip=103.44.52.180"></iframe>
+                </div>
+              </div>
+               {
+                renderTable(val,data)?.cardRenders
+               }
+              
+              <div className="clock flip-clock-wrapper">
+                <FlipClockCountdown
+                 to={Date.now() + (parseInt(data?.auto, 10) || 0) * 1000} 
+                  digitBlockStyle={{
+                    width: 50,
+                    height: 60,
+                    fontSize: 40,
+                    background: "#333",
+                    color: "#fff",
+                  }}
+                  duration={0.5} // Flip speed
+                  // Removes labels (hours, minutes)
+                  // separatorStyle={{ display: "none" } as any} // Removes colons
+                />
               </div>
             </div>
+            <div className="casino-detail">
+              {renderTable(val,data)?.table}
 
-            <div className="casino-video-cards">
-              {["Player A", "Player B"].map((player, index) => (
-                <div key={index} className="mt-1">
-                  <h5>{player}</h5>
-                  <div className="flip-card-container">
-                    {(data?.img||[]).map((card:any, idx:number) => (
-                      <div key={idx} className="flip-card">
-                        <div className="flip-card-inner">
-                          <div className="flip-card-front">
-                            <img
-                              src={`/assets/images/playingCards/${card}.jpg`}
-                              alt={card}
-                            />
-                          </div>
-                          <div className="flip-card-back">
-                            <img
-               src={`/assets/images/playingCards/${card}.jpg`}
-
-                              alt={card}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="clock flip-clock-wrapper">
-              <FlipClockCountdown
-                to={Date.now() + 20 * 1000} // Countdown for 20 seconds
-                digitBlockStyle={{
-                  width: 50,
-                  height: 60,
-                  fontSize: 40,
-                  background: "#333",
-                  color: "#fff",
-                }}
-                duration={0.5} // Flip speed
-                labels={["Seconds"] as any} // Removes labels (hours, minutes)
-                separatorStyle={{ display: "none" } as any} // Removes colons
-              />
-            </div>
-          </div>
-
-          <div className="casino-detail">
-            <div className="casino-table">
-              {["Player A", "Player B"].map((player, index) => (
-                <div key={index} className="casino-table-box">
-                  <div className="casino-table-left-box">
-                    <div className="casino-table-header">
-                      <div className="casino-nation-detail">{player}</div>
-                    </div>
-                    <div className="casino-table-body">
-                      <div className="casino-table-row">
-                        {Array(4)
-                          .fill(4)
-                          .map((_, idx) => (
-                            <div
-                              key={idx}
-                              className="casino-odds-box back suspended-box"
-                            >
-                              <span className="casino-odds">0</span>
-                            </div>
-                          ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="casino-table-box">
-            <div className="casino-table-left-box">
-              <div className="casino-table-header">
-                <div className="casino-nation-detail"></div>
-                <div className="casino-odds-box back">Back</div>
-                <div className="casino-odds-box lay">Lay</div>
+              <div className="casino-last-result-title">
+                <span>Last Result</span>
+                <span>
+                  <a href="/casino-results/teen">View All</a>
+                </span>
               </div>
-              <div className="casino-table-body">
+
+              <div className="casino-last-results">
                 {
-                  (playerVal||[]).slice(0,4).map((item:any,i:number)=>{
-                    return(
-<div className="casino-table-row">
-                  <div className="casino-nation-detail">
-                    <div className="casino-nation-name">{item?.nat}</div>
-                  </div>
-                  <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
-                    <span className="casino-odds">{item?.b1}</span>
-                  </div>
-                  <div className={`casino-odds-box lay ${item?.status === "suspended" ? 'suspended-box':''}`}>
-                    <span className="casino-odds">{item?.l1}</span>
-                  </div>
-                </div>
-                    )
-                  })
+                 ( resultData||[]).map((item:any,i:number)=>{
+                  const result = item?.result?.Winner
+                  const WinnerName = ((result||"").split(" ")||[])[1];
+                  return (<span
+                    onClick={()=>{
+                      setOpenResultModal(true);
+                      setCasinoresult(item);
+                    }}
+                    className={`result result-${WinnerName === 'A' ?'a':'b'}`}>{WinnerName}</span>)
+                 })
                 }
                 
-                
-              </div>
-            </div>
-            <div className="casino-table-box-divider"></div>
-            <div className="casino-table-right-box">
-              <div className="casino-table-header">
-                <div className="casino-nation-detail"></div>
-                <div className="casino-odds-box back">Odd</div>
-                <div className="casino-odds-box back">Even</div>
-              </div>
-              <div className="casino-table-body">
-              {
-                  (playerVal||[]).slice(4,8).map((item:any,i:number)=>{
-                    return(
-<div className="casino-table-row">
-                  <div className="casino-nation-detail">
-                    <div className="casino-nation-name">{item?.nat}</div>
-                  </div>
-                  <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
-                    <span className="casino-odds">{item?.b1}</span>
-                  </div>
-                  <div className={`casino-odds-box lay ${item?.status === "SUSPENDED" ? 'suspended-box':''}`}>
-                    <span className="casino-odds">{item?.l1}</span>
-                  </div>
-                </div>
-                    )
-                  })
-                }
-             
+            
               </div>
             </div>
           </div>
-          </div>
-          
         </div>
       </div>
 
@@ -208,6 +288,7 @@ const LiveCasino = () => {
           </div>
         </div>
       </div>
+      <CasinoResultModal openModal = {openResultModal} setOpenModal={setOpenResultModal} casinoResult ={casinoResult} title={renderTable(val)?.title}/>
     </div>
   );
 };

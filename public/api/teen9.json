@@ -1,0 +1,99 @@
+{
+    "success": true,
+    "update": "2025-03-24 22:32:49",
+    "auto": "01",
+    "mid": " 112250324223134",
+    "img": "9CC,QCC,8DD,6DD,5DD,KDD,QHH,KHH,5CC",
+    "t1": [
+        {
+            "nat": "Winner Tiger",
+            "bp": "2.94",
+            "status": "suspended",
+            "sid": "1"
+        },
+        {
+            "nat": "Winner Lion",
+            "bp": "2.94",
+            "status": "suspended",
+            "sid": "2"
+        },
+        {
+            "nat": "Winner Dragon",
+            "bp": "2.94",
+            "status": "suspended",
+            "sid": "3"
+        },
+        {
+            "nat": "Pair Tiger",
+            "bp": "5",
+            "status": "suspended",
+            "sid": "4"
+        },
+        {
+            "nat": "Pair Lion",
+            "bp": "5",
+            "status": "suspended",
+            "sid": "5"
+        },
+        {
+            "nat": "Pair Dragon",
+            "bp": "5",
+            "status": "suspended",
+            "sid": "6"
+        },
+        {
+            "nat": "Flush Tiger",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "7"
+        },
+        {
+            "nat": "Flush Lion",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "8"
+        },
+        {
+            "nat": "Flush Dragon",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "9"
+        },
+        {
+            "nat": "Straight Tiger",
+            "bp": "21",
+            "status": "suspended",
+            "sid": "10"
+        },
+        {
+            "nat": "Straight Lion",
+            "bp": "21",
+            "status": "suspended",
+            "sid": "11"
+        },
+        {
+            "nat": "Straight Dragon",
+            "bp": "21",
+            "status": "suspended",
+            "sid": "12"
+        },
+        {
+            "nat": "Straight Flush Tiger",
+            "bp": "151",
+            "status": "suspended",
+            "sid": "13"
+        },
+        {
+            "nat": "Straight Flush Lion",
+            "bp": "151",
+            "status": "suspended",
+            "sid": "14"
+        },
+        {
+            "nat": "Straight Flush Dragon",
+            "bp": "151",
+            "status": "suspended",
+            "sid": "15"
+        }
+    ]
+}

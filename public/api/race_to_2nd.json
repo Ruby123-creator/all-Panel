@@ -1,0 +1,37 @@
+{
+    "success": true,
+    "update": "2025-03-25 01:30:00",
+    "auto": "27",
+    "mid": " 151250325012803",
+    "img": "ASS,QDD,JCC",
+    "t1": [
+        {
+            "nat": "Player A",
+            "bp": "",
+            "lp": "",
+            "status": "suspended",
+            "sid": 1
+        },
+        {
+            "nat": "Player B",
+            "bp": "1.25",
+            "lp": "1.29",
+            "status": "active",
+            "sid": 2
+        },
+        {
+            "nat": "Player C",
+            "bp": "",
+            "lp": "",
+            "status": "suspended",
+            "sid": 3
+        },
+        {
+            "nat": "Player D",
+            "bp": "4.63",
+            "lp": "5.17",
+            "status": "active",
+            "sid": 4
+        }
+    ]
+}

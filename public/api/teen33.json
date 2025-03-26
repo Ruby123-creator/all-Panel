@@ -1,0 +1,21 @@
+{
+    "success": true,
+    "update": "2025-03-24 23:02:04",
+    "auto": "00",
+    "mid": " 157250324230107",
+    "img": "9CC,8HH,6SS,9DD,5CC,JDD",
+    "t1": [
+        {
+            "nat": "Player A",
+            "bp": "0",
+            "lp": "0",
+            "status": "suspended"
+        },
+        {
+            "nat": "Player B",
+            "bp": "",
+            "lp": "",
+            "status": "suspended"
+        }
+    ]
+}

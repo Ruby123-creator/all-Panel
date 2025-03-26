@@ -7,6 +7,8 @@ import { useParams } from "react-router-dom";
 
 import BookmakerComp from "./Bookmaker";
 import RacingBet from "./RacingBet/racingbet";
+import SoccerCard from "./soccerCard";
+import ScoreCard from "./scoreCard";
 
 const EventPanel: React.FC = () => {
   const { sport, eventId }: any = useParams();
@@ -32,6 +34,9 @@ const EventPanel: React.FC = () => {
           <div className="game-header">
             <span>{data?.title}</span>
           </div>
+          {(sport === "cricket" && (data?.teams||[]).length > 1) ? <ScoreCard data={data}/> : ""}
+
+          
           {(matchOdds || [])?.length ? (
             <MatchOddBookmaker
               data={matchOdds}

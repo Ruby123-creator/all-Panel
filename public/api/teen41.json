@@ -1,0 +1,41 @@
+{
+    "success": true,
+    "update": "2025-03-24 23:03:45",
+    "auto": "01",
+    "mid": " 159250324230308",
+    "img": "QSS,JHH,9DD,QCC,1,1",
+    "t1": [
+        {
+            "nat": "Player A",
+            "bp": "0",
+            "bs": "",
+            "lp": "0",
+            "ls": "",
+            "sid": "1",
+            "status": "suspended"
+        },
+        {
+            "nat": "Player B",
+            "bp": "0",
+            "bs": "",
+            "lp": "0",
+            "ls": "",
+            "sid": "2",
+            "status": "suspended"
+        }
+    ],
+    "t2": [
+        {
+            "nat": "Player B Under 21",
+            "price": "0",
+            "sid": "3",
+            "status": "suspended"
+        },
+        {
+            "nat": "Player B Over 21",
+            "price": "0",
+            "sid": "4",
+            "status": "suspended"
+        }
+    ]
+}

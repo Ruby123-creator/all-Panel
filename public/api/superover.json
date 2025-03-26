@@ -1,0 +1,133 @@
+{
+    "img": [
+        "10"
+    ],
+    "mid": " 4669904642",
+    "score": [
+        "ENG",
+        "0-0",
+        "(0.1)",
+        "CRR",
+        "0.00",
+        "RSA",
+        "0-0",
+        "(0.0)",
+        "0"
+    ],
+    "autotime": "00",
+    "update_time": "2025-03-25 20:16:42",
+    "bookmaker": [
+        {
+            "nat": "ENG",
+            "bp": "-0.00",
+            "lp": "-0.00",
+            "status": "SUSPENDED",
+            "sid": 1,
+            "min": "100",
+            "max": "10k"
+        },
+        {
+            "nat": "RSA",
+            "bp": "-0.00",
+            "lp": "-0.00",
+            "status": "SUSPENDED",
+            "sid": 2,
+            "min": "100",
+            "max": "10k"
+        }
+    ],
+    "fancy": [
+        {
+            "nat": "1 over run bhav ENG",
+            "bp": "-",
+            "lp": "-",
+            "status": null,
+            "sid": 3,
+            "min": "100",
+            "max": "10k"
+        },
+        {
+            "nat": "1 over run ENG",
+            "bp": "-",
+            "lp": "-",
+            "status": null,
+            "sid": 4,
+            "min": "100",
+            "max": "10k"
+        }
+    ],
+    "fancy1": [
+        {
+            "nat": "Common Wicket ENG",
+            "bp": "-",
+            "lp": "-",
+            "status": null,
+            "sid": 5,
+            "min": "100",
+            "max": "10k"
+        },
+        {
+            "nat": "Common Boundry ENG",
+            "bp": "-",
+            "lp": "-",
+            "status": null,
+            "sid": 6,
+            "min": "100",
+            "max": "10k"
+        },
+        {
+            "nat": "0.2 Over Wicket ENG",
+            "bp": "-",
+            "lp": "-",
+            "status": null,
+            "sid": 7,
+            "min": "100",
+            "max": "10k"
+        },
+        {
+            "nat": " 0.2 Over Zero ENG",
+            "bp": "-",
+            "lp": "-",
+            "status": null,
+            "sid": 8,
+            "min": "100",
+            "max": "10k"
+        },
+        {
+            "nat": "0.2 Over One ENG",
+            "bp": "-",
+            "lp": "-",
+            "status": null,
+            "sid": 9,
+            "min": "100",
+            "max": "10k"
+        },
+        {
+            "nat": "0.2 Over Two ENG",
+            "bp": "-",
+            "lp": "-",
+            "status": null,
+            "sid": 10,
+            "min": "100",
+            "max": "10k"
+        },
+        {
+            "nat": "0.2 Over Three ENG",
+            "bp": "-",
+            "lp": "-",
+            "status": null,
+            "sid": 11,
+            "min": "100",
+            "max": "10k"
+        },
+        {
+            "nat": "0.2 Over Boundry ENG",
+            "bp": "-",
+            "lp": "-",
+            "status": null,
+            "sid": 12,
+            "min": "100",
+            "max": "10k"
+        }
+    ]
+}

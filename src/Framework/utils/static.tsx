@@ -3,8 +3,477 @@ import { FaTelegramPlane } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa6";
 import { IoIosJet, IoIosMail, IoLogoWhatsapp } from "react-icons/io";
 import { GiCirclingFish } from "react-icons/gi";
+import TeenJoker from "../../component/pages/LiveCasino/casinoTables/teenjoker";
+import Teen from "../../component/pages/LiveCasino/casinoTables/teen";
+import Teenmuf from "../../component/pages/LiveCasino/casinoTables/teenmuf";
+import Teen41 from "../../component/pages/LiveCasino/casinoTables/teen41";
 
+import Teen20C from "../../component/pages/LiveCasino/casinoTables/teen20c";
+import Teen9 from "../../component/pages/LiveCasino/casinoTables/teen9";
+import Teen8 from "../../component/pages/LiveCasino/casinoTables/teen8";
+import Poker6 from "../../component/pages/LiveCasino/casinoTables/poker6";
+import Poker from "../../component/pages/LiveCasino/casinoTables/poker";
+import Patti2 from "../../component/pages/LiveCasino/casinoTables/patti2";
+import OurRoullete from "../../component/pages/LiveCasino/casinoTables/ourRoullete";
+import Baccarat from "../../component/pages/LiveCasino/casinoTables/baccarat";
+import Baccarat9 from "../../component/pages/LiveCasino/casinoTables/baccarat9";
+import Teen3 from "../../component/pages/LiveCasino/casinoTables/teen3";
+import Teen32 from "../../component/pages/LiveCasino/casinoTables/teen32";
+import Teen20b from "../../component/pages/LiveCasino/casinoTables/teen20b";
+import Poker20 from "../../component/pages/LiveCasino/casinoTables/poker20";
+import Dragontiger20 from "../../component/pages/LiveCasino/casinoTables/dragontiger20";
+import Dragontiger202 from "../../component/pages/LiveCasino/casinoTables/dragontiger202";
+import OnedayDragonTiger from "../../component/pages/LiveCasino/casinoTables/onedayDragonTiger";
+import DragonTigerLion20 from "../../component/pages/LiveCasino/casinoTables/dragonTigerLion20";
+import Card32 from "../../component/pages/LiveCasino/casinoTables/card32";
+import Card32eu from "../../component/pages/LiveCasino/casinoTables/card32eu";
+import AndarBahar150 from "../../component/pages/LiveCasino/casinoTables/andarBahar150";
+import AndarBahar2 from "../../component/pages/LiveCasino/casinoTables/AndarBahar2";
+import Lucky15 from "../../component/pages/LiveCasino/casinoTables/lucky15";
+import Lucky7 from "../../component/pages/LiveCasino/casinoTables/lucky7";
+import Lucky7B from "../../component/pages/LiveCasino/casinoTables/lucky7B";
+import Lucky7C from "../../component/pages/LiveCasino/casinoTables/lucky7C";
+import Cardjudgement from "../../component/pages/LiveCasino/casinoTables/cardjudgement";
+import Casinowar from "../../component/pages/LiveCasino/casinoTables/casinowar";
+import Worlimatka from "../../component/pages/LiveCasino/casinoTables/worlimatka";
+import Instantworli from "../../component/pages/LiveCasino/casinoTables/instantworli";
+import Goal from "../../component/pages/LiveCasino/casinoTables/goal";
+import SuperOver from "../../component/pages/LiveCasino/casinoTables/superOver";
+import CasinoMeter from "../../component/pages/LiveCasino/casinoTables/casinoMeter";
+import MatchTable from "../../component/pages/LiveCasino/casinoTables/matchTable";
+import BollywoodTable from "../../component/pages/LiveCasino/casinoTables/bollywoodTable";
+import Casibo2 from "../../component/pages/LiveCasino/casinoTables/casibo2";
+import Teensin from "../../component/pages/LiveCasino/casinoTables/teensin";
+import { title } from "process";
+import Kbc from "../../component/pages/LiveCasino/casinoTables/kbc";
+import { table } from "console";
+import NoteNumber from "../../component/pages/LiveCasino/casinoTables/noteNumber";
+import Teen1 from "../../component/pages/LiveCasino/casinoTables/teen1";
+import Teen120 from "../../component/pages/LiveCasino/casinoTables/teen120";
+import Trap from "../../component/pages/LiveCasino/casinoTables/trap";
+import Trio from "../../component/pages/LiveCasino/casinoTables/trio";
+import Race2 from "../../component/pages/LiveCasino/casinoTables/race2";
+import Race17 from "../../component/pages/LiveCasino/casinoTables/race17";
+import Race20 from "../../component/pages/LiveCasino/casinoTables/race20";
+import CasinoQueen from "../../component/pages/LiveCasino/casinoTables/casinoQueen";
+import Lotterycard from "../../component/pages/LiveCasino/casinoTables/lotterycard";
 
+const renderCards = (players: string[], images: string, div: number) => {
+  // Convert the image string into an array
+  const imageArray = images?.split(",") || [];
+
+  return (
+    <div className="casino-video-cards">
+      {players.map((player, index) => {
+        // Get the subset of images for this player
+        const playerImages = imageArray.slice(index * div, (index + 1) * div);
+
+        return (
+          <div key={index} className="mt-1">
+            <h5>{player}</h5>
+            <div className="flip-card-container">
+              {playerImages.map((card, idx) => (
+                <div key={idx} className="flip-card">
+                  <div className="flip-card-inner">
+                    <div className="flip-card-front">
+                      <img
+                        src={`/assets/images/playingCards/${card}.jpg`}
+                        alt={card}
+                      />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+export const renderTable = (val:string | undefined,data?:any) => {
+  switch (val) {
+    case "teenjoker":
+      return {
+        title: "JOKER TEENPATTI",
+        table: <TeenJoker />,
+      };
+    case "teen":
+      return {
+        title:"TEENPATTI 1-DAY",
+        table: <Teen data={data}/>,
+        cardRenders : renderCards(["PLAYER A","PLAYER B"], data?.img , 3)
+
+      };
+    case "teenmuf":
+      return {
+        title:"MUFLIS TEENPATTI",
+        table: <Teenmuf data={data}/>,
+        cardRenders : renderCards(["",""], data?.img , 3)
+
+      };
+    case "tee41":
+      return {
+        title: "Teen 41",
+        table: <Teen41 />,
+      };
+    case "teen33":
+      return {
+        title:"INSTANT TEENPATTI3.0",
+        table: <Teen32 data={data}/>,
+          cardRenders : renderCards(["PLAYER A","PLAYER B"], data?.img , 3)
+      };
+    case "teen20c":
+      return {
+        title:"20-20 TEENPATTIC C",
+        table: <Teen20C data={data}/>,
+        
+          cardRenders : renderCards(["PLAYER A","PLAYER B"], data?.img , 3)
+      };
+    case "teen9":
+      return {
+        title:"TEENPATTI TEST",
+        table: <Teen9 data={data}/>,
+        cardRenders : renderCards(["TIGER","LION","DRAGON"], data?.img , 3)
+      };
+      case "teen20":
+        return {
+          title:"TEENPATTI 20-20",
+          table: <Teen9 />,
+        };
+    case "teen8":
+      return {
+        title:"OPEN TEENPATTI",
+        table: <Teen8 />,
+      };
+    case "poker6":
+      return {
+        title:"POKER 20-20",
+        table: <Poker6 />,
+      };
+    case "poker":
+      return {
+        title:"POKER 1-DAY",
+        table: <Poker />,
+      };
+    case "patti2":
+      return {
+        title: "2 CARDS TEENPATTI",
+        table: <Patti2 />,
+      };
+    case "ourroullete":
+      return {
+        title:"UNIQUE ROULETTE",
+        table: <OurRoullete />,
+      };
+    case "baccarat":
+      return {
+        title:"BACCARAT",
+        table: <Baccarat />,
+      };
+    case "baccarat9":
+      return {
+        title:"ONLINE BACCARAT",
+        table: <Baccarat9 />,
+      };
+    case "teen6":
+      return {
+        title:"TEENPATTI 2.0",
+        table: <Teen3 />,
+      };
+    case "teen3":
+      return {
+        title: "INSTANT TEENPATTI",
+        table: <Teen3 />,
+      };
+    case "teen32":
+      return {
+        title:"INSTANT TEENPATTI 2.0",
+        table: <Teen32 data={data}/>,
+          cardRenders : renderCards(["PLAYER A","PLAYER B"], data?.img , 3)
+      }
+      case "teen42":
+        return {
+          title:"JACK TOP OPEN TEENPATTI",
+          table: <Teen32 data={data}/>,
+          cardRenders : renderCards(["PLAYER","DEALER"], data?.img , 3)
+
+        };
+        case "teen41":
+        return {
+          title:"QUEEN TOP OPEN TEENPATTI",
+          table: <Teen32 data={data}/>,
+          cardRenders : renderCards(["PLAYER A","PLAYER B"], data?.img , 3)
+
+        };
+    case "teen20b":
+      return {
+        title:"20-20 TEENPATTI B",
+        table: <Teen20C data={data}/>,
+        
+        cardRenders : renderCards(["PLAYER A","PLAYER B"], data?.img , 3)
+      };
+    case "poker20":
+      return {
+        title:"POKER 6 PLAYER",
+        table: <Poker20 />,
+      };
+    case "dt20":
+      return {
+        title:"20-20 DRAGON TIGER",
+        table: <Dragontiger20 />,
+      };
+    case "dt202":
+      return {
+        title:"20-20 DARGON TIGER 2",
+        table: <Dragontiger202 />,
+      };
+    case "dt6":
+      return {
+        title:"1-DAY DRAGON TIGER",
+        table: <OnedayDragonTiger />,
+      };
+    case "dtl20":
+      return {
+        title:"20-20 DRAGON TIGER LION",
+        table: <DragonTigerLion20 />,
+      };
+    case "card32":
+      return {
+        title:"32 CARDS-A",
+        table: <Card32 />,
+      };
+    case "card32eu":
+      return {
+        title:"32 CARDS-B",
+        table: <Card32eu />,
+      };
+    case "ab4":
+      return {
+        title:"ANDAR BAHAR 150 CARDS",
+        table: <AndarBahar150 />,
+      };
+    case "ab3":
+      return {
+        title:"ANDAR BAHAR 50 CARDS",
+        table: <AndarBahar150 />,
+      };
+    case "ab20":
+      return {
+        title:"ANDAR BAHAR",
+        table: <AndarBahar150 />,
+      };
+    case "abj":
+      return {
+        title:"ANDAR BAHAR 2",
+        table: <AndarBahar2 />,
+      };
+    case "lucky15":
+      return {
+        title:"LUCKY 15",
+        table: <Lucky15 />,
+      };
+    case "lucky7":
+      return {
+        title:"LUCKY 7-A",
+        table: <Lucky7 />,
+      };
+    case "lucky7eu":
+      return {
+        title:"LUCKY 7-B",
+        table: <Lucky7B />,
+      };
+    case "lucky7eu2":
+      return {
+        title:"LUCKY7-C CASINO",
+        table: <Lucky7C />,
+      };
+    case "3cardj":
+      return {
+        title:"3 CARDS JUDGEMENT",
+        table: <Cardjudgement />,
+      };
+    case "war":
+      return {
+        title:"CASINO WAR",
+        table: <Casinowar />,
+      };
+    case "worli":
+      return {
+        title:"WORLI MATKA",
+        table: <Worlimatka />,
+      };
+    case "worli2":
+      return {
+        title:"INSTANT WORLI",
+        table: <Instantworli />,
+      };
+    case "goal":
+      return {
+        title:"GOAL",
+        table: <Goal />,
+      };
+    case "superover":
+      return {
+        title:"SUPER OVER",
+        table: <SuperOver />,
+      };
+    case "superover2":
+      return {
+        title:"SUPER OVER2",
+        table: <SuperOver />,
+      };
+    case "superover3":
+      return {
+        title:"MINI SUPER OVER",
+        table: <SuperOver />,
+      };
+      case "cricketv3":
+        return {
+          title:"5FIVE CRICKET",
+          table: <SuperOver />,
+        };
+    case "cricketv3":
+      return {
+        title:"5FIVE CRICKET",
+        table: <SuperOver />,
+      };
+    case "cmeter1":
+      return {
+        title:"1 CARD METER",
+        table: <CasinoMeter />,
+      };
+    case "cmeter":
+      return {
+        title:"CASINO METER",
+        table: <CasinoMeter />,
+      };
+    case "cmatch20":
+      return {
+        title:"CRICKET MATCH 20-20",
+        table: <MatchTable />,
+      };
+    case "btable2":
+      return {
+        title:"BOLLYWOOD CASINO 2",
+        table: <BollywoodTable />,
+      };
+    case "btable":
+      return {
+        title:"BOLLYWOOD",
+        table: <BollywoodTable />,
+      };
+    case "aaa":
+      return {
+        title:"AMAR AKBAR ANTHONY",
+        table: <BollywoodTable />,
+      };
+    case "aaa2":
+      return {
+        title:"AMAR AKBAR ANTHONY 2.0",
+        table: <BollywoodTable />,
+      };
+      case "teen1":
+        return {
+          title:"1 CARD ONE-DAY",
+
+          table: <Teen1 data={data}/>,
+          cardRenders : renderCards(["PLAYER","DEALER"], data?.img , 1)
+
+        };
+        case "teen120":
+          return {
+            title:"1 CARD 20-20",
+  
+            table: <Teen120 data={data}/>,
+          cardRenders : renderCards(["PLAYER","DEALER"], data?.img , 1)
+
+          };
+    case "sicbo":
+      return {
+        title:"SIC BO",
+
+        table: <Casibo2 />,
+      };
+      case "trio":
+        return {
+          title:"TRIO",
+
+  
+          table: <Trio />,
+        };
+      case "trap":
+        return {
+          title:"THE TRAP",
+
+  
+          table: <Trap />,
+        };
+    case "notenum":
+      return{
+    title:"NOTE NUMBER",
+table : <NoteNumber/>
+      }
+    case "kbc":
+      return{
+        title:"KAUN BANEGA CROREPATI",
+        table: <Kbc/>
+      }
+    case "sicbo2":
+      return {
+        title:"DOUBLE SICBO",
+
+        table: <Casibo2 />,
+      };
+      case "race2":
+        return {
+          title:"RACE TO 2ND",
+  
+          table: <Race2 />,
+        };
+        case "race17":
+        return {
+          title:"RACE TO 17",
+
+  
+          table: <Race17 />,
+        };
+        case "race20":
+        return {
+          title:"RACE 20",
+
+  
+          table: <Race20 />,
+        }; 
+        case "queen":
+        return {
+          title:"CASINO QUEEN",
+
+  
+          table: <CasinoQueen />,
+        };
+        case "lottcard":
+        return {
+          title:"LOTTERY",
+
+  
+          table: <Lotterycard />,
+        };
+    case "teensin":
+      return {
+        title:"29 BACCARAT",
+        table: <Teensin data={data}/>,
+        cardRenders : renderCards(["PLAYER A","PLAYER B"], data?.img , 3)
+
+      };
+    default:
+      return {
+        title: "Not Found",
+        table: null,
+      };
+  }
+};
 export const socialLinks = [
   {
     title: "",
@@ -162,7 +631,8 @@ export const mobileHeaderMenu = [
 export const casinoCards = [
   {
     img: "/assets/images/casino/img-1.jpg",
-    title:"3 CARDS JUDGEMENT"
+    title:"3 CARDS JUDGEMENT",
+   
   },
   {
     img: "/assets/images/casino/img-2.jpg",
@@ -306,7 +776,7 @@ export const casinoCards = [
   },
   {
     img: "/assets/images/casino/img-37.jpg",
-    title:"JACK TOP OPEN TEENPATTI"
+    title:"QUEEN TOP OPEN TEENPATTI"
   },
   {
     img: "/assets/images/casino/img-38.jpg",
@@ -444,349 +914,401 @@ export const casinoCards = [
   },
 ];
 
-export const baccarats = [
-  {
-    img: "https://client.qtlauncher.com/images/?id=EVO-always8baccarat_en_US&amp&type=logo-square&amp;version=1731473904011",
-  },
-  {
-    img: "https://client.qtlauncher.com/images/?id=EVO-bacbo_en_US&amp&type=logo-square&amp;version=1678359207526",
-  },
-  {
-    img: "https://client.qtlauncher.com/images/?id=BTV-baccarat_en_US&amp&type=logo-square&amp;version=1662976207439",
-  },
-  {
-    img: "https://client.qtlauncher.com/images/?id=EVO-baccarat_en_US&amp&type=logo-square&amp;version=1678359251397",
-  },
-  {
-    img: "https://client.qtlauncher.com/images/?id=EZU-baccarat_en_US&amp&type=logo-square&amp;version=1716211287452",
-  },
-  {
-    img: "https://client.qtlauncher.com/images/?id=L88-baccarat1_en_US&amp&type=logo-square&amp;version=1727968121327",
-  },
-  {
-    img: "https://client.qtlauncher.com/images/?id=L88-baccarat3_en_US&amp&type=logo-square&amp;version=1727875420320",
-  },
-  {
-    img: "https://client.qtlauncher.com/images/?id=L88-baccarat5_en_US&amp&type=logo-square&amp;version=1727875500599",
-  },
-  {
-    img: "https://client.qtlauncher.com/images/?id=EVO-baccarata_en_US&amp&type=logo-square&amp;version=1726028817311",
-  },
-  {
-    img: "https://client.qtlauncher.com/images/?id=EZU-baccarata_en_US&amp&type=logo-square&amp;version=1717130391537",
-  },
-];
 
-export const roulette = [
-  {
-    img: "https://client.qtlauncher.com/images/?id=VGL-americanautoroulette_en_US&amp&type=logo-square&amp;version=1701672928302",
-  },
-  {
-    img: "https://client.qtlauncher.com/images/?id=EVO-americanroulette_en_US&amp&type=logo-square&amp;version=1678358704943",
-  },
-  {
-    img: "https://client.qtlauncher.com/images/?id=EVO-autolightningroulette_en_US&amp&type=logo-square&amp;version=1701277574098",
-  },
-  {
-    img: "https://client.qtlauncher.com/images/?id=BTL-autoroulette_en_US&amp&type=logo-square&amp;version=1727274726306",
-  },
-  {
-    img: "https://client.qtlauncher.com/images/?id=BTL-autoroulette_en_US&amp&type=logo-square&amp;version=1727274726306",
-  },
-  {
-    img: "https://client.qtlauncher.com/images/?id=EZU-automaticroulette_en_US&amp&type=logo-square&amp;version=1716210438504",
-  },
-  {
-    img: "https://client.qtlauncher.com/images/?id=L88-autoroulette1_en_US&amp&type=logo-square&amp;version=1727875079920",
-  },
-  {
-    img: "https://client.qtlauncher.com/images/?id=EZU-autoroulette1_en_US&amp&type=logo-square&amp;version=1716214180331",
-  },
-  {
-    img: "https://client.qtlauncher.com/images/?id=EVO-autoroulette_en_US&amp&type=logo-square&amp;version=1726028196831",
-  },
-  {
-    img: "https://client.qtlauncher.com/images/?id=EVO-autoroulettelapartage_en_US&amp&type=logo-square&amp;version=1702450712159",
-  },
-];
-
-export const andarbhar = [
-  {
-    img: "https://client.qtlauncher.com/images/?id=EZU-andarbahar_en_US&amp&type=logo-square&amp;version=1678476979546",
-  },
-  {
-    img: "https://client.qtlauncher.com/images/?id=L88-andarbahar1_en_US&amp&type=logo-square&amp;version=1727874820295",
-  },
-  {
-    img: "https://client.qtlauncher.com/images/?id=EZU-casinomarinaandarbahar_en_US&amp&type=logo-square&amp;version=1685691014988",
-  },
-  {
-    img: "https://client.qtlauncher.com/images/?id=SAG-mandarbahar_en_US&amp&type=logo-square&amp;version=1702895346689",
-  },
-  {
-    img: "https://client.qtlauncher.com/images/?id=EVO-superandarbahar_en_US&amp&type=logo-square&amp;version=1678388339595",
-  },
-  {
-    img: "https://client.qtlauncher.com/images/?id=EZU-ultimateandarbahar_en_US&amp&type=logo-square&amp;version=1669146546695",
-  },
-];
 
 
 export const casinoTypes ={
   "Teenpatti":[ {
     img: "/assets/images/casino/img-34.jpg",
-    title:"TEENPATTI 1-DAY"
+    title:"TEENPATTI 1-DAY",
+    path:"/casino/teen"
   },
   {
     img: "/assets/images/casino/img-35.jpg",
-    title:"20-20 TEENPATTIC C"
+    title:"20-20 TEENPATTIC C",
+    path:"/casino/teen20c"
+
   },
   {
     img: "/assets/images/casino/img-36.jpg",
-    title:"INSTANT TEENPATTI3.0"
+    title:"INSTANT TEENPATTI3.0",
+    path:"/casino/teen33"
+
   },
   {
     img: "/assets/images/casino/img-37.jpg",
-    title:"JACK TOP OPEN TEENPATTI"
+    title:"QUEEN TOP OPEN TEENPATTI",
+    path:"/casino/teen41"
+
   },
   {
     img: "/assets/images/casino/img-38.jpg",
-    title:"JOKER TEENPATTI"
+    title:"JOKER TEENPATTI",
+    path:"/casino/teenjoker"
+
   },{
     img: "/assets/images/casino/img-45.jpg",
-    title:"2 CARDS TEENPATTI"
+    title:"2 CARDS TEENPATTI",
+    path:"/casino/patti2"
+
   },
   {
     img: "/assets/images/casino/img-54.jpg",
-    title:"INSTANT TEENPATTI"
+    title:"INSTANT TEENPATTI",
+    path:"/casino/teen3"
+
   },
   {
     img: "/assets/images/casino/img-55.jpg",
-    title:"TEENPATTI 2.0"
+    title:"TEENPATTI 2.0",
+    path:"/casino/teen6"
+
   },
   {
     img: "/assets/images/casino/img-63.jpg",
-    title:"MUFLIS TEENPATTI"
+    title:"MUFLIS TEENPATTI",
+    path:"/casino/teenmuf"
+
   },
   {
     img: "/assets/images/casino/img-56.jpg",
-    title:"OPEN TEENPATTI"
+    title:"OPEN TEENPATTI",
+    path:"/casino/teen8"
+
   },
   {
     img: "/assets/images/casino/img-57.jpg",
-    title:"TEENPATTI TEST"
+    title:"TEENPATTI TEST",
+    path:"/casino/teen9"
+
   },
   {
     img: "/assets/images/casino/img-58.jpg",
-    title:"TEENPATTI 20-20"
+    title:"TEENPATTI 20-20",
+    path:"/casino/teen20"
+
   },
   {
     img: "/assets/images/casino/img-59.jpg",
-    title:"20-20 TEENPATTI B"
+    title:"20-20 TEENPATTI B",
+    path:"/casino/teen20b"
+
   },
   {
     img: "/assets/images/casino/img-60.jpg",
-    title:"INSTANT TEENPATTI 2.0"
+    title:"INSTANT TEENPATTI 2.0",
+    path:"/casino/teen32"
+
   },
   {
     img: "/assets/images/casino/img-61.jpg",
-    title:"JACK TOP OPEN TEENPATTI"
+    title:"JACK TOP OPEN TEENPATTI",
+    path:"/casino/teen42"
+
   },
 ],
   "Others":[{
     img: "/assets/images/casino/img-30.jpg",
-    title:"SIC BO"
+    title:"SIC BO",
+    path:"/casino/sicbo"
+
   },
   {
     img: "/assets/images/casino/img-31.jpg",
-    title:"DOUBLE SICBO"
+    title:"DOUBLE SICBO",
+    path:"/casino/sicbo2"
+
   },{
     img: "/assets/images/casino/img-42.jpg",
-    title:"KAUN BANEGA CROREPATI"
+    title:"KAUN BANEGA CROREPATI",
+    path:"/casino/kbc"
+
   },{
     img: "/assets/images/casino/img-44.jpg",
-    title:"NOTE NUMBER"
+    title:"NOTE NUMBER",
+    path:"/casino/notenum"
+
   },{
     img: "/assets/images/casino/img-53.jpg",
-    title:"1 CARD ONE-DAY"
+    title:"1 CARD ONE-DAY",
+    path:"/casino/teen1"
+
   }, {
     img: "/assets/images/casino/img-62.jpg",
-    title:"1 CARD 20-20"
+    title:"1 CARD 20-20",
+    path:"/casino/teen120"
+
   }, {
     img: "/assets/images/casino/img-65.jpg",
-   title:"THE TRAP"
+   title:"THE TRAP",
+   path:"/casino/trap"
+
   },
   {
     img: "/assets/images/casino/img-66.jpg",
-     title:"TRIO"
+     title:"TRIO",
+    path:"/casino/trio"
+
   },],
   "Race":[  {
     img: "/assets/images/casino/img-48.jpg",
-    title:"RACE TO 2ND"
+    title:"RACE TO 2ND",
+    path:"/casino/race2"
+
   },
   {
     img: "/assets/images/casino/img-49.jpg",
-    title:"RACE TO 17"
+    title:"RACE TO 17",
+    path:"/casino/race17"
+
   },
   {
     img: "/assets/images/casino/img-50.jpg",
-    title:"RACE 20"
+    title:"RACE 20",
+    path:"/casino/race20"
+
   },],
   "Queen":[ {
     img: "/assets/images/casino/img-26.jpg",
-    title:"CASINO QUEEN"
+    title:"CASINO QUEEN",
+    path:"/casino/queen"
+
   },],
   "Lottery":[ {
     img: "/assets/images/casino/img-20.jpg",
-    title:"LOTTERY"
+    title:"LOTTERY",
+    path:"/casino/lottcard"
+
   },],
   "Bollywood":[ {
     img: "/assets/images/casino/img-2.jpg",
-    title:"AMAR AKBAR ANTHONY"
+    title:"AMAR AKBAR ANTHONY",
+    path:"/casino/aaa"
+
   }, {
     img: "/assets/images/casino/img-9.jpg",
-    title:"BOLLYWOOD"
+    title:"BOLLYWOOD",
+    path:"/casino/btable"
+
   }, {
     img: "/assets/images/casino/img-10.jpg",
-    title:"BOLLYWOOD CASINO 2"
+    title:"BOLLYWOOD CASINO 2",
+    path:"/casino/btable2"
+
   },{
     img: "/assets/images/casino/img-68.jpg",
-    title:"AMAR AKBAR ANTHONY 2.0"
+    title:"AMAR AKBAR ANTHONY 2.0",
+    path:"/casino/aaa2"
+
   },],
   "Sports":[{
     img: "/assets/images/casino/img-13.jpg",
-    title:"CRICKET MATCH 20-20"
+    title:"CRICKET MATCH 20-20",
+    path:"/casino/cmatch20"
+
   }, {
     img: "/assets/images/casino/img-15.jpg",
-    title:"5FIVE CRICKET"
+    title:"5FIVE CRICKET",
+    path:"/casino/cricketv3"
+
   }, {
     img: "/assets/images/casino/img-19.jpg",
-    title:"GOAL"
+    title:"GOAL",
+    path:"/casino/goal"
+
   },  {
     img: "/assets/images/casino/img-32.jpg",
-    title:"SUPER OVER2"
+    title:"SUPER OVER2",
+    path:"/casino/superover2"
+
   },
   {
     img: "/assets/images/casino/img-33.jpg",
-    title:"MINI SUPER OVER"
+    title:"MINI SUPER OVER",
+    path:"/casino/superover3"
+
   }, {
     img: "/assets/images/casino/img-52.jpg",
-    title:"SUPER OVER"
+    title:"SUPER OVER",
+    path:"/casino/superover"
+
   },
   {
     img: "/assets/images/casino/img-14.jpg",
-    title:"CASINO METER"
+    title:"CASINO METER",
+    path:"/casino/cmeter"
+
   },
   {
     img: "/assets/images/casino/img-70.jpg",
-    title:"1 CARD METER"
+    title:"1 CARD METER",
+    path:"/casino/cmeter1"
+
   },
 ],
   "Worli":[{
     img: "/assets/images/casino/img-40.jpg",
-    title:"WORLI MATKA"
+    title:"WORLI MATKA",
+    path:"/casino/worli"
+
   },
   {
     img: "/assets/images/casino/img-67.jpg",
-     title:"INSTANT WORLI"
+     title:"INSTANT WORLI",
+    path:"/casino/worli2"
+
   },],
   "Casino War":[
   {
     img: "/assets/images/casino/img-39.jpg",
-    title:"CASINO WAR"
+    title:"CASINO WAR",
+    path:"/casino/war"
+
   },],
   "3 Card Judgement":[ {
     img: "/assets/images/casino/img-1.jpg",
-    title:"3 CARDS JUDGEMENT"
+    title:"3 CARDS JUDGEMENT",
+    path:"/casino/3cardj"
+
   },],
   "Lucky 7":[  {
     img: "/assets/images/casino/img-21.jpg",
-    title:"LUCKY 7-A"
+    title:"LUCKY 7-A",
+    path:"/casino/lucky7"
+
   },
   {
     img: "/assets/images/casino/img-43.jpg",
-    title:"LUCKY7-C CASINO"
+    title:"LUCKY7-C CASINO",
+    path:"/casino/lucky7eu2"
+
   },
   {
     img: "/assets/images/casino/img-22.jpg",
-    title:"LUCKY 7-B"
+    title:"LUCKY 7-B",
+    path:"/casino/lucky7eu"
+
   },
   {
     img: "/assets/images/casino/img-23.jpg",
-    title:"LUCKY 15"
+    title:"LUCKY 15",
+    path:"/casino/lucky15"
+
   },],
   "Andar Bahar":[{
     img: "/assets/images/casino/img-3.jpg",
-    title:"ANDAR BAHAR 150 CARDS"
+    title:"ANDAR BAHAR 150 CARDS",
+    path:"/casino/ab4"
+
   },
   {
     img: "/assets/images/casino/img-4.jpg",
-    title:"ANDAR BAHAR"
+    title:"ANDAR BAHAR",
+    path:"/casino/ab20"
+
   }, {
     img: "/assets/images/casino/img-5.jpg",
-    title:"ANDAR BAHAR 2"
+    title:"ANDAR BAHAR 2",
+    path:"/casino/abj"
+
   }, {
     img: "/assets/images/casino/img-69.jpg",
-    title:"ANDAR BAHAR 50 CARDS"
+    title:"ANDAR BAHAR 50 CARDS",
+    path:"/casino/ab3"
+
 
   },],
   "32 Cards":[ {
     img: "/assets/images/casino/img-11.jpg",
-    title:"32 CARDS-A"
+    title:"32 CARDS-A",
+    path:"/casino/card32"
+
   }, {
     img: "/assets/images/casino/img-12.jpg",
-    title:"32 CARDS-B"
+    title:"32 CARDS-B",
+    path:"/casino/card32eu"
+
   },],
   "Dragon Tiger":[{
     img: "/assets/images/casino/img-16.jpg",
-    title:"20-20 DRAGON TIGER"
+    title:"20-20 DRAGON TIGER",
+    path:"/casino/dt20"
+
   }, {
     img: "/assets/images/casino/img-17.jpg",
-    title:"20-20 DARGON TIGER 2"
+    title:"20-20 DARGON TIGER 2",
+    path:"/casino/dt202"
+
   },{
     img: "/assets/images/casino/img-18.jpg",
-    title:"20-20 DRAGON TIGER LION"
+    title:"20-20 DRAGON TIGER LION",
+    path:"/casino/dtl20"
+
   }, {
     img: "/assets/images/casino/img-71.jpg",
-    title:"1-DAY DRAGON METER"
+    title:"1-DAY DRAGON TIGER",
+    path:"/casino/dt6"
+
   },],
   "Baccarat":[  {
     img: "/assets/images/casino/img-6.jpg",
-    title:"BACCARAT"
+    title:"BACCARAT",
+    path:"/casino/baccarat"
+
   }, {
     img: "/assets/images/casino/img-7.jpg",
-    title:"ONLINE BACCARAT"
+    title:"ONLINE BACCARAT",
+    path:"/casino/baccarat2"
+
   }, {
     img: "/assets/images/casino/img-64.jpg",
-    title:"29 BACCARAT"
+    title:"29 BACCARAT",
+    path:"/casino/teensin"
+
   },],
   "Poker":[{
     img: "/assets/images/casino/img-25.jpg",
-    title:"POKER 1-DAY"
+    title:"POKER 1-DAY",
+    path:"/casino/poker"
+
   },{
     img: "/assets/images/casino/img-46.jpg",
-    title:"POKER 6 PLAYER"
+    title:"POKER 6 PLAYER",
+    path:"/casino/poker20"
+
   },
   {
     img: "/assets/images/casino/img-47.jpg",
-    title:"POKER 20-20"
+    title:"POKER 20-20",
+    path:"/casino/poker6"
+
   },],
  "Roulette":[ {
   img: "/assets/images/casino/img-24.jpg",
-  title:"UNIQUE ROULETTE"
+  title:"UNIQUE ROULETTE",
+  path:"/casino/ourroullete"
+
 }, {
   img: "/assets/images/casino/img-27.jpg",
-  title:"ROULETTE BL"
+  title:"ROULETTE BL",
+  path:"/casino/teenjoker"
+
 },
 {
   img: "/assets/images/casino/img-28.jpg",
-  title:"GOLDEN ROULETTE"
+  title:"GOLDEN ROULETTE",
+  path:"/casino/teenjoker"
+
 },
 {
   img: "/assets/images/casino/img-29.jpg",
-  title:"BEACH ROULETTE"
+  title:"BEACH ROULETTE",
+  path:"/casino/teenjoker"
+
 }, {
   img: "/assets/images/casino/img-51.jpg",
-  title:"ROULETTE"
+  title:"ROULETTE",
+  path:"/casino/teenjoker"
+
 },],
 }

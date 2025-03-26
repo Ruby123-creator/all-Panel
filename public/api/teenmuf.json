@@ -1,0 +1,44 @@
+{
+    "img": "1,1,1,1,1,1",
+    "mid": " 138250325000730",
+    "autotime": "00",
+    "update_time": "2025-03-25 00:08:06",
+    "t1": [
+        {
+            "nat": "Winner",
+            "bp": "1.98",
+            "status": "suspended",
+            "sid": "1"
+        },
+        {
+            "nat": "Top 9",
+            "bp": "A",
+            "status": "suspended",
+            "sid": "2"
+        },
+        {
+            "nat": "M Baccarat A",
+            "bp": "1.98",
+            "status": "suspended",
+            "sid": "3"
+        },
+        {
+            "nat": "Winner",
+            "bp": "1.98",
+            "status": "suspended",
+            "sid": "4"
+        },
+        {
+            "nat": "Top 9",
+            "bp": "A",
+            "status": "suspended",
+            "sid": "5"
+        },
+        {
+            "nat": "M Baccarat B",
+            "bp": "1.98",
+            "status": "suspended",
+            "sid": "6"
+        }
+    ]
+}

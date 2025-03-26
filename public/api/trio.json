@@ -1,0 +1,116 @@
+{
+    "img": "1,1,1",
+    "mid": " 141250325004212",
+    "autotime": "33",
+    "update_time": "2025-03-25 00:42:17",
+    "t1": [
+        {
+            "nat": "Session ",
+            "bp": "21",
+            "bs": 0,
+            "lp": "21",
+            "ls": "100",
+            "status": "ACTIVE",
+            "sid": "1"
+        },
+        {
+            "nat": "3 Card Judgement(1 2 4)",
+            "bp": "1.78",
+            "bs": 0,
+            "lp": "1.83",
+            "ls": 0,
+            "status": "ACTIVE",
+            "sid": "2"
+        },
+        {
+            "nat": "3 Card Judgement(J Q K)",
+            "bp": "1.78",
+            "bs": 0,
+            "lp": "1.83",
+            "ls": 0,
+            "status": "ACTIVE",
+            "sid": "3"
+        },
+        {
+            "nat": "Two Red Only",
+            "bp": "2.52",
+            "bs": 0,
+            "lp": "2.72",
+            "ls": 0,
+            "status": "ACTIVE",
+            "sid": "4"
+        },
+        {
+            "nat": "Two Black Only",
+            "bp": "2.52",
+            "bs": 0,
+            "lp": "2.72",
+            "ls": 0,
+            "status": "ACTIVE",
+            "sid": "5"
+        },
+        {
+            "nat": "Two Odd Only",
+            "bp": "2.33",
+            "bs": 0,
+            "lp": "2.53",
+            "ls": 0,
+            "status": "ACTIVE",
+            "sid": "6"
+        },
+        {
+            "nat": "Two Even Only",
+            "bp": "2.75",
+            "bs": 0,
+            "lp": "2.95",
+            "ls": 0,
+            "status": "ACTIVE",
+            "sid": "7"
+        },
+        {
+            "nat": "Pair",
+            "bp": "5.5",
+            "bs": 0,
+            "lp": 0,
+            "ls": 0,
+            "status": "ACTIVE",
+            "sid": "8"
+        },
+        {
+            "nat": "Flush",
+            "bp": "17",
+            "bs": 0,
+            "lp": 0,
+            "ls": 0,
+            "status": "ACTIVE",
+            "sid": "9"
+        },
+        {
+            "nat": "Straight",
+            "bp": "24",
+            "bs": 0,
+            "lp": 0,
+            "ls": 0,
+            "status": "ACTIVE",
+            "sid": "10"
+        },
+        {
+            "nat": "Trio",
+            "bp": "201",
+            "bs": 0,
+            "lp": 0,
+            "ls": 0,
+            "status": "ACTIVE",
+            "sid": "11"
+        },
+        {
+            "nat": "Straight Flush",
+            "bp": "226",
+            "bs": 0,
+            "lp": 0,
+            "ls": 0,
+            "status": "ACTIVE",
+            "sid": "12"
+        }
+    ]
+}

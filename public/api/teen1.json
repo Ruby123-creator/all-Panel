@@ -1,0 +1,50 @@
+{
+    "img": "1,1",
+    "mid": " 145250323212422",
+    "autotime": "11",
+    "update_time": "2025-03-23 21:24:34",
+    "t1": [
+        {
+            "nat": "Player",
+            "bp": "1.98",
+            "lp": "0",
+            "status": "ACTIVE",
+            "sid": "1"
+        },
+        {
+            "nat": "Dealer",
+            "bp": "1.98",
+            "lp": "0",
+            "status": "ACTIVE",
+            "sid": "2"
+        }
+    ],
+    "t2": [
+        {
+            "nat": "7 Down Player",
+            "bp": "2",
+            "status": "ACTIVE",
+            "sid": "3"
+        },
+        {
+            "nat": "7 Up Player",
+            "bp": "2",
+            "lp": "0",
+            "status": "ACTIVE",
+            "sid": "4"
+        },
+        {
+            "nat": "7 Down Dealer",
+            "bp": "2",
+            "status": "ACTIVE",
+            "sid": "5"
+        },
+        {
+            "nat": "7 Up Dealer",
+            "bp": "2",
+            "lp": "0",
+            "status": "ACTIVE",
+            "sid": "6"
+        }
+    ]
+}

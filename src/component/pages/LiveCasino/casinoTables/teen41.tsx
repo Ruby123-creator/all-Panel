@@ -1,0 +1,9 @@
+import React from 'react'
+
+const Teen41 = () => {
+  return (
+    <div className="casino-table"><div className="casino-table-box"><div className="casino-table-left-box"><div className="casino-table-header"><div className="casino-nation-detail">Player A</div><div className="casino-odds-box back">Back</div><div className="casino-odds-box lay">Lay</div></div><div className="casino-table-body"><div className="casino-table-row "><div className="casino-nation-detail"><div className="casino-nation-name">Main</div></div><div className="casino-odds-box back suspended-box"><span className="casino-odds">0</span></div><div className="casino-odds-box lay suspended-box"><span className="casino-odds">0</span></div></div></div></div><div className="casino-table-box-divider"></div><div className="casino-table-right-box"><div className="casino-table-header"><div className="casino-nation-detail">Player B</div><div className="casino-odds-box back">Back</div><div className="casino-odds-box lay">Lay</div></div><div className="casino-table-body"><div className="casino-table-row"><div className="casino-nation-detail"><div className="casino-nation-name">Main</div></div><div className="casino-odds-box back"><span className="casino-odds">1.9</span></div><div className="casino-odds-box lay"><span className="casino-odds">1.93</span></div></div><div className="casino-table-row under-over-row"><div className="uo-box"><div className="casino-nation-detail"><div className="casino-nation-name">Player B Under 21</div></div><div className="casino-odds-box back"><span className="casino-odds">1.84</span></div></div><div className="uo-box"><div className="casino-nation-detail"><div className="casino-nation-name">Player B Over 21</div></div><div className="casino-odds-box back"><span className="casino-odds">2.18</span></div></div></div></div></div></div></div>
+  )
+}
+
+export default Teen41

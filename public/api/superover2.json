@@ -1,0 +1,121 @@
+{
+    "img": "",
+    "mid": " 6940037280",
+    "score": [],
+    "autotime": "17",
+    "update_time": "2025-03-25 20:20:09",
+    "bookmaker": [
+        {
+            "nat": "IND",
+            "bp": "1.95\n300000.00",
+            "lp": "-\n300000.00",
+            "status": "ACTIVE",
+            "sid": 1,
+            "min": "100",
+            "max": "10k"
+        },
+        {
+            "nat": "ENG",
+            "bp": "1.95\n300000.00",
+            "lp": "-\n300000.00",
+            "status": "ACTIVE",
+            "sid": 2,
+            "min": "100",
+            "max": "10k"
+        }
+    ],
+    "fancy": [
+        {
+            "nat": "1 over run bhav IND",
+            "bp": "13\n74",
+            "lp": "13\n84",
+            "status": "ACTIVE",
+            "sid": 3,
+            "min": "100",
+            "max": "10k"
+        },
+        {
+            "nat": "1 over run IND",
+            "bp": "13\n74",
+            "lp": "13\n84",
+            "status": "ACTIVE",
+            "sid": 4,
+            "min": "100",
+            "max": "10k"
+        }
+    ],
+    "fancy1": [
+        {
+            "nat": "Common Wicket IND",
+            "bp": "1.56\n100",
+            "lp": "1.61\n100",
+            "status": "ACTIVE",
+            "sid": 5,
+            "min": "100",
+            "max": "10k"
+        },
+        {
+            "nat": "Common Boundry IND",
+            "bp": "1.17\n100",
+            "lp": "1.22\n100",
+            "status": "ACTIVE",
+            "sid": 6,
+            "min": "100",
+            "max": "10k"
+        },
+        {
+            "nat": "0.1 Over Wicket IND",
+            "bp": "6.7\n100",
+            "lp": "-",
+            "status": "ACTIVE",
+            "sid": 7,
+            "min": "100",
+            "max": "10k"
+        },
+        {
+            "nat": "0.1 Over Zero IND",
+            "bp": "6.7\n100",
+            "lp": "-",
+            "status": "ACTIVE",
+            "sid": 8,
+            "min": "100",
+            "max": "10k"
+        },
+        {
+            "nat": "0.1 Over One IND",
+            "bp": "6.7\n100",
+            "lp": "-",
+            "status": "ACTIVE",
+            "sid": 9,
+            "min": "100",
+            "max": "10k"
+        },
+        {
+            "nat": "0.1 Over Two IND",
+            "bp": "6.7\n100",
+            "lp": "-",
+            "status": "ACTIVE",
+            "sid": 10,
+            "min": "100",
+            "max": "10k"
+        },
+        {
+            "nat": "0.1 Over Three IND",
+            "bp": "6.7\n100",
+            "lp": "-",
+            "status": "ACTIVE",
+            "sid": 11,
+            "min": "100",
+            "max": "10k"
+        },
+        {
+            "nat": "0.1 Over Boundry IND",
+            "bp": "3.38\n100",
+            "lp": "-",
+            "status": "ACTIVE",
+            "sid": 12,
+            "min": "100",
+            "max": "10k"
+        }
+    ]
+}

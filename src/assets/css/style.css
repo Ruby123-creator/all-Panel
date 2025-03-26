@@ -1969,7 +1969,7 @@ tr {
 }
 
 .suspended-box::before {
-  /* background-image: url("../img/icons/lock.svg"); */
+  background-image: url("../../../public/icons/lock.svg");
   background-size: 17px 17px;
   filter: invert(1);
   -webkit-filter: invert(1);
@@ -1984,6 +1984,7 @@ tr {
   background-position: center;
   pointer-events: none;
 }
+
 
 .suspended-box::after {
   content: "";
@@ -3224,7 +3225,7 @@ tr {
 .scorecard {
   width: calc(100% - 8px);
   padding: 5px;
-  /* background-image: url("../img/scorecard-bg.png"); */
+  background-image: url("../../../public/assets/images/scorecard-bg.png");
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
@@ -4439,7 +4440,7 @@ tr {
 .clock {
   position: absolute !important;
   right: 10px;
-  /* bottom: 10px; */
+  bottom: 10px;
   text-align: right !important;
   top: unset;
   left: unset;
@@ -4788,7 +4789,7 @@ tr {
   margin: 0 10px;
 }
 
-.casino-winner-icon i {
+.casino-winner-icon .trophy {
   font-size: 26px;
   box-shadow: 0 0 0 var(--bg-secondary);
   animation: winnerbox 1.5s infinite;
@@ -4811,7 +4812,7 @@ tr {
 }
 
 .casino-table .suspended-row::before {
-  /* background-image: url("../img/icons/lock.svg"); */
+  background-image: url("../../../public/icons/lock.svg");
   background-size: 17px 17px;
   filter: invert(1);
   -webkit-filter: invert(1);
@@ -4969,7 +4970,7 @@ tr {
 }
 
 .teenpatti1day .casino-odds-box {
-  width: 20%;
+  width: 100%;
 }
 
 .teenpatti1day .casino-table .suspended-row::before,
@@ -14821,7 +14822,7 @@ img.r-rotate {
   align-items: center;
 }
 
-.fcc__separator, .fcc__unit_time--day ,.fcc__unit_time--hour , .fcc__unit_time--minute{
+.fcc__separator, .fcc__unit_time--day ,.fcc__unit_time--hour , .fcc__unit_time--minute ,.fcc__label {
   display: none !important;
 }
 .iframe-wrapper {
@@ -14847,4 +14848,33 @@ img.r-rotate {
 
 .ant-modal{
   width: 700px !important;
+}
+.LoaderModal .ant-modal{
+   width: 200px !important; 
+}
+.bet-loader {
+  box-shadow: 0 4px 16px rgba(17, 17, 26, 0.1), 0 8px 32px rgba(17, 17, 26, 0.05);
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.bet-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(30, 144, 255, 0.3);
+  border-top-color: dodgerblue;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

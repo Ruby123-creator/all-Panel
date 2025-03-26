@@ -8636,7 +8636,7 @@ react-simple-flipclock@^0.3.1:
     prop-types "^15.7.2"
     react "^16.13.1"
 
-react@*, "react@^18 || ^19", react@^18.0.0, react@^18.3.1, "react@>= 16", "react@>= 16.13.0", react@>=16.0.0, react@>=16.11.0, react@>=16.9.0, react@>=18:
+react@*, "react@^18 || ^19", react@^18.0.0, react@^18.3.1, "react@>= 16", "react@>= 16.13.0", react@>=16.0.0, react@>=16.11.0, react@>=16.8, react@>=16.9.0, react@>=18:
   version "18.3.1"
   resolved "https://registry.npmjs.org/react/-/react-18.3.1.tgz"
   integrity sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==
@@ -8660,6 +8660,11 @@ react@^16.14.0, react@^16.2.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
+
+reactjs-flip-card@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.npmjs.org/reactjs-flip-card/-/reactjs-flip-card-2.0.3.tgz"
+  integrity sha512-kVdt7O1EnfKhVTEZaeLigN/KnX/XPtOYmheBHw7c0kdNUg/p+ltmztmmSXVv55vRttZKP9KqzyFn/ILlg9DbEw==
 
 read-cache@^1.0.0:
   version "1.0.0"

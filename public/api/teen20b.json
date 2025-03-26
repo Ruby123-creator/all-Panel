@@ -1,0 +1,80 @@
+{
+    "img": "JHH,JDD,9HH,2SS,3SS,1",
+    "mid": " 140250324224110",
+    "autotime": "01",
+    "update_time": "2025-03-24 22:42:08",
+    "t1": [
+        {
+            "nat": "Player A",
+            "bp": "1.98",
+            "status": "suspended",
+            "sid": "1"
+        },
+        {
+            "nat": "3 Baccarat A",
+            "bp": "1.98",
+            "status": "suspended",
+            "sid": "2"
+        },
+        {
+            "nat": "Total A",
+            "bp": "2",
+            "status": "suspended",
+            "sid": "3"
+        },
+        {
+            "nat": "Pair Plus A",
+            "bp": "2",
+            "status": "suspended",
+            "sid": "4"
+        },
+        {
+            "nat": "Black A",
+            "bp": "1.98",
+            "status": "suspended",
+            "sid": "5"
+        },
+        {
+            "nat": "Red A",
+            "bp": "1.98",
+            "status": "suspended",
+            "sid": "6"
+        },
+        {
+            "nat": "Player B",
+            "bp": "1.98",
+            "status": "suspended",
+            "sid": "7"
+        },
+        {
+            "nat": "3 Baccarat B",
+            "bp": "1.98",
+            "status": "suspended",
+            "sid": "8"
+        },
+        {
+            "nat": "Total B",
+            "bp": "2",
+            "status": "suspended",
+            "sid": "9"
+        },
+        {
+            "nat": "Pair Plus B",
+            "bp": "2",
+            "status": "suspended",
+            "sid": "10"
+        },
+        {
+            "nat": "Black B",
+            "bp": "1.98",
+            "status": "suspended",
+            "sid": "11"
+        },
+        {
+            "nat": "Red B",
+            "bp": "1.98",
+            "status": "suspended",
+            "sid": "12"
+        }
+    ]
+}

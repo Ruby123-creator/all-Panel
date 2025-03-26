@@ -14,106 +14,63 @@ interface ScoreCardProps {
   };
 }
 
-const ScoreCard: React.FC<ScoreCardProps> = ({ data={} }) => {
-  const { teams = [], teamScore = [],scorecards=[] } = data;
-   const ballsColor = (val:string) =>{
-   
-    switch(val){
+const ScoreCard: React.FC<ScoreCardProps> = ({ data = {} }) => {
+  const { teams = [], teamScore = [], scorecards = [] } = data;
+  const ballsColor = (val: string) => {
+    switch (val) {
       case "4":
-        return 'bg-bg_RefreshBtnBg';
+        return "bg-bg_RefreshBtnBg";
       case "6":
-        return 'purpleball';
+        return "purpleball";
       case "ww":
         return "bg-bg_Primary";
       default:
         return "blueballs";
     }
-   }
+  };
   return (
-    <div>
-      <div className="container-main">
-        <div className="row-ctm">
-          {/* Batsman Icon */}
-          <div className="batsman_svg">
-            <img
-              src="https://speedcdn.io/assets/score_card/batsman-bold-outline.svg"
-              alt="Batsman Icon"
-              className="icon-image"
-            />
-          </div>
-
-          {/* Team 1 Score */}
-          <div className="team team-right">
-            <div className="curr_inn">
-              <div className="team-name">{teams?.[0] || "Team A"}</div>
-              <span className="run">
-                {
-                   teamScore?.[0] ||0
-                }
-                {/* {teamScore?.[0]?.runs || 0}/{teamScore?.[0]?.wickets || 0}&nbsp; */}
-              </span>
-              {/* <span className="over">({teamScore?.[0]?.overs || 0})</span>
-              <br /> */}
-              {/* <span className="over">CRR: </span>7.49 */}
-            </div>
-          </div>
-
-          {/* Match Status */}
-          <div className="match_status">
-            <span className="commentary"></span>
-            <p className="target"></p>
-            <div className="score-over">
-              <ul></ul>
-            </div>
-            <div className="scoreballs">
-              {
-                  (scorecards||[]).map((item:any,i)=>{
-                    return (
-                      <span className={`balls ${ballsColor(item)}`}>
-                      {item}
-                    </span>
-                    )
-                  })
-              }
-              {/* <span>
-                LIO need 293 runs off 234 balls | <span>RRR: 0</span>
-              </span> */}
-            </div>
-            {/* <div className="batsman-container">
-              <div>
-                <span>*</span> <span>0 (0)</span>
+    <div className="scorecard">
+      <div className="row">
+        <div className="col-12 col-md-6">
+          <p className="team-1 row">
+            <span className="team-name col-3">{(teams||[])[0]}</span>
+            <span className="score col-6 text-end">{(teamScore||[])[0]}</span>
+            <span className="team-name col-3">
+              <span>{(teams||[])[1]} </span>
+              <span>RR 19.00</span>
+            </span>
+          </p>
+          <p className="team-1 row mt-2">
+            <span className="team-name col-3">{(teams||[])[2]}</span>
+            <span className="score col-6 text-end">{(teamScore||[])[1]}</span>
+            <span className="team-name col-3"></span>
+          </p>
+        </div>
+        <div className="col-12 col-md-6">
+          <div className="row">
+            <div className="col-12">
+              <div className="text-xl-end">
+                {/* <span>GT Needed 57 runs from 18 balls</span> */}
               </div>
-              <div>
-                <span></span> <span>0 (0)</span>
+              <div className="row">
+                <div className="col-12">
+                  <p className="text-xl-end ball-by-ball mt-2">
+                    {
+                      (scorecards||[]).map((item,i:number)=>{
+                        return (
+                    <span className="ball-runs">{item}</span>
+
+                        )
+                      })
+                    }
+                   
+                  </p>
+                </div>
               </div>
-            </div> */}
-          </div>
-
-          {/* Team 2 Score */}
-          <div className="team team-left">
-            <div className="curr_inn">
-              <div className="team-name">{teams?.[2] || "Team B"}</div>
-              <span className="run"> {
-                   teamScore?.[1] ||0
-                }</span>
-              {/* <span className="over">(0.0)</span> */}
-              {/* <br />
-              <span>{teams?.[1] || "Team B"}: </span> */}
             </div>
-          </div>
-
-          {/* Bowler Icon */}
-          <div className="bowler_svg">
-            <img
-              src="https://speedcdn.io/assets/score_card/baller-bold-outline.svg"
-              alt="Bowler Icon"
-              className="icon-image"
-            />
           </div>
         </div>
       </div>
-
-      
     </div>
   );
 };

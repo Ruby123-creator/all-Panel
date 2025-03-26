@@ -1,0 +1,123 @@
+{
+    "success": true,
+    "update": "2025-03-23 22:42:07",
+    "auto": "22",
+    "mid": " 101250323224156",
+    "img": "1,1,1,1,1,1",
+    "t1": [
+        {
+            "nat": "Player A Main",
+            "status": "active",
+            "bp": "1.98",
+            "lp": "0",
+            "sid": 1
+        },
+        {
+            "nat": "Player A Consecutive",
+            "status": "active",
+            "bp": "2.43",
+            "lp": "2.53",
+            "sid": 2
+        },
+        {
+            "nat": "Player B Main",
+            "status": "active",
+            "bp": "1.98",
+            "lp": "0",
+            "sid": 3
+        },
+        {
+            "nat": "Player B Consecutive",
+            "status": "active",
+            "bp": "2.43",
+            "lp": "2.53",
+            "sid": 4
+        }
+    ],
+    "t2": [
+        {
+            "nat": "Odd Card 1",
+            "bp": "1.83",
+            "status": "active",
+            "sid": 1,
+            "type": "even"
+        },
+        {
+            "nat": "Odd Card 2",
+            "bp": "0",
+            "status": "suspend",
+            "sid": 2,
+            "type": "even"
+        },
+        {
+            "nat": "Odd Card 3",
+            "bp": "0",
+            "status": "suspend",
+            "sid": 3,
+            "type": "even"
+        },
+        {
+            "nat": "Odd Card 4",
+            "bp": "0",
+            "status": "suspend",
+            "sid": 4,
+            "type": "even"
+        },
+        {
+            "nat": "Odd Card 5",
+            "bp": "0",
+            "status": "suspend",
+            "sid": 5,
+            "type": "even"
+        },
+        {
+            "nat": "Odd Card 6",
+            "bp": "0",
+            "status": "suspend",
+            "sid": 6,
+            "type": "even"
+        },
+        {
+            "nat": "Even Card 1",
+            "bp": "2.13",
+            "status": "active",
+            "sid": 7,
+            "type": "even"
+        },
+        {
+            "nat": "Even Card 2",
+            "bp": "0",
+            "status": "suspend",
+            "sid": 8,
+            "type": "even"
+        },
+        {
+            "nat": "Even Card 3",
+            "bp": "0",
+            "status": "suspend",
+            "sid": 9,
+            "type": "even"
+        },
+        {
+            "nat": "Even Card 4",
+            "bp": "0",
+            "status": "suspend",
+            "sid": 10,
+            "type": "even"
+        },
+        {
+            "nat": "Even Card 5",
+            "bp": "0",
+            "status": "suspend",
+            "sid": 11,
+            "type": "even"
+        },
+        {
+            "nat": "Even Card 6",
+            "bp": "0",
+            "status": "suspend",
+            "sid": 12,
+            "type": "even"
+        }
+    ]
+}
