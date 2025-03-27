@@ -29,7 +29,7 @@ const Teen:React.FC<Props> = ({data}) => {
     console.log(data, playerInfo, "CHECK::::::::::::::::");
 
   return (
-    <div className="casino-table">
+    <div className="casino-table teenpatti1day">
       <div className="casino-table-box">
         <div className="casino-table-left-box">
           <div className="casino-table-header">

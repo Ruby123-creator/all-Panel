@@ -1,122 +1,81 @@
 import React from "react";
+import { FaInfoCircle } from "react-icons/fa";
 
-const Trio = () => {
+interface Props{
+  data?:any;
+}
+
+const Trio :React.FC<Props> = ({data}) => {
+  const cardsInfo =  data?.t1||[]
+  console.log(data,"CHECK")
   return (
-    <div className="casino-table">
+    <div className="casino-table trio">
       <div className="casino-table-box">
-        <div className="casino-odd-box-container">
+        {
+          (cardsInfo||[]).slice(0,3).map((item:any,i:number)=>{
+            return(
+<div className="casino-odd-box-container">
           <div className="casino-nation-name pointer">
-            Session <i className="fas fa-info-circle"></i>
+            {item?.nat} {i===0 ? <FaInfoCircle/>: ""} 
           </div>
-          <div className="casino-odds-box back suspended-box">
-            <span className="casino-odds">0</span>
-            <span className="casino-volume">80</span>
+          <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
+            <span className="casino-odds">{item?.bp}</span>
+            <span className="casino-volume">{item?.bs}</span>
           </div>
-          <div className="casino-odds-box lay suspended-box">
-            <span className="casino-odds">0</span>
-            <span className="casino-volume">100</span>
-          </div>
-          <div className="casino-nation-book text-center w-100"></div>
-        </div>
-        <div className="casino-odd-box-container">
-          <div className="casino-nation-name">3 Card Judgement(1 2 4)</div>
-          <div className="casino-odds-box back suspended-box">
-            <span className="casino-odds">0</span>
-          </div>
-          <div className="casino-odds-box lay suspended-box">
-            <span className="casino-odds">0</span>
+          <div className={`casino-odds-box lay ${item?.status === "suspended" ? 'suspended-box':''}`}>
+            <span className="casino-odds">{item?.lp}</span>
+            <span className="casino-volume">{item?.ls}</span>
           </div>
           <div className="casino-nation-book text-center w-100"></div>
         </div>
-        <div className="casino-odd-box-container">
-          <div className="casino-nation-name">3 Card Judgement(J Q K)</div>
-          <div className="casino-odds-box back suspended-box">
-            <span className="casino-odds">0</span>
-          </div>
-          <div className="casino-odds-box lay suspended-box">
-            <span className="casino-odds">0</span>
-          </div>
-          <div className="casino-nation-book text-center w-100"></div>
-        </div>
+            )
+          })
+        }
+        
+        
       </div>
       <div className="casino-table-box triocards mt-3">
-        <div className="casino-odd-box-container">
-          <div className="casino-nation-name">Two Red Only</div>
-          <div className="casino-odds-box back suspended-box">
-            <span className="casino-odds">0</span>
+      {
+          (cardsInfo||[]).slice(3,7).map((item:any,i:number)=>{
+            return(
+<div className="casino-odd-box-container">
+          <div className="casino-nation-name">
+            {item?.nat}
           </div>
-          <div className="casino-odds-box lay suspended-box">
-            <span className="casino-odds">0</span>
+          <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
+            <span className="casino-odds">{item?.bp}</span>
+          
           </div>
-          <div className="casino-nation-book text-center w-100"></div>
-        </div>
-        <div className="casino-odd-box-container">
-          <div className="casino-nation-name">Two Black Only</div>
-          <div className="casino-odds-box back suspended-box">
-            <span className="casino-odds">0</span>
-          </div>
-          <div className="casino-odds-box lay suspended-box">
-            <span className="casino-odds">0</span>
+          <div className={`casino-odds-box lay ${item?.status === "suspended" ? 'suspended-box':''}`}>
+            <span className="casino-odds">{item?.lp}</span>
+       
           </div>
           <div className="casino-nation-book text-center w-100"></div>
         </div>
-        <div className="casino-odd-box-container">
-          <div className="casino-nation-name">Two Odd Only</div>
-          <div className="casino-odds-box back suspended-box">
-            <span className="casino-odds">0</span>
-          </div>
-          <div className="casino-odds-box lay suspended-box">
-            <span className="casino-odds">0</span>
-          </div>
-          <div className="casino-nation-book text-center w-100"></div>
-        </div>
-        <div className="casino-odd-box-container">
-          <div className="casino-nation-name">Two Even Only</div>
-          <div className="casino-odds-box back suspended-box">
-            <span className="casino-odds">0</span>
-          </div>
-          <div className="casino-odds-box lay suspended-box">
-            <span className="casino-odds">0</span>
-          </div>
-          <div className="casino-nation-book text-center w-100"></div>
-        </div>
+            )
+          })
+        }
+       
       </div>
       <div className="casino-table-box trioodds mt-3">
-        <div className="casino-odd-box-container">
-          <div className="casino-nation-name">Pair</div>
-          <div className="casino-odds-box back suspended-box">
-            <span className="casino-odds">0</span>
+      {
+          (cardsInfo||[]).slice(7).map((item:any,i:number)=>{
+            return(
+<div className="casino-odd-box-container">
+          <div className="casino-nation-name">
+            {item?.nat}
           </div>
+          <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
+            <span className="casino-odds">{item?.bp}</span>
+          
+          </div>
+         
           <div className="casino-nation-book text-center w-100"></div>
         </div>
-        <div className="casino-odd-box-container">
-          <div className="casino-nation-name">Flush</div>
-          <div className="casino-odds-box back suspended-box">
-            <span className="casino-odds">0</span>
-          </div>
-          <div className="casino-nation-book text-center w-100"></div>
-        </div>
-        <div className="casino-odd-box-container">
-          <div className="casino-nation-name">Straight</div>
-          <div className="casino-odds-box back suspended-box">
-            <span className="casino-odds">0</span>
-          </div>
-          <div className="casino-nation-book text-center w-100"></div>
-        </div>
-        <div className="casino-odd-box-container">
-          <div className="casino-nation-name">Trio</div>
-          <div className="casino-odds-box back suspended-box">
-            <span className="casino-odds">0</span>
-          </div>
-          <div className="casino-nation-book text-center w-100"></div>
-        </div>
-        <div className="casino-odd-box-container">
-          <div className="casino-nation-name">Straight Flush</div>
-          <div className="casino-odds-box back suspended-box">
-            <span className="casino-odds">0</span>
-          </div>
-          <div className="casino-nation-book text-center w-100"></div>
-        </div>
+            )
+          })
+        }
+
       </div>
     </div>
   );

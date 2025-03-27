@@ -401,7 +401,9 @@ export const renderTable = (val:string | undefined,data?:any) => {
           title:"TRIO",
 
   
-          table: <Trio />,
+          table: <Trio data={data}/>,
+          cardRenders : renderCards([""], data?.img , 3)
+
         };
       case "trap":
         return {
