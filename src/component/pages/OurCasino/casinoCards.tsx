@@ -18,12 +18,14 @@ const CasinoCards: React.FC = () => {
 
   // Get the correct data or default to an empty array
   const casinoData: CasinoItem[] = casinoTypes[type as CasinoTypeKeys] || [];
-
+  const mergedArray = Object.values(casinoTypes).flat();
+  const data = (type === "All Casino") ? mergedArray : casinoData;
   return (
     <div className="tab-content">
       <div className="tab-pane active" id="all-casino">
         <div className="casino-list">
-          {casinoData.map((item, i) => (
+          
+          {(data||[]).map((item, i) => (
             <div
               key={i}
               className="casino-list-item"

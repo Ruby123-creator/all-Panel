@@ -1,49 +1,31 @@
 import React from "react";
-
-const Race17 = () => {
+interface Props{
+  data?:any;
+}
+const Race17 :React.FC<Props> = ({data}) => {
+  console.log(data,"CHECK");
+  const playersInfo = data?.t1||[]
   return (
-    <div className="casino-table">
+    <div className="casino-table raceto17">
       <div className="casino-table-box">
-        <div className="casino-odd-box-container">
-          <div className="casino-nation-name">Race to 17</div>
-          <div className="casino-odds-box back">
-            <span className="casino-odds">3.19</span>
-          </div>
-          <div className="casino-odds-box lay">
-            <span className="casino-odds">3.43</span>
-          </div>
-          <div className="casino-nation-book text-center w-100"></div>
-        </div>
-        <div className="casino-odd-box-container">
-          <div className="casino-nation-name">Big Card (7,8,9) - 3</div>
-          <div className="casino-odds-box back">
-            <span className="casino-odds">4.01</span>
-          </div>
-          <div className="casino-odds-box lay">
-            <span className="casino-odds">4.32</span>
-          </div>
-          <div className="casino-nation-book text-center w-100"></div>
-        </div>
-        <div className="casino-odd-box-container">
-          <div className="casino-nation-name">Zero Card - 3</div>
-          <div className="casino-odds-box back">
-            <span className="casino-odds">3.22</span>
-          </div>
-          <div className="casino-odds-box lay">
-            <span className="casino-odds">3.45</span>
-          </div>
-          <div className="casino-nation-book text-center w-100"></div>
-        </div>
-        <div className="casino-odd-box-container">
-          <div className="casino-nation-name">Any Zero</div>
-          <div className="casino-odds-box back suspended-box">
-            <span className="casino-odds">0</span>
-          </div>
-          <div className="casino-odds-box lay suspended-box">
-            <span className="casino-odds">0</span>
-          </div>
-          <div className="casino-nation-book text-center w-100"></div>
-        </div>
+        {
+          (playersInfo||[]).map((item:any,i:number)=>{
+            return(
+              <div className="casino-odd-box-container">
+              <div className="casino-nation-name">{item?.nat}</div>
+              <div className={`casino-odds-box back ${(item?.status === "suspended"||item?.gstatus === "suspended") ? 'suspended-box':''}`}>
+                <span className="casino-odds">{item?.bp||item?.b1}</span>
+              </div>
+              <div className={`casino-odds-box lay ${(item?.status === "suspended"||item?.gstatus=== "suspended") ? 'suspended-box':''}`}>
+                <span className="casino-odds">{item?.lp||item?.l1}</span>
+              </div>
+              <div className="casino-nation-book text-center w-100"></div>
+            </div>
+            )
+          })
+        }
+       
+        
       </div>
     </div>
   );

@@ -1,9 +1,96 @@
-import React from 'react'
+import React from "react";
 
-const Race20 = () => {
-  return (
-   <div className="casino-table"><div className="casino-table-box"><div className="casino-odd-box-container"><div className="casino-nation-name"><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/KSS.jpg"/></div><div className="casino-odds-box back suspended-box"><span className="casino-odds">0</span><div className="casino-volume">10000</div></div><div className="casino-odds-box lay suspended-box"><span className="casino-odds">0</span><div className="casino-volume">10000</div></div><div className="casino-nation-book text-center w-100"></div></div><div className="casino-odd-box-container"><div className="casino-nation-name"><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/KHH.jpg"/></div><div className="casino-odds-box back suspended-box"><span className="casino-odds">0</span><div className="casino-volume">10000</div></div><div className="casino-odds-box lay suspended-box"><span className="casino-odds">0</span><div className="casino-volume">10000</div></div><div className="casino-nation-book text-center w-100"></div></div><div className="casino-odd-box-container"><div className="casino-nation-name"><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/KCC.jpg"/></div><div className="casino-odds-box back suspended-box"><span className="casino-odds">0</span><div className="casino-volume">10000</div></div><div className="casino-odds-box lay suspended-box"><span className="casino-odds">0</span><div className="casino-volume">10000</div></div><div className="casino-nation-book text-center w-100"></div></div><div className="casino-odd-box-container"><div className="casino-nation-name"><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/KDD.jpg"/></div><div className="casino-odds-box back suspended-box"><span className="casino-odds">0</span><div className="casino-volume">10000</div></div><div className="casino-odds-box lay suspended-box"><span className="casino-odds">0</span><div className="casino-volume">10000</div></div><div className="casino-nation-book text-center w-100"></div></div></div><div className="casino-table-box mt-3"><div className="casino-table-left-box"><div className="casino-odd-box-container"><div className="casino-nation-name"></div><div className="casino-nation-name">No</div><div className="casino-nation-name">Yes</div></div><div className="casino-odd-box-container"><div className="casino-nation-name">Total points</div><div className="casino-odds-box lay suspended-box"><span className="casino-odds">0</span><div className="casino-volume text-center">0</div></div><div className="casino-odds-box back suspended-box"><span className="casino-odds">0</span><div className="casino-volume text-center">0</div></div><div className="casino-nation-book"></div></div><div className="casino-odd-box-container"><div className="casino-nation-name"></div><div className="casino-nation-name">No</div><div className="casino-nation-name">Yes</div></div><div className="casino-odd-box-container"><div className="casino-nation-name">Total cards</div><div className="casino-odds-box lay suspended-box"><span className="casino-odds">0</span><div className="casino-volume text-center">0</div></div><div className="casino-odds-box back suspended-box"><span className="casino-odds">0</span><div className="casino-volume text-center">0</div></div><div className="casino-nation-book"></div></div></div><div className="casino-table-right-box"><div className="casino-odd-box-container"><div className="casino-nation-name">Win with 5</div><div className="casino-odds-box back suspended-box"><span className="casino-odds">0</span></div><div className="casino-nation-book text-center w-100 text-danger"></div></div><div className="casino-odd-box-container"><div className="casino-nation-name">Win with 6</div><div className="casino-odds-box back suspended-box"><span className="casino-odds">0</span></div><div className="casino-nation-book text-center w-100 text-danger"></div></div><div className="casino-odd-box-container"><div className="casino-nation-name">Win with 7</div><div className="casino-odds-box back suspended-box"><span className="casino-odds">0</span></div><div className="casino-nation-book text-center w-100 text-danger"></div></div><div className="casino-odd-box-container"><div className="casino-nation-name">Win with 15</div><div className="casino-odds-box back suspended-box"><span className="casino-odds">0</span></div><div className="casino-nation-book text-center w-100 text-danger"></div></div><div className="casino-odd-box-container"><div className="casino-nation-name">Win with 16</div><div className="casino-odds-box back suspended-box"><span className="casino-odds">0</span></div><div className="casino-nation-book text-center w-100 text-danger"></div></div><div className="casino-odd-box-container"><div className="casino-nation-name">Win with 17</div><div className="casino-odds-box back suspended-box"><span className="casino-odds">0</span></div><div className="casino-nation-book text-center w-100 text-danger"></div></div></div></div></div>
-  )
+
+interface Props{
+  data?:any
 }
+const Race20 :React.FC<Props> = ({data}) => {
+  console.log(data,"CHECK")
+  const cardInfo = data?.t1||[]
+  return (
+    <div className="casino-table race20">
+      <div className="casino-table-box">
+        {
+          (cardInfo||[]).slice(0,4).map((item:any,i:number)=>{
+            const img = ["KSS","KHH","KCC","KDD"];
+            return(
+              <div className="casino-odd-box-container">
+              <div className="casino-nation-name">
+                <img src={`/assets/images/playingCards/${img[i]}.jpg`}/>
+              </div>
+              <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
+                <span className="casino-odds">{item?.b1}</span>
+                <div className="casino-volume">{item?.bs1}</div>
+              </div>
+              <div className={`casino-odds-box lay ${item?.status === "suspended" ? 'suspended-box':''}`}>
+                <span className="casino-odds">{item?.l1}</span>
+                <div className="casino-volume">{item?.ls1}</div>
+              </div>
+              <div className="casino-nation-book text-center w-100"></div>
+            </div>
+            )
+          })
+        }
+       
+       
+      </div>
+      <div className="casino-table-box mt-3">
+        <div className="casino-table-left-box">
+          <div className="casino-odd-box-container">
+            <div className="casino-nation-name"></div>
+            <div className="casino-nation-name">No</div>
+            <div className="casino-nation-name">Yes</div>
+          </div>
+          <div className="casino-odd-box-container">
+            <div className="casino-nation-name">Total points</div>
+            <div className="casino-odds-box lay suspended-box">
+              <span className="casino-odds">0</span>
+              <div className="casino-volume text-center">0</div>
+            </div>
+            <div className="casino-odds-box back suspended-box">
+              <span className="casino-odds">0</span>
+              <div className="casino-volume text-center">0</div>
+            </div>
+            <div className="casino-nation-book"></div>
+          </div>
+          <div className="casino-odd-box-container">
+            <div className="casino-nation-name"></div>
+            <div className="casino-nation-name">No</div>
+            <div className="casino-nation-name">Yes</div>
+          </div>
+          <div className="casino-odd-box-container">
+            <div className="casino-nation-name">Total cards</div>
+            <div className="casino-odds-box lay suspended-box">
+              <span className="casino-odds">0</span>
+              <div className="casino-volume text-center">0</div>
+            </div>
+            <div className="casino-odds-box back suspended-box">
+              <span className="casino-odds">0</span>
+              <div className="casino-volume text-center">0</div>
+            </div>
+            <div className="casino-nation-book"></div>
+          </div>
+        </div>
+        <div className="casino-table-right-box">
+          {
+            (cardInfo||[]).slice(5,11).map((item:any,i:number)=>{
+              return(
+                <div className="casino-odd-box-container">
+                <div className="casino-nation-name">{item?.nation}</div>
+                <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
+                  <span className="casino-odds">{item?.b1}</span>
+                </div>
+                <div className="casino-nation-book text-center w-100 text-danger"></div>
+              </div>
+              )
+            })
+          }
+         
+         
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default Race20
+export default Race20;

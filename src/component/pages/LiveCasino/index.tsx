@@ -170,11 +170,8 @@ const LiveCasino = () => {
 
   const { data } = useTableCardsFixture(val);
   const [openResultModal, setOpenResultModal] = useState(false);
-  const [casinoResult,setCasinoresult] = useState({}) 
+  const [casinoResult, setCasinoresult] = useState({});
   // const {t1=[],t2=[]} = data;
-  
-
-  
 
   return (
     <div className="center-main-container casino-page">
@@ -209,6 +206,41 @@ const LiveCasino = () => {
               </span>
             </div>
           </div>
+          <div className="scorecard mb-1">
+            <div className="row">
+              <div className="col-12 col-md-6">
+                <p className="team-1 row">
+                  <span className="team-name col-3">ENG</span>
+                  <span className="score col-4 text-end">9-2 (0.4)</span>
+                  <span className="team-name col-5">
+                    <span>CRR 13.50 </span>
+                  </span>
+                </p>
+                <p className="team-1 row mt-2">
+                  <span className="team-name col-3">RSA</span>
+                  <span className="score col-4 text-end">0-0 (0.0)</span>
+                  <span className="team-name col-5"></span>
+                </p>
+              </div>
+              <div className="col-12 col-md-6">
+                <div className="row">
+                  <div className="col-12">
+                    <div className="text-xl-end"></div>
+                    <div className="row">
+                      <div className="col-12">
+                        <p className="text-xl-end ball-by-ball mt-2">
+                          <span className="ball-runs six">6</span>
+                          <span className="ball-runs">3</span>
+                          <span className="ball-runs">W</span>
+                          <span className="ball-runs">W</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div>
             <div className="casino-video">
               <div className="video-box-container">
@@ -216,13 +248,11 @@ const LiveCasino = () => {
                   <iframe src="/mediaplayer/teen20c/9c87abd8-82be-4a9c-a2ee-87062bc1d1ab?ip=103.44.52.180"></iframe>
                 </div>
               </div>
-               {
-                renderTable(val,data)?.cardRenders
-               }
-              
+              {renderTable(val, data)?.cardRenders}
+
               <div className="clock flip-clock-wrapper">
                 <FlipClockCountdown
-                 to={Date.now() + (parseInt(data?.auto, 10) || 0) * 1000} 
+                  to={Date.now() + (parseInt(data?.auto, 10) || 0) * 1000}
                   digitBlockStyle={{
                     width: 50,
                     height: 60,
@@ -237,7 +267,7 @@ const LiveCasino = () => {
               </div>
             </div>
             <div className="casino-detail">
-              {renderTable(val,data)?.table}
+              {renderTable(val, data)?.table}
 
               <div className="casino-last-result-title">
                 <span>Last Result</span>
@@ -247,20 +277,23 @@ const LiveCasino = () => {
               </div>
 
               <div className="casino-last-results">
-                {
-                 ( resultData||[]).map((item:any,i:number)=>{
-                  const result = item?.result?.Winner
-                  const WinnerName = ((result||"").split(" ")||[])[1];
-                  return (<span
-                    onClick={()=>{
-                      setOpenResultModal(true);
-                      setCasinoresult(item);
-                    }}
-                    className={`result result-${WinnerName === 'A' ?'a':'b'}`}>{WinnerName}</span>)
-                 })
-                }
-                
-            
+                {(resultData || []).map((item: any, i: number) => {
+                  const result = item?.result?.Winner;
+                  const WinnerName = ((result || "").split(" ") || [])[1];
+                  return (
+                    <span
+                      onClick={() => {
+                        setOpenResultModal(true);
+                        setCasinoresult(item);
+                      }}
+                      className={`result result-${
+                        WinnerName === "A" ? "a" : "b"
+                      }`}
+                    >
+                      {WinnerName}
+                    </span>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -288,7 +321,12 @@ const LiveCasino = () => {
           </div>
         </div>
       </div>
-      <CasinoResultModal openModal = {openResultModal} setOpenModal={setOpenResultModal} casinoResult ={casinoResult} title={renderTable(val)?.title}/>
+      <CasinoResultModal
+        openModal={openResultModal}
+        setOpenModal={setOpenResultModal}
+        casinoResult={casinoResult}
+        title={renderTable(val)?.title}
+      />
     </div>
   );
 };
