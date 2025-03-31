@@ -23,14 +23,14 @@ const CasinoCards: React.FC = () => {
   return (
     <div className="tab-content">
       <div className="tab-pane active" id="all-casino">
-        <div className="casino-list">
+        <div className="casino-list mt-2">
           
           {(data||[]).map((item, i) => (
             <div
               key={i}
               className="casino-list-item"
               onClick={() => navigate(item?.path)}
-              style={{ width: "120px", height: "100px" }}
+              style={{ width: "120px", height: "120px" }}
             >
               <div
                 className="casino-list-item-banner"

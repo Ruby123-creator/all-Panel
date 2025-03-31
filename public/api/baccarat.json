@@ -1,0 +1,77 @@
+{
+    "success": true,
+    "update": "2025-03-28 17:34:10",
+    "auto": "19",
+    "mid": " 104250328230406",
+    "t1": [
+        {
+            "nat": "Perfect Pair",
+            "bp": "2.5",
+            "status": "active",
+            "img": "",
+            "sid": "1"
+        },
+        {
+            "nat": "Big",
+            "bp": "0.54",
+            "status": "active",
+            "img": "",
+            "sid": "2"
+        },
+        {
+            "nat": "Small",
+            "bp": "1.5",
+            "status": "active",
+            "img": "",
+            "sid": "3"
+        },
+        {
+            "nat": "Either Pair",
+            "bp": "5",
+            "status": "active",
+            "img": "",
+            "sid": "4"
+        },
+        {
+            "nat": "Player Pair",
+            "bp": "11",
+            "status": "active",
+            "img": "",
+            "sid": "5"
+        },
+        {
+            "nat": "Player",
+            "bp": "1",
+            "status": "active",
+            "img": [
+                "1",
+                "1"
+            ],
+            "sid": "6"
+        },
+        {
+            "nat": "Tie",
+            "bp": "8",
+            "status": "active",
+            "img": "",
+            "sid": "7"
+        },
+        {
+            "nat": "Banker",
+            "bp": "1",
+            "status": "active",
+            "img": [
+                "1",
+                "1"
+            ],
+            "sid": "8"
+        },
+        {
+            "nat": "Banker Pair",
+            "bp": "11",
+            "status": "active",
+            "img": "",
+            "sid": "9"
+        }
+    ]
+}

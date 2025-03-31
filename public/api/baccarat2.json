@@ -1,0 +1,86 @@
+{
+    "success": true,
+    "update": "2025-03-28 22:54:43",
+    "auto": "00",
+    "mid": " 105250328225340",
+    "t1": [
+        {
+            "nat": "Score 1-4",
+            "bp": "7.5",
+            "status": "suspended",
+            "img": "",
+            "sid": "1"
+        },
+        {
+            "nat": "Score 5-6",
+            "bp": "4",
+            "status": "suspended",
+            "img": "",
+            "sid": "2"
+        },
+        {
+            "nat": "Score 7",
+            "bp": "4.5",
+            "status": "suspended",
+            "img": "",
+            "sid": "3"
+        },
+        {
+            "nat": "Score 8",
+            "bp": "3",
+            "status": "suspended",
+            "img": "",
+            "sid": "4"
+        },
+        {
+            "nat": "Score 9",
+            "bp": "2.5",
+            "status": "suspended",
+            "img": "",
+            "sid": "5"
+        },
+        {
+            "nat": "Player",
+            "bp": "1",
+            "status": "suspended",
+            "img": [
+                "2DD",
+                "7CC",
+                "8SS"
+            ],
+            "sid": "6"
+        },
+        {
+            "nat": "Tie",
+            "bp": "8",
+            "status": "suspended",
+            "img": "",
+            "sid": "7"
+        },
+        {
+            "nat": "Banker",
+            "bp": "1",
+            "status": "suspended",
+            "img": [
+                "2SS",
+                "KHH",
+                "JSS"
+            ],
+            "sid": "8"
+        },
+        {
+            "nat": "Banker Pair",
+            "bp": "11",
+            "status": "suspended",
+            "img": "",
+            "sid": "9"
+        },
+        {
+            "nat": "Player Pair",
+            "bp": "11",
+            "status": "suspended",
+            "img": "",
+            "sid": "10"
+        }
+    ]
+}

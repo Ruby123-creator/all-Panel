@@ -15,7 +15,7 @@ const Home: React.FC = () => {
 
   return (
     <>
-    <div className="main-component">
+
               <div className="center-main-container home-page">
                 <div className="center-container">
                   <div className="latest-event d-none d-xl-flex">
@@ -29,8 +29,7 @@ const Home: React.FC = () => {
 
                  <NavbarComp/>
                 </div>
-              </div>
-              <div className="flex flex-col transition-all lg:pt-[110px] ease-in-out duration-100 pt-[94px]">
+                <div className="flex flex-col transition-all lg:pt-[110px] ease-in-out duration-100 pt-[94px]">
                 <div className="flex items-start justify-start w-full lg:px-12 xl:px-20 xlg:px-24">
                   {
     
@@ -39,9 +38,11 @@ const Home: React.FC = () => {
       
      
       </div>
-    </div>
+    
               <CasinoComp/>
             </div>
+              </div>
+             
             <EventModal/>
     </>
    

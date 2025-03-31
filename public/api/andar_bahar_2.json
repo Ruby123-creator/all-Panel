@@ -1,0 +1,159 @@
+{
+    "success": true,
+    "update": "2025-03-29 20:29:49",
+    "auto": "02",
+    "mid": "124250329202826",
+    "img": "KSS,5SS,10CC",
+    "t1": [
+        {
+            "nat": "SA",
+            "sid": "1",
+            "b1": "13.00",
+            "gstatus": "0"
+        },
+        {
+            "nat": "1st Bet",
+            "sid": "2",
+            "b1": "2.00",
+            "gstatus": "0"
+        },
+        {
+            "nat": "2nd Bet",
+            "sid": "3",
+            "b1": "2.00",
+            "gstatus": "0"
+        },
+        {
+            "nat": "SB",
+            "sid": "4",
+            "b1": "13.00",
+            "gstatus": "0"
+        },
+        {
+            "nat": "1st Bet",
+            "sid": "5",
+            "b1": "2.00",
+            "gstatus": "0"
+        },
+        {
+            "nat": "2nd Bet",
+            "sid": "6",
+            "b1": "2.00",
+            "gstatus": "0"
+        },
+        {
+            "nat": "Joker A",
+            "sid": "7",
+            "b1": "12.00",
+            "gstatus": "0"
+        },
+        {
+            "nat": "Joker 2",
+            "sid": "8",
+            "b1": "12.00",
+            "gstatus": "0"
+        },
+        {
+            "nat": "Joker 3",
+            "sid": "9",
+            "b1": "12.00",
+            "gstatus": "0"
+        },
+        {
+            "nat": "Joker 4",
+            "sid": "10",
+            "b1": "12.00",
+            "gstatus": "0"
+        },
+        {
+            "nat": "Joker 5",
+            "sid": "11",
+            "b1": "12.00",
+            "gstatus": "0"
+        },
+        {
+            "nat": "Joker 6",
+            "sid": "12",
+            "b1": "12.00",
+            "gstatus": "0"
+        },
+        {
+            "nat": "Joker 7",
+            "sid": "13",
+            "b1": "12.00",
+            "gstatus": "0"
+        },
+        {
+            "nat": "Joker 8",
+            "sid": "14",
+            "b1": "12.00",
+            "gstatus": "0"
+        },
+        {
+            "nat": "Joker 9",
+            "sid": "15",
+            "b1": "12.00",
+            "gstatus": "0"
+        },
+        {
+            "nat": "Joker 10",
+            "sid": "16",
+            "b1": "12.00",
+            "gstatus": "0"
+        },
+        {
+            "nat": "Joker J",
+            "sid": "17",
+            "b1": "12.00",
+            "gstatus": "0"
+        },
+        {
+            "nat": "Joker Q",
+            "sid": "18",
+            "b1": "12.00",
+            "gstatus": "0"
+        },
+        {
+            "nat": "Joker K",
+            "sid": "19",
+            "b1": "12.00",
+            "gstatus": "0"
+        },
+        {
+            "nat": "Joker Spade",
+            "sid": "20",
+            "b1": "3.83",
+            "gstatus": "0"
+        },
+        {
+            "nat": "Joker Club",
+            "sid": "21",
+            "b1": "3.83",
+            "gstatus": "0"
+        },
+        {
+            "nat": "Joker Heart",
+            "sid": "22",
+            "b1": "3.83",
+            "gstatus": "0"
+        },
+        {
+            "nat": "Joker Diamond",
+            "sid": "23",
+            "b1": "3.83",
+            "gstatus": "0"
+        },
+        {
+            "nat": "Joker Odd",
+            "sid": "24",
+            "b1": "1.83",
+            "gstatus": "0"
+        },
+        {
+            "nat": "Joker Even",
+            "sid": "25",
+            "b1": "2.12",
+            "gstatus": "0"
+        }
+    ]
+}

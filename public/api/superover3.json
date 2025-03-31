@@ -1,0 +1,158 @@
+{
+    "success": true,
+    "update": "2025-03-27 22:47:17",
+    "mid": " 7454494821",
+    "img": "2",
+    "auto": "16",
+    "score": [
+        "IND",
+        "2-0",
+        "(0.1)",
+        "CRR",
+        "8.00",
+        "AUS",
+        "0-0",
+        "(0.0)",
+        "2"
+    ],
+    "t1": [
+        {
+            "nat": "IND",
+            "status": "ACTIVE",
+            "bp": "1.88",
+            "bs": "300000.00",
+            "lp": "1.91",
+            "ls": "300000.00",
+            "sid": "1",
+            "min": "100",
+            "max": "3L",
+            "gtype": "Bookmaker"
+        },
+        {
+            "nat": "AUS",
+            "status": "SUSPENDED",
+            "bp": "-",
+            "bs": "0.00",
+            "lp": "-",
+            "ls": "0.00",
+            "sid": "2",
+            "min": "100",
+            "max": "3L",
+            "gtype": "Bookmaker"
+        }
+    ],
+    "t2": [
+        {
+            "nat": "1 over run bhav IND",
+            "status": "ACTIVE",
+            "bp": "7",
+            "bs": "61",
+            "lp": "7",
+            "ls": "69",
+            "sid": "3",
+            "min": "Min:",
+            "max": "100",
+            "gtype": "Fancy"
+        },
+        {
+            "nat": "1 over run IND",
+            "status": "ACTIVE",
+            "bp": "8",
+            "bs": "79",
+            "lp": "8",
+            "ls": "89",
+            "sid": "4",
+            "min": "Min:",
+            "max": "100",
+            "gtype": "Fancy"
+        }
+    ],
+    "t3": [
+        {
+            "nat": "Tie",
+            "status": "ACTIVE",
+            "bp": "16.26",
+            "bs": "100",
+            "lp": "19.76",
+            "ls": "100",
+            "sid": "5",
+            "min": "0",
+            "max": "0",
+            "gtype": "Tie"
+        }
+    ],
+    "t4": [
+        {
+            "nat": "0.2 Over Wicket IND",
+            "status": "ACTIVE",
+            "bp": "6.25",
+            "bs": "100",
+            "lp": "",
+            "ls": "",
+            "sid": "6",
+            "min": "Min:",
+            "max": "100",
+            "gtype": "Fancy1"
+        },
+        {
+            "nat": "0.2 Over Zero IND",
+            "status": "ACTIVE",
+            "bp": "6.25",
+            "bs": "100",
+            "lp": "",
+            "ls": "",
+            "sid": "7",
+            "min": "Min:",
+            "max": "100",
+            "gtype": "Fancy1"
+        },
+        {
+            "nat": "0.2 Over One IND",
+            "status": "ACTIVE",
+            "bp": "6.25",
+            "bs": "100",
+            "lp": "",
+            "ls": "",
+            "sid": "8",
+            "min": "Min:",
+            "max": "100",
+            "gtype": "Fancy1"
+        },
+        {
+            "nat": "0.2 Over Two IND",
+            "status": "ACTIVE",
+            "bp": "9.25",
+            "bs": "100",
+            "lp": "",
+            "ls": "",
+            "sid": "9",
+            "min": "Min:",
+            "max": "100",
+            "gtype": "Fancy1"
+        },
+        {
+            "nat": "0.2 Over Three IND",
+            "status": "ACTIVE",
+            "bp": "6.25",
+            "bs": "100",
+            "lp": "",
+            "ls": "",
+            "sid": "10",
+            "min": "Min:",
+            "max": "100",
+            "gtype": "Fancy1"
+        },
+        {
+            "nat": "0.2 Over Boundry IND",
+            "status": "ACTIVE",
+            "bp": "3.15",
+            "bs": "100",
+            "lp": "",
+            "ls": "",
+            "sid": "11",
+            "min": "Min:",
+            "max": "100",
+            "gtype": "Fancy1"
+        }
+    ]
+}

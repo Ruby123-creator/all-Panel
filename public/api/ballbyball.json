@@ -1,0 +1,80 @@
+{
+    "success": true,
+    "update": "2025-03-28 22:43:47",
+    "auto": "00",
+    "mid": " 6184131214282",
+    "t1": [
+        {
+            "nat": "0 Runs",
+            "bp": "-",
+            "bs": "25000",
+            "status": "OPEN",
+            "min": "50",
+            "max": "25K"
+        },
+        {
+            "nat": "1 Runs",
+            "bp": "-",
+            "bs": "25000",
+            "status": "OPEN",
+            "min": "50",
+            "max": "25K"
+        },
+        {
+            "nat": "2 Runs",
+            "bp": "-",
+            "bs": "25000",
+            "status": "OPEN",
+            "min": "50",
+            "max": "25K"
+        },
+        {
+            "nat": "3 Runs",
+            "bp": "-",
+            "bs": "15000",
+            "status": "OPEN",
+            "min": "50",
+            "max": "25K"
+        },
+        {
+            "nat": "4 Runs",
+            "bp": "-",
+            "bs": "20000",
+            "status": "OPEN",
+            "min": "50",
+            "max": "25K"
+        },
+        {
+            "nat": "6 Runs",
+            "bp": "-",
+            "bs": "20000",
+            "status": "OPEN",
+            "min": "50",
+            "max": "20K"
+        },
+        {
+            "nat": "Boundary",
+            "bp": "-",
+            "bs": "25000",
+            "status": "OPEN",
+            "min": "50",
+            "max": "25K"
+        },
+        {
+            "nat": "Wicket",
+            "bp": "-",
+            "bs": "25000",
+            "status": "OPEN",
+            "min": "50",
+            "max": "25K"
+        },
+        {
+            "nat": "Extra Runs",
+            "bp": "-",
+            "bs": "25000",
+            "status": "OPEN",
+            "min": "50",
+            "max": "25K"
+        }
+    ]
+}

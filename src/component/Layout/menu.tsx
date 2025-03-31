@@ -15,7 +15,7 @@ const HeaderMenu = () => {
   const { isLogin ,activeNav,setActiveNav} = useUI();
  
   return (
-    <div className="header-bottom d-xl-block">
+    <div className="header-bottom d-none d-xl-block">
     <nav className="navbar navbar-expand">
       <ul className="navbar-nav">
         {

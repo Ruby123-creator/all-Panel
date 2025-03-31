@@ -1,0 +1,50 @@
+{
+    "img": "1,1,1,1",
+    "mid": " 136250327135801",
+    "autotime": "20",
+    "update_time": "2025-03-27 13:58:18",
+    "t1": [
+        {
+            "nat": "Player A",
+            "bp": "1.98",
+            "lp": "0",
+            "status": "ACTIVE",
+            "sid": 1
+        },
+        {
+            "nat": "Mini Baccarat A",
+            "bp": "2.1",
+            "lp": 0,
+            "status": "ACTIVE",
+            "sid": 2
+        },
+        {
+            "nat": "Total A",
+            "bp": "15\n105",
+            "lp": "14\n95",
+            "status": "ACTIVE",
+            "sid": 3
+        },
+        {
+            "nat": "Player B",
+            "bp": "1.98",
+            "lp": "0",
+            "status": "ACTIVE",
+            "sid": 4
+        },
+        {
+            "nat": "Mini Baccarat B",
+            "bp": "2.1",
+            "lp": 0,
+            "status": "ACTIVE",
+            "sid": 5
+        },
+        {
+            "nat": "Total B",
+            "bp": "15\n105",
+            "lp": "14\n95",
+            "status": "ACTIVE",
+            "sid": 6
+        }
+    ]
+}

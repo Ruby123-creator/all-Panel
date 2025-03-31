@@ -1,0 +1,108 @@
+{
+    "mid": " 125250328205452",
+    "autotime": "15",
+    "update": "2025-03-28 20:55:01",
+    "img": "1",
+    "remark": "Team B Need 12 Runs to WIN Match. If The Score is Tie Team B will WIN.",
+    "t1": [
+        {
+            "mid": " 125250328205452",
+            "sid": "1",
+            "nat": "Run 2",
+            "b1": "5.0",
+            "l1": "5.2",
+            "gtype": "cmatch20",
+            "gstatus": "ACTIVE",
+            "min": 100,
+            "max": 150000
+        },
+        {
+            "mid": " 125250328205452",
+            "sid": "2",
+            "nat": "Run 3",
+            "b1": "3.33",
+            "l1": "3.53",
+            "gtype": "cmatch20",
+            "gstatus": "ACTIVE",
+            "min": 100,
+            "max": 150000
+        },
+        {
+            "mid": " 125250328205452",
+            "sid": "3",
+            "nat": "Run 4",
+            "b1": "2.5",
+            "l1": "2.7",
+            "gtype": "cmatch20",
+            "gstatus": "ACTIVE",
+            "min": 100,
+            "max": 150000
+        },
+        {
+            "mid": " 125250328205452",
+            "sid": "4",
+            "nat": "Run 5",
+            "b1": "2.0",
+            "l1": "2.2",
+            "gtype": "cmatch20",
+            "gstatus": "ACTIVE",
+            "min": 100,
+            "max": 150000
+        },
+        {
+            "mid": " 125250328205452",
+            "sid": "5",
+            "nat": "Run 6",
+            "b1": "1.67",
+            "l1": "1.87",
+            "gtype": "cmatch20",
+            "gstatus": "ACTIVE",
+            "min": 100,
+            "max": 150000
+        },
+        {
+            "mid": " 125250328205452",
+            "sid": "6",
+            "nat": "Run 7",
+            "b1": "1.43",
+            "l1": "1.63",
+            "gtype": "cmatch20",
+            "gstatus": "ACTIVE",
+            "min": 100,
+            "max": 150000
+        },
+        {
+            "mid": " 125250328205452",
+            "sid": "7",
+            "nat": "Run 8",
+            "b1": "1.25",
+            "l1": "1.45",
+            "gtype": "cmatch20",
+            "gstatus": "ACTIVE",
+            "min": 100,
+            "max": 150000
+        },
+        {
+            "mid": " 125250328205452",
+            "sid": "8",
+            "nat": "Run 9",
+            "b1": "1.11",
+            "l1": "1.31",
+            "gtype": "cmatch20",
+            "gstatus": "ACTIVE",
+            "min": 100,
+            "max": 150000
+        },
+        {
+            "mid": " 125250328205452",
+            "sid": "9",
+            "nat": "Run 10",
+            "b1": "1.0",
+            "l1": "1.2",
+            "gtype": "cmatch20",
+            "gstatus": "ACTIVE",
+            "min": 100,
+            "max": 150000
+        }
+    ]
+}

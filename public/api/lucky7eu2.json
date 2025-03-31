@@ -1,0 +1,140 @@
+{
+    "img": "3CC",
+    "mid": " 134250328004742",
+    "autotime": "00",
+    "update_time": "2025-03-28 00:48:19",
+    "t1": [
+        {
+            "nat": "Low Card",
+            "bp": "2",
+            "status": "suspended",
+            "sid": "1"
+        },
+        {
+            "nat": "High Card",
+            "bp": "2",
+            "status": "suspended",
+            "sid": "2"
+        },
+        {
+            "nat": "Even",
+            "bp": "2.1",
+            "status": "suspended",
+            "sid": "3"
+        },
+        {
+            "nat": "Odd",
+            "bp": "1.79",
+            "status": "suspended",
+            "sid": "4"
+        },
+        {
+            "nat": "Red",
+            "bp": "1.95",
+            "status": "suspended",
+            "sid": "5"
+        },
+        {
+            "nat": "Black",
+            "bp": "1.95",
+            "status": "suspended",
+            "sid": "6"
+        },
+        {
+            "nat": "Line 1",
+            "bp": "4",
+            "status": "suspended",
+            "sid": "7"
+        },
+        {
+            "nat": "Line 2",
+            "bp": "4",
+            "status": "suspended",
+            "sid": "8"
+        },
+        {
+            "nat": "Line 3",
+            "bp": "4",
+            "status": "suspended",
+            "sid": "9"
+        },
+        {
+            "nat": "Card A",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "10"
+        },
+        {
+            "nat": "Card 2",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "11"
+        },
+        {
+            "nat": "Card 3",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "12"
+        },
+        {
+            "nat": "Card 4",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "13"
+        },
+        {
+            "nat": "Card 5",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "14"
+        },
+        {
+            "nat": "Card 6",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "15"
+        },
+        {
+            "nat": "Card 7",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "16"
+        },
+        {
+            "nat": "Card 8",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "17"
+        },
+        {
+            "nat": "Card 9",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "18"
+        },
+        {
+            "nat": "Card 10",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "19"
+        },
+        {
+            "nat": "Card J",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "20"
+        },
+        {
+            "nat": "Card Q",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "21"
+        },
+        {
+            "nat": "Card K",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "22"
+        }
+    ]
+}

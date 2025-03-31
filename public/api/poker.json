@@ -1,0 +1,45 @@
+{
+    "success": true,
+    "update": "2025-03-26 23:02:51",
+    "auto": "00",
+    "mid": "108250326225839",
+    "img": "QHH,6CC,3DD,5CC,5SS,KDD,KSS,3HH,9HH",
+    "t1": [
+        {
+            "nat": "Player A",
+            "bp": 0,
+            "lp": 0,
+            "status": "suspended",
+            "sid": "1"
+        },
+        {
+            "nat": "Player B",
+            "bp": 0,
+            "lp": 0,
+            "status": "suspended",
+            "sid": "2"
+        }
+    ],
+    "t2": [
+        {
+            "nat": "Player A 7 card bonus",
+            "status": "suspended",
+            "sid": "3"
+        },
+        {
+            "nat": "Player A 2 Cards Bonus",
+            "status": "suspended",
+            "sid": "4"
+        },
+        {
+            "nat": "Player B 7 Cards Bonus",
+            "status": "suspended",
+            "sid": "5"
+        },
+        {
+            "nat": "Player B 2 Cards Bonus",
+            "status": "suspended",
+            "sid": "6"
+        }
+    ]
+}

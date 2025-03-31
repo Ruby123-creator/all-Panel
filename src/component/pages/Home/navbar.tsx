@@ -16,7 +16,7 @@ const NavbarComp = () => {
               setActiveNav({title:item?.title,val:item?.val})
               }}>
               <div className="d-xl-none">
-                <i className="icon icon-4"></i>
+                {item?.icons}
               </div>
               <span>{item?.title}</span>
             </div>

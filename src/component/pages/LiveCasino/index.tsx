@@ -206,7 +206,8 @@ const LiveCasino = () => {
               </span>
             </div>
           </div>
-          <div className="scorecard mb-1">
+          {
+            (val === "superover" || val === "cricketv3" || val === "superover3") ? <div className="scorecard mb-1">
             <div className="row">
               <div className="col-12 col-md-6">
                 <p className="team-1 row">
@@ -240,7 +241,9 @@ const LiveCasino = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div>:""
+          }
+          
           <div>
             <div className="casino-video">
               <div className="video-box-container">

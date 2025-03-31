@@ -1,0 +1,93 @@
+{
+    "success": true,
+    "update": "2025-03-28 22:38:50",
+    "auto": "26",
+    "mid": " 165250328223843",
+    "C1": "1",
+    "t1": [
+        {
+            "nat": "A.Don",
+            "back": "15",
+            "lay": "17",
+            "status": "active"
+        },
+        {
+            "nat": "B.Amar Akbar Anthony",
+            "back": "5.15",
+            "lay": "5.5",
+            "status": "active"
+        },
+        {
+            "nat": "C.Sahib Bibi Aur Ghulam",
+            "back": "5.15",
+            "lay": "5.5",
+            "status": "active"
+        },
+        {
+            "nat": "D.Dharam Veer",
+            "back": "7.65",
+            "lay": "8.35",
+            "status": "active"
+        },
+        {
+            "nat": "E.Kis Kis ko Pyaar Karoon",
+            "back": "3.85",
+            "lay": "4.15",
+            "status": "active"
+        },
+        {
+            "nat": "F.Ghulam",
+            "back": "5.15",
+            "lay": "5.5",
+            "status": "active"
+        },
+        {
+            "nat": "Odd",
+            "back": "1.32",
+            "lay": "1.36",
+            "status": "active"
+        }
+    ],
+    "t2": [
+        {
+            "nat": "Dulha Dulhan K-Q",
+            "back": "1.97",
+            "status": "active"
+        },
+        {
+            "nat": "Barati J-A",
+            "back": "1.97",
+            "status": "active"
+        },
+        {
+            "nat": "Red",
+            "back": "1.97",
+            "status": "active"
+        },
+        {
+            "nat": "Black",
+            "back": "1.97",
+            "status": "active"
+        },
+        {
+            "nat": "Card J",
+            "back": "3.75",
+            "status": "active"
+        },
+        {
+            "nat": "Card Q",
+            "back": "3.75",
+            "status": "active"
+        },
+        {
+            "nat": "card K",
+            "back": "3.75",
+            "status": "active"
+        },
+        {
+            "nat": "card A",
+            "back": "3.75",
+            "status": "active"
+        }
+    ]
+}

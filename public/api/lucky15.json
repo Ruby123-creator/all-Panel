@@ -1,0 +1,63 @@
+{
+    "success": true,
+    "update": "2025-03-28 00:28:13",
+    "auto": "",
+    "mid": "161250328002740",
+    "run": "",
+    "t1": [
+        {
+            "nat": "0 Runs",
+            "status": "SUSPENDED",
+            "price": "",
+            "size": "",
+            "sid": "1",
+            "min": "50Max:",
+            "max": "25K"
+        },
+        {
+            "nat": "1 Runs",
+            "status": "SUSPENDED",
+            "price": "",
+            "size": "",
+            "sid": "2",
+            "min": "50Max:",
+            "max": "25K"
+        },
+        {
+            "nat": "2 Runs",
+            "status": "SUSPENDED",
+            "price": "",
+            "size": "",
+            "sid": "3",
+            "min": "50Max:",
+            "max": "25K"
+        },
+        {
+            "nat": "4 Runs",
+            "status": "SUSPENDED",
+            "price": "",
+            "size": "",
+            "sid": "4",
+            "min": "50Max:",
+            "max": "25K"
+        },
+        {
+            "nat": "6 Runs",
+            "status": "SUSPENDED",
+            "price": "",
+            "size": "",
+            "sid": "5",
+            "min": "50Max:",
+            "max": "25K"
+        },
+        {
+            "nat": "Wicket",
+            "status": "SUSPENDED",
+            "price": "",
+            "size": "",
+            "sid": "6",
+            "min": "50Max:",
+            "max": "25K"
+        }
+    ]
+}

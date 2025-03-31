@@ -46,9 +46,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <Header />
 
           <main className="main-container">
-            <div className="sidebar">
+           
               <SidebarComp />
-            </div>
+          
             {children}
            
           </main>

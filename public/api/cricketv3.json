@@ -1,0 +1,64 @@
+{
+    "success": true,
+    "score": [
+        "AUS",
+        "61-7",
+        "(5.0)",
+        "IND",
+        "25-2",
+        "(2.0)",
+        "CRR",
+        "12.50",
+        "RR",
+        "12.33",
+        "IND",
+        "Needed",
+        "37",
+        "runs",
+        "from",
+        "18",
+        "balls",
+        "121433"
+    ],
+    "update": "2025-03-28 20:22:26",
+    "auto": "00",
+    "mid": " 6125306140",
+    "img": "1, 1, 1, 1, 1, 1",
+    "bookmaker": [
+        {
+            "nat": "AUS",
+            "bp": 0,
+            "bs": 0,
+            "lp": 0,
+            "ls": 0,
+            "sid": 1,
+            "status": "SUSPENDED",
+            "min": "Min:",
+            "max": "100"
+        },
+        {
+            "nat": "IND",
+            "bp": "1.2",
+            "bs": "1.2",
+            "lp": "1.23",
+            "ls": "300000.00",
+            "sid": 2,
+            "status": "ACTIVE",
+            "min": "Min:",
+            "max": "100"
+        }
+    ],
+    "fancy": [
+        {
+            "nat": "Ind Over 3",
+            "bp": "40",
+            "bs": "40",
+            "lp": "39",
+            "ls": "100",
+            "sid": 3,
+            "status": "ACTIVE",
+            "min": 0,
+            "max": 0
+        }
+    ]
+}

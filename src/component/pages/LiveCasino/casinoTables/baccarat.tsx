@@ -1,8 +1,22 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
-const Baccarat = () => {
+interface Props{
+  data?:any
+}
+
+const Baccarat:React.FC<Props> = ({data}) => {
+  const {val} = useParams();
+  console.log(data,"CHECK")
+  const statics = data?.t1;
+  const playerPair = (data?.t1||[]).find((val:any)=>val?.nat === "Player Pair");
+  const player = (data?.t1||[]).find((val:any)=>val?.nat === "Player");
+  const tie = (data?.t1||[]).find((val:any)=>val?.nat === "Tie");
+  const banker = (data?.t1||[]).find((val:any)=>val?.nat === "Banker");
+  const bankerPair = (data?.t1||[]).find((val:any)=>val?.nat === "Banker Pair");
+
   return (
-    <div className="casino-table">
+    <div className={`casino-table baccarat ${val === "baccarat2" ? 'baccarat2' :''}`}>
       <div className="casino-table-full-box ">
         <div className="baccarat-graph text-center">
           <h4 className="">Statistics</h4>
@@ -428,76 +442,77 @@ const Baccarat = () => {
         </div>
         <div className="baccarat-odds-container">
           <div className="baccarat-other-odds">
-            <div className="baccarat-other-odd-box-container">
-              <div className="baccarat-other-odd-box">
-                <span>Perfect Pair</span>
-                <span>25:1</span>
+            {
+              (statics||[]).slice(0,val === "baccarat2" ? 5 :4).map((item:any,i:number)=>{
+                return(
+<div className="baccarat-other-odd-box-container">
+              <div className={`baccarat-other-odd-box ${item?.status === "SUSPENDED" ? "suspended-box" :""}`}>
+                <span>{item?.nat}</span>
+                <span>{item?.bp}:1</span>
               </div>
               <div className="casino-nation-book text-center"></div>
             </div>
-            <div className="baccarat-other-odd-box-container">
-              <div className="baccarat-other-odd-box">
-                <span>Big</span>
-                <span>0.54:1</span>
-              </div>
-              <div className="casino-nation-book text-center"></div>
-            </div>
-            <div className="baccarat-other-odd-box-container">
-              <div className="baccarat-other-odd-box">
-                <span>Small</span>
-                <span>1.5:1</span>
-              </div>
-              <div className="casino-nation-book text-center"></div>
-            </div>
-            <div className="baccarat-other-odd-box-container">
-              <div className="baccarat-other-odd-box">
-                <span>Either Pair</span>
-                <span>5:1</span>
-              </div>
-              <div className="casino-nation-book text-center"></div>
-            </div>
+                )
+              })
+            }
+            
+          
           </div>
           <div className="baccarat-main-odds mt-3">
             <div className="player-pair-box-container">
-              <div className="player-pair-box">
+              <div className={`player-pair-box ${playerPair?.status === "SUSPENDED" ? 'suspended-box' :''}`}>
                 <div>Player Pair</div>
-                <div>11:1</div>
+                <div>{playerPair?.bp}:1</div>
               </div>
               <div className="casino-nation-book text-center"></div>
             </div>
             <div className="player-box-container">
-              <div className="player-box">
+              <div className={`player-box ${player?.status === "SUSPENDED" ? 'suspended-box' :''}`}>
                 <div>Player</div>
-                <div>1:1</div>
+                <div>{player?.bp}:1</div>
                 <div>
-                  <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/1.jpg" />
-                  <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/1.jpg" />
+                  {
+                   ( player?.img||[]).map((val:any)=>{
+                    return(
+                      <img src={`/assets/images/playingCards/${val}.jpg`} />
+
+                    )
+                   })
+                  }
+                 
                 </div>
               </div>
               <div className="casino-nation-book text-center"></div>
             </div>
             <div className="tie-box-container">
-              <div className="tie-box">
+              <div className={`tie-box ${tie?.status === "SUSPENDED" ? 'suspended-box' :''}`}>
                 <div>Tie</div>
-                <div>8:1</div>
+                <div>{tie?.bp}:1</div>
               </div>
               <div className="casino-nation-book text-center"></div>
             </div>
             <div className="banker-box-container">
-              <div className="banker-box">
+              <div className={`banker-box ${banker?.status === "SUSPENDED" ? 'suspended-box' :''}`}>
                 <div>Banker</div>
-                <div>1:1</div>
+                <div>{banker?.bp}:1</div>
                 <div>
-                  <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/1.jpg" />
-                  <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/1.jpg" />
+                  {
+                    (banker?.img||[]).map((val:any)=>{
+                      return(
+                      <img src={`/assets/images/playingCards/${val}.jpg`} />
+
+                      )
+                    })
+                  }
+                 
                 </div>
               </div>
               <div className="casino-nation-book text-center"></div>
             </div>
             <div className="banker-pair-box-container">
-              <div className="banker-pair-box">
+              <div className={`banker-pair-box ${bankerPair?.status === "SUSPENDED" ? 'suspended-box' :''}`}>
                 <div>Banker Pair</div>
-                <div>11:1</div>
+                <div>{bankerPair?.bp}:1</div>
               </div>
               <div className="casino-nation-book text-center"></div>
             </div>

@@ -1,0 +1,174 @@
+{
+    "success": true,
+    "img": "1",
+    "update": "2025-03-28 21:59:13",
+    "auto": "08",
+    "mid": " 120250328215848",
+    "t1": [
+        {
+            "mid": " 120250328215848",
+            "sid": "1",
+            "nat": "DON",
+            "b1": "15.00",
+            "l1": "17.00",
+            "gtype": "btable",
+            "gstatus": "ACTIVE",
+            "min": 100,
+            "max": 150000
+        },
+        {
+            "mid": " 120250328215848",
+            "sid": "2",
+            "nat": "Amar Akbar Anthony",
+            "b1": "5.15",
+            "l1": "5.50",
+            "gtype": "btable",
+            "gstatus": "ACTIVE",
+            "min": 100,
+            "max": 150000
+        },
+        {
+            "mid": " 120250328215848",
+            "sid": "3",
+            "nat": "Sahib Bibi Aur Ghulam",
+            "b1": "5.15",
+            "l1": "5.50",
+            "gtype": "btable",
+            "gstatus": "ACTIVE",
+            "min": 100,
+            "max": 150000
+        },
+        {
+            "mid": " 120250328215848",
+            "sid": "4",
+            "nat": "Dharam Veer",
+            "b1": "7.65",
+            "l1": "8.35",
+            "gtype": "btable",
+            "gstatus": "ACTIVE",
+            "min": 100,
+            "max": 150000
+        },
+        {
+            "mid": " 120250328215848",
+            "sid": "5",
+            "nat": "Kis KisKo Pyaar Karoon",
+            "b1": "3.85",
+            "l1": "4.15",
+            "gtype": "btable",
+            "gstatus": "ACTIVE",
+            "min": 100,
+            "max": 150000
+        },
+        {
+            "mid": " 120250328215848",
+            "sid": "6",
+            "nat": "Ghulam",
+            "b1": "5.15",
+            "l1": "5.50",
+            "gtype": "btable",
+            "gstatus": "ACTIVE",
+            "min": 100,
+            "max": 150000
+        },
+        {
+            "mid": " 120250328215848",
+            "sid": "7",
+            "nat": "Odd",
+            "b1": "1.31",
+            "l1": "1.36",
+            "gtype": "btablefancy",
+            "gstatus": "ACTIVE",
+            "min": 100,
+            "max": 50000
+        },
+        {
+            "mid": " 120250328215848",
+            "sid": "8",
+            "nat": "Red",
+            "b1": "1.97",
+            "l1": "0.00",
+            "gtype": "btablefancy",
+            "gstatus": "ACTIVE",
+            "min": 100,
+            "max": 12500
+        },
+        {
+            "mid": " 120250328215848",
+            "sid": "9",
+            "nat": "Black",
+            "b1": "1.97",
+            "l1": "0.00",
+            "gtype": "btablefancy",
+            "gstatus": "ACTIVE",
+            "min": 100,
+            "max": 12500
+        },
+        {
+            "mid": " 120250328215848",
+            "sid": "10",
+            "nat": "Card J",
+            "b1": "3.75",
+            "l1": "0.00",
+            "gtype": "btablefancy",
+            "gstatus": "ACTIVE",
+            "min": 100,
+            "max": 50000
+        },
+        {
+            "mid": " 120250328215848",
+            "sid": "11",
+            "nat": "Card Q",
+            "b1": "3.75",
+            "l1": "0.00",
+            "gtype": "btablefancy",
+            "gstatus": "ACTIVE",
+            "min": 100,
+            "max": 50000
+        },
+        {
+            "mid": " 120250328215848",
+            "sid": "12",
+            "nat": "card K",
+            "b1": "3.75",
+            "l1": "0.00",
+            "gtype": "btablefancy",
+            "gstatus": "ACTIVE",
+            "min": 100,
+            "max": 50000
+        },
+        {
+            "mid": " 120250328215848",
+            "sid": "13",
+            "nat": "card A",
+            "b1": "3.75",
+            "l1": "0.00",
+            "gtype": "btablefancy",
+            "gstatus": "ACTIVE",
+            "min": 100,
+            "max": 50000
+        },
+        {
+            "mid": " 120250328215848",
+            "sid": "14",
+            "nat": "Dulha Dulhan K-Q",
+            "b1": "1.97",
+            "l1": "0.00",
+            "gtype": "btablefancy",
+            "gstatus": "ACTIVE",
+            "min": 100,
+            "max": 50000
+        },
+        {
+            "mid": " 120250328215848",
+            "sid": "15",
+            "nat": "Barati J-A",
+            "b1": "1.97",
+            "l1": "0.00",
+            "gtype": "btablefancy",
+            "gstatus": "ACTIVE",
+            "min": 100,
+            "max": 50000
+        }
+    ]
+}

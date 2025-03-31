@@ -1,0 +1,130 @@
+{
+    "success": true,
+    "update": "2025-03-28 02:17:06",
+    "auto": "00",
+    "mid": " 162250328021624",
+    "t1": [
+        {
+            "nat": "Cristiano Ronaldo",
+            "bp": "-",
+            "bs": "100000",
+            "status": "SUSPENDED",
+            "min": "100",
+            "max": "50K"
+        },
+        {
+            "nat": "Lionel Messi",
+            "bp": "-",
+            "bs": "100000",
+            "status": "SUSPENDED",
+            "min": "100",
+            "max": "50K"
+        },
+        {
+            "nat": "Robert Lewandowski",
+            "bp": "-",
+            "bs": "100000",
+            "status": "SUSPENDED",
+            "min": "100",
+            "max": "50K"
+        },
+        {
+            "nat": "Neymar",
+            "bp": "-",
+            "bs": "100000",
+            "status": "SUSPENDED",
+            "min": "100",
+            "max": "50K"
+        },
+        {
+            "nat": "Harry Kane",
+            "bp": "-",
+            "bs": "100000",
+            "status": "SUSPENDED",
+            "min": "100",
+            "max": "50K"
+        },
+        {
+            "nat": "Zlatan Ibrahimovic",
+            "bp": "-",
+            "bs": "100000",
+            "status": "SUSPENDED",
+            "min": "100",
+            "max": "50K"
+        },
+        {
+            "nat": "Romelu Lukaku",
+            "bp": "-",
+            "bs": "100000",
+            "status": "SUSPENDED",
+            "min": "100",
+            "max": "50K"
+        },
+        {
+            "nat": "Kylian Mbappe",
+            "bp": "-",
+            "bs": "100000",
+            "status": "SUSPENDED",
+            "min": "100",
+            "max": "50K"
+        },
+        {
+            "nat": "Erling Haaland",
+            "bp": "-",
+            "bs": "100000",
+            "status": "SUSPENDED",
+            "min": "100",
+            "max": "50K"
+        },
+        {
+            "nat": "No Goal",
+            "bp": "-",
+            "bs": "100000",
+            "status": "SUSPENDED",
+            "min": "100",
+            "max": "25K"
+        }
+    ],
+    "t2": [
+        {
+            "nat": "Shot Goal",
+            "bp": "-",
+            "bs": "100000",
+            "status": "SUSPENDED",
+            "min": "100",
+            "max": "50K"
+        },
+        {
+            "nat": "Header Goal",
+            "bp": "-",
+            "bs": "100000",
+            "status": "SUSPENDED",
+            "min": "100",
+            "max": "50K"
+        },
+        {
+            "nat": "Penalty Goal",
+            "bp": "-",
+            "bs": "100000",
+            "status": "SUSPENDED",
+            "min": "100",
+            "max": "50K"
+        },
+        {
+            "nat": "Free Kick Goal",
+            "bp": "-",
+            "bs": "100000",
+            "status": "SUSPENDED",
+            "min": "100",
+            "max": "50K"
+        },
+        {
+            "nat": "No Goal",
+            "bp": "-",
+            "bs": "100000",
+            "status": "SUSPENDED",
+            "min": "100",
+            "max": "25K"
+        }
+    ]
+}

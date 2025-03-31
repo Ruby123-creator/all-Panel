@@ -1,0 +1,176 @@
+{
+    "success": true,
+    "update": "2025-03-29 20:53:11",
+    "auto": "00",
+    "mid": " 123250329204753",
+    "andar_images": [
+        "10SS",
+        "6DD",
+        "KHH",
+        "8CC",
+        "3DD",
+        "JDD",
+        "9DD",
+        "5CC",
+        "10CC",
+        "7CC",
+        "KCC",
+        "7SS",
+        "AHH",
+        "4CC",
+        "9HH",
+        "9CC",
+        "QDD"
+    ],
+    "bahar_images": [
+        "8HH",
+        "2SS",
+        "JSS",
+        "7HH",
+        "10DD",
+        "2DD",
+        "7DD",
+        "3HH",
+        "4HH",
+        "6HH",
+        "4SS",
+        "ACC",
+        "ADD",
+        "2CC",
+        "JCC",
+        "KSS",
+        "5DD"
+    ],
+    "t1": [
+        {
+            "nat": "ANDAR",
+            "icon": "0",
+            "status": "active"
+        },
+        {
+            "nat": "ANDAR",
+            "icon": "0",
+            "status": "active"
+        },
+        {
+            "nat": "ANDAR",
+            "icon": "3",
+            "status": "active"
+        },
+        {
+            "nat": "ANDAR",
+            "icon": "0",
+            "status": "active"
+        },
+        {
+            "nat": "ANDAR",
+            "icon": "5",
+            "status": "active"
+        },
+        {
+            "nat": "ANDAR",
+            "icon": "6",
+            "status": "active"
+        },
+        {
+            "nat": "ANDAR",
+            "icon": "0",
+            "status": "active"
+        },
+        {
+            "nat": "ANDAR",
+            "icon": "0",
+            "status": "active"
+        },
+        {
+            "nat": "ANDAR",
+            "icon": "9",
+            "status": "active"
+        },
+        {
+            "nat": "ANDAR",
+            "icon": "10",
+            "status": "active"
+        },
+        {
+            "nat": "ANDAR",
+            "icon": "0",
+            "status": "active"
+        },
+        {
+            "nat": "ANDAR",
+            "icon": "12",
+            "status": "active"
+        },
+        {
+            "nat": "ANDAR",
+            "icon": "13",
+            "status": "active"
+        },
+        {
+            "nat": "BAHAR",
+            "icon": "21",
+            "status": "active"
+        },
+        {
+            "nat": "BAHAR",
+            "icon": "22",
+            "status": "active"
+        },
+        {
+            "nat": "BAHAR",
+            "icon": "0",
+            "status": "active"
+        },
+        {
+            "nat": "BAHAR",
+            "icon": "24",
+            "status": "active"
+        },
+        {
+            "nat": "BAHAR",
+            "icon": "0",
+            "status": "active"
+        },
+        {
+            "nat": "BAHAR",
+            "icon": "0",
+            "status": "active"
+        },
+        {
+            "nat": "BAHAR",
+            "icon": "27",
+            "status": "active"
+        },
+        {
+            "nat": "BAHAR",
+            "icon": "28",
+            "status": "active"
+        },
+        {
+            "nat": "BAHAR",
+            "icon": "0",
+            "status": "active"
+        },
+        {
+            "nat": "BAHAR",
+            "icon": "0",
+            "status": "active"
+        },
+        {
+            "nat": "BAHAR",
+            "icon": "31",
+            "status": "active"
+        },
+        {
+            "nat": "BAHAR",
+            "icon": "0",
+            "status": "active"
+        },
+        {
+            "nat": "BAHAR",
+            "icon": "0",
+            "status": "active"
+        }
+    ]
+}

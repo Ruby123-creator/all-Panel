@@ -57,6 +57,18 @@ import Race17 from "../../component/pages/LiveCasino/casinoTables/race17";
 import Race20 from "../../component/pages/LiveCasino/casinoTables/race20";
 import CasinoQueen from "../../component/pages/LiveCasino/casinoTables/casinoQueen";
 import Lotterycard from "../../component/pages/LiveCasino/casinoTables/lotterycard";
+import { BiSolidCricketBall } from "react-icons/bi";
+import { IoMdFootball } from "react-icons/io";
+
+import { IoTennisballSharp } from "react-icons/io5";
+import { GiPokerHand } from "react-icons/gi";
+import { MdSportsTennis } from "react-icons/md";
+import { FaVolleyball } from "react-icons/fa6";
+import { IoBasketballSharp } from "react-icons/io5";
+import { FaTableTennis } from "react-icons/fa";
+import { icons } from "antd/es/image/PreviewGroup";
+import { Carousel } from "antd";
+import Ballbyball from "../../component/pages/LiveCasino/casinoTables/ballbyball";
 
 const renderCards = (players: string[], images: string, div: number) => {
   // Convert the image string into an array
@@ -77,7 +89,7 @@ const renderCards = (players: string[], images: string, div: number) => {
                   <div className="flip-card-inner">
                     <div className="flip-card-front">
                       <img
-                        src={`/assets/images/playingCards/${card}.jpg`}
+                        src={`/assets/images/playingCards/${card.trim()}.jpg`}
                         alt={card}
                       />
                     </div>
@@ -91,7 +103,122 @@ const renderCards = (players: string[], images: string, div: number) => {
     </div>
   );
 };
-
+const pokerCards = (images: string) => {
+  const arr = (images||"").split(",");
+  return (
+    <div className="casino-video-cards">
+      <div className="d-flex flex-wrap justify-content-between">
+        <div>
+          <h5>Player A</h5>
+          <div className="flip-card-container">
+            {
+              ((arr||[]).slice(0,2)||[]).map((val:string)=>{
+                return(
+                  <div className="flip-card">
+                  <div className="flip-card-inner ">
+                    <div className="flip-card-front">
+                      <img src={`/assets/images/playingCards/${val}.jpg`} />
+                    </div>
+                    
+                  </div>
+                </div>
+                )
+              })
+            }
+           
+           
+          </div>
+        </div>
+        <div>
+          <h5>Player B</h5>
+          <div className="flip-card-container justify-content-end">
+          {
+              ((arr||[]).slice(2,4)||[]).map((val:string)=>{
+                return(
+                  <div className="flip-card">
+                  <div className="flip-card-inner ">
+                    <div className="flip-card-front">
+                      <img src={`/assets/images/playingCards/${val}.jpg`} />
+                    </div>
+                    
+                  </div>
+                </div>
+                )
+              })
+            }
+          </div>
+        </div>
+      </div>
+      <div className="mt-1">
+        <h5>Board</h5>
+        <div className="flip-card-container">
+        {
+              ((arr||[]).slice(4)||[]).map((val:string)=>{
+                return(
+                  <div className="flip-card">
+                  <div className="flip-card-inner ">
+                    <div className="flip-card-front">
+                      <img src={`/assets/images/playingCards/${val}.jpg`} />
+                    </div>
+                    
+                  </div>
+                </div>
+                )
+              })
+            }
+        </div>
+      </div>
+    </div>
+  );
+};
+const renderABCards = (andar: [string], bahar: [string]) => {
+  return (
+    <div className="casino-video-cards">
+      <span className="text-white">
+        Next Card Count: <span className="text-warning">53 / Andar</span>
+      </span>
+      <div className="ab-cards-container">
+        <h5>Andar</h5>
+        <div className="ms-4">
+          {/* <button
+              type="button"
+              data-role="none"
+              className="slick-arrow slick-prev"
+              style={{ display: "block" }}
+            >
+              {" "}
+              Previous
+            </button> */}
+          <Carousel dots={false} slidesToShow={3} arrows>
+            {(andar || []).map((src, index) => (
+              <div key={index} style={{ padding: "10px" }}>
+                <img
+                  src={`/assets/images/playingCards/${src}.jpg`}
+                  alt={`Card ${index}`}
+                  style={{ width: "100%", display: "block" }}
+                />
+              </div>
+            ))}
+          </Carousel>
+        </div>
+        <h5>Bahar</h5>
+        <div className="ms-4">
+          <Carousel dots={false} slidesToShow={3} arrows>
+            {(bahar || []).map((src, index) => (
+              <div key={index} style={{ padding: "10px" }}>
+                <img
+                  src={`/assets/images/playingCards/${src}.jpg`}
+                  alt={`Card ${index}`}
+                  style={{ width: "100%", display: "block" }}
+                />
+              </div>
+            ))}
+          </Carousel>
+        </div>
+      </div>
+    </div>
+  );
+};
 const renderBalls = (images: any) => {
   return (
     <div className="casino-video-cards">
@@ -113,34 +240,35 @@ const renderBalls = (images: any) => {
 };
 
 const renderRaceCards = (images: any) => {
-  const cardsImages = (images||"").split(",");
-  const cards = (cardsImages||[]).filter((val:string)=>!((val||"").includes("K")));
-  const cardsNumber = (cards||[]).map((item:string)=>{
-    const  num = (item||"").includes('10') ? 10 : (item||"").charAt(0);
-    if(num === 'J'){
+  const cardsImages = (images || "").split(",");
+  const cards = (cardsImages || []).filter(
+    (val: string) => !(val || "").includes("K")
+  );
+  const cardsNumber = (cards || []).map((item: string) => {
+    const num = (item || "").includes("10") ? 10 : (item || "").charAt(0);
+    if (num === "J") {
       return 11;
-
-    }
-    else if(num === 'Q'){
+    } else if (num === "Q") {
       return 12;
-    }
-    else if(num === 'A'){
+    } else if (num === "A") {
       return 1;
-    }
-    else{
+    } else {
       return Number(num);
     }
-  })
-  console.log(cardsNumber,cards,"RUBY:::::")
-  const totalPoints = (cardsNumber||[]).reduce((sum:number,item:string)=>{
-    return sum + Number(item);
-  },0)
+  });
+  console.log(cardsNumber, cards, "RUBY:::::");
+  const totalPoints = (cardsNumber || []).reduce(
+    (sum: number, item: string) => {
+      return sum + Number(item);
+    },
+    0
+  );
   return (
     <div className="casino-video-cards">
       <div className="race-total-point">
         <div className="text-white">
           <div>Cards</div>
-          <div>{(cards||[]).length}</div>
+          <div>{(cards || []).length}</div>
         </div>
         <div className="text-white">
           <div>Points</div>
@@ -152,23 +280,20 @@ const renderRaceCards = (images: any) => {
           <div className="flip-card">
             <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/icons/spade.png" />
           </div>
-        
-            {
-              (cardsImages||[]).filter((val:string)=>(val||"").includes("SS")).map((item:string,i:number)=>{
-                return(
-                  <div className="flip-card">
+
+          {(cardsImages || [])
+            .filter((val: string) => (val || "").includes("SS"))
+            .map((item: string, i: number) => {
+              return (
+                <div className="flip-card">
                   <div className="flip-card-inner ">
-                  <div className="flip-card-front">
-                    <img src={`/assets/images/playingCards/${item}.jpg`} />
-                  </div>
+                    <div className="flip-card-front">
+                      <img src={`/assets/images/playingCards/${item}.jpg`} />
+                    </div>
                   </div>
                 </div>
-                )
-              })
-            }
-           
-        
-         
+              );
+            })}
         </div>
       </div>
       <div className="mt-1">
@@ -176,19 +301,19 @@ const renderRaceCards = (images: any) => {
           <div className="flip-card">
             <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/icons/heart.png" />
           </div>
-          {
-              (cardsImages||[]).filter((val:string)=>(val||"").includes("HH")).map((item:string,i:number)=>{
-                return(
-                  <div className="flip-card">
+          {(cardsImages || [])
+            .filter((val: string) => (val || "").includes("HH"))
+            .map((item: string, i: number) => {
+              return (
+                <div className="flip-card">
                   <div className="flip-card-inner ">
-                  <div className="flip-card-front">
-                    <img src={`/assets/images/playingCards/${item}.jpg`} />
-                  </div>
+                    <div className="flip-card-front">
+                      <img src={`/assets/images/playingCards/${item}.jpg`} />
+                    </div>
                   </div>
                 </div>
-                )
-              })
-            }
+              );
+            })}
         </div>
       </div>
       <div className="mt-1">
@@ -196,19 +321,19 @@ const renderRaceCards = (images: any) => {
           <div className="flip-card">
             <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/icons/club.png" />
           </div>
-          {
-              (cardsImages||[]).filter((val:string)=>(val||"").includes("CC")).map((item:string,i:number)=>{
-                return(
-                  <div className="flip-card">
+          {(cardsImages || [])
+            .filter((val: string) => (val || "").includes("CC"))
+            .map((item: string, i: number) => {
+              return (
+                <div className="flip-card">
                   <div className="flip-card-inner ">
-                  <div className="flip-card-front">
-                    <img src={`/assets/images/playingCards/${item}.jpg`} />
-                  </div>
+                    <div className="flip-card-front">
+                      <img src={`/assets/images/playingCards/${item}.jpg`} />
+                    </div>
                   </div>
                 </div>
-                )
-              })
-            }
+              );
+            })}
         </div>
       </div>
       <div className="mt-1">
@@ -216,19 +341,19 @@ const renderRaceCards = (images: any) => {
           <div className="flip-card">
             <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/icons/diamond.png" />
           </div>
-          {
-              (cardsImages||[]).filter((val:string)=>(val||"").includes("DD")).map((item:string,i:number)=>{
-                return(
-                  <div className="flip-card">
+          {(cardsImages || [])
+            .filter((val: string) => (val || "").includes("DD"))
+            .map((item: string, i: number) => {
+              return (
+                <div className="flip-card">
                   <div className="flip-card-inner ">
-                  <div className="flip-card-front">
-                    <img src={`/assets/images/playingCards/${item}.jpg`} />
-                  </div>
+                    <div className="flip-card-front">
+                      <img src={`/assets/images/playingCards/${item}.jpg`} />
+                    </div>
                   </div>
                 </div>
-                )
-              })
-            }
+              );
+            })}
         </div>
       </div>
     </div>
@@ -296,7 +421,8 @@ export const renderTable = (val: string | undefined, data?: any) => {
     case "poker":
       return {
         title: "POKER 1-DAY",
-        table: <Poker />,
+        table: <Poker data={data}/>,
+        cardRenders: pokerCards( data?.img ),
       };
     case "patti2":
       return {
@@ -311,12 +437,12 @@ export const renderTable = (val: string | undefined, data?: any) => {
     case "baccarat":
       return {
         title: "BACCARAT",
-        table: <Baccarat />,
+        table: <Baccarat data={data} />,
       };
-    case "baccarat9":
+    case "baccarat2":
       return {
         title: "ONLINE BACCARAT",
-        table: <Baccarat9 />,
+        table: <Baccarat data={data} />,
       };
     case "teen6":
       return {
@@ -391,17 +517,20 @@ export const renderTable = (val: string | undefined, data?: any) => {
     case "ab4":
       return {
         title: "ANDAR BAHAR 150 CARDS",
-        table: <AndarBahar150 />,
+        table: <AndarBahar150 data={data} />,
+        cardRenders: renderABCards(data?.andar_images, data?.bahar_images),
       };
     case "ab3":
       return {
         title: "ANDAR BAHAR 50 CARDS",
-        table: <AndarBahar150 />,
+        table: <AndarBahar150 data={data} />,
+        cardRenders: renderABCards(data?.andar_images, data?.bahar_images),
       };
     case "ab20":
       return {
         title: "ANDAR BAHAR",
-        table: <AndarBahar150 />,
+        table: <AndarBahar150 data={data} />,
+        cardRenders: renderABCards(data?.andar_images, data?.bahar_images),
       };
     case "abj":
       return {
@@ -411,22 +540,25 @@ export const renderTable = (val: string | undefined, data?: any) => {
     case "lucky15":
       return {
         title: "LUCKY 15",
-        table: <Lucky15 />,
+        table: <Ballbyball data={data} />,
       };
     case "lucky7":
       return {
         title: "LUCKY 7-A",
-        table: <Lucky7 />,
+        table: <Lucky7 data={data} />,
+        cardRenders: renderCards([""], data?.img, 1),
       };
     case "lucky7eu":
       return {
         title: "LUCKY 7-B",
-        table: <Lucky7B />,
+        table: <Lucky7 data={data} />,
+        cardRenders: renderCards([""], data?.img, 1),
       };
     case "lucky7eu2":
       return {
         title: "LUCKY7-C CASINO",
-        table: <Lucky7C />,
+        table: <Lucky7 data={data} />,
+        cardRenders: renderCards([""], data?.img, 1),
       };
     case "3cardj":
       return {
@@ -436,7 +568,8 @@ export const renderTable = (val: string | undefined, data?: any) => {
     case "war":
       return {
         title: "CASINO WAR",
-        table: <Casinowar />,
+        table: <Casinowar data={data} />,
+        cardRenders: renderCards([""], data?.C7, 1),
       };
     case "worli":
       return {
@@ -451,7 +584,7 @@ export const renderTable = (val: string | undefined, data?: any) => {
     case "goal":
       return {
         title: "GOAL",
-        table: <Goal />,
+        table: <Goal data={data} />,
       };
     case "superover":
       return {
@@ -467,18 +600,16 @@ export const renderTable = (val: string | undefined, data?: any) => {
     case "superover3":
       return {
         title: "MINI SUPER OVER",
-        table: <SuperOver />,
+        table: <SuperOver data={data} />,
+        cardRenders: renderBalls((data?.img || "").split(",")),
       };
     case "cricketv3":
       return {
         title: "5FIVE CRICKET",
-        table: <SuperOver />,
+        table: <SuperOver data={data} />,
+        cardRenders: renderCards(["", "", "", "", "", "", ""], data?.img, 1),
       };
-    case "cricketv3":
-      return {
-        title: "5FIVE CRICKET",
-        table: <SuperOver />,
-      };
+
     case "cmeter1":
       return {
         title: "1 CARD METER",
@@ -487,27 +618,30 @@ export const renderTable = (val: string | undefined, data?: any) => {
     case "cmeter":
       return {
         title: "CASINO METER",
-        table: <CasinoMeter />,
+        table: <CasinoMeter data={data} />,
       };
     case "cmatch20":
       return {
         title: "CRICKET MATCH 20-20",
-        table: <MatchTable />,
+        table: <MatchTable data={data} />,
+        cardRenders: renderCards([""], data?.img, 1),
       };
     case "btable2":
       return {
         title: "BOLLYWOOD CASINO 2",
-        table: <BollywoodTable />,
+        table: <BollywoodTable data={data} />,
+        cardRenders: renderCards([""], data?.img, 1),
       };
     case "btable":
       return {
         title: "BOLLYWOOD",
-        table: <BollywoodTable />,
+        table: <BollywoodTable data={data} />,
+        cardRenders: renderCards([""], data?.img, 1),
       };
     case "aaa":
       return {
         title: "AMAR AKBAR ANTHONY",
-        table: <BollywoodTable />,
+        table: <BollywoodTable data={data} />,
       };
     case "aaa2":
       return {
@@ -585,7 +719,7 @@ export const renderTable = (val: string | undefined, data?: any) => {
     case "race20":
       return {
         title: "RACE 20",
-        cardRenders: renderRaceCards( data?.img),
+        cardRenders: renderRaceCards(data?.img),
         table: <Race20 data={data} />,
       };
     case "queen":
@@ -612,6 +746,11 @@ export const renderTable = (val: string | undefined, data?: any) => {
         title: "29 BACCARAT",
         table: <Teensin data={data} />,
         cardRenders: renderCards(["PLAYER A", "PLAYER B"], data?.img, 3),
+      };
+    case "ballbyball":
+      return {
+        title: "BALL BY BALL",
+        table: <Ballbyball data={data} />,
       };
     default:
       return {
@@ -660,21 +799,49 @@ export const headerMenu = [
 ];
 
 export const navMenu = [
-  { title: "Cricket", val: "cricket" },
-  { title: "Football", val: "soccer" },
-  { title: "Tennis", val: "tennis" },
-  { title: "Esoccer", val: "soccer" },
-  { title: "Horse Racing", val: "horse_race" },
-  { title: "Greyhound Racing", val: "greyhound/greyhond_race" },
-  { title: "Table Tennis", val: "table-tennis" },
+  { title: "Cricket", val: "cricket", icons: <BiSolidCricketBall size={20} /> },
+  { title: "Football", val: "soccer", icons: <IoMdFootball size={20} /> },
+  { title: "Tennis", val: "tennis", icons: <IoTennisballSharp size={20} /> },
+  { title: "Esoccer", val: "soccer", icons: <IoMdFootball size={20} /> },
+  {
+    title: "Horse Racing",
+    val: "horse_race",
+    icons: <img src="/icons/white-horse.svg" />,
+  },
+  {
+    title: "Greyhound Racing",
+    val: "greyhound/greyhond_race",
+    icons: <img src="/icons/white_greyhound.svg" />,
+  },
+  {
+    title: "Table Tennis",
+    val: "table-tennis",
+    icons: <FaTableTennis size={20} />,
+  },
 
-  { title: "Basketball", val: "/sports-page/basketball" },
-  { title: "Volleyball", val: "/sports-page/volleyball" },
-  { title: "Badminton", val: "/sports-page/badminton" },
-  { title: "Snooker", val: "/sports-page/snooker" },
+  {
+    title: "Basketball",
+    val: "/sports-page/basketball",
+    icons: <IoBasketballSharp size={20} />,
+  },
+  {
+    title: "Volleyball",
+    val: "/sports-page/volleyball",
+    icons: <FaVolleyball size={20} />,
+  },
+  {
+    title: "Badminton",
+    val: "/sports-page/badminton",
+    icons: <MdSportsTennis size={20} />,
+  },
+  {
+    title: "Snooker",
+    val: "/sports-page/snooker",
+    icons: <FaVolleyball size={20} />,
+  },
 
-  { title: "Poker", val: "/poker" },
-  { title: "Lucky 7", val: "/lucky" },
+  { title: "Poker", val: "/poker", icons: <GiPokerHand size={20} /> },
+  { title: "Lucky 7", val: "/lucky", icons: <GiPokerHand size={20} /> },
 ];
 
 export const mobileHeaderMenu = [
@@ -1067,6 +1234,11 @@ export const casinoTypes = {
     },
   ],
   Others: [
+    {
+      img: "/assets/images/casino/img-8.jpg",
+      title: "Ball By Ball",
+      path: "/casino/ballbyball",
+    },
     {
       img: "/assets/images/casino/img-30.jpg",
       title: "SIC BO",

@@ -1,0 +1,147 @@
+{
+    "success": true,
+    "update": "2025-03-28 01:00:52",
+    "auto": "20",
+    "mid": " 107250328010051",
+    "img": "1",
+    "t1": [
+        {
+            "nat": "Low Card",
+            "bp": "2",
+            "status": "active",
+            "sid": "1"
+        },
+        {
+            "nat": "High Card",
+            "bp": "2",
+            "status": "active",
+            "sid": "2"
+        },
+        {
+            "nat": "Even",
+            "bp": "2.1",
+            "status": "active",
+            "sid": "3"
+        },
+        {
+            "nat": "Odd",
+            "bp": "1.79",
+            "status": "active",
+            "sid": "4"
+        },
+        {
+            "nat": "Red",
+            "bp": "1.95",
+            "status": "active",
+            "sid": "5"
+        },
+        {
+            "nat": "Black",
+            "bp": "1.95",
+            "status": "active",
+            "sid": "6"
+        },
+        {
+            "nat": "Line 1",
+            "bp": "4",
+            "status": "active",
+            "sid": "7"
+        },
+        {
+            "nat": "Line 2",
+            "bp": "4",
+            "status": "active",
+            "sid": "8"
+        },
+        {
+            "nat": "Line 3",
+            "bp": "4",
+            "status": "active",
+            "sid": "9"
+        },
+        {
+            "nat": "Line 4",
+            "bp": "4",
+            "status": "active",
+            "sid": "10"
+        },
+        {
+            "nat": "Card 1",
+            "bp": "12",
+            "status": "active",
+            "sid": "11"
+        },
+        {
+            "nat": "Card 2",
+            "bp": "12",
+            "status": "active",
+            "sid": "12"
+        },
+        {
+            "nat": "Card 3",
+            "bp": "12",
+            "status": "active",
+            "sid": "13"
+        },
+        {
+            "nat": "Card 4",
+            "bp": "12",
+            "status": "active",
+            "sid": "14"
+        },
+        {
+            "nat": "Card 5",
+            "bp": "12",
+            "status": "active",
+            "sid": "15"
+        },
+        {
+            "nat": "Card 6",
+            "bp": "12",
+            "status": "active",
+            "sid": "16"
+        },
+        {
+            "nat": "Card 7",
+            "bp": "12",
+            "status": "active",
+            "sid": "17"
+        },
+        {
+            "nat": "Card 8",
+            "bp": "12",
+            "status": "active",
+            "sid": "18"
+        },
+        {
+            "nat": "Card 9",
+            "bp": "12",
+            "status": "active",
+            "sid": "19"
+        },
+        {
+            "nat": "Card 10",
+            "bp": "12",
+            "status": "active",
+            "sid": "20"
+        },
+        {
+            "nat": "Card J",
+            "bp": "12",
+            "status": "active",
+            "sid": "21"
+        },
+        {
+            "nat": "Card Q",
+            "bp": "12",
+            "status": "active",
+            "sid": "22"
+        },
+        {
+            "nat": "Card K",
+            "bp": "12",
+            "status": "active",
+            "sid": "23"
+        }
+    ]
+}
