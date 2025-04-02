@@ -1,0 +1,141 @@
+{
+    "success": true,
+    "update": "2025-04-01 20:02:41",
+    "auto": "02",
+    "mid": "4250401194550",
+    "next_card": "41 / Andar",
+    "andar_images": "9DD,8CC,KHH,3SS,6CC,4SS,JSS,KSS,4HH,10SS,KDD,4CC,8DD,3CC,9CC,6SS,5SS,QDD,10DD,3DD",
+    "bahar_images": "5HH,10HH,QHH,2DD,QSS,KCC,7CC,JCC,ASS,7SS,9HH,5DD,QCC,ACC,4DD,JDD,2CC,5CC,10CC,9SS",
+    "t1": [
+        {
+            "nat": "ANDAR",
+            "icon": "1",
+            "status": "suspended"
+        },
+        {
+            "nat": "ANDAR",
+            "icon": "2",
+            "status": "suspended"
+        },
+        {
+            "nat": "ANDAR",
+            "icon": "3",
+            "status": "suspended"
+        },
+        {
+            "nat": "ANDAR",
+            "icon": "0",
+            "status": "suspended"
+        },
+        {
+            "nat": "ANDAR",
+            "icon": "0",
+            "status": "suspended"
+        },
+        {
+            "nat": "ANDAR",
+            "icon": "6",
+            "status": "suspended"
+        },
+        {
+            "nat": "ANDAR",
+            "icon": "7",
+            "status": "suspended"
+        },
+        {
+            "nat": "ANDAR",
+            "icon": "8",
+            "status": "suspended"
+        },
+        {
+            "nat": "ANDAR",
+            "icon": "0",
+            "status": "suspended"
+        },
+        {
+            "nat": "ANDAR",
+            "icon": "0",
+            "status": "suspended"
+        },
+        {
+            "nat": "ANDAR",
+            "icon": "11",
+            "status": "suspended"
+        },
+        {
+            "nat": "ANDAR",
+            "icon": "0",
+            "status": "suspended"
+        },
+        {
+            "nat": "ANDAR",
+            "icon": "0",
+            "status": "suspended"
+        },
+        {
+            "nat": "BAHAR",
+            "icon": "1",
+            "status": "suspended"
+        },
+        {
+            "nat": "BAHAR",
+            "icon": "2",
+            "status": "suspended"
+        },
+        {
+            "nat": "BAHAR",
+            "icon": "3",
+            "status": "suspended"
+        },
+        {
+            "nat": "BAHAR",
+            "icon": "0",
+            "status": "suspended"
+        },
+        {
+            "nat": "BAHAR",
+            "icon": "0",
+            "status": "suspended"
+        },
+        {
+            "nat": "BAHAR",
+            "icon": "6",
+            "status": "suspended"
+        },
+        {
+            "nat": "BAHAR",
+            "icon": "7",
+            "status": "suspended"
+        },
+        {
+            "nat": "BAHAR",
+            "icon": "8",
+            "status": "suspended"
+        },
+        {
+            "nat": "BAHAR",
+            "icon": "0",
+            "status": "suspended"
+        },
+        {
+            "nat": "BAHAR",
+            "icon": "0",
+            "status": "suspended"
+        },
+        {
+            "nat": "BAHAR",
+            "icon": "11",
+            "status": "suspended"
+        },
+        {
+            "nat": "BAHAR",
+            "icon": "0",
+            "status": "suspended"
+        },
+        {
+            "nat": "BAHAR",
+            "icon": "0",
+            "status": "suspended"
+        }
+    ]
+}

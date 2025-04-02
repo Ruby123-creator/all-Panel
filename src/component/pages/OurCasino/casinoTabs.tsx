@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 const casinoTabs = [
     { name: "All Casino", path: "/live-casino/all-casino" },
@@ -22,12 +22,14 @@ const casinoTabs = [
   ];
 const CasinoTabs = () => {
     const Navigate = useNavigate();
+    const [activeTab , setActiveTab] = useState("All Casino");
   return (
-    <div className="col-xl-2 d-none d-xl-flex">
+    <div className="col-xl-2 d-none d-xl-flex own-casino-page">
     <ul className="nav nav-pills casino-sub-tab">
       {casinoTabs.map((tab, index) => (
-        <li className="nav-item" key={index}>
-          <div className="nav-link"  onClick={()=>{
+        <li className="nav-item " key={index}>
+          <div className={`nav-link ${activeTab === tab?.name ? 'active':''}`}  onClick={()=>{
+            setActiveTab(tab?.name);
 Navigate(`/live-casino/${tab?.name}`)
           }}>
             <span>{tab.name}</span>

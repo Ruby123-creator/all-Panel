@@ -1,0 +1,204 @@
+{
+    "success": true,
+    "update": "2025-04-01 20:10:27",
+    "mid": "118250401200921",
+    "auto": "00",
+    "img": "10CC,9HH",
+    "t1": [
+        {
+            "nat": "Dragon",
+            "bp": "0",
+            "lp": "0",
+            "status": "suspended",
+            "sid": 1
+        },
+        {
+            "nat": "Tiger",
+            "bp": "0",
+            "lp": "0",
+            "status": "suspended",
+            "sid": 2
+        },
+        {
+            "nat": "Pair",
+            "bp": 12,
+            "lp": 0,
+            "status": "suspended",
+            "sid": "27"
+        }
+    ],
+    "t3": [
+        {
+            "nat": "Dragon Even",
+            "bp": "0",
+            "bp1": "0",
+            "status": "suspended",
+            "sid": 3
+        },
+        {
+            "nat": "Dragon Odd",
+            "bp": "0",
+            "bp1": "0",
+            "status": "suspended",
+            "sid": 4
+        },
+        {
+            "nat": "Tiger Even",
+            "bp": "0",
+            "bp1": "0",
+            "status": "suspended",
+            "sid": 5
+        },
+        {
+            "nat": "Tiger Odd",
+            "bp": "0",
+            "bp1": "0",
+            "status": "suspended",
+            "sid": 6
+        }
+    ],
+    "t4": [
+        {
+            "nat": "Dragon Red",
+            "bp": "0",
+            "bp1": "0",
+            "status": "suspended",
+            "sid": 7
+        },
+        {
+            "nat": "Dragon Black",
+            "bp": "0",
+            "bp1": "0",
+            "status": "suspended",
+            "sid": 8
+        },
+        {
+            "nat": "Tiger Red",
+            "bp": "0",
+            "bp1": "0",
+            "status": "suspended",
+            "sid": 9
+        },
+        {
+            "nat": "Tiger Black",
+            "bp": "0",
+            "bp1": "0",
+            "status": "suspended",
+            "sid": 10
+        }
+    ],
+    "t5": [
+        {
+            "nat": "Dragon Red",
+            "bp": "0",
+            "bp1": "0",
+            "status": "suspended",
+            "sid": 11
+        },
+        {
+            "nat": "Dragon Black",
+            "bp": "0",
+            "bp1": "0",
+            "status": "suspended",
+            "sid": 12
+        },
+        {
+            "nat": "Tiger Red",
+            "bp": "0",
+            "bp1": "0",
+            "status": "suspended",
+            "sid": 13
+        },
+        {
+            "nat": "Tiger Black",
+            "bp": "0",
+            "bp1": "0",
+            "status": "suspended",
+            "sid": 14
+        },
+        {
+            "nat": "Dragon Red",
+            "bp": "0",
+            "bp1": "0",
+            "status": "suspended",
+            "sid": 15
+        },
+        {
+            "nat": "Dragon Black",
+            "bp": "0",
+            "bp1": "0",
+            "status": "suspended",
+            "sid": 16
+        },
+        {
+            "nat": "Tiger Red",
+            "bp": "0",
+            "bp1": "0",
+            "status": "suspended",
+            "sid": 17
+        },
+        {
+            "nat": "Tiger Black",
+            "bp": "0",
+            "bp1": "0",
+            "status": "suspended",
+            "sid": 18
+        },
+        {
+            "nat": "Dragon Red",
+            "bp": "0",
+            "bp1": "0",
+            "status": "suspended",
+            "sid": 19
+        },
+        {
+            "nat": "Dragon Black",
+            "bp": "0",
+            "bp1": "0",
+            "status": "suspended",
+            "sid": 20
+        },
+        {
+            "nat": "Tiger Red",
+            "bp": "0",
+            "bp1": "0",
+            "status": "suspended",
+            "sid": 21
+        },
+        {
+            "nat": "Tiger Black",
+            "bp": "0",
+            "bp1": "0",
+            "status": "suspended",
+            "sid": 22
+        },
+        {
+            "nat": "Dragon Red",
+            "bp": "0",
+            "bp1": "0",
+            "status": "suspended",
+            "sid": 23
+        },
+        {
+            "nat": "Dragon Black",
+            "bp": "0",
+            "bp1": "0",
+            "status": "suspended",
+            "sid": 24
+        },
+        {
+            "nat": "Tiger Red",
+            "bp": "0",
+            "bp1": "0",
+            "status": "suspended",
+            "sid": 25
+        },
+        {
+            "nat": "Tiger Black",
+            "bp": "0",
+            "bp1": "0",
+            "status": "suspended",
+            "sid": 26
+        }
+    ]
+}

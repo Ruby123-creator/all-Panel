@@ -6,27 +6,31 @@ interface Props{
 }
 const EditStack: React.FC<Props> = ({edit}) => {
   const {stacks,setStacks} = useUI();
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
+    const updatedStacks = stacks.map((item: any, i: number) => (i === index ? Number(e.target.value) : item));
+    setStacks(updatedStacks);
+  };
   return (
-   <div className="grid grid-cols-3 gap-2">
-    {
-      stacks.map((val:any,i:number)=>{
-        return(
-          <div className="bg-bg_StakeInput"                   key={"stackAmount"+i}
->
-            {
-               edit ? <input onChange={(e)=>{
-                  let updatedStacks = stacks.map((item:any,index:number)=> index === i ? Number(e.target.value):item)
-                  setStacks(updatedStacks);
-
-               }} className="block w-full focus:outline-none  rounded py-1.5 bg-bg_StakeInput text-center text-[12px] text-text_Ternary  font-lato border  border-ternary2 focus:border-success shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]" autoComplete="off" type="number" value={val}/> : <div className="rounded py-1.5 px-2 bg-bg_StakeInput flex justify-center items-center text-[12px] text-text_Ternary  font-lato  border border-ternary2 focus:border-success shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">{val}</div>
-            }
+    <div className="container p-2 d-flex flex-wrap gap-2" style={{ maxWidth: "400px" }}>
+      {stacks.map((val: any, i: number) => (
+        <div key={"stackAmount" + i} className="d-flex align-items-center" style={{width:"20%"}}>
+          {edit ? (
+            <input
+              type="number"
+              value={val}
+              onChange={(e) => handleInputChange(e, i)}
+              autoComplete="off"
+              className="form-control rounded-1"
+            />
+          ) : (
+            <div className="p-2 w-100 text-center border rounded bg-white">{val}</div>
+          )}
+        </div>
+      ))}
+      {edit && (
+        <button className="btn btn-primary w-100">Save Changes</button>
+      )}
     </div>
-        )
-      })
-    }
-   
-    
-   </div>
   );
 };
 

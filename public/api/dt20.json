@@ -1,0 +1,241 @@
+{
+    "success": true,
+    "update": "2025-04-01 20:08:06",
+    "auto": "00",
+    "mid": "116250401200712",
+    "img": "6CC,6HH",
+    "t1": [
+        {
+            "nat": "Dragon",
+            "bp": "2",
+            "status": "suspended",
+            "sid": "1"
+        },
+        {
+            "nat": "Tie",
+            "bp": "15",
+            "status": "suspended",
+            "sid": "2"
+        },
+        {
+            "nat": "Tiger",
+            "bp": "2",
+            "status": "suspended",
+            "sid": "3"
+        },
+        {
+            "nat": "Pair",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "4"
+        }
+    ],
+    "t2": [
+        {
+            "nat": "Dragon Even",
+            "bp": "2.1",
+            "status": "suspended",
+            "sid": "5"
+        },
+        {
+            "nat": "Dragon Odd",
+            "bp": "1.79",
+            "status": "suspended",
+            "sid": "6"
+        },
+        {
+            "nat": "Dragon Red",
+            "bp": "1.95",
+            "status": "suspended",
+            "sid": "7"
+        },
+        {
+            "nat": "Dragon Black",
+            "bp": "1.95",
+            "status": "suspended",
+            "sid": "8"
+        },
+        {
+            "nat": "Tiger Even",
+            "bp": "2.1",
+            "status": "suspended",
+            "sid": "9"
+        },
+        {
+            "nat": "Tiger Odd",
+            "bp": "1.79",
+            "status": "suspended",
+            "sid": "10"
+        },
+        {
+            "nat": "Tiger Red",
+            "bp": "1.95",
+            "status": "suspended",
+            "sid": "11"
+        },
+        {
+            "nat": "Tiger Black",
+            "bp": "1.95",
+            "status": "suspended",
+            "sid": "12"
+        }
+    ],
+    "t3": [
+        {
+            "nat": "Dragon Card 1",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "13"
+        },
+        {
+            "nat": "Dragon Card 2",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "14"
+        },
+        {
+            "nat": "Dragon Card 3",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "15"
+        },
+        {
+            "nat": "Dragon Card 4",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "16"
+        },
+        {
+            "nat": "Dragon Card 5",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "17"
+        },
+        {
+            "nat": "Dragon Card 6",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "18"
+        },
+        {
+            "nat": "Dragon Card 7",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "19"
+        },
+        {
+            "nat": "Dragon Card 8",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "20"
+        },
+        {
+            "nat": "Dragon Card 9",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "21"
+        },
+        {
+            "nat": "Dragon Card 10",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "22"
+        },
+        {
+            "nat": "Dragon Card 11",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "23"
+        },
+        {
+            "nat": "Dragon Card 12",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "24"
+        },
+        {
+            "nat": "Dragon Card 13",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "25"
+        },
+        {
+            "nat": "Tiger Card 1",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "26"
+        },
+        {
+            "nat": "Tiger Card 2",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "27"
+        },
+        {
+            "nat": "Tiger Card 3",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "28"
+        },
+        {
+            "nat": "Tiger Card 4",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "29"
+        },
+        {
+            "nat": "Tiger Card 5",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "30"
+        },
+        {
+            "nat": "Tiger Card 6",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "31"
+        },
+        {
+            "nat": "Tiger Card 7",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "32"
+        },
+        {
+            "nat": "Tiger Card 8",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "33"
+        },
+        {
+            "nat": "Tiger Card 9",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "34"
+        },
+        {
+            "nat": "Tiger Card 10",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "35"
+        },
+        {
+            "nat": "Tiger Card 11",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "36"
+        },
+        {
+            "nat": "Tiger Card 12",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "37"
+        },
+        {
+            "nat": "Tiger Card 13",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "38"
+        }
+    ]
+}

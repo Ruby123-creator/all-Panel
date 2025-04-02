@@ -1,0 +1,333 @@
+{
+    "success": true,
+    "update": "2025-04-01 20:07:20",
+    "auto": "02",
+    "mid": " 119250401200658",
+    "img": "1,1,1",
+    "t1": [
+        {
+            "nat": "Winner D",
+            "bp": "2.94",
+            "status": "suspended",
+            "sid": "1"
+        },
+        {
+            "nat": "Winner T",
+            "bp": "2.94",
+            "status": "suspended",
+            "sid": "2"
+        },
+        {
+            "nat": "Winner L",
+            "bp": "2.94",
+            "status": "suspended",
+            "sid": "3"
+        },
+        {
+            "nat": "Black D",
+            "bp": "1.97",
+            "status": "suspended",
+            "sid": "4"
+        },
+        {
+            "nat": "Black T",
+            "bp": "1.97",
+            "status": "suspended",
+            "sid": "5"
+        },
+        {
+            "nat": "Black L",
+            "bp": "1.97",
+            "status": "suspended",
+            "sid": "6"
+        },
+        {
+            "nat": "Red D",
+            "bp": "1.97",
+            "status": "suspended",
+            "sid": "7"
+        },
+        {
+            "nat": "Red T",
+            "bp": "1.97",
+            "status": "suspended",
+            "sid": "8"
+        },
+        {
+            "nat": "Red L",
+            "bp": "1.97",
+            "status": "suspended",
+            "sid": "9"
+        },
+        {
+            "nat": "Odd D",
+            "bp": "1.83",
+            "status": "suspended",
+            "sid": "10"
+        },
+        {
+            "nat": "Odd T",
+            "bp": "1.83",
+            "status": "suspended",
+            "sid": "11"
+        },
+        {
+            "nat": "Odd L",
+            "bp": "1.83",
+            "status": "suspended",
+            "sid": "12"
+        },
+        {
+            "nat": "Even D",
+            "bp": "2.12",
+            "status": "suspended",
+            "sid": "13"
+        },
+        {
+            "nat": "Even T",
+            "bp": "2.12",
+            "status": "suspended",
+            "sid": "14"
+        },
+        {
+            "nat": "Even L",
+            "bp": "2.12",
+            "status": "suspended",
+            "sid": "15"
+        },
+        {
+            "nat": "Dragon A",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "16"
+        },
+        {
+            "nat": "Tiger A",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "17"
+        },
+        {
+            "nat": "Lion A",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "18"
+        },
+        {
+            "nat": "Dragon 2",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "19"
+        },
+        {
+            "nat": "Tiger 2",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "20"
+        },
+        {
+            "nat": "Lion 2",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "21"
+        },
+        {
+            "nat": "Dragon 3",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "22"
+        },
+        {
+            "nat": "Tiger 3",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "23"
+        },
+        {
+            "nat": "Lion 3",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "24"
+        },
+        {
+            "nat": "Dragon 4",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "25"
+        },
+        {
+            "nat": "Tiger 4",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "26"
+        },
+        {
+            "nat": "Lion 4",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "27"
+        },
+        {
+            "nat": "Dragon 5",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "28"
+        },
+        {
+            "nat": "Tiger 5",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "29"
+        },
+        {
+            "nat": "Lion 5",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "30"
+        },
+        {
+            "nat": "Dragon 6",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "31"
+        },
+        {
+            "nat": "Tiger 6",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "32"
+        },
+        {
+            "nat": "Lion 6",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "33"
+        },
+        {
+            "nat": "Dragon 7",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "34"
+        },
+        {
+            "nat": "Tiger 7",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "35"
+        },
+        {
+            "nat": "Lion 7",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "36"
+        },
+        {
+            "nat": "Dragon 8",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "37"
+        },
+        {
+            "nat": "Tiger 8",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "38"
+        },
+        {
+            "nat": "Lion 8",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "39"
+        },
+        {
+            "nat": "Dragon 9",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "40"
+        },
+        {
+            "nat": "Tiger 9",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "41"
+        },
+        {
+            "nat": "Lion 9",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "42"
+        },
+        {
+            "nat": "Dragon 10",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "43"
+        },
+        {
+            "nat": "Tiger 10",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "44"
+        },
+        {
+            "nat": "Lion 10",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "45"
+        },
+        {
+            "nat": "Dragon J",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "46"
+        },
+        {
+            "nat": "Tiger J",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "47"
+        },
+        {
+            "nat": "Lion J",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "48"
+        },
+        {
+            "nat": "Dragon Q",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "49"
+        },
+        {
+            "nat": "Tiger Q",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "50"
+        },
+        {
+            "nat": "Lion Q",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "51"
+        },
+        {
+            "nat": "Dragon K",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "52"
+        },
+        {
+            "nat": "Tiger K",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "53"
+        },
+        {
+            "nat": "Lion K",
+            "bp": "12",
+            "status": "suspended",
+            "sid": "54"
+        }
+    ]
+}

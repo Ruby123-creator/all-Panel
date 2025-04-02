@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 
 import CasinoResultModal from "../../modals/resultModal";
 import { renderTable } from "../../../Framework/utils/static";
+import ScorecardBoard from "./scorecard";
 const suspendedData = {
   success: true,
   update: "2025-03-25 23:47:07",
@@ -207,41 +208,7 @@ const LiveCasino = () => {
             </div>
           </div>
           {
-            (val === "superover" || val === "cricketv3" || val === "superover3") ? <div className="scorecard mb-1">
-            <div className="row">
-              <div className="col-12 col-md-6">
-                <p className="team-1 row">
-                  <span className="team-name col-3">ENG</span>
-                  <span className="score col-4 text-end">9-2 (0.4)</span>
-                  <span className="team-name col-5">
-                    <span>CRR 13.50 </span>
-                  </span>
-                </p>
-                <p className="team-1 row mt-2">
-                  <span className="team-name col-3">RSA</span>
-                  <span className="score col-4 text-end">0-0 (0.0)</span>
-                  <span className="team-name col-5"></span>
-                </p>
-              </div>
-              <div className="col-12 col-md-6">
-                <div className="row">
-                  <div className="col-12">
-                    <div className="text-xl-end"></div>
-                    <div className="row">
-                      <div className="col-12">
-                        <p className="text-xl-end ball-by-ball mt-2">
-                          <span className="ball-runs six">6</span>
-                          <span className="ball-runs">3</span>
-                          <span className="ball-runs">W</span>
-                          <span className="ball-runs">W</span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>:""
+            (val === "superover" || val === "cricketv3" || val === "superover3") ? <ScorecardBoard/>:""
           }
           
           <div>

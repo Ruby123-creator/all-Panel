@@ -93,9 +93,9 @@ const AppHeader = () => {
                     <Link to="/casino-report">
                       <li className="dropdown-item">Casino Results</li>
                     </Link>
-                    <Link to="/profile/set-button-values">
+                    {/* <Link to="/profile/set-button-values">
                       <li className="dropdown-item">Set Button Values</li>
-                    </Link>
+                    </Link> */}
                     <div className="dropdown-item" onClick={()=>{
                       logOut(userData?.UserName)
                     }}>SignOut</div>

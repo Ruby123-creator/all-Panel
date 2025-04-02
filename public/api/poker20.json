@@ -1,0 +1,117 @@
+{
+    "success": true,
+    "update": "2025-04-01 20:06:37",
+    "auto": "00",
+    "mid": " 109250401200550",
+    "img": "6DD,6HH,1,1,1,1,1,1,1",
+    "t1": [
+        {
+            "nat": "Winner A",
+            "bp": "0",
+            "status": "suspended",
+            "sid": "1"
+        },
+        {
+            "nat": "One Pair A",
+            "bp": "0",
+            "status": "suspended",
+            "sid": "2"
+        },
+        {
+            "nat": "Two Pair A",
+            "bp": "0",
+            "status": "suspended",
+            "sid": "3"
+        },
+        {
+            "nat": "Three of a Kind A",
+            "bp": "0",
+            "status": "suspended",
+            "sid": "4"
+        },
+        {
+            "nat": "Straight A",
+            "bp": "0",
+            "status": "suspended",
+            "sid": "5"
+        },
+        {
+            "nat": "Flush A",
+            "bp": "0",
+            "status": "suspended",
+            "sid": "6"
+        },
+        {
+            "nat": "Full House A",
+            "bp": "0",
+            "status": "suspended",
+            "sid": "7"
+        },
+        {
+            "nat": "Four of a Kind A",
+            "bp": "0",
+            "status": "suspended",
+            "sid": "8"
+        },
+        {
+            "nat": "Straight Flush A",
+            "bp": "0",
+            "status": "suspended",
+            "sid": "9"
+        },
+        {
+            "nat": "Winner B",
+            "bp": "0",
+            "status": "suspended",
+            "sid": "10"
+        },
+        {
+            "nat": "One Pair B",
+            "bp": "0",
+            "status": "suspended",
+            "sid": "11"
+        },
+        {
+            "nat": "Two Pair B",
+            "bp": "0",
+            "status": "suspended",
+            "sid": "12"
+        },
+        {
+            "nat": "Three of a Kind B",
+            "bp": "0",
+            "status": "suspended",
+            "sid": "13"
+        },
+        {
+            "nat": "Straight B",
+            "bp": "0",
+            "status": "suspended",
+            "sid": "14"
+        },
+        {
+            "nat": "Flush B",
+            "bp": "0",
+            "status": "suspended",
+            "sid": "15"
+        },
+        {
+            "nat": "Full House B",
+            "bp": "0",
+            "status": "suspended",
+            "sid": "16"
+        },
+        {
+            "nat": "Four of a Kind B",
+            "bp": "0",
+            "status": "suspended",
+            "sid": "17"
+        },
+        {
+            "nat": "Straight Flush B",
+            "bp": "0",
+            "status": "suspended",
+            "sid": "18"
+        }
+    ]
+}

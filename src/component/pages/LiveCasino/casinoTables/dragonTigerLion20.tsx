@@ -1,8 +1,59 @@
 import React from "react";
 
-const DragonTigerLion20 = () => {
+interface Props{
+  data?:any;
+}
+const reduceData = (data:any)=>{
+  const groupedData = data.reduce((acc:any, item:any) => {
+    // Extract category and type (e.g., "Straight" and "Tiger")
+    const [category, type] = item.nat.split(" ");
+
+    // Find or create the object for this category
+    let obj = (acc||[]).find((o: { natname: any; }) => o.natname === category);
+    if (!obj) {
+        obj = { natname: category };
+        acc.push(obj);
+    }
+
+    // Assign values dynamically
+    obj[`${type.toLowerCase()}bp`] = item.bp;
+    obj[`${type.toLowerCase()}status`] = item.status;
+
+    return acc;
+}, []);
+return groupedData;
+}
+const reduceData1 = (data:any)=>{
+  const groupedData = data.reduce((acc:any, item:any) => {
+    // Extract category and type (e.g., "Straight" and "Tiger")
+    const [type, category] = item.nat.split(" ");
+
+    // Find or create the object for this category
+    let obj = (acc||[]).find((o: { natname: any; }) => o.natname === category);
+    if (!obj) {
+        obj = { natname: category };
+        acc.push(obj);
+    }
+
+    // Assign values dynamically
+    obj[`${type.toLowerCase()}bp`] = item.bp;
+    obj[`${type.toLowerCase()}status`] = item.status;
+
+    return acc;
+}, []);
+return groupedData;
+}
+const DragonTigerLion20 :React.FC<Props> = ({data}) => {
+  console.log(data,"CHECK");
+  const playerInfo = data?.t1 || [];
+ 
+  
+    const players = reduceData(playerInfo.slice(0,15));
+    const cards = reduceData1(playerInfo.slice(15));
+    console.log(players,cards,"CHECK:::::::::::::::::::::::::::")
+
   return (
-    <div className="casino-table">
+    <div className="casino-table dtl20">
       <div className="casino-table-box d-none d-md-flex">
         <div className="casino-table-left-box">
           <div className="casino-table-header">
@@ -12,156 +63,52 @@ const DragonTigerLion20 = () => {
             <div className="casino-odds-box back">Lion</div>
           </div>
           <div className="casino-table-body">
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">Winner</div>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-            </div>
-            <div className="casino-table-row">
+            {
+              (players||[]).map((item:any,i:number)=>{
+                return(
+                  <div className="casino-table-row">
+                  <div className="casino-nation-detail">
+                    <div className="casino-nation-name">{item?.natname}</div>
+                  </div>
+                  <div className={`casino-odds-box back ${item?.dstatus === 'suspended' ? 'suspended-box':''}`}>
+                    <span className="casino-odds">{item?.dbp}</span>
+                  </div>
+                  <div className={`casino-odds-box back ${item?.tstatus === 'suspended' ? 'suspended-box':''}`}>
+
+                    <span className="casino-odds">{item?.tbp}</span>
+                  </div>
+                  <div className={`casino-odds-box back ${item?.lstatus === 'suspended' ? 'suspended-box':''}`}>
+                    <span className="casino-odds">{item?.lbp}</span>
+                  </div>
+                </div>
+                )
+              })
+            }
+           {
+            (cards||[]).slice(0,4).map((item:any,i:number)=>{
+              return(
+<div className="casino-table-row">
               <div className="casino-nation-detail">
                 <div className="casino-nation-name">
-                  Black
-                  <span className="card-icon ms-1">
-                    <span className="card-black "></span>
-                  </span>
-                  <span className="card-icon ms-1">
-                    <span className="card-black ">]</span>
-                  </span>
+                  <img src={`/assets/images/AB_Images/${i+1}.jpg`} />
                 </div>
               </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
+              <div className={`casino-odds-box back ${item?.dragonstatus === 'suspended' ? 'suspended-box':''}`}>
+              <span className="casino-odds">{item?.dragonbp}</span>
               </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
+              <div className={`casino-odds-box back ${item?.tigerstatus === 'suspended' ? 'suspended-box':''}`}>
+              <span className="casino-odds">{item?.tigerbp}</span>
               </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-            </div>
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">
-                  Red
-                  <span className="card-icon ms-1">
-                    <span className="card-red "></span>
-                  </span>
-                  <span className="card-icon ms-1">
-                    <span className="card-red ">[</span>
-                  </span>
-                </div>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
+              <div className={`casino-odds-box back ${item?.lionstatus === 'suspended' ? 'suspended-box':''}`}>
+              <span className="casino-odds">{item?.lionbp}</span>
               </div>
             </div>
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">Odd</div>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-            </div>
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">Even</div>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-            </div>
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">
-                  <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/A.png" />
-                </div>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-            </div>
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">
-                  <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/2.png" />
-                </div>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-            </div>
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">
-                  <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/3.png" />
-                </div>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-            </div>
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">
-                  <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/4.png" />
-                </div>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-            </div>
+              )
+            })
+           }
+           
+            
+          
           </div>
         </div>
         <div className="casino-table-right-box">
@@ -172,150 +119,29 @@ const DragonTigerLion20 = () => {
             <div className="casino-odds-box back">Lion</div>
           </div>
           <div className="casino-table-body">
-            <div className="casino-table-row">
+          {
+            (cards||[]).slice(4).map((item:any,i:number)=>{
+              return(
+<div className="casino-table-row">
               <div className="casino-nation-detail">
                 <div className="casino-nation-name">
-                  <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/5.png" />
+                  <img src={`/assets/images/AB_Images/${i+5}.jpg`} />
                 </div>
               </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
+              <div className={`casino-odds-box back ${item?.dragonstatus === 'suspended' ? 'suspended-box':''}`}>
+              <span className="casino-odds">{item?.dragonbp}</span>
               </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
+              <div className={`casino-odds-box back ${item?.tigerstatus === 'suspended' ? 'suspended-box':''}`}>
+              <span className="casino-odds">{item?.tigerbp}</span>
               </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-            </div>
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">
-                  <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/6.png" />
-                </div>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
+              <div className={`casino-odds-box back ${item?.lionstatus === 'suspended' ? 'suspended-box':''}`}>
+              <span className="casino-odds">{item?.lionbp}</span>
               </div>
             </div>
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">
-                  <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/7.png" />
-                </div>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-            </div>
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">
-                  <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/8.png" />
-                </div>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-            </div>
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">
-                  <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/9.png" />
-                </div>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-            </div>
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">
-                  <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/10.png" />
-                </div>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-            </div>
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">
-                  <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/J.png" />
-                </div>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-            </div>
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">
-                  <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/Q.png" />
-                </div>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-            </div>
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">
-                  <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/K.png" />
-                </div>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-            </div>
+              )
+            })
+           }
+          
           </div>
         </div>
       </div>

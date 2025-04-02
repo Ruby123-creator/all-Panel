@@ -1,0 +1,37 @@
+{
+    "img": "",
+    "success": true,
+    "update": "2025-04-01 20:05:55",
+    "auto": "17",
+    "mid": " 113250401200544",
+    "t1": [
+        {
+            "nat": "Player 8",
+            "bp": "12.2",
+            "lp": "13.7",
+            "status": "active",
+            "sid": "1"
+        },
+        {
+            "nat": "Player 9",
+            "bp": "5.95",
+            "lp": "6.45",
+            "status": "active",
+            "sid": "2"
+        },
+        {
+            "nat": "Player 10",
+            "bp": "3.2",
+            "lp": "3.45",
+            "status": "active",
+            "sid": "3"
+        },
+        {
+            "nat": "Player 11",
+            "bp": "2.08",
+            "lp": "2.18",
+            "status": "active",
+            "sid": "4"
+        }
+    ]
+}

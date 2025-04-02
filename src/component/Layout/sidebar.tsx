@@ -3,6 +3,7 @@ import sidebarAllSports from "../../Framework/utils/sidebarallsports.json";
 import sidebarOthers from "../../Framework/utils/sidebarothers.json";
 import { FaAngleDown } from "react-icons/fa";
 import { FaAngleUp } from "react-icons/fa";
+import { title } from "process";
 
 interface SidebarItem {
   name: string;
@@ -20,6 +21,29 @@ interface Category {
   icon: string;
   subcategories: SubCategory[];
 }
+
+const sidebarMenu = [{
+  title:"Lottery",
+  url:"/casino-lobby/lottery"
+},
+{
+  title:"Sports",
+  url:"/home"
+},{
+  title:"Our Casino",
+  url:"/live-casino/All Casino"
+},{
+  title:"Live Casino",
+  url:"/casino-lobby/casino"
+},{
+  title:"Slots",
+  url:"/casino-lobby/slot-games"
+},{
+  title:"Fantasy",
+  url:"/casino-lobby/crash"
+},
+
+]
 
 const Sidebar: React.FC = () => {
   const [showOverlay, setShowOverlay] = useState<boolean>(false);
@@ -229,36 +253,19 @@ const Sidebar: React.FC = () => {
         </div>
       </div>
       <ul className="nav nav-tabs d-xl-none menu-tabs">
-        <li className="nav-item">
-          <a className="nav-link" href="/sports-book/33">
-            Lottery
-          </a>
-        </li>
-        <li className="nav-item">
-          <a aria-current="page" className="nav-link active" href="/home">
-            Sports
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="/casino-list">
-            Our Casino
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="/live-casino-list">
-            Live Casino
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="/slot-list">
-            Slots
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="/fantasy-list">
-            Fantasy
-          </a>
-        </li>
+        {
+          (sidebarMenu||[]).map((item:any,i:number)=>{
+            return(
+              <li className="nav-item">
+              <a className="nav-link" href={item?.url}>
+                {item?.title}
+              </a>
+            </li>
+            )
+          })
+        }
+       
+      
       </ul>
     </>
   );

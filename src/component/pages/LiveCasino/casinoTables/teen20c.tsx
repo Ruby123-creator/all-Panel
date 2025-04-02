@@ -42,8 +42,16 @@ const Teen20C : React.FC<Props> = ({data}) => {
                   return(
                     <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
                     <div>
-                <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/icons/spade.png" />
-                <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/icons/club.png" />
+                      {
+                        (item?.nat||"").includes('Red') ? <>
+                        <img src="/assets/images/playingCards/heart.png" />
+                        <img src="/assets/images/playingCards/diamond.png" />
+                        </>:<>
+                        <img src="/assets/images/playingCards/spade.png" />
+                        <img src="/assets/images/playingCards/club.png" />
+                        </>
+                      }
+                
               </div>
               <div>
                 <span className="casino-odds">{item?.bp}</span>
@@ -84,13 +92,22 @@ const Teen20C : React.FC<Props> = ({data}) => {
         </div>
         <div className="teenpatti20-other-oods d-md-none">
           <div className="casino-table-right-box">
+
           {
                 (playerInfo||[]).slice(10,12).map((item:any,i:number)=>{
                   return(
                     <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
                     <div>
-                <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/icons/spade.png" />
-                <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/icons/club.png" />
+                      {
+                        (item?.nat||"").includes('Red') ? <>
+                        <img src="/assets/images/playingCards/heart.png" />
+                        <img src="/assets/images/playingCards/diamond.png" />
+                        </>:<>
+                        <img src="/assets/images/playingCards/spade.png" />
+                        <img src="/assets/images/playingCards/club.png" />
+                        </>
+                      }
+                
               </div>
               <div>
                 <span className="casino-odds">{item?.bp}</span>
@@ -110,8 +127,16 @@ const Teen20C : React.FC<Props> = ({data}) => {
                   return(
                     <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
                     <div>
-                <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/icons/spade.png" />
-                <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/icons/club.png" />
+                      {
+                        (item?.nat||"").includes('Red') ? <>
+                        <img src="/assets/images/playingCards/heart.png" />
+                        <img src="/assets/images/playingCards/diamond.png" />
+                        </>:<>
+                        <img src="/assets/images/playingCards/spade.png" />
+                        <img src="/assets/images/playingCards/club.png" />
+                        </>
+                      }
+                
               </div>
               <div>
                 <span className="casino-odds">{item?.bp}</span>
@@ -128,8 +153,16 @@ const Teen20C : React.FC<Props> = ({data}) => {
                   return(
                     <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
                     <div>
-                <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/icons/spade.png" />
-                <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/icons/club.png" />
+                      {
+                        (item?.nat||"").includes('Red') ? <>
+                        <img src="/assets/images/playingCards/heart.png" />
+                        <img src="/assets/images/playingCards/diamond.png" />
+                        </>:<>
+                        <img src="/assets/images/playingCards/spade.png" />
+                        <img src="/assets/images/playingCards/club.png" />
+                        </>
+                      }
+                
               </div>
               <div>
                 <span className="casino-odds">{item?.bp}</span>

@@ -1,8 +1,12 @@
 import React from "react";
-
-const Card32eu = () => {
+interface Props{
+  data?:any
+}
+const Card32eu:React.FC<Props> = ({data}) => {
+  console.log(data,"CHECK");
+  const playersInfo = (data?.t1||[])
   return (
-    <div className="casino-table">
+    <div className="casino-table cards32b">
       <div className="casino-table-box">
         <div className="casino-table-left-box">
           <div className="casino-table-header">
@@ -11,50 +15,26 @@ const Card32eu = () => {
             <div className="casino-odds-box lay">Lay</div>
           </div>
           <div className="casino-table-body">
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">Player 8</div>
-              </div>
-              <div className="casino-odds-box back">
-                <span className="casino-odds">12.2</span>
-              </div>
-              <div className="casino-odds-box lay">
-                <span className="casino-odds">13.7</span>
-              </div>
-            </div>
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">Player 9</div>
-              </div>
-              <div className="casino-odds-box back">
-                <span className="casino-odds">5.95</span>
-              </div>
-              <div className="casino-odds-box lay">
-                <span className="casino-odds">6.45</span>
-              </div>
-            </div>
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">Player 10</div>
-              </div>
-              <div className="casino-odds-box back">
-                <span className="casino-odds">3.2</span>
-              </div>
-              <div className="casino-odds-box lay">
-                <span className="casino-odds">3.45</span>
-              </div>
-            </div>
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">Player 11</div>
-              </div>
-              <div className="casino-odds-box back">
-                <span className="casino-odds">2.08</span>
-              </div>
-              <div className="casino-odds-box lay">
-                <span className="casino-odds">2.18</span>
-              </div>
-            </div>
+            {
+              (playersInfo||[]).slice(0,4).map((item:any,i:number)=>{
+                return(
+                  <div className="casino-table-row">
+                  <div className="casino-nation-detail">
+                    <div className="casino-nation-name">{item?.nat}</div>
+                  </div>
+                  <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box': ''}`}>
+                    <span className="casino-odds">{item?.bp}</span>
+                  </div>
+                  <div className={`casino-odds-box lay ${item?.status === "suspended" ? 'suspended-box': ''}`}>
+
+                    <span className="casino-odds">{item?.lay}</span>
+                  </div>
+                </div>
+                )
+              })
+            }
+          
+           
           </div>
         </div>
         <div className="casino-table-box-divider"></div>
@@ -65,50 +45,24 @@ const Card32eu = () => {
             <div className="casino-odds-box back">Even</div>
           </div>
           <div className="casino-table-body">
-            <div className="casino-table-row ">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">Player 8</div>
-              </div>
-              <div className="casino-odds-box back">
-                <span className="casino-odds">1.97</span>
-              </div>
-              <div className="casino-odds-box back">
-                <span className="casino-odds">1.97</span>
-              </div>
-            </div>
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">Player 9</div>
-              </div>
-              <div className="casino-odds-box back">
-                <span className="casino-odds">1.97</span>
-              </div>
-              <div className="casino-odds-box back">
-                <span className="casino-odds">1.97</span>
-              </div>
-            </div>
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">Player 10</div>
-              </div>
-              <div className="casino-odds-box back">
-                <span className="casino-odds">1.97</span>
-              </div>
-              <div className="casino-odds-box back">
-                <span className="casino-odds">1.97</span>
-              </div>
-            </div>
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">Player 11</div>
-              </div>
-              <div className="casino-odds-box back">
-                <span className="casino-odds">1.97</span>
-              </div>
-              <div className="casino-odds-box back">
-                <span className="casino-odds">1.97</span>
-              </div>
-            </div>
+          {
+              (playersInfo||[]).slice(4,8).map((item:any,i:number)=>{
+                return(
+                  <div className="casino-table-row">
+                  <div className="casino-nation-detail">
+                    <div className="casino-nation-name">{item?.nat}</div>
+                  </div>
+                  <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box': ''}`}>
+                    <span className="casino-odds">{item?.bp}</span>
+                  </div>
+                  <div className={`casino-odds-box lay ${item?.status === "suspended" ? 'suspended-box': ''}`}>
+
+                    <span className="casino-odds">{item?.lay}</span>
+                  </div>
+                </div>
+                )
+              })
+            }
           </div>
         </div>
       </div>
@@ -120,39 +74,26 @@ const Card32eu = () => {
             <div className="casino-odds-box lay">Lay</div>
           </div>
           <div className="casino-table-body">
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">Any 3 Card Black</div>
-              </div>
-              <div className="casino-odds-box back">
-                <span className="casino-odds">3.25</span>
-              </div>
-              <div className="casino-odds-box lay">
-                <span className="casino-odds">3.45</span>
-              </div>
-            </div>
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">Any 3 Card Red</div>
-              </div>
-              <div className="casino-odds-box back">
-                <span className="casino-odds">3.25</span>
-              </div>
-              <div className="casino-odds-box lay">
-                <span className="casino-odds">3.45</span>
-              </div>
-            </div>
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">Two Black Two Red</div>
-              </div>
-              <div className="casino-odds-box back">
-                <span className="casino-odds">2.44</span>
-              </div>
-              <div className="casino-odds-box lay">
-                <span className="casino-odds">2.54</span>
-              </div>
-            </div>
+            {
+              (playersInfo||[]).slice(8,11).map((item:any,i:number)=>{
+                return(
+                  <div className="casino-table-row">
+                  <div className="casino-nation-detail">
+                    <div className="casino-nation-name">{item?.nat}</div>
+                  </div>
+                  <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box': ''}`}>
+                    <span className="casino-odds">{item?.bp}</span>
+                  </div>
+                  <div className={`casino-odds-box lay ${item?.status === "suspended" ? 'suspended-box': ''}`}>
+
+                    <span className="casino-odds">{item?.lay}</span>
+                  </div>
+                </div>
+                )
+              })
+            }
+           
+           
           </div>
         </div>
         <div className="casino-table-box-divider"></div>
@@ -162,22 +103,24 @@ const Card32eu = () => {
             <div className="casino-odds-box back">Back</div>
           </div>
           <div className="casino-table-body">
-            <div className="casino-table-row ">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">8 &amp; 9 Total</div>
-              </div>
-              <div className="casino-odds-box back">
-                <span className="casino-odds">1.97</span>
-              </div>
-            </div>
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">10 &amp; 11 Total</div>
-              </div>
-              <div className="casino-odds-box back">
-                <span className="casino-odds">1.97</span>
-              </div>
-            </div>
+          {
+              (playersInfo||[]).slice(11).map((item:any,i:number)=>{
+                return(
+                  <div className="casino-table-row">
+                  <div className="casino-nation-detail">
+                    <div className="casino-nation-name">{item?.nat}</div>
+                  </div>
+                  <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box': ''}`}>
+                    <span className="casino-odds">{item?.bp}</span>
+                  </div>
+                  <div className={`casino-odds-box lay ${item?.status === "suspended" ? 'suspended-box': ''}`}>
+
+                    <span className="casino-odds">{item?.lay}</span>
+                  </div>
+                </div>
+                )
+              })
+            }
           </div>
         </div>
       </div>
@@ -186,36 +129,17 @@ const Card32eu = () => {
           <b>9.5</b>
         </h4>
         <div className="card32numbers-container">
-          <div className="casino-odds-box back">
-            <span className="casino-odds">1</span>
-          </div>
-          <div className="casino-odds-box back">
-            <span className="casino-odds">2</span>
-          </div>
-          <div className="casino-odds-box back">
-            <span className="casino-odds">3</span>
-          </div>
-          <div className="casino-odds-box back">
-            <span className="casino-odds">4</span>
-          </div>
-          <div className="casino-odds-box back">
-            <span className="casino-odds">5</span>
-          </div>
-          <div className="casino-odds-box back">
-            <span className="casino-odds">6</span>
-          </div>
-          <div className="casino-odds-box back">
-            <span className="casino-odds">7</span>
-          </div>
-          <div className="casino-odds-box back">
-            <span className="casino-odds">8</span>
-          </div>
-          <div className="casino-odds-box back">
-            <span className="casino-odds">9</span>
-          </div>
-          <div className="casino-odds-box back">
-            <span className="casino-odds">0</span>
-          </div>
+          {
+          [1,2,3,4,5,6,7,8,9,0].map((val,i)=>{
+            return(
+              <div className="casino-odds-box back">
+              <span className="casino-odds">{val}</span>
+            </div>
+            )
+          })
+
+          }
+        
         </div>
       </div>
     </div>

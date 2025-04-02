@@ -1,8 +1,15 @@
 import React from "react";
-
-const OnedayDragonTiger = () => {
+interface Props{
+  data?:any;
+}
+const OnedayDragonTiger :React.FC<Props> = ({data}) => {
+  console.log(data,"CHECK");
+  const table1 = data?.t1;
+  const table2 = data?.t3;
+  const table3 = data?.t4;
+  const table4 = data?.t5;
   return (
-    <div className="casino-table">
+    <div className="casino-table dt1day">
       <div className="casino-table-box">
         <div className="casino-table-left-box">
           <div className="casino-table-header">
@@ -11,35 +18,40 @@ const OnedayDragonTiger = () => {
             <div className="casino-odds-box lay">Lay</div>
           </div>
           <div className="casino-table-body">
-            <div className="casino-table-row ">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">Dragon</div>
+            {
+              (table1).slice(0,2).map((item:any,i:number)=>{
+                return(
+                  <div className="casino-table-row ">
+                <div className="casino-nation-detail">
+                  <div className="casino-nation-name">{item?.nat}</div>
+                </div>
+                <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
+                  <span className="casino-odds">{item?.bp}</span>
+                </div>
+                <div className={`casino-odds-box lay ${item?.status === "suspended" ? 'suspended-box':''}`}>
+
+                  <span className="casino-odds">{item?.lp}</span>
+                </div>
               </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box lay suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-            </div>
-            <div className="casino-table-row">
-              <div className="casino-nation-detail">
-                <div className="casino-nation-name">Tiger</div>
-              </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-              <div className="casino-odds-box lay suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
-            </div>
+                )
+              })
+            }
+           
+           
           </div>
         </div>
         <div className="casino-table-right-box dtpair">
-          <div className="casino-odds text-center">0</div>
-          <div className="casino-odds-box back casino-odds-box-theme suspended-box">
-            <span className="casino-odds">Pair</span>
+          {
+            (table1).slice(2).map((item:any,i:number)=>{
+              return<>
+              <div className="casino-odds text-center">{item?.bp}</div>
+          <div className={`casino-odds-box back casino-odds-box-theme ${item?.status === "suspended" ? 'suspended-box':''}`}>
+            <span className="casino-odds">{item?.nat}</span>
           </div>
+              </>
+            })
+          }
+          
         </div>
       </div>
       <div className="casino-table-box mt-3">
@@ -54,23 +66,39 @@ const OnedayDragonTiger = () => {
               <div className="casino-nation-detail">
                 <div className="casino-nation-name">Dragon</div>
               </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
+              
+                  {
+                    (table2).slice(0,2).map((item:any,i:number)=>{
+                      return(
+                       <>
+                <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
+                <span className="casino-odds">{item?.bp}</span>
               </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
+             
+                       </>
+                      )
+                    })
+                  }
+              
+             
             </div>
             <div className="casino-table-row">
               <div className="casino-nation-detail">
                 <div className="casino-nation-name">Tiger</div>
               </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
+             
+              {
+                    (table2).slice(2).map((item:any,i:number)=>{
+                      return(
+                       <>
+                <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
+                <span className="casino-odds">{item?.bp}</span>
               </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
+             
+                       </>
+                      )
+                    })
+                  }
             </div>
           </div>
         </div>
@@ -79,21 +107,13 @@ const OnedayDragonTiger = () => {
             <div className="casino-nation-detail"></div>
             <div className="casino-odds-box back">
               <span>Red</span>
-              <span className="card-icon ms-1">
-                <span className="card-red "></span>
-              </span>
-              <span className="card-icon ms-1">
-                <span className="card-red "></span>
-              </span>
+              <img src="/assets/images/playingCards/heart.png" width={15}/>
+              <img src="/assets/images/playingCards/diamond.png" width={15}/>
             </div>
             <div className="casino-odds-box back">
               <span>Black</span>
-              <span className="card-icon ms-1">
-                <span className="card-black "></span>
-              </span>
-              <span className="card-icon ms-1">
-                <span className="card-black "></span>
-              </span>
+              <img src="/assets/images/playingCards/club.png" width={15}/>
+              <img src="/assets/images/playingCards/spade.png" width={15}/>
             </div>
           </div>
           <div className="casino-table-body">
@@ -101,23 +121,36 @@ const OnedayDragonTiger = () => {
               <div className="casino-nation-detail">
                 <div className="casino-nation-name">Dragon</div>
               </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
+
+              {
+                    (table3).slice(0,2).map((item:any,i:number)=>{
+                      return(
+                       <>
+                <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
+                <span className="casino-odds">{item?.bp}</span>
               </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
+             
+                       </>
+                      )
+                    })
+                  }
             </div>
             <div className="casino-table-row">
               <div className="casino-nation-detail">
                 <div className="casino-nation-name">Tiger</div>
               </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
+              {
+                    (table3).slice(2).map((item:any,i:number)=>{
+                      return(
+                       <>
+                <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
+                <span className="casino-odds">{item?.bp}</span>
               </div>
-              <div className="casino-odds-box back suspended-box">
-                <span className="casino-odds">0</span>
-              </div>
+             
+                       </>
+                      )
+                    })
+                  }
             </div>
           </div>
         </div>

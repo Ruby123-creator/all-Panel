@@ -2177,6 +2177,9 @@
     .casino-list {
       padding: 0 4px;
     }
+    .iframe-wrapper{
+      position: relative;
+    }
   }
   
   @media only screen and (min-width: 1200px) and (max-width: 1399px) {
@@ -2906,6 +2909,7 @@
     .main-container .casino-title-header-mobile .nav-tabs {
       width: auto;
     }
+    
   }
   @media only screen and (max-height: 750px) and (max-width: 767px) {
     .board-cell {

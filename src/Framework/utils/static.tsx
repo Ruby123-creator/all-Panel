@@ -69,6 +69,7 @@ import { FaTableTennis } from "react-icons/fa";
 import { icons } from "antd/es/image/PreviewGroup";
 import { Carousel } from "antd";
 import Ballbyball from "../../component/pages/LiveCasino/casinoTables/ballbyball";
+import Bollywood from "../../component/pages/LiveCasino/casinoTables/bollywood";
 
 const renderCards = (players: string[], images: string, div: number) => {
   // Convert the image string into an array
@@ -406,12 +407,16 @@ export const renderTable = (val: string | undefined, data?: any) => {
     case "teen20":
       return {
         title: "TEENPATTI 20-20",
-        table: <Teen9 />,
+        table: <Teen20C data={data}/>,
+        cardRenders: renderCards(["PLAYER A", "PLAYER B"], data?.img, 3),
+
       };
     case "teen8":
       return {
         title: "OPEN TEENPATTI",
-        table: <Teen8 />,
+        table: <Teen8 data={data}/>,
+        cardRenders: renderCards(["DEALER"], data?.img, 3),
+
       };
     case "poker6":
       return {
@@ -427,7 +432,9 @@ export const renderTable = (val: string | undefined, data?: any) => {
     case "patti2":
       return {
         title: "2 CARDS TEENPATTI",
-        table: <Patti2 />,
+        table: <Patti2 data={data}/>,
+        cardRenders: renderCards(["",""], data?.img, 2),
+
       };
     case "ourroullete":
       return {
@@ -482,37 +489,49 @@ export const renderTable = (val: string | undefined, data?: any) => {
     case "poker20":
       return {
         title: "POKER 6 PLAYER",
-        table: <Poker20 />,
+        table: <Poker20 data={data}/>,
+        cardRenders: pokerCards( data?.img ),
       };
     case "dt20":
       return {
         title: "20-20 DRAGON TIGER",
-        table: <Dragontiger20 />,
+        table: <Dragontiger20 data={data}/>,
+        cardRenders: renderCards([""], data?.img, 2),
+
       };
     case "dt202":
       return {
         title: "20-20 DARGON TIGER 2",
-        table: <Dragontiger202 />,
+        table: <Dragontiger20 data={data}/>,
+        cardRenders: renderCards([""], data?.img, 2),
       };
     case "dt6":
       return {
         title: "1-DAY DRAGON TIGER",
-        table: <OnedayDragonTiger />,
+        table: <OnedayDragonTiger data={data}/>,
+        cardRenders: renderCards([""], data?.img, 2),
+
       };
     case "dtl20":
       return {
         title: "20-20 DRAGON TIGER LION",
-        table: <DragonTigerLion20 />,
+        table: <DragonTigerLion20 data={data}/>,
+        cardRenders: renderCards([""], data?.img, 3),
+
       };
     case "card32":
       return {
         title: "32 CARDS-A",
-        table: <Card32 />,
+        table: <Card32 data={data}/>,
+        cardRenders: renderCards(["PLAYER 8","PLAYER 9","PLAYER 10","PLAYER 11"], data?.img, 4),
+
       };
     case "card32eu":
       return {
         title: "32 CARDS-B",
-        table: <Card32eu />,
+        table: <Card32eu data={data}/>,
+        cardRenders: renderCards(["PLAYER 8","PLAYER 9","PLAYER 10","PLAYER 11"], data?.img, 4),
+
       };
     case "ab4":
       return {
@@ -563,7 +582,9 @@ export const renderTable = (val: string | undefined, data?: any) => {
     case "3cardj":
       return {
         title: "3 CARDS JUDGEMENT",
-        table: <Cardjudgement />,
+        table: <Cardjudgement data={data}/>,
+        cardRenders: renderCards([""], data?.img, 3),
+
       };
     case "war":
       return {
@@ -595,7 +616,7 @@ export const renderTable = (val: string | undefined, data?: any) => {
     case "superover2":
       return {
         title: "SUPER OVER2",
-        table: <SuperOver />,
+        table: <SuperOver data={data}/>,
       };
     case "superover3":
       return {
@@ -641,12 +662,15 @@ export const renderTable = (val: string | undefined, data?: any) => {
     case "aaa":
       return {
         title: "AMAR AKBAR ANTHONY",
-        table: <BollywoodTable data={data} />,
-      };
+        table: <Bollywood data={data} />,
+        cardRenders: renderCards([""], data?.C1, 1),
+  };
     case "aaa2":
       return {
         title: "AMAR AKBAR ANTHONY 2.0",
-        table: <BollywoodTable />,
+        table: <Bollywood data={data}/>,
+        cardRenders: renderCards([""], data?.C1, 1),
+
       };
     case "teen1":
       return {
@@ -1505,12 +1529,12 @@ export const casinoTypes = {
     {
       img: "/assets/images/casino/img-46.jpg",
       title: "POKER 6 PLAYER",
-      path: "/casino/poker20",
+      path: "/casino/poker6",
     },
     {
       img: "/assets/images/casino/img-47.jpg",
       title: "POKER 20-20",
-      path: "/casino/poker6",
+      path: "/casino/poker20",
     },
   ],
   Roulette: [

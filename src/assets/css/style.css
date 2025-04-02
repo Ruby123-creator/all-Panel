@@ -4242,6 +4242,8 @@ tr {
 .casino-list {
   display: flex;
   flex-wrap: wrap;
+  gap: 10;
+  padding: 10px;
 }
 
 .casino-list-item {
@@ -14795,7 +14797,14 @@ padding: 8px;
   background: #285e9494;
   color: white;
 }
-
+.stack-btns{
+  background-color: var(--bg-body) !important;
+     font-size: 14px;
+     text-align: center;
+   
+    padding: 5px 0;
+   
+}
 .live-casino-list .nav-link-active {
   background: #285e9494;
   color: white;

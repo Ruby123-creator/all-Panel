@@ -5,7 +5,7 @@ interface Props{
 const SuperOver : React.FC<Props> = ({data}) => {
   console.log(data,"CHECK")
   return (
-    <div className="casino-detail detail-page-container position-relative">
+    <div className="casino-detail detail-page-container position-relative super-over super-over2">
       {
         (data?.bookmaker||[])?.length ? <div className="game-market market-2 ">
         <div className="market-title">

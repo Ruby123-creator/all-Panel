@@ -1,11 +1,63 @@
-import React from 'react'
+import React from "react";
 
-const Cardjudgement = () => {
-  return (
-    <div className="casino-table"><div className="threecardjbox back"><div className="threecard-title">Yes<div className="casino-odds"></div></div><div className="threecardj-cards"><h4 className="text-center w-100 mb-2"><b>1.78</b></h4><div className="card-odd-box"><div className=""><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/andar-bahar-cards/1.jpg"/></div></div><div className="card-odd-box"><div className=""><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/andar-bahar-cards/2.jpg"/></div></div><div className="card-odd-box"><div className=""><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/andar-bahar-cards/3.jpg"/></div></div><div className="card-odd-box"><div className=""><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/andar-bahar-cards/4.jpg"/></div></div><div className="card-odd-box"><div className=""><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/andar-bahar-cards/5.jpg"/></div></div><div className="card-odd-box"><div className=""><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/andar-bahar-cards/6.jpg"/></div></div><div className="card-odd-box"><div className=""><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/andar-bahar-cards/7.jpg"/></div></div><div className="card-odd-box"><div className=""><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/andar-bahar-cards/8.jpg"/></div></div><div className="card-odd-box"><div className=""><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/andar-bahar-cards/9.jpg"/></div></div><div className="card-odd-box"><div className=""><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/andar-bahar-cards/10.jpg"/></div></div><div className="card-odd-box"><div className=""><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/andar-bahar-cards/11.jpg"/></div></div><div className="card-odd-box"><div className=""><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/andar-bahar-cards/12.jpg"/></div></div><div className="card-odd-box"><div className=""><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/andar-bahar-cards/13.jpg"/></div></div></div></div><div className="threecardjbox lay"><div className="threecard-title">No<div className="casino-odds"></div></div><div className="threecardj-cards"><h4 className="text-center w-100 mb-2"><b>1.84</b></h4><div className="card-odd-box"><div className=""><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/andar-bahar-cards/1.jpg"/></div></div><div className="card-odd-box"><div className=""><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/andar-bahar-cards/2.jpg"/></div></div><div className="card-odd-box"><div className=""><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/andar-bahar-cards/3.jpg"/></div></div><div className="card-odd-box"><div className=""><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/andar-bahar-cards/4.jpg"/></div></div><div className="card-odd-box"><div className=""><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/andar-bahar-cards/5.jpg"/></div></div><div className="card-odd-box"><div className=""><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/andar-bahar-cards/6.jpg"/></div></div><div className="card-odd-box"><div className=""><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/andar-bahar-cards/7.jpg"/></div></div><div className="card-odd-box"><div className=""><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/andar-bahar-cards/8.jpg"/></div></div><div className="card-odd-box"><div className=""><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/andar-bahar-cards/9.jpg"/></div></div><div className="card-odd-box"><div className=""><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/andar-bahar-cards/10.jpg"/></div></div><div className="card-odd-box"><div className=""><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/andar-bahar-cards/11.jpg"/></div></div><div className="card-odd-box"><div className=""><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/andar-bahar-cards/12.jpg"/></div></div><div className="card-odd-box"><div className=""><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/andar-bahar-cards/13.jpg"/></div></div></div></div><div className="casino-remark mt-1">
-        {/* <marquee scrollamount="3">Select any 3 card and you will win if you will get at least 1 card from the 3 cards you have selected.|Select any 3 card and you will win If you do not get any card from the 3 cards you have selected.</marquee> */}
-        </div></div>
-  )
+interface Props{
+  data?:any
 }
+const Cardjudgement : React.FC<Props> = ({data}) => {
+  console.log(data,"CHECK")
+  const cardsInfo = data?.t1
+  const [yesCard,noCard] = cardsInfo;
+  return (
+    <div className="casino-table threecardj">
+      <div className={`threecardjbox back ${yesCard?.gstatus ? '' : 'suspended-box'}`}>
+        <div className="threecard-title">
+          Yes<div className="casino-odds"></div>
+        </div>
+        <div className="threecardj-cards">
+          <h4 className="text-center w-100 mb-2">
+            <b>{yesCard?.rate}</b>
+          </h4>
+          {
+            [1,2,3,4,5,6,7,8,9,10,11,12,13].map((val,i)=>{
+              return(
+                <div className="card-odd-box">
+                <div className="">
+                  <img src={`/assets/images/AB_Images/${val}.jpg`} />
+                </div>
+              </div>
+              )
+            })
+          }
+         
+        
+        </div>
+      </div>
+      <div className={`threecardjbox lay ${yesCard?.gstatus ? '' : 'suspended-box'}`}>
+        <div className="threecard-title">
+          No<div className="casino-odds"></div>
+        </div>
+        <div className="threecardj-cards">
+          <h4 className="text-center w-100 mb-2">
+            <b>{noCard?.rate}</b>
+          </h4>
+          {
+            [1,2,3,4,5,6,7,8,9,10,11,12,13].map((val,i)=>{
+              return(
+                <div className="card-odd-box">
+                <div className="">
+                  <img src={`/assets/images/AB_Images/${val}.jpg`} />
+                </div>
+              </div>
+              )
+            })
+          }
+        </div>
+      </div>
+      <div className="casino-remark mt-1">
+        {/* <marquee scrollamount="3">Select any 3 card and you will win if you will get at least 1 card from the 3 cards you have selected.|Select any 3 card and you will win If you do not get any card from the 3 cards you have selected.</marquee> */}
+      </div>
+    </div>
+  );
+};
 
-export default Cardjudgement
+export default Cardjudgement;

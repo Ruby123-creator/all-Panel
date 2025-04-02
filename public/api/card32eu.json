@@ -1,0 +1,156 @@
+{
+    "img": "",
+    "success": true,
+    "update": "2025-04-01 20:05:14",
+    "auto": "14",
+    "mid": " 114250401200455",
+    "t1": [
+        {
+            "nat": "Player 8",
+            "bp": "12.2",
+            "lay": "13.7",
+            "status": "active",
+            "sid": 1
+        },
+        {
+            "nat": "Player 9",
+            "bp": "5.95",
+            "lay": "6.45",
+            "status": "active",
+            "sid": 2
+        },
+        {
+            "nat": "Player 10",
+            "bp": "3.2",
+            "lay": "3.45",
+            "status": "active",
+            "sid": 3
+        },
+        {
+            "nat": "Player 11",
+            "bp": "2.08",
+            "lay": "2.18",
+            "status": "active",
+            "sid": 4
+        },
+        {
+            "nat": "Player 8",
+            "bp": "1.97",
+            "bp1": "1.97",
+            "status": "active",
+            "sid": 5
+        },
+        {
+            "nat": "Player 9",
+            "bp": "1.97",
+            "bp1": "1.97",
+            "status": "active",
+            "sid": 6
+        },
+        {
+            "nat": "Player 10",
+            "bp": "1.97",
+            "bp1": "1.97",
+            "status": "active",
+            "sid": 7
+        },
+        {
+            "nat": "Player 11",
+            "bp": "1.97",
+            "bp1": "1.97",
+            "status": "active",
+            "sid": 8
+        },
+        {
+            "nat": "Any 3 Card Black",
+            "bp": "3.25",
+            "lay": "3.45",
+            "status": "active",
+            "sid": 9
+        },
+        {
+            "nat": "Any 3 Card Red",
+            "bp": "3.25",
+            "lay": "3.45",
+            "status": "active",
+            "sid": 10
+        },
+        {
+            "nat": "Two Black Two Red",
+            "bp": "2.44",
+            "lay": "2.54",
+            "status": "active",
+            "sid": 11
+        },
+        {
+            "nat": "8 & 9 Total",
+            "bp": "1.97",
+            "bp1": "1.97",
+            "status": "active",
+            "sid": 12
+        },
+        {
+            "nat": "10 & 11 Total",
+            "bp": "1.97",
+            "bp1": "1.97",
+            "status": "active",
+            "sid": 13
+        }
+    ],
+    "t2": [
+        {
+            "nat": "Single 1",
+            "bp": "9.5",
+            "status": "active",
+            "sid": "15"
+        },
+        {
+            "nat": "Single 2",
+            "bp": "9.5",
+            "status": "active",
+            "sid": "16"
+        },
+        {
+            "nat": "Single 3",
+            "bp": "9.5",
+            "status": "active",
+            "sid": "17"
+        },
+        {
+            "nat": "Single 4",
+            "bp": "9.5",
+            "status": "active",
+            "sid": "18"
+        },
+        {
+            "nat": "Single 5",
+            "bp": "9.5",
+            "status": "active",
+            "sid": "19"
+        },
+        {
+            "nat": "Single 6",
+            "bp": "9.5",
+            "status": "active",
+            "sid": "20"
+        },
+        {
+            "nat": "Single 7",
+            "bp": "9.5",
+            "status": "active",
+            "sid": "21"
+        },
+        {
+            "nat": "Single 8",
+            "bp": "9.5",
+            "status": "active",
+            "sid": "22"
+        },
+        {
+            "nat": "Single 9",
+            "bp": "9.5",
+            "status": "active",
+            "sid": "23"
+        }
+    ]
+}
