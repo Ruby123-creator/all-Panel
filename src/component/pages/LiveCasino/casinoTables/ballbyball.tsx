@@ -1,9 +1,13 @@
 import React from "react";
+import { useUI } from "../../../../context/ui.context";
+import { useBetting } from "../../../../context/bettingContext";
 interface Props{
     data?:any
 }
 const Ballbyball :React.FC<Props> = ({data}) => {
     console.log(data,"CHECK")
+    const {setCasinoBetOdds,casinoOdds} = useBetting();
+
     const tableInfo = data?.t1;
   return (
     <div className="casino-detail detail-page-container position-relative ball-by-ball">
@@ -47,7 +51,15 @@ const Ballbyball :React.FC<Props> = ({data}) => {
                   <span className="market-nation-name pointer">{item?.nat}</span>
                 </div>
                 <div className=" blb-box ">
-                  <div className={`market-odd-box back ${item?.status === "SUSPENDED" ?"suspended-row":""}`}>
+                  <div  onClick={(e)=>{
+              e.preventDefault();
+              e.stopPropagation();
+              setCasinoBetOdds({...casinoOdds, odds:item?.bp,size:item?.bs,  runnerName:`${item?.nat}`,type:"back",
+               className:"back",
+               eventKey:'t1',
+                // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+              })
+            }} className={`market-odd-box back ${item?.status === "SUSPENDED" ?"suspended-row":""}`}>
                     <span className="market-odd">{item?.bp}</span>
                     <span className="market-volume">{item?.bs}</span>
                   </div>

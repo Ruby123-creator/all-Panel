@@ -43,7 +43,7 @@ const Home: React.FC = () => {
             </div>
               </div>
              
-            <EventModal/>
+            {/* <EventModal/> */}
     </>
    
   );

@@ -1,11 +1,15 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { useUI } from "../../../../context/ui.context";
+import { useBetting } from "../../../../context/bettingContext";
 
 interface Props{
   data?:any
 }
 
 const Baccarat:React.FC<Props> = ({data}) => {
+  const {setCasinoBetOdds,casinoOdds} = useBetting();
+
   const {val} = useParams();
   console.log(data,"CHECK")
   const statics = data?.t1;
@@ -446,7 +450,14 @@ const Baccarat:React.FC<Props> = ({data}) => {
               (statics||[]).slice(0,val === "baccarat2" ? 5 :4).map((item:any,i:number)=>{
                 return(
 <div className="baccarat-other-odd-box-container">
-              <div className={`baccarat-other-odd-box ${item?.status === "SUSPENDED" ? "suspended-box" :""}`}>
+              <div onClick={(e)=>{
+              e.preventDefault();
+              e.stopPropagation();
+              setCasinoBetOdds({...casinoOdds, odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+               className:"back",eventKey:'t1'
+                // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+              })
+            }} className={`baccarat-other-odd-box ${item?.status === "SUSPENDED" ? "suspended-box" :""}`}>
                 <span>{item?.nat}</span>
                 <span>{item?.bp}:1</span>
               </div>
@@ -460,14 +471,30 @@ const Baccarat:React.FC<Props> = ({data}) => {
           </div>
           <div className="baccarat-main-odds mt-3">
             <div className="player-pair-box-container">
-              <div className={`player-pair-box ${playerPair?.status === "SUSPENDED" ? 'suspended-box' :''}`}>
+              <div onClick={(e)=>{
+              e.preventDefault();
+              e.stopPropagation();
+              setCasinoBetOdds({...casinoOdds, odds:playerPair?.bp,  runnerName:`${playerPair?.nat}`,type:"back",
+               className:"back",eventKey:'t1',
+                // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+              })
+            }} className={`player-pair-box ${playerPair?.status === "SUSPENDED" ? 'suspended-box' :''}`}>
                 <div>Player Pair</div>
                 <div>{playerPair?.bp}:1</div>
               </div>
               <div className="casino-nation-book text-center"></div>
             </div>
             <div className="player-box-container">
-              <div className={`player-box ${player?.status === "SUSPENDED" ? 'suspended-box' :''}`}>
+              <div
+              onClick={(e)=>{
+                e.preventDefault();
+                e.stopPropagation();
+                setCasinoBetOdds({...casinoOdds, odds:player?.bp,  runnerName:`${player?.nat}`,type:"back",
+                 className:"back",eventKey:'t1',
+                  // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                })
+              }}
+              className={`player-box ${player?.status === "SUSPENDED" ? 'suspended-box' :''}`}>
                 <div>Player</div>
                 <div>{player?.bp}:1</div>
                 <div>
@@ -485,14 +512,28 @@ const Baccarat:React.FC<Props> = ({data}) => {
               <div className="casino-nation-book text-center"></div>
             </div>
             <div className="tie-box-container">
-              <div className={`tie-box ${tie?.status === "SUSPENDED" ? 'suspended-box' :''}`}>
+              <div onClick={(e)=>{
+              e.preventDefault();
+              e.stopPropagation();
+              setCasinoBetOdds({...casinoOdds, odds:tie?.bp,  runnerName:`${tie?.nat}`,type:"back",
+               className:"back",eventKey:'t1',
+                // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+              })
+            }} className={`tie-box ${tie?.status === "SUSPENDED" ? 'suspended-box' :''}`}>
                 <div>Tie</div>
                 <div>{tie?.bp}:1</div>
               </div>
               <div className="casino-nation-book text-center"></div>
             </div>
             <div className="banker-box-container">
-              <div className={`banker-box ${banker?.status === "SUSPENDED" ? 'suspended-box' :''}`}>
+              <div  onClick={(e)=>{
+              e.preventDefault();
+              e.stopPropagation();
+              setCasinoBetOdds({...casinoOdds, odds:banker?.bp,  runnerName:`${banker?.nat}`,type:"back",
+               className:"back",eventKey:'t1',
+                // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+              })
+            }} className={`banker-box ${banker?.status === "SUSPENDED" ? 'suspended-box' :''}`}>
                 <div>Banker</div>
                 <div>{banker?.bp}:1</div>
                 <div>
@@ -510,7 +551,14 @@ const Baccarat:React.FC<Props> = ({data}) => {
               <div className="casino-nation-book text-center"></div>
             </div>
             <div className="banker-pair-box-container">
-              <div className={`banker-pair-box ${bankerPair?.status === "SUSPENDED" ? 'suspended-box' :''}`}>
+              <div  onClick={(e)=>{
+              e.preventDefault();
+              e.stopPropagation();
+              setCasinoBetOdds({...casinoOdds, odds:bankerPair?.bp,  runnerName:`${bankerPair?.nat}`,type:"back",
+               className:"back",eventKey:'t1',
+                // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+              })
+            }} className={`banker-pair-box ${bankerPair?.status === "SUSPENDED" ? 'suspended-box' :''}`}>
                 <div>Banker Pair</div>
                 <div>{bankerPair?.bp}:1</div>
               </div>

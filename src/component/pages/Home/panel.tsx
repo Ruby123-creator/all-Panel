@@ -24,7 +24,7 @@ const PanelComp: React.FC = () => {
     if (a?.inPlay !== "True" && b?.inPlay === "True") return 1;
     return 0;
   });
-  console.log(activeNav, events, "navbar");
+  console.log(sportsName, events, "navbar");
 
  
 
@@ -58,7 +58,7 @@ const PanelComp: React.FC = () => {
                     <div className={`bet-nation-game-name ${item?.inPlay === "True" ? "pointer":""}`} onClick={()=>{
                                                    if(item?.inPlay === "True"){
 
-                                                    naviagte(`/event-page/${activeNav?.val}/${item?.gameId}`);
+                                                    naviagte(`/event-page/${sportsName || activeNav?.val}/${item?.gameId}`);
                                                    }
                                                    
                                                 }}>

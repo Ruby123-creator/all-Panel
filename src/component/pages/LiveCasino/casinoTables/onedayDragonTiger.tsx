@@ -1,9 +1,12 @@
 import React from "react";
+import { useBetting } from "../../../../context/bettingContext";
 interface Props{
   data?:any;
 }
 const OnedayDragonTiger :React.FC<Props> = ({data}) => {
   console.log(data,"CHECK");
+    const {setCasinoBetOdds} = useBetting();
+  
   const table1 = data?.t1;
   const table2 = data?.t3;
   const table3 = data?.t4;
@@ -25,10 +28,24 @@ const OnedayDragonTiger :React.FC<Props> = ({data}) => {
                 <div className="casino-nation-detail">
                   <div className="casino-nation-name">{item?.nat}</div>
                 </div>
-                <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
+                <div  onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+                   className:"back",eventKey:'t1',
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }} className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
                   <span className="casino-odds">{item?.bp}</span>
                 </div>
-                <div className={`casino-odds-box lay ${item?.status === "suspended" ? 'suspended-box':''}`}>
+                <div  onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.lp,  runnerName:`${item?.nat}`,type:"lay",
+                   className:"lay"
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }} className={`casino-odds-box lay ${item?.status === "suspended" ? 'suspended-box':''}`}>
 
                   <span className="casino-odds">{item?.lp}</span>
                 </div>
@@ -45,7 +62,14 @@ const OnedayDragonTiger :React.FC<Props> = ({data}) => {
             (table1).slice(2).map((item:any,i:number)=>{
               return<>
               <div className="casino-odds text-center">{item?.bp}</div>
-          <div className={`casino-odds-box back casino-odds-box-theme ${item?.status === "suspended" ? 'suspended-box':''}`}>
+          <div  onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+                   className:"back",eventKey:'t1',
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }} className={`casino-odds-box back casino-odds-box-theme ${item?.status === "suspended" ? 'suspended-box':''}`}>
             <span className="casino-odds">{item?.nat}</span>
           </div>
               </>
@@ -71,7 +95,14 @@ const OnedayDragonTiger :React.FC<Props> = ({data}) => {
                     (table2).slice(0,2).map((item:any,i:number)=>{
                       return(
                        <>
-                <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
+                <div  onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+                   className:"back",eventKey:'t3',
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }} className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
                 <span className="casino-odds">{item?.bp}</span>
               </div>
              
@@ -91,7 +122,14 @@ const OnedayDragonTiger :React.FC<Props> = ({data}) => {
                     (table2).slice(2).map((item:any,i:number)=>{
                       return(
                        <>
-                <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
+                <div  onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+                   className:"back",eventKey:'t3',
+                
+                  })
+                }} className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
                 <span className="casino-odds">{item?.bp}</span>
               </div>
              
@@ -126,7 +164,14 @@ const OnedayDragonTiger :React.FC<Props> = ({data}) => {
                     (table3).slice(0,2).map((item:any,i:number)=>{
                       return(
                        <>
-                <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
+                <div  onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+                   className:"back",eventKey:'t4',
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }} className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
                 <span className="casino-odds">{item?.bp}</span>
               </div>
              
@@ -143,7 +188,14 @@ const OnedayDragonTiger :React.FC<Props> = ({data}) => {
                     (table3).slice(2).map((item:any,i:number)=>{
                       return(
                        <>
-                <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
+                <div  onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+                   className:"back",eventKey:'t4',
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }} className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
                 <span className="casino-odds">{item?.bp}</span>
               </div>
              

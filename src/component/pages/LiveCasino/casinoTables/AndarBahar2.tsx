@@ -1,9 +1,198 @@
-import React from 'react'
+import React from "react";
 
 const AndarBahar2 = () => {
   return (
-    <div className="casino-table"><div className="casino-table-full-box"><div className="playera-bets"><div className="playera-title">A</div><div className="player-sa"><div className="player-sa-box"><div className="casino-odds">SA</div><div className="casino-volume ">15</div></div><div className="casino-nation-book text-center"></div></div><div className="player-bet"><div className="player-bet-box"><div className="casino-odds">First Bet</div><div className="casino-volume ">2</div></div><div className="casino-nation-book text-center"></div></div><div className="player-bet"><div className="player-bet-box suspended-box"><div className="casino-odds">Second Bet</div><div className="casino-volume ">0</div></div><div className="casino-nation-book text-center"></div></div><div className="playera-title">A</div></div><div className="playera-bets"><div className="playera-title">B</div><div className="player-sa"><div className="player-sa-box"><div className="casino-odds">SB</div><div className="casino-volume ">15</div></div><div className="casino-nation-book text-center"></div></div><div className="player-bet"><div className="player-bet-box"><div className="casino-odds">First Bet</div><div className="casino-volume ">2</div></div><div className="casino-nation-book text-center"></div></div><div className="player-bet"><div className="player-bet-box suspended-box"><div className="casino-odds">Second Bet</div><div className="casino-volume ">0</div></div><div className="casino-nation-book text-center"></div></div><div className="playera-title">B</div></div></div><div className="casino-table-box mt-3"><div className="casino-table-left-box"><div className="ab2-box"><div className="casino-odds text-center">ODD</div><div className="casino-odds-box back suspended-box"><span className="casino-odds">0</span></div><div className="casino-nation-book text-center"></div></div><div className="ab2-box"><div className="casino-odds text-center">EVEN</div><div className="casino-odds-box back suspended-box"><span className="casino-odds">0</span></div><div className="casino-nation-book text-center"></div></div></div><div className="casino-table-right-box"><div className="ab2-box"><div className="casino-odds text-center"><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/icons/spade.png"/></div><div className="casino-odds-box back suspended-box"><span className="casino-odds">0</span></div><div className="casino-nation-book text-center"></div></div><div className="ab2-box"><div className="casino-odds text-center"><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/icons/club.png"/></div><div className="casino-odds-box back suspended-box"><span className="casino-odds">0</span></div><div className="casino-nation-book text-center"></div></div><div className="ab2-box"><div className="casino-odds text-center"><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/icons/heart.png"/></div><div className="casino-odds-box back suspended-box"><span className="casino-odds">0</span></div><div className="casino-nation-book text-center"></div></div><div className="ab2-box"><div className="casino-odds text-center"><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/icons/diamond.png"/></div><div className="casino-odds-box back suspended-box"><span className="casino-odds">0</span></div><div className="casino-nation-book text-center"></div></div></div></div><div className="casino-table-full-box ab2cards mt-3"><div className="card-odd-box"><div className="suspended-box"><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/A.png"/></div><div className="casino-nation-book"></div></div><div className="card-odd-box"><div className="suspended-box"><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/2.png"/></div><div className="casino-nation-book"></div></div><div className="card-odd-box"><div className="suspended-box"><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/3.png"/></div><div className="casino-nation-book"></div></div><div className="card-odd-box"><div className="suspended-box"><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/4.png"/></div><div className="casino-nation-book"></div></div><div className="card-odd-box"><div className="suspended-box"><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/5.png"/></div><div className="casino-nation-book"></div></div><div className="card-odd-box"><div className="suspended-box"><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/6.png"/></div><div className="casino-nation-book"></div></div><div className="card-odd-box"><div className="suspended-box"><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/7.png"/></div><div className="casino-nation-book"></div></div><div className="card-odd-box"><div className="suspended-box"><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/8.png"/></div><div className="casino-nation-book"></div></div><div className="card-odd-box"><div className="suspended-box"><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/9.png"/></div><div className="casino-nation-book"></div></div><div className="card-odd-box"><div className="suspended-box"><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/10.png"/></div><div className="casino-nation-book"></div></div><div className="card-odd-box"><div className="suspended-box"><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/J.png"/></div><div className="casino-nation-book"></div></div><div className="card-odd-box"><div className="suspended-box"><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/Q.png"/></div><div className="casino-nation-book"></div></div><div className="card-odd-box"><div className="suspended-box"><img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/K.png"/></div><div className="casino-nation-book"></div></div></div></div>
-  )
-}
+    <div className="casino-table ab2">
+      <div className="casino-table-full-box">
+        <div className="playera-bets">
+          <div className="playera-title">A</div>
+          <div className="player-sa">
+            <div className="player-sa-box">
+              <div className="casino-odds">SA</div>
+              <div className="casino-volume ">15</div>
+            </div>
+            <div className="casino-nation-book text-center"></div>
+          </div>
+          <div className="player-bet">
+            <div className="player-bet-box">
+              <div className="casino-odds">First Bet</div>
+              <div className="casino-volume ">2</div>
+            </div>
+            <div className="casino-nation-book text-center"></div>
+          </div>
+          <div className="player-bet">
+            <div className="player-bet-box suspended-box">
+              <div className="casino-odds">Second Bet</div>
+              <div className="casino-volume ">0</div>
+            </div>
+            <div className="casino-nation-book text-center"></div>
+          </div>
+          <div className="playera-title">A</div>
+        </div>
+        <div className="playera-bets">
+          <div className="playera-title">B</div>
+          <div className="player-sa">
+            <div className="player-sa-box">
+              <div className="casino-odds">SB</div>
+              <div className="casino-volume ">15</div>
+            </div>
+            <div className="casino-nation-book text-center"></div>
+          </div>
+          <div className="player-bet">
+            <div className="player-bet-box">
+              <div className="casino-odds">First Bet</div>
+              <div className="casino-volume ">2</div>
+            </div>
+            <div className="casino-nation-book text-center"></div>
+          </div>
+          <div className="player-bet">
+            <div className="player-bet-box suspended-box">
+              <div className="casino-odds">Second Bet</div>
+              <div className="casino-volume ">0</div>
+            </div>
+            <div className="casino-nation-book text-center"></div>
+          </div>
+          <div className="playera-title">B</div>
+        </div>
+      </div>
+      <div className="casino-table-box mt-3">
+        <div className="casino-table-left-box">
+          <div className="ab2-box">
+            <div className="casino-odds text-center">ODD</div>
+            <div className="casino-odds-box back suspended-box">
+              <span className="casino-odds">0</span>
+            </div>
+            <div className="casino-nation-book text-center"></div>
+          </div>
+          <div className="ab2-box">
+            <div className="casino-odds text-center">EVEN</div>
+            <div className="casino-odds-box back suspended-box">
+              <span className="casino-odds">0</span>
+            </div>
+            <div className="casino-nation-book text-center"></div>
+          </div>
+        </div>
+        <div className="casino-table-right-box">
+          <div className="ab2-box">
+            <div className="casino-odds text-center">
+              <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/icons/spade.png" />
+            </div>
+            <div className="casino-odds-box back suspended-box">
+              <span className="casino-odds">0</span>
+            </div>
+            <div className="casino-nation-book text-center"></div>
+          </div>
+          <div className="ab2-box">
+            <div className="casino-odds text-center">
+              <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/icons/club.png" />
+            </div>
+            <div className="casino-odds-box back suspended-box">
+              <span className="casino-odds">0</span>
+            </div>
+            <div className="casino-nation-book text-center"></div>
+          </div>
+          <div className="ab2-box">
+            <div className="casino-odds text-center">
+              <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/icons/heart.png" />
+            </div>
+            <div className="casino-odds-box back suspended-box">
+              <span className="casino-odds">0</span>
+            </div>
+            <div className="casino-nation-book text-center"></div>
+          </div>
+          <div className="ab2-box">
+            <div className="casino-odds text-center">
+              <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/icons/diamond.png" />
+            </div>
+            <div className="casino-odds-box back suspended-box">
+              <span className="casino-odds">0</span>
+            </div>
+            <div className="casino-nation-book text-center"></div>
+          </div>
+        </div>
+      </div>
+      <div className="casino-table-full-box ab2cards mt-3">
+        <div className="card-odd-box">
+          <div className="suspended-box">
+            <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/A.png" />
+          </div>
+          <div className="casino-nation-book"></div>
+        </div>
+        <div className="card-odd-box">
+          <div className="suspended-box">
+            <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/2.png" />
+          </div>
+          <div className="casino-nation-book"></div>
+        </div>
+        <div className="card-odd-box">
+          <div className="suspended-box">
+            <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/3.png" />
+          </div>
+          <div className="casino-nation-book"></div>
+        </div>
+        <div className="card-odd-box">
+          <div className="suspended-box">
+            <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/4.png" />
+          </div>
+          <div className="casino-nation-book"></div>
+        </div>
+        <div className="card-odd-box">
+          <div className="suspended-box">
+            <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/5.png" />
+          </div>
+          <div className="casino-nation-book"></div>
+        </div>
+        <div className="card-odd-box">
+          <div className="suspended-box">
+            <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/6.png" />
+          </div>
+          <div className="casino-nation-book"></div>
+        </div>
+        <div className="card-odd-box">
+          <div className="suspended-box">
+            <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/7.png" />
+          </div>
+          <div className="casino-nation-book"></div>
+        </div>
+        <div className="card-odd-box">
+          <div className="suspended-box">
+            <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/8.png" />
+          </div>
+          <div className="casino-nation-book"></div>
+        </div>
+        <div className="card-odd-box">
+          <div className="suspended-box">
+            <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/9.png" />
+          </div>
+          <div className="casino-nation-book"></div>
+        </div>
+        <div className="card-odd-box">
+          <div className="suspended-box">
+            <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/10.png" />
+          </div>
+          <div className="casino-nation-book"></div>
+        </div>
+        <div className="card-odd-box">
+          <div className="suspended-box">
+            <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/J.png" />
+          </div>
+          <div className="casino-nation-book"></div>
+        </div>
+        <div className="card-odd-box">
+          <div className="suspended-box">
+            <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/Q.png" />
+          </div>
+          <div className="casino-nation-book"></div>
+        </div>
+        <div className="card-odd-box">
+          <div className="suspended-box">
+            <img src="https://versionobj.ecoassetsservice.com/v36/static/front/img/cards/K.png" />
+          </div>
+          <div className="casino-nation-book"></div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default AndarBahar2
+export default AndarBahar2;

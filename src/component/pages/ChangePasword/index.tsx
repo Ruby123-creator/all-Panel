@@ -1,18 +1,23 @@
-import React from 'react'
+import React from "react";
 
-
-
-import Password from './password'
+import Password from "./password";
 
 const Chnage_Password = () => {
   return (
-    <div className="flex flex-col transition-all lg:pt-[110px] ease-in-out duration-100 pt-[94px]">
-    <div className="flex items-start justify-start w-full lg:px-12 xl:px-20 xlg:px-24">
+    <div className="center-main-container report-page">
+      <div className="center-container">
+        <div className="card">
+          <div className="card-header">
+            <h4 className="card-title">Change Password</h4>
+          </div>
 
-<Password/>
+          <div className="card-body">
+           <Password/>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-</div>
-</div>  )
-}
-
-export default Chnage_Password
+export default Chnage_Password;

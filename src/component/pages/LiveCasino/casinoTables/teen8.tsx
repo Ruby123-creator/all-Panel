@@ -1,4 +1,6 @@
 import React from "react";
+import { useUI } from "../../../../context/ui.context";
+import { useBetting } from "../../../../context/bettingContext";
 
 interface Props{
   data?:any
@@ -6,6 +8,7 @@ interface Props{
 const Teen8 :React.FC<Props> = ({data}) => {
   console.log(data,"CHECK");
   const playerInfo = data?.t1
+  const {setCasinoBetOdds, casinoOdds} = useBetting();
   return (
     <div className="casino-table">
       <div className="casino-table-full-box">
@@ -33,7 +36,16 @@ const Teen8 :React.FC<Props> = ({data}) => {
                 </div>
               </div>
             </div>
-            <div className={`casino-odds-box back ${item?.status === 'suspended' ? 'suspended-box':''}`}>
+            <div
+             onClick={(e)=>{
+              e.preventDefault();
+              e.stopPropagation();
+              setCasinoBetOdds({...casinoOdds, odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+               className:"back",eventKey:'t1',
+                // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+              })
+            }}
+            className={`casino-odds-box back ${item?.status === 'suspended' ? 'suspended-box':''}`}>
               <span className="casino-odds">{item?.bp}</span>
             </div>
             <div className={`casino-odds-box back ${item?.status === 'suspended' ? 'suspended-box':''}`}>

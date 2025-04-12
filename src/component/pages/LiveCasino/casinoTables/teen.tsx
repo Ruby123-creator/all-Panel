@@ -1,9 +1,12 @@
 import React from "react";
+import { useUI } from "../../../../context/ui.context";
+import { useBetting } from "../../../../context/bettingContext";
 
 interface Props{
   data?:any
 }
 const Teen:React.FC<Props> = ({data}) => {
+  const {setCasinoBetOdds} = useBetting();
   const playerInfo = data?.t1 || [];
   const cardsInfo = data?.t2 ||[];
     const playerA = (playerInfo || []).filter((val: any) =>
@@ -45,10 +48,30 @@ const Teen:React.FC<Props> = ({data}) => {
                   <div className="casino-nation-detail">
                     <div className="casino-nation-name">{extractedNat}</div>
                   </div>
-                  <div className="casino-odds-box back">
+                  <div className="casino-odds-box back" 
+                  onClick={(e)=>{
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setCasinoBetOdds({ odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+                      className:"back",eventKey:'t1'
+                     
+                      // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                    })
+                  }}
+                  >
                     <span className="casino-odds">{item?.bp}</span>
                   </div>
-                  <div className="casino-odds-box lay">
+                  <div className="casino-odds-box lay"
+                    onClick={(e)=>{
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setCasinoBetOdds({ odds:item?.lp,  runnerName:`${item?.nat}`,type:"lay",
+                     className:"lay",
+                       eventKey:'t1',
+                        // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                      })
+                    }}
+                  >
                     <span className="casino-odds">{item?.lp}</span>
                   </div>
                 </div>)
@@ -72,11 +95,28 @@ const Teen:React.FC<Props> = ({data}) => {
                   <div className="casino-nation-detail">
                     <div className="casino-nation-name">{extractedNat}</div>
                   </div>
-                  <div className="casino-odds-box back">
+                  <div className="casino-odds-box back"   onClick={(e)=>{
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setCasinoBetOdds({ odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+                     className:"back",
+                     eventKey:'t1',
+
+                      // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                    })
+                  }}>
                     <span className="casino-odds">{item?.bp}</span>
                   </div>
                   <div className="casino-odds-box lay">
-                    <span className="casino-odds">{item?.lp}</span>
+                    <span className="casino-odds"   onClick={(e)=>{
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setCasinoBetOdds({ odds:item?.lp,  runnerName:`${item?.nat}`,type:"lay",
+                      className:"lay",
+                     eventKey:'t1'
+                      // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                    })
+                  }}>{item?.lp}</span>
                   </div>
                 </div>)
               })
@@ -102,7 +142,14 @@ const Teen:React.FC<Props> = ({data}) => {
             {
               (oddCards||[]).map((item:any,i:number)=>{
                 return (
-<div className={`casino-odds-box back ${item?.status === 'suspend' ? 'suspended-box' :''}`}>
+<div className={`casino-odds-box back ${item?.status === 'suspend' ? 'suspended-box' :''}`}   onClick={(e)=>{
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setCasinoBetOdds({ odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+                     className:"back",eventKey:'t2',
+                      // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                    })
+                  }}>
               <span className="casino-odds">{item?.bp}</span>
             </div>
                 )
@@ -118,7 +165,13 @@ const Teen:React.FC<Props> = ({data}) => {
             {
               (evenCards||[]).map((item:any,i:number)=>{
                 return (
-<div className={`casino-odds-box back ${item?.status === 'suspend' ? 'suspended-box' :''}`}>
+<div onClick={(e)=>{
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setCasinoBetOdds({ odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+                     className:"back",eventKey:'t2',
+                      // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                    })}} className={`casino-odds-box back ${item?.status === 'suspend' ? 'suspended-box' :''}`}>
               <span className="casino-odds">{item?.bp}</span>
             </div>
                 )

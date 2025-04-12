@@ -1,15 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useUI } from "../../../context/ui.context";
-import EditStack from "./editStacks";
+
 import { Modal } from "antd";
-import { CiStopwatch } from "react-icons/ci";
+
 import { useParams } from "react-router-dom";
 import { useSportDetailsById, useCricketFancyData } from "../../../Framework/sportsData";
-import { fetchIPAdress, useAdminDetails, useIPDetails } from "../../../Framework/login";
-import { checkTimeDifference, extractDetails, extractEventDetails, showToasterMessage } from "../../../Framework/utils/constant";
+import { useIPDetails } from "../../../Framework/login";
+import { checkTimeDifference, extractDetails, showToasterMessage } from "../../../Framework/utils/constant";
 import { usePlaceBet } from "../../../Framework/placeBet";
-import { format, isToday, isTomorrow, parse } from "date-fns";
-import { useCurrentBetsData } from "../../../Framework/placeBet";
+import { format} from "date-fns";
+
 
 interface BetOdds {
   betType: string;
@@ -36,7 +36,7 @@ const BetSlip: React.FC = () => {
   const { betOdds, stacks ,setMatchedBets,userData,setStacks} = useUI();
   const { sport, eventId }: any = useParams();
    const [val,setValue] = useState('');
-
+console.log(betOdds,"Check:::")
    const [values, setValues] = useState(stacks)
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
        const updatedStacks = stacks.map((item: any, i: number) => (i === index ? Number(e.target.value) : item));

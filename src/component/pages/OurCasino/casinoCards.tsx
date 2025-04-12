@@ -23,7 +23,7 @@ const CasinoCards: React.FC = () => {
   return (
     <div className="tab-content">
       <div className="tab-pane active" id="all-casino">
-        <div className="casino-list mt-2">
+        <div className="casino-list">
           
           {(data||[]).map((item, i) => (
             <div

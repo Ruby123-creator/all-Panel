@@ -147,3 +147,22 @@ import axios from "axios";
          
        
       }
+
+     export  const alphaValue = (val:number)=>{
+        if(val === 1){
+          return 'A';
+        }
+        else if(val === 11){
+          return 'J';
+        }
+        else if(val === 12){
+          return 'Q'
+        }
+        else if(val === 13){
+          return 'K'
+        }
+        else{
+          return `${val}`;
+        }
+      
+      }

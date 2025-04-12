@@ -1,8 +1,11 @@
 import React from "react";
+import { useBetting } from "../../../../context/bettingContext";
 interface Props{
   data?:any;
 }
 const Race17 :React.FC<Props> = ({data}) => {
+  const {setCasinoBetOdds} = useBetting();
+
   console.log(data,"CHECK");
   const playersInfo = data?.t1||[]
   return (
@@ -13,10 +16,24 @@ const Race17 :React.FC<Props> = ({data}) => {
             return(
               <div className="casino-odd-box-container">
               <div className="casino-nation-name">{item?.nat}</div>
-              <div className={`casino-odds-box back ${(item?.status === "suspended"||item?.gstatus === "suspended") ? 'suspended-box':''}`}>
+              <div  onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:(item?.bp||item?.b1),  runnerName:`${item?.nat}`,type:"back",
+                   className:"back",eventKey:'t1',
+                  
+                  })
+                }} className={`casino-odds-box back ${(item?.status === "suspended"||item?.gstatus === "suspended") ? 'suspended-box':''}`}>
                 <span className="casino-odds">{item?.bp||item?.b1}</span>
               </div>
-              <div className={`casino-odds-box lay ${(item?.status === "suspended"||item?.gstatus=== "suspended") ? 'suspended-box':''}`}>
+              <div  onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:(item?.lp||item?.l1),  runnerName:`${item?.nat}`,type:"lay",
+                   className:"lay",eventKey:'t1',
+                   
+                  })
+                }} className={`casino-odds-box lay ${(item?.status === "suspended"||item?.gstatus=== "suspended") ? 'suspended-box':''}`}>
                 <span className="casino-odds">{item?.lp||item?.l1}</span>
               </div>
               <div className="casino-nation-book text-center w-100"></div>

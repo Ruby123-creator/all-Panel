@@ -1,8 +1,12 @@
 import React from "react";
+import { useUI } from "../../../../context/ui.context";
+import { useBetting } from "../../../../context/bettingContext";
 interface Props{
   data?:any;
 }
 const Card32:React.FC<Props> = ({data}) => {
+  const {setCasinoBetOdds,casinoOdds} = useBetting();
+
   console.log(data,"CHECK");
   const playerInfo = data?.t1;
   return (
@@ -22,10 +26,24 @@ const Card32:React.FC<Props> = ({data}) => {
                   <div className="casino-nation-detail">
                     <div className="casino-nation-name">{item?.nat}</div>
                   </div>
-                  <div className={`casino-odds-box back ${item?.status === "SUSPENDED" ? 'suspended-box':""}`}>
+                  <div  onClick={(e)=>{
+              e.preventDefault();
+              e.stopPropagation();
+              setCasinoBetOdds({...casinoOdds, odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+               className:"back",eventKey:'t1',
+                // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+              })
+            }} className={`casino-odds-box back ${item?.status === "SUSPENDED" ? 'suspended-box':""}`}>
                     <span className="casino-odds">{item?.bp}</span>
                   </div>
-                  <div className={`casino-odds-box lay ${item?.status === "SUSPENDED" ? 'suspended-box':""}`}>
+                  <div  onClick={(e)=>{
+              e.preventDefault();
+              e.stopPropagation();
+              setCasinoBetOdds({...casinoOdds, odds:item?.lp,  runnerName:`${item?.nat}`,type:"lay",
+               className:"lay",eventKey:'t1',
+                // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+              })
+            }} className={`casino-odds-box lay ${item?.status === "SUSPENDED" ? 'suspended-box':""}`}>
                     <span className="casino-odds">{item?.lp}</span>
                   </div>
                 </div>
@@ -51,10 +69,24 @@ const Card32:React.FC<Props> = ({data}) => {
                   <div className="casino-nation-detail">
                     <div className="casino-nation-name">{item?.nat}</div>
                   </div>
-                  <div className={`casino-odds-box back ${item?.status === "SUSPENDED" ? 'suspended-box':""}`}>
+                  <div  onClick={(e)=>{
+              e.preventDefault();
+              e.stopPropagation();
+              setCasinoBetOdds({...casinoOdds, odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+               className:"back",eventKey:'t1',
+                // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+              })
+            }} className={`casino-odds-box back ${item?.status === "SUSPENDED" ? 'suspended-box':""}`}>
                     <span className="casino-odds">{item?.bp}</span>
                   </div>
-                  <div className={`casino-odds-box lay ${item?.status === "SUSPENDED" ? 'suspended-box':""}`}>
+                  <div  onClick={(e)=>{
+              e.preventDefault();
+              e.stopPropagation();
+              setCasinoBetOdds({...casinoOdds, odds:item?.bp,  runnerName:`${item?.nat}`,type:"lay",
+               className:"lay",eventKey:'t1',
+                // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+              })
+            }} className={`casino-odds-box lay ${item?.status === "SUSPENDED" ? 'suspended-box':""}`}>
                     <span className="casino-odds">{item?.lp}</span>
                   </div>
                 </div>

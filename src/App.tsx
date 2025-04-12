@@ -31,6 +31,7 @@ import UserLogin from './component/pages/Login';
 import LiveCasino from './component/pages/LiveCasino';
 import CasinoReport from './component/pages/CasinoReport';
 import OurCasino from './component/pages/OurCasino';
+import CasinoSettlement from './component/pages/casino-settlement';
 
 
 
@@ -77,7 +78,8 @@ const {data: userData} = useAdminDetails({isLogin:isLoginAsUser,username:val?.us
         <Route path="/sports-page/:sportsName"  element={<PrivateRoute element={<SportsDetail />} />} />
        
    
-     
+        <Route path='/casino-settlement' element={<PrivateRoute element={<CasinoSettlement/>}/>}/>
+
         <Route path="/casino-lobby/:casinoType" element={<PrivateRoute element={<CasinoGames />} />}/>
        
         <Route path="/aviator"  element={<PrivateRoute element={<AviatorComp />} />}/>

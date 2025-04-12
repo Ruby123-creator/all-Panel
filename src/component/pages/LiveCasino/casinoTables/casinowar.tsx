@@ -1,10 +1,14 @@
 import React, { useState } from "react";
+import { useUI } from "../../../../context/ui.context";
+import { useBetting } from "../../../../context/bettingContext";
 
 
 interface Props{
   data?:any
 }
 const Casinowar:React.FC<Props> = ({data}) => {
+    const {setCasinoBetOdds} = useBetting();
+  
   const [activeTab, setActiveTab] = useState(0); // Track active tab index
 
   console.log(data,"CHECK")
@@ -20,7 +24,7 @@ const Casinowar:React.FC<Props> = ({data}) => {
     { nat: <img src={`/assets/images/playingCards/club.png`} />, items: (data?.t1 || []).filter((item: any) => (item?.nat || "").includes("Club")) },
     { nat: <img src={`/assets/images/playingCards/diamond.png`} />, items: (data?.t1 || []).filter((item: any) => (item?.nat || "").includes("Diamond")) },
   ];
-
+  console.log(cardsInfo,"FISHYYY:::::::")
   return (
     <div className="casino-table casino-war">
       <div className="casino-table-header w-100">
@@ -66,7 +70,14 @@ const Casinowar:React.FC<Props> = ({data}) => {
             {
               (item?.items||[]).map((val:any,index:number)=>{
                 return(
-                  <div className={`casino-odds-box back ${val?.gstatus ? '' : 'suspended-box'}`}>
+                  <div onClick={(e)=>{
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setCasinoBetOdds({ odds:val?.b1,  runnerName:`${val?.nat}`,type:"back",
+                     className:"back",eventKey:'t1'
+                      // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                    })
+                  }}  className={`casino-odds-box back ${val?.gstatus ? '' : 'suspended-box'}`}>
                   <span className="casino-odds">{val?.b1}</span>
                 </div>
                 )
@@ -122,7 +133,14 @@ const Casinowar:React.FC<Props> = ({data}) => {
                         <div className="casino-nation-detail">
                           <div className="casino-nation-name">{item?.nat}</div>
                         </div>
-                        <div className="casino-odds-box back suspended-box">
+                        <div onClick={(e)=>{
+              e.preventDefault();
+              e.stopPropagation();
+              setCasinoBetOdds({ odds:item?.items[i]?.b1,  runnerName:`${item?.items[i]?.nat}`,type:"back",
+               className:"back",eventKey:'t1'
+                // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+              })
+            }} className="casino-odds-box back suspended-box">
                           <span className="casino-odds">{item?.items[i]?.b1}</span>
                         </div>
                       </div>
@@ -130,7 +148,14 @@ const Casinowar:React.FC<Props> = ({data}) => {
                   </div>
                   <div className="col-6">
                     {cardsInfo.slice(5).map((item, index) => (
-                      <div className="casino-table-row" key={index}>
+                      <div className="casino-table-row" key={index} onClick={(e)=>{
+                        e.preventDefault();
+                        e.stopPropagation();
+                        setCasinoBetOdds({ odds:item?.items[i]?.b1,  runnerName:`${item?.items[i].nat}`,type:"back",
+                         className:"back",eventKey:'t1'
+                          // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                        })
+                      }}>
                         <div className="casino-nation-detail">
                           <div className="casino-nation-name">{item?.nat}</div>
                         </div>

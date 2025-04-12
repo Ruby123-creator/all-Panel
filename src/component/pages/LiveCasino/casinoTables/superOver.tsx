@@ -1,8 +1,11 @@
 import React from "react";
+import { useBetting } from "../../../../context/bettingContext";
 interface Props{
   data?:any
 }
 const SuperOver : React.FC<Props> = ({data}) => {
+  const {setCasinoBetOdds} = useBetting();
+
   console.log(data,"CHECK")
   return (
     <div className="casino-detail detail-page-container position-relative super-over super-over2">
@@ -31,11 +34,25 @@ const SuperOver : React.FC<Props> = ({data}) => {
                   <span className="market-nation-name">{item?.nat}</span>
                   <div className="market-nation-book"></div>
                 </div>
-                <div className="market-odd-box back   ">
+                <div  onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+                   className:"back",eventKey:'t1',
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }} className="market-odd-box back   ">
                   <span className="market-odd">-</span>
                   <span className="market-volume">{item?.bp}</span>
                 </div>
-                <div className="market-odd-box lay   ">
+                <div  onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.lp,  runnerName:`${item?.nat}`,type:"lay",
+                   className:"lay",eventKey:'t1',
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }} className="market-odd-box lay   ">
                   <span className="market-odd">-</span>
                   <span className="market-volume">{item?.lp}</span>
                 </div>
@@ -96,11 +113,27 @@ const SuperOver : React.FC<Props> = ({data}) => {
                   </span>
                   <div className="market-nation-book"></div>
                 </div>
-                <div className="market-odd-box back ">
+                <div  onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+                   className:"back",eventKey:'t1',min:item?.min,max:item?.max
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }} className="market-odd-box back ">
                   <span className="market-odd">{item?.bp}</span>
                   <span className="market-volume">100</span>
                 </div>
-                <div className="market-odd-box lay ">
+                <div
+                 onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.lp,  runnerName:`${item?.nat}`,type:"lay",
+                   className:"lay",min:item?.min,max:item?.max,eventKey:'t1',
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }}
+                className="market-odd-box lay ">
                   <span className="market-odd">{item?.lp}</span>
                 </div>
                 <div className="fancy-min-max-box">
@@ -168,11 +201,25 @@ const SuperOver : React.FC<Props> = ({data}) => {
                       </span>
                       <div className="market-nation-book"></div>
                     </div>
-                    <div className="market-odd-box back ">
+                    <div  onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+                   className:"back",eventKey:'t1',min:item?.min,max:item?.max
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }} className="market-odd-box back ">
                       <span className="market-odd">{item?.bp}</span>
                       <span className="market-volume">100</span>
                     </div>
-                    <div className="market-odd-box lay ">
+                    <div  onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.lp,  runnerName:`${item?.nat}`,type:"lay",
+                   className:"lay",min:item?.min,max:item?.max,eventKey:'t1',
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }} className="market-odd-box lay ">
                       <span className="market-odd">{item?.lp}</span>
                     </div>
                     <div className="fancy-min-max-box">

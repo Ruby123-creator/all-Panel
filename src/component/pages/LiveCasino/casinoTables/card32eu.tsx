@@ -1,9 +1,13 @@
 import React from "react";
+import { useUI } from "../../../../context/ui.context";
+import { useBetting } from "../../../../context/bettingContext";
 interface Props{
   data?:any
 }
 const Card32eu:React.FC<Props> = ({data}) => {
   console.log(data,"CHECK");
+  const {setCasinoBetOdds,casinoOdds} = useBetting();
+
   const playersInfo = (data?.t1||[])
   return (
     <div className="casino-table cards32b">
@@ -22,10 +26,24 @@ const Card32eu:React.FC<Props> = ({data}) => {
                   <div className="casino-nation-detail">
                     <div className="casino-nation-name">{item?.nat}</div>
                   </div>
-                  <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box': ''}`}>
+                  <div onClick={(e)=>{
+              e.preventDefault();
+              e.stopPropagation();
+              setCasinoBetOdds({...casinoOdds, odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+               className:"back",eventKey:'t1',
+                // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+              })
+            }} className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box': ''}`}>
                     <span className="casino-odds">{item?.bp}</span>
                   </div>
-                  <div className={`casino-odds-box lay ${item?.status === "suspended" ? 'suspended-box': ''}`}>
+                  <div onClick={(e)=>{
+              e.preventDefault();
+              e.stopPropagation();
+              setCasinoBetOdds({...casinoOdds, odds:item?.lay,  runnerName:`${item?.nat}`,type:"lay",
+               className:"lay",eventKey:'t1',
+                // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+              })
+            }} className={`casino-odds-box lay ${item?.status === "suspended" ? 'suspended-box': ''}`}>
 
                     <span className="casino-odds">{item?.lay}</span>
                   </div>
@@ -52,12 +70,26 @@ const Card32eu:React.FC<Props> = ({data}) => {
                   <div className="casino-nation-detail">
                     <div className="casino-nation-name">{item?.nat}</div>
                   </div>
-                  <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box': ''}`}>
+                  <div onClick={(e)=>{
+              e.preventDefault();
+              e.stopPropagation();
+              setCasinoBetOdds({...casinoOdds, odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+               className:"back",eventKey:'t1',
+                // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+              })
+            }} className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box': ''}`}>
                     <span className="casino-odds">{item?.bp}</span>
                   </div>
-                  <div className={`casino-odds-box lay ${item?.status === "suspended" ? 'suspended-box': ''}`}>
+                  <div onClick={(e)=>{
+              e.preventDefault();
+              e.stopPropagation();
+              setCasinoBetOdds({...casinoOdds, odds:item?.bp1,  runnerName:`${item?.nat}`,type:"lay",
+               className:"lay",eventKey:'t1',
+                // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+              })
+            }} className={`casino-odds-box lay ${item?.status === "suspended" ? 'suspended-box': ''}`}>
 
-                    <span className="casino-odds">{item?.lay}</span>
+                    <span className="casino-odds">{item?.bp1}</span>
                   </div>
                 </div>
                 )
@@ -81,10 +113,24 @@ const Card32eu:React.FC<Props> = ({data}) => {
                   <div className="casino-nation-detail">
                     <div className="casino-nation-name">{item?.nat}</div>
                   </div>
-                  <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box': ''}`}>
+                  <div onClick={(e)=>{
+              e.preventDefault();
+              e.stopPropagation();
+              setCasinoBetOdds({...casinoOdds, odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+               className:"back",eventKey:'t1',
+                // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+              })
+            }} className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box': ''}`}>
                     <span className="casino-odds">{item?.bp}</span>
                   </div>
-                  <div className={`casino-odds-box lay ${item?.status === "suspended" ? 'suspended-box': ''}`}>
+                  <div onClick={(e)=>{
+              e.preventDefault();
+              e.stopPropagation();
+              setCasinoBetOdds({...casinoOdds, odds:item?.lay,  runnerName:`${item?.nat}`,type:"lay",
+               className:"lay",eventKey:'t1',
+                // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+              })
+            }} className={`casino-odds-box lay ${item?.status === "suspended" ? 'suspended-box': ''}`}>
 
                     <span className="casino-odds">{item?.lay}</span>
                   </div>
@@ -101,6 +147,8 @@ const Card32eu:React.FC<Props> = ({data}) => {
           <div className="casino-table-header">
             <div className="casino-nation-detail"></div>
             <div className="casino-odds-box back">Back</div>
+            <div className="casino-odds-box lay">Lay</div>
+
           </div>
           <div className="casino-table-body">
           {
@@ -110,12 +158,26 @@ const Card32eu:React.FC<Props> = ({data}) => {
                   <div className="casino-nation-detail">
                     <div className="casino-nation-name">{item?.nat}</div>
                   </div>
-                  <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box': ''}`}>
+                  <div onClick={(e)=>{
+              e.preventDefault();
+              e.stopPropagation();
+              setCasinoBetOdds({...casinoOdds, odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+               className:"back",eventKey:'t1',
+                // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+              })
+            }} className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box': ''}`}>
                     <span className="casino-odds">{item?.bp}</span>
                   </div>
-                  <div className={`casino-odds-box lay ${item?.status === "suspended" ? 'suspended-box': ''}`}>
+                  <div onClick={(e)=>{
+              e.preventDefault();
+              e.stopPropagation();
+              setCasinoBetOdds({...casinoOdds, odds:item?.bp,  runnerName:`${item?.nat}`,type:"lay",
+               className:"lay",eventKey:'t1',
+                // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+              })
+            }} className={`casino-odds-box lay ${item?.status === "suspended" ? 'suspended-box': ''}`}>
 
-                    <span className="casino-odds">{item?.lay}</span>
+                    <span className="casino-odds">{item?.bp1}</span>
                   </div>
                 </div>
                 )
@@ -132,7 +194,16 @@ const Card32eu:React.FC<Props> = ({data}) => {
           {
           [1,2,3,4,5,6,7,8,9,0].map((val,i)=>{
             return(
-              <div className="casino-odds-box back">
+              <div className="casino-odds-box back"
+              onClick={(e)=>{
+                e.preventDefault();
+                e.stopPropagation();
+                setCasinoBetOdds({...casinoOdds, odds:9.5,  runnerName:`${val}`,type:"back",
+                 className:"back",eventKey:'t1',
+                  // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                })
+              }}
+              >
               <span className="casino-odds">{val}</span>
             </div>
             )

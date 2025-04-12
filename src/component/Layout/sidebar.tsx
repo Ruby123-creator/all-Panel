@@ -4,6 +4,8 @@ import sidebarOthers from "../../Framework/utils/sidebarothers.json";
 import { FaAngleDown } from "react-icons/fa";
 import { FaAngleUp } from "react-icons/fa";
 import { title } from "process";
+import { useUI } from "../../context/ui.context";
+import { useNavigate } from "react-router-dom";
 
 interface SidebarItem {
   name: string;
@@ -17,9 +19,10 @@ interface SubCategory {
 }
 
 interface Category {
+  routing: any;
   name: string;
-  icon: string;
-  subcategories: SubCategory[];
+
+
 }
 
 const sidebarMenu = [{
@@ -46,10 +49,8 @@ const sidebarMenu = [{
 ]
 
 const Sidebar: React.FC = () => {
-  const [showOverlay, setShowOverlay] = useState<boolean>(false);
-  const [activeOverlay, setActiveOverlay] = useState<
-    "horse" | "greyhound" | null
-  >(null);
+   const {setActiveNav} = useUI();
+   const navigate = useNavigate();
   const [openAccordions, setOpenAccordions] = useState<Record<string, boolean>>(
     {
       racingSports: true,
@@ -57,41 +58,13 @@ const Sidebar: React.FC = () => {
       allSports: true,
     }
   );
-  const [openCatAccordions, setOpenCatAccordions] = useState<
-    Record<string, boolean>
-  >({});
 
-  const horseRaces: string[] = ["Race 1", "Race 2", "Race 3"];
-  const greyhoundRaces: string[] = ["Race A", "Race B", "Race C"];
 
   const toggleAccordion = (name: string) => {
     setOpenAccordions((prev) => ({ ...prev, [name]: !prev[name] }));
   };
 
-  const toggleCategoryAccordion = (categoryIndex: number) => {
-    setOpenAccordions((prev) => ({
-      ...prev,
-      [`category-${categoryIndex}`]: !prev[`category-${categoryIndex}`],
-    }));
-  };
-
-  const toggleCatAccordion = (categoryIndex: number, subIndex: number) => {
-    const key = `${categoryIndex}-${subIndex}`;
-    setOpenCatAccordions((prev) => ({
-      ...prev,
-      [key]: !prev[key],
-    }));
-  };
-
-  const openOverlay = (type: "horse" | "greyhound") => {
-    setActiveOverlay(type);
-    setShowOverlay(true);
-  };
-
-  const closeOverlay = () => {
-    setShowOverlay(false);
-    setActiveOverlay(null);
-  };
+ 
 
   return (
     <>
@@ -113,22 +86,32 @@ const Sidebar: React.FC = () => {
               <div className="accordion-collapse accordion-body">
                 <ul>
                   <li className="nav-item">
-                    <a
+                    <div
                       className="nav-link"
-                      onClick={() => openOverlay("horse")}
-                      href="#"
+                    onClick={()=>{
+                      navigate('/home')
+
+                      setActiveNav({title:'Horse Racing',val:'horse_race'});
+                      // navigate('/sports-page/Horse-Racing')
+                    }}
+                    
                     >
                       Horse Racing
-                    </a>
+                    </div>
                   </li>
                   <li className="nav-item">
-                    <a
+                    <div
                       className="nav-link"
-                      onClick={() => openOverlay("greyhound")}
-                      href="#"
+                     
+                      onClick={()=>{
+                        navigate('/home')
+
+                        setActiveNav({title:"GreyHound Racing",val:'greyhound/greyhond_race'});
+                        // navigate('/sports-page/Greyhound-Racing')
+                      }}
                     >
                       Greyhound Racing
-                    </a>
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -136,26 +119,7 @@ const Sidebar: React.FC = () => {
           </div>
         </div>
 
-        {/* Overlay */}
-        {showOverlay && (
-          <div className="overlay">
-            <div className="overlay-content">
-              <h2>
-                {activeOverlay === "horse"
-                  ? "All Horse Racing"
-                  : "All Greyhound Racing"}
-              </h2>
-              <ul>
-                {(activeOverlay === "horse" ? horseRaces : greyhoundRaces).map(
-                  (race, index) => (
-                    <li key={index}>{race}</li>
-                  )
-                )}
-              </ul>
-              <button onClick={closeOverlay}>Close</button>
-            </div>
-          </div>
-        )}
+       
 
         {/* Others */}
         <div className="accordion">
@@ -210,7 +174,11 @@ const Sidebar: React.FC = () => {
                   {(sidebarAllSports as Category[]).map(
                     (category, categoryIndex) => (
                       <li key={categoryIndex} className="nav-item">
-                        <a className=" nav-link">{category.name}</a>
+                        <div  onClick={()=>{
+navigate('/home')
+setActiveNav({title:category.name,val:category?.routing});
+
+}} className=" nav-link">{category.name}</div>
                       </li>
                     )
                   )}
@@ -220,7 +188,7 @@ const Sidebar: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="latest-event d-xl-none">
+      {/* <div className="latest-event d-xl-none">
         <div className="latest-event-item">
           <a className="blink_me" href="/game-details/4/828856279">
             <i className="d-icon icon-4"></i>
@@ -251,7 +219,7 @@ const Sidebar: React.FC = () => {
             <span>Real Sociedad v Valladolid</span>
           </a>
         </div>
-      </div>
+      </div> */}
       <ul className="nav nav-tabs d-xl-none menu-tabs">
         {
           (sidebarMenu||[]).map((item:any,i:number)=>{

@@ -1,8 +1,12 @@
 import React from "react";
+import { useUI } from "../../../../context/ui.context";
+import { useBetting } from "../../../../context/bettingContext";
 interface Props{
   data?:any
 }
 const Goal :React.FC<Props> = ({data}) => {
+  const {setCasinoBetOdds} = useBetting();
+
    console.log(data,"CHECK")
    const table1 = data?.t1;
    const table2 = data?.t2;
@@ -41,7 +45,14 @@ const Goal :React.FC<Props> = ({data}) => {
                         {item?.nat}
                       </span>
                     </div>
-                    <div className={` blb-box ${item?.status === "SUSPENDED" ? 'suspended-box':""}`}>
+                    <div onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.bp,size:item?.bs,min:item?.min,max:item?.max,  runnerName:`${item?.nat}`,type:"back",
+            className:"back",eventKey:'t1',
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }} className={` blb-box ${item?.status === "SUSPENDED" ? 'suspended-box':""}`}>
                       <div className="market-odd-box back ">
                         <span className="market-odd">{item?.bp}</span>
                         <span className="market-volume">{item?.bs}</span>
@@ -97,7 +108,14 @@ const Goal :React.FC<Props> = ({data}) => {
                         {item?.nat}
                       </span>
                     </div>
-                    <div className={` blb-box ${item?.status === "SUSPENDED" ? 'suspended-box':""}`}>
+                    <div onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.bp,size:item?.bs,min:item?.min,max:item?.max,  runnerName:`${item?.nat}`,type:"back",
+            className:"back",eventKey:'t1',
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }} className={` blb-box ${item?.status === "SUSPENDED" ? 'suspended-box':""}`}>
                       <div className="market-odd-box back ">
                         <span className="market-odd">{item?.bp}</span>
                         <span className="market-volume">{item?.bs}</span>

@@ -91,3 +91,26 @@ export const useAccountStatementData = (data:any) => {
     refetchOnWindowFocus: false, // No auto-refetch on focus
   });
 };
+
+
+const placingCasinoBet = async (data: any) => {
+  const response = await axios.post(`${API_ENDPOINTS.PLACECASINOBET}`, data?.data);
+  return response.data;
+};
+
+// React Query Mutation Hook
+export const usePlaceCasinoBet = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: placingCasinoBet, // Function that makes the API call
+    onSuccess: (data) => {
+      queryClient.invalidateQueries({ queryKey: ["currentbets-detail"] });
+
+      console.log("Bet placed successfully!", data);
+    },
+    onError: (error) => {
+      console.error("Error placing bet:", error);
+    },
+  });
+};

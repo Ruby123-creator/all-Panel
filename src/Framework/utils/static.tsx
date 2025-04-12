@@ -16,23 +16,22 @@ import Poker from "../../component/pages/LiveCasino/casinoTables/poker";
 import Patti2 from "../../component/pages/LiveCasino/casinoTables/patti2";
 import OurRoullete from "../../component/pages/LiveCasino/casinoTables/ourRoullete";
 import Baccarat from "../../component/pages/LiveCasino/casinoTables/baccarat";
-import Baccarat9 from "../../component/pages/LiveCasino/casinoTables/baccarat9";
+
 import Teen3 from "../../component/pages/LiveCasino/casinoTables/teen3";
 import Teen32 from "../../component/pages/LiveCasino/casinoTables/teen32";
-import Teen20b from "../../component/pages/LiveCasino/casinoTables/teen20b";
+
 import Poker20 from "../../component/pages/LiveCasino/casinoTables/poker20";
 import Dragontiger20 from "../../component/pages/LiveCasino/casinoTables/dragontiger20";
-import Dragontiger202 from "../../component/pages/LiveCasino/casinoTables/dragontiger202";
+
 import OnedayDragonTiger from "../../component/pages/LiveCasino/casinoTables/onedayDragonTiger";
 import DragonTigerLion20 from "../../component/pages/LiveCasino/casinoTables/dragonTigerLion20";
 import Card32 from "../../component/pages/LiveCasino/casinoTables/card32";
 import Card32eu from "../../component/pages/LiveCasino/casinoTables/card32eu";
 import AndarBahar150 from "../../component/pages/LiveCasino/casinoTables/andarBahar150";
 import AndarBahar2 from "../../component/pages/LiveCasino/casinoTables/AndarBahar2";
-import Lucky15 from "../../component/pages/LiveCasino/casinoTables/lucky15";
+
 import Lucky7 from "../../component/pages/LiveCasino/casinoTables/lucky7";
-import Lucky7B from "../../component/pages/LiveCasino/casinoTables/lucky7B";
-import Lucky7C from "../../component/pages/LiveCasino/casinoTables/lucky7C";
+
 import Cardjudgement from "../../component/pages/LiveCasino/casinoTables/cardjudgement";
 import Casinowar from "../../component/pages/LiveCasino/casinoTables/casinowar";
 import Worlimatka from "../../component/pages/LiveCasino/casinoTables/worlimatka";
@@ -44,18 +43,18 @@ import MatchTable from "../../component/pages/LiveCasino/casinoTables/matchTable
 import BollywoodTable from "../../component/pages/LiveCasino/casinoTables/bollywoodTable";
 import Casibo2 from "../../component/pages/LiveCasino/casinoTables/casibo2";
 import Teensin from "../../component/pages/LiveCasino/casinoTables/teensin";
-import { title } from "process";
+
 import Kbc from "../../component/pages/LiveCasino/casinoTables/kbc";
-import { table } from "console";
+
 import NoteNumber from "../../component/pages/LiveCasino/casinoTables/noteNumber";
 import Teen1 from "../../component/pages/LiveCasino/casinoTables/teen1";
 import Teen120 from "../../component/pages/LiveCasino/casinoTables/teen120";
 import Trap from "../../component/pages/LiveCasino/casinoTables/trap";
 import Trio from "../../component/pages/LiveCasino/casinoTables/trio";
-import Race2 from "../../component/pages/LiveCasino/casinoTables/race2";
+
 import Race17 from "../../component/pages/LiveCasino/casinoTables/race17";
 import Race20 from "../../component/pages/LiveCasino/casinoTables/race20";
-import CasinoQueen from "../../component/pages/LiveCasino/casinoTables/casinoQueen";
+
 import Lotterycard from "../../component/pages/LiveCasino/casinoTables/lotterycard";
 import { BiSolidCricketBall } from "react-icons/bi";
 import { IoMdFootball } from "react-icons/io";
@@ -66,7 +65,7 @@ import { MdSportsTennis } from "react-icons/md";
 import { FaVolleyball } from "react-icons/fa6";
 import { IoBasketballSharp } from "react-icons/io5";
 import { FaTableTennis } from "react-icons/fa";
-import { icons } from "antd/es/image/PreviewGroup";
+
 import { Carousel } from "antd";
 import Ballbyball from "../../component/pages/LiveCasino/casinoTables/ballbyball";
 import Bollywood from "../../component/pages/LiveCasino/casinoTables/bollywood";
@@ -808,18 +807,18 @@ export const socialLinks = [
 
 export const headerMenu = [
   { title: "Home", routing: "/home" },
-  { title: "Lottery", routing: "/casino-lobby/lottery" },
+  { title: "Lottery", routing: "/live-casino/Lottery" },
   { title: "Cricket", routing: "/sports-page/cricket" },
   { title: "Football", routing: "/sports-page/soccer" },
   { title: "Tennis", routing: "/sports-page/tennis" },
   { title: "Table Tennis", routing: "/sports-page/table-tennis" },
-  { title: "Baccarat", routing: "/casino-lobby/tableGames" },
-  { title: "32 Cards", routing: "/casino-lobby/tableGames" },
+  { title: "Baccarat", routing: "/live-casino/Baccarat" },
+  { title: "32 Cards", routing: "/live-casino/32 Cards" },
 
-  { title: "Teenpatti", routing: "/casino-lobby/tableGames" },
+  { title: "Teenpatti", routing: "/live-casino/Teenpatti" },
 
-  { title: "Poker", routing: "/casino-lobby/tableGames" },
-  { title: "Lucky 7", routing: "/casino-lobby/tableGames" },
+  { title: "Poker", routing: "/live-casino/Poker" },
+  { title: "Lucky 7", routing: "/live-casino/Lucky 7" },
 ];
 
 export const navMenu = [

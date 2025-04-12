@@ -1,4 +1,6 @@
 import React from "react";
+import { useUI } from "../../../../context/ui.context";
+import { useBetting } from "../../../../context/bettingContext";
 
 interface Props{
   data?:any;
@@ -45,6 +47,8 @@ return groupedData;
 }
 const DragonTigerLion20 :React.FC<Props> = ({data}) => {
   console.log(data,"CHECK");
+  const {setCasinoBetOdds} = useBetting();
+
   const playerInfo = data?.t1 || [];
  
   
@@ -70,14 +74,35 @@ const DragonTigerLion20 :React.FC<Props> = ({data}) => {
                   <div className="casino-nation-detail">
                     <div className="casino-nation-name">{item?.natname}</div>
                   </div>
-                  <div className={`casino-odds-box back ${item?.dstatus === 'suspended' ? 'suspended-box':''}`}>
+                  <div  onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.dbp,  runnerName:`${item?.natname}`,type:"back",
+                   className:"back",eventKey:'t1',
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }}  className={`casino-odds-box back ${item?.dstatus === 'suspended' ? 'suspended-box':''}`}>
                     <span className="casino-odds">{item?.dbp}</span>
                   </div>
-                  <div className={`casino-odds-box back ${item?.tstatus === 'suspended' ? 'suspended-box':''}`}>
+                  <div  onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.tbp,  runnerName:`${item?.natname}`,type:"back",
+                   className:"back",eventKey:'t1',
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }} className={`casino-odds-box back ${item?.tstatus === 'suspended' ? 'suspended-box':''}`}>
 
                     <span className="casino-odds">{item?.tbp}</span>
                   </div>
-                  <div className={`casino-odds-box back ${item?.lstatus === 'suspended' ? 'suspended-box':''}`}>
+                  <div  onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.lbp,  runnerName:`${item?.natname}`,type:"back",
+                   className:"back",eventKey:'t1',
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }} className={`casino-odds-box back ${item?.lstatus === 'suspended' ? 'suspended-box':''}`}>
                     <span className="casino-odds">{item?.lbp}</span>
                   </div>
                 </div>
@@ -93,13 +118,34 @@ const DragonTigerLion20 :React.FC<Props> = ({data}) => {
                   <img src={`/assets/images/AB_Images/${i+1}.jpg`} />
                 </div>
               </div>
-              <div className={`casino-odds-box back ${item?.dragonstatus === 'suspended' ? 'suspended-box':''}`}>
+              <div  onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.dragonbp,  runnerName:`${item?.natname}`,type:"back",
+                   className:"back",eventKey:'t1',
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }} className={`casino-odds-box back ${item?.dragonstatus === 'suspended' ? 'suspended-box':''}`}>
               <span className="casino-odds">{item?.dragonbp}</span>
               </div>
-              <div className={`casino-odds-box back ${item?.tigerstatus === 'suspended' ? 'suspended-box':''}`}>
+              <div onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.tigerbp,  runnerName:`${item?.natname}`,type:"back",
+                   className:"back",eventKey:'t1',
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }} className={`casino-odds-box back ${item?.tigerstatus === 'suspended' ? 'suspended-box':''}`}>
               <span className="casino-odds">{item?.tigerbp}</span>
               </div>
-              <div className={`casino-odds-box back ${item?.lionstatus === 'suspended' ? 'suspended-box':''}`}>
+              <div onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.lionbp,  runnerName:`${item?.natname}`,type:"back",
+                   className:"back",eventKey:'t1',
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }} className={`casino-odds-box back ${item?.lionstatus === 'suspended' ? 'suspended-box':''}`}>
               <span className="casino-odds">{item?.lionbp}</span>
               </div>
             </div>
@@ -128,13 +174,34 @@ const DragonTigerLion20 :React.FC<Props> = ({data}) => {
                   <img src={`/assets/images/AB_Images/${i+5}.jpg`} />
                 </div>
               </div>
-              <div className={`casino-odds-box back ${item?.dragonstatus === 'suspended' ? 'suspended-box':''}`}>
+              <div onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.dragonbp,  runnerName:`${item?.natname}`,type:"back",
+                   className:"back",eventKey:'t1',
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }} className={`casino-odds-box back ${item?.dragonstatus === 'suspended' ? 'suspended-box':''}`}>
               <span className="casino-odds">{item?.dragonbp}</span>
               </div>
-              <div className={`casino-odds-box back ${item?.tigerstatus === 'suspended' ? 'suspended-box':''}`}>
+              <div onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.tigerbp,  runnerName:`${item?.natname}`,type:"back",
+                   className:"back",eventKey:'t1',
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }} className={`casino-odds-box back ${item?.tigerstatus === 'suspended' ? 'suspended-box':''}`}>
               <span className="casino-odds">{item?.tigerbp}</span>
               </div>
-              <div className={`casino-odds-box back ${item?.lionstatus === 'suspended' ? 'suspended-box':''}`}>
+              <div onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.lionbp,  runnerName:`${item?.natname}`,type:"back",
+                   className:"back",eventKey:'t1',
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }} className={`casino-odds-box back ${item?.lionstatus === 'suspended' ? 'suspended-box':''}`}>
               <span className="casino-odds">{item?.lionbp}</span>
               </div>
             </div>

@@ -1,8 +1,13 @@
 import React from "react";
+import { useUI } from "../../../../context/ui.context";
+import { alphaValue } from "../../../../Framework/utils/constant";
+import { useBetting } from "../../../../context/bettingContext";
 interface Props {
   data?: any;
 }
 const Dragontiger20: React.FC<Props> = ({ data }) => {
+  const {setCasinoBetOdds} = useBetting();
+
   console.log(data, "CHECK");
   const table1 = data?.t1;
   const table2 = data?.t2;
@@ -17,6 +22,14 @@ const Dragontiger20: React.FC<Props> = ({ data }) => {
             >
               <div className="casino-odds text-center">{item?.bp}</div>
               <div
+              onClick={(e)=>{
+                e.preventDefault();
+                e.stopPropagation();
+                setCasinoBetOdds({ odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+                 className:"back",eventKey:'t1',
+                  // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                })
+              }}
                 className={`casino-odds-box back casino-odds-box-theme ${
                   item?.status === "suspended" ? "suspended-box" : ""
                 } `}
@@ -37,6 +50,14 @@ const Dragontiger20: React.FC<Props> = ({ data }) => {
               <div className="dt20-odd-box dt20odds">
                 <div className="casino-odds text-center">{item?.bp}</div>
                 <div
+                onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+                   className:"back",eventKey:'t1',
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }}
                   className={`casino-odds-box back casino-odds-box-theme ${
                     item?.status === "suspended" ? "suspended-box" : ""
                   } `}
@@ -75,6 +96,14 @@ const Dragontiger20: React.FC<Props> = ({ data }) => {
               <div className="dt20-odd-box dt20odds">
                 <div className="casino-odds text-center">{item?.bp}</div>
                 <div
+                 onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+                   className:"back",eventKey:'t1',
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }}
                   className={`casino-odds-box back casino-odds-box-theme ${
                     item?.status === "suspended" ? "suspended-box" : ""
                   } `}
@@ -133,7 +162,16 @@ const Dragontiger20: React.FC<Props> = ({ data }) => {
             </h4>
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map((val, i) => {
               return (
-                <div className="card-odd-box">
+                <div
+                onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:12,  runnerName:`Card ${alphaValue(val)}`,type:"back",
+                   className:"back",eventKey:'t1',
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }}
+                className="card-odd-box">
                   <div
                     className={`${
                       cardValue?.status === "suspended" ? "suspended-box" : ""

@@ -1,5 +1,5 @@
 import { useTableCardsFixture } from "../../../Framework/tablecards";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import FlipClockCountdown from "@leenguyen/react-flip-clock-countdown";
 import "@leenguyen/react-flip-clock-countdown/dist/index.css";
 import { useParams } from "react-router-dom";
@@ -7,129 +7,10 @@ import { useParams } from "react-router-dom";
 import CasinoResultModal from "../../modals/resultModal";
 import { renderTable } from "../../../Framework/utils/static";
 import ScorecardBoard from "./scorecard";
-const suspendedData = {
-  success: true,
-  update: "2025-03-25 23:47:07",
-  auto: "28",
-  mid: " 101250325234446",
-  img: "9HH,KDD,1,ASS,KHH,1",
-  t1: [
-    {
-      nat: "Player A Main",
-      status: "suspend",
-      bp: "0",
-      lp: "0",
-      sid: 1,
-    },
-    {
-      nat: "Player A Consecutive",
-      status: "suspend",
-      bp: "0",
-      lp: "0",
-      sid: 2,
-    },
-    {
-      nat: "Player B Main",
-      status: "suspend",
-      bp: "0",
-      lp: "0",
-      sid: 3,
-    },
-    {
-      nat: "Player B Consecutive",
-      status: "suspend",
-      bp: "0",
-      lp: "0",
-      sid: 4,
-    },
-  ],
-  t2: [
-    {
-      nat: "Odd Card 1",
-      bp: "0",
-      status: "suspend",
-      sid: 1,
-      type: "even",
-    },
-    {
-      nat: "Odd Card 2",
-      bp: "0",
-      status: "suspend",
-      sid: 2,
-      type: "even",
-    },
-    {
-      nat: "Odd Card 3",
-      bp: "0",
-      status: "suspend",
-      sid: 3,
-      type: "even",
-    },
-    {
-      nat: "Odd Card 4",
-      bp: "0",
-      status: "suspend",
-      sid: 4,
-      type: "even",
-    },
-    {
-      nat: "Odd Card 5",
-      bp: "1.97",
-      status: "active",
-      sid: 5,
-      type: "even",
-    },
-    {
-      nat: "Odd Card 6",
-      bp: "0",
-      status: "suspend",
-      sid: 6,
-      type: "even",
-    },
-    {
-      nat: "Even Card 1",
-      bp: "0",
-      status: "suspend",
-      sid: 7,
-      type: "even",
-    },
-    {
-      nat: "Even Card 2",
-      bp: "0",
-      status: "suspend",
-      sid: 8,
-      type: "even",
-    },
-    {
-      nat: "Even Card 3",
-      bp: "0",
-      status: "suspend",
-      sid: 9,
-      type: "even",
-    },
-    {
-      nat: "Even Card 4",
-      bp: "0",
-      status: "suspend",
-      sid: 10,
-      type: "even",
-    },
-    {
-      nat: "Even Card 5",
-      bp: "1.97",
-      status: "active",
-      sid: 11,
-      type: "even",
-    },
-    {
-      nat: "Even Card 6",
-      bp: "0",
-      status: "suspend",
-      sid: 12,
-      type: "even",
-    },
-  ],
-};
+
+import CasinoBettingWindow from "../../common/CasinoBettingWindow";
+import { BettingProvider, useBetting } from "../../../context/bettingContext";
+const MemoCasinoBettingWindow = React.memo(CasinoBettingWindow);
 const resultData = [
   {
     success: true,
@@ -168,18 +49,19 @@ const resultData = [
 ];
 const LiveCasino = () => {
   const { val } = useParams();
-
+  // const {casinoOdds} = useBetting();
   const { data } = useTableCardsFixture(val);
   const [openResultModal, setOpenResultModal] = useState(false);
   const [casinoResult, setCasinoresult] = useState({});
-  // const {t1=[],t2=[]} = data;
+  
 
   return (
     <div className="center-main-container casino-page">
-      <div className="center-container">
-        <div className="casino-page-container teenpatti1day">
+      <BettingProvider> <div className="center-container">
+        <div className="casino-page-container">
           <div className="casino-header">
             <span className="casino-name">
+              
               {renderTable(val)?.title}{" "}
               <a className="ms-1">
                 <small>Rules</small>
@@ -269,8 +151,12 @@ const LiveCasino = () => {
           </div>
         </div>
       </div>
-
+     
+       
       <div className="sidebar right-sidebar casino-right-sidebar">
+        {
+           <MemoCasinoBettingWindow/> 
+        }
         <div className="sidebar-box my-bet-container">
           <div className="sidebar-title">
             <h4>My Bet</h4>
@@ -290,7 +176,10 @@ const LiveCasino = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div></BettingProvider>
+     
+    
+     
       <CasinoResultModal
         openModal={openResultModal}
         setOpenModal={setOpenResultModal}

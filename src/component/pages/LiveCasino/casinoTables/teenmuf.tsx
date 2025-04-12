@@ -1,8 +1,12 @@
 import React from "react";
+import { useUI } from "../../../../context/ui.context";
+import { useBetting } from "../../../../context/bettingContext";
 interface Props {
   data?: any;
 }
 const Teenmuf: React.FC<Props> = ({ data }) => {
+  const {setCasinoBetOdds,casinoOdds} = useBetting();
+
   console.log(data,"CHECK::::::::::::::")
   const playerInfo = data?.t1 || [];
   return (
@@ -30,7 +34,14 @@ const Teenmuf: React.FC<Props> = ({ data }) => {
               {
               ((playerInfo||[]).slice(0,3)||[]).map((item:any,i:number)=>{
                 return(
-              <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
+              <div onClick={(e)=>{
+                e.preventDefault();
+                e.stopPropagation();
+                setCasinoBetOdds({...casinoOdds, odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+                 className:"back",eventKey:'t1',
+                  // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                })
+              }} className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
                 <span className="casino-odds">{item?.bp}</span>
               </div>
              
@@ -64,7 +75,14 @@ const Teenmuf: React.FC<Props> = ({ data }) => {
               {
               ((playerInfo||[]).slice(3,6)||[]).map((item:any,i:number)=>{
                 return(
-              <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
+              <div onClick={(e)=>{
+                e.preventDefault();
+                e.stopPropagation();
+                setCasinoBetOdds({...casinoOdds, odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+                 className:"back",eventKey:'t1',
+                  // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                })
+              }} className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
                 <span className="casino-odds">{item?.bp}</span>
               </div>
              

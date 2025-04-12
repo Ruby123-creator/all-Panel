@@ -1,8 +1,12 @@
 import React from "react";
+import { useUI } from "../../../../context/ui.context";
+import { useBetting } from "../../../../context/bettingContext";
 interface Props {
   data?: any;
 }
 const Teen32: React.FC<Props> = ({ data }) => {
+    const {setCasinoBetOdds,casinoOdds} = useBetting();
+  
   console.log(data, "CHECK");
   const playerInfo = data?.t1 || [];
   const playerResult =  data?.t2 || []
@@ -24,6 +28,14 @@ const Teen32: React.FC<Props> = ({ data }) => {
                       <div className="casino-nation-name">Main</div>
                     </div>
                     <div
+                    onClick={(e)=>{
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setCasinoBetOdds({...casinoOdds, odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+                       className:"back",eventKey:'t1',
+                        // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                      })
+                    }}
                       className={`casino-odds-box back ${
                         item?.status === "suspended" ? "suspended-box" : ""
                       }`}
@@ -31,6 +43,14 @@ const Teen32: React.FC<Props> = ({ data }) => {
                       <span className="casino-odds">{item?.bp}</span>
                     </div>
                     <div
+                    onClick={(e)=>{
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setCasinoBetOdds({...casinoOdds, odds:item?.lp,  runnerName:`${item?.nat}`,type:"lay",
+                       className:"lay",eventKey:'t1',
+                        // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                      })
+                    }}
                       className={`casino-odds-box lay ${
                         item?.status === "suspended" ? "suspended-box" : ""
                       }`}
@@ -49,7 +69,14 @@ const Teen32: React.FC<Props> = ({ data }) => {
                               {item?.nat}
                             </div>
                           </div>
-                          <div className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
+                          <div onClick={(e)=>{
+              e.preventDefault();
+              e.stopPropagation();
+              setCasinoBetOdds({...casinoOdds, odds:item?.bp,  runnerName:`${item?.nat}`,type:"back",
+               className:"back",eventKey:'t1',
+                // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+              })
+            }} className={`casino-odds-box back ${item?.status === "suspended" ? 'suspended-box':''}`}>
                             <span className="casino-odds">{item?.bp}</span>
                           </div>
                         </div>

@@ -1,9 +1,13 @@
 import React from "react";
+import { useUI } from "../../../../context/ui.context";
+import { useBetting } from "../../../../context/bettingContext";
 
 interface Props{
   data:any;
 }
 const MatchTable :React.FC<Props> = ({data}) => {
+  const {setCasinoBetOdds} = useBetting();
+
   console.log(data,"CHECK")
   const ballsInfo = data?.t1
   return (
@@ -38,10 +42,24 @@ const MatchTable :React.FC<Props> = ({data}) => {
                   <img src={`/assets/images/balls/ball${((item?.nat||"").split(" ")||[])[1]}.png`} />
                 </div>
                 <div className="blbox">
-                  <div className={`casino-odds-box back ${item?.gstatus === "SUSPENDED" ? "suspended-box" :""}`}>
+                  <div onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.b1,  runnerName:`${item?.nat}`,type:"back",
+                   className:"back",eventKey:'t1',
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }} className={`casino-odds-box back ${item?.gstatus === "SUSPENDED" ? "suspended-box" :""}`}>
                     <span className="casino-odds">{item?.b1}</span>
                   </div>
-                  <div className={`casino-odds-box lay ${item?.gstatus === "SUSPENDED" ? "suspended-box" :""}`}>
+                  <div onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.l1,  runnerName:`${item?.nat}`,type:"lay",
+                   className:"lay"
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }} className={`casino-odds-box lay ${item?.gstatus === "SUSPENDED" ? "suspended-box" :""}`}>
                     <span className="casino-odds">{item?.l1}</span>
                   </div>
                 </div>
@@ -80,11 +98,25 @@ const MatchTable :React.FC<Props> = ({data}) => {
                 <div className="ball-icon">
                   <img src={`/assets/images/balls/ball${((item?.nat||"").split(" ")||[])[1]}.png`} />
                 </div>
-                <div className="blbox">
+                <div onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.b1,  runnerName:`${item?.nat}`,type:"back",
+                   className:"back",eventKey:'t1',
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }} className="blbox">
                   <div className={`casino-odds-box back ${item?.gstatus === "SUSPENDED" ? "suspended-box" :""}`}>
                     <span className="casino-odds">{item?.b1}</span>
                   </div>
-                  <div className={`casino-odds-box lay ${item?.gstatus === "SUSPENDED" ? "suspended-box" :""}`}>
+                  <div onClick={(e)=>{
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCasinoBetOdds({ odds:item?.l1,  runnerName:`${item?.nat}`,type:"lay",
+                   className:"lay"
+                    // key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min
+                  })
+                }} className={`casino-odds-box lay ${item?.gstatus === "SUSPENDED" ? "suspended-box" :""}`}>
                     <span className="casino-odds">{item?.l1}</span>
                   </div>
                 </div>

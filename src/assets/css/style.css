@@ -2754,6 +2754,7 @@ tr {
   font-weight: 400;
   font-size: 14px;
   padding: 2px 15px;
+  cursor: pointer;
 }
 
 .sidebar .nav-item .nav-link span {
@@ -2978,12 +2979,9 @@ tr {
 .center-container .nav.sports-tab,
 .center-container .nav.casino-tab,
 .center-container .nav.casino-sub-tab {
-  overflow: scroll;
-  /* Allow scrolling */
-  -ms-overflow-style: none;
-  /* Disable scrollbar for IE and Edge */
-  scrollbar-width: none;
-  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-behavior: smooth;
   flex-wrap: wrap;
   align-content: flex-start;
   background-color: var(--bg-secondary);
@@ -2994,6 +2992,8 @@ tr {
   background-color: transparent;
   height: auto;
   flex-wrap: nowrap;
+ 
+
 }
 
 /* .center-container .nav.sports-tab {
@@ -3012,6 +3012,7 @@ tr {
 
 .center-container .casino-sub-tab-list .nav.casino-sub-tab .nav-item {
   width: auto;
+  
 }
 
 .home-page .tab-content #loader-section {
@@ -4181,6 +4182,11 @@ tr {
 
 .own-casino-page .casino-sub-tab {
   width: 100%;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+.casino-sub-tab::-webkit-scrollbar {
+  display: none; /* Hide scrollbar if desired */
 }
 
 .own-casino-page .show-close-btn .casino-sub-tab {
@@ -4243,7 +4249,7 @@ tr {
   display: flex;
   flex-wrap: wrap;
   gap: 10;
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 .casino-list-item {
