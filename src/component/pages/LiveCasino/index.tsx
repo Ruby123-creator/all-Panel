@@ -154,9 +154,9 @@ const LiveCasino = () => {
      
        
       <div className="sidebar right-sidebar casino-right-sidebar">
-        {
+        
            <MemoCasinoBettingWindow/> 
-        }
+        
         <div className="sidebar-box my-bet-container">
           <div className="sidebar-title">
             <h4>My Bet</h4>

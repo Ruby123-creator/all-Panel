@@ -35,10 +35,12 @@ const MatchOddBookmaker: React.FC<Props> = ({ data, updatedTime }) => {
   const [prevData, setPrevData] = useState<DataItem[]>([]);
   const [blinkFields, setBlinkFields] = useState<BlinkState[]>([]);
   const { data: allBets } = useCurrentBetsData();
-  const LayBack = ({item,price,size,className='',eventKey,betType}:any)=>{
-    
+  const LayBack = ({item,price,size,className='',eventKey,betType,index,sizeKey}:any)=>{
+    const isBlinking =
+    blinkFields[index]?.[eventKey] || blinkFields[index]?.[sizeKey];
+
     return(
-      <div className={`market-odd-box ${className}`}
+      <div className={`market-odd-box ${className} ${isBlinking ? "blink" : ""}`}
       onClick={()=>{
         setMatchedBets({ ...betOdds, odds: price, max: item?.max, runnerName:item?.RunnerName,key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min})
       }}
@@ -80,56 +82,22 @@ const MatchOddBookmaker: React.FC<Props> = ({ data, updatedTime }) => {
     if (data && prevData.length === data.length) {
       const newBlinkFields = getBlinkFields(data, prevData);
       setBlinkFields(newBlinkFields);
-
-      // Reset blinking effect after 1 second
+  
+      // Update prevData for next comparison
+      setPrevData([...data]);
+  
       const timeout = setTimeout(() => {
         setBlinkFields(data.map(() => ({})));
       }, 1000);
-
+  
       return () => clearTimeout(timeout);
-    }
-
-    if (data) {
+    } else if (data) {
       setPrevData([...data]);
     }
   }, [data]);
 
-  // Helper function to render LayBack components
-  // const renderLayBack = (
-  //   title: string,
-  //   item: DataItem,
-  //   type: "back" | "lay",
-  //   priceKey: keyof DataItem,
-  //   sizeKey: keyof DataItem,
-  //   className: string,
-  //   index: number
-  // ) => {
-  //   const price = item[priceKey] as string;
-  //   const size = item[sizeKey] as string;
-  //   const isBlinking =
-  //     blinkFields[index]?.[priceKey] || blinkFields[index]?.[sizeKey];
-
-  //   return (
-  //     <LayBack
-  //       val={price}
-  //       size={size}
-  //       max={item.max}
-  //       type={type}
-  //       eventKey={priceKey}
-  //       runnerName={item.RunnerName}
-  //       time={updatedTime}
-  //       betType={title}
-  //       allowed={true}
-  //       betTrue={true}
-  //       min={Number(item?.min)}
-  //       className={`${className} ${isBlinking ? "blink" : ""}`}
-  //     />
-  //   );
-  // };
-
-  // const setMatchOddsValues = ()=>{
-  //   setMatchedBets({ ...betOdds, odds: val, max: max, runnerName,key:eventKey ,type,betType: betType === "Bookmaker" ? "bookmaker":"odd",time,min})
-  // }
+ 
+  const minmax = (data||[])[0]
   console.log(allBets, "BetWindow");
   return (
     <div className="game-market market-4 ">
@@ -138,7 +106,7 @@ const MatchOddBookmaker: React.FC<Props> = ({ data, updatedTime }) => {
       </div>
       <div className="market-header">
         <div className="market-nation-detail">
-          <span className="market-nation-name">Max: 1L</span>
+          <span className="market-nation-name">Max: {minmax?.max}</span>
         </div>
         <div className="market-odd-box no-border d-none d-md-block"></div>
         <div className="market-odd-box no-border d-none d-md-block"></div>
@@ -161,12 +129,12 @@ const MatchOddBookmaker: React.FC<Props> = ({ data, updatedTime }) => {
               <span className="market-nation-name">{item?.RunnerName}</span>
               <div className="market-nation-book"></div>
             </div>
-            <LayBack item={item} price={item?.BackPrice2} size={item?.BackSize2} eventKey="BackPrice2" betType ="back"  className="back2"/>
-            <LayBack item={item} price={item?.BackPrice3} size={item?.BackSize3} eventKey="BackPrice3" betType ="back" className="back1"/>
-            <LayBack item={item} price={item?.BackPrice1} size={item?.BackSize1} eventKey="BackPrice1" betType ="back" className="back"/>
-            <LayBack item={item} price={item?.LayPrice1} size={item?.LaySize1} eventKey="LayPrice1" betType ="lay" className="lay"/>
-            <LayBack item={item} price={item?.LayPrice2} size={item?.LaySize2} eventKey="LayPrice2" betType ="lay" className="lay1"/>
-            <LayBack item={item} price={item?.LayPrice3} size={item?.LaySize3} eventKey="LayPrice3" betType ="lay" className="lay2"/>
+            <LayBack item={item} index={i} price={item?.BackPrice2} size={item?.BackSize2} eventKey="BackPrice2" sizeKey="BackSize2" betType ="back"  className="back2"/>
+            <LayBack item={item} index={i} price={item?.BackPrice3} size={item?.BackSize3} eventKey="BackPrice3" sizeKey="BackSize3" betType ="back" className="back1"/>
+            <LayBack item={item} index={i} price={item?.BackPrice1} size={item?.BackSize1} eventKey="BackPrice1" sizeKey="BackSize1" betType ="back" className="back"/>
+            <LayBack item={item} index={i} price={item?.LayPrice1} size={item?.LaySize1} eventKey="LayPrice1" sizeKey="LaySize1" betType ="lay" className="lay"/>
+            <LayBack item={item} index={i} price={item?.LayPrice2} size={item?.LaySize2} eventKey="LayPrice2" sizeKey="LaySize2" betType ="lay" className="lay1"/>
+            <LayBack item={item} index={i} price={item?.LayPrice3} size={item?.LaySize3} eventKey="LayPrice3" sizeKey="LaySize3" betType ="lay" className="lay2"/>
 
            
           </div>)

@@ -50,7 +50,7 @@ return formattedDate;
               <tbody>
                 {(data||[]).map((casino:any, index:number) => (
                   <tr
-                    key={"currentBets"+index}
+                    key={"settlements"+index}
                     className="border-b text-xs"
                   >
                     <td className="p-2">{index+1}</td>

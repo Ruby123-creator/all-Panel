@@ -259,12 +259,12 @@ const AccountDrawer : React.FC<Props> = ({openDrawer}) => {
                    {
                     (drawerElement||[]).map((item,i)=>{
                         return(
-<li className="divide-y flex items-start justify-start flex-col"><span
+<li className="divide-y flex items-start justify-start flex-col" key={"drawerElement" + i}><span
                             className="font-lato-bold font-semibold px-3 py-1 w-full bg-bg_Ternary8 text-xs xs:text-sm text-text_Ternary ">{item?.title}</span>
                         <div className="divide-y pl-5 flex items-start justify-start w-full flex-col">
                           {
-                            (item?.items||[]).map((val)=>{
-                                return(<div className="w-full">
+                            (item?.items||[]).map((val,index)=>{
+                                return(<div className="w-full" key={"drawerItems" + i + index}>
                                     <div
                                         className="flex transition-all px-0.5 rounded-sm ease-in-out duration-150 hover:bg-bg_Ternary6  active:scale-[99%] items-center justify-start gap-3 w-full py-2 cursor-pointer" onClick={()=>{
                                             if(val?.title === "Sign Out"){
@@ -298,7 +298,7 @@ const AccountDrawer : React.FC<Props> = ({openDrawer}) => {
                             <div className="flex w-full items-center justify-center gap-1 ">
                                 {
                                     socialLinks.map((item:any,i)=>{
-                                     return <a title="whatsapp"
+                                     return <a title="whatsapp" key={"socialElements" + i}
                                      href="https://wa.me/0000000000?text=Hello%20there!" target="_blank"
                                      className="flex items-center justify-center gap-1 w-10 h-10 ">
                                        {item?.icon}

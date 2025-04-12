@@ -122,7 +122,7 @@ console.log(betOdds,"Check:::")
     const betOddsValue = parseFloat(betOdds.odds);
      const currentsize = parseFloat(checkCurrentBet[`${betOdds?.sizeKey}`])
 
-   
+      console.log(betOdds,'BETODDSSS')
 
     if(betOdds?.betType === 'session'){
         if(Number(betOdds?.size) !== Number(currentsize)){
@@ -333,7 +333,7 @@ console.log(betOdds,"Check:::")
             {
                (stacks||[]).map((val:number,i:number)=>{
                 return(
-                  <button className="btn btn-place-bet" onClick={()=>{
+                  <button key={"stackAmountVal" + i} className="btn btn-place-bet" onClick={()=>{
                          handleStackClick(val);
                   }}>{val}</button>
   

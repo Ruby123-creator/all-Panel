@@ -8,7 +8,7 @@ interface CasinoOdds {
   size?:string;
   min?:number|undefined;
   max?:string|undefined;
-  eventKey?:string
+  eventKey?:string;
 }
 
 interface BettingContextType {

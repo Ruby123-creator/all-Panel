@@ -139,7 +139,7 @@ const Sidebar: React.FC = () => {
               <div className="accordion-collapse accordion-body">
                 <ul>
                   {(sidebarOthers as SidebarItem[]).map((item, index) => (
-                    <li key={index} className="nav-item">
+                    <li className="nav-item" key={"sidebarOthers" + index}>
                       <a
                         className={`nav-link ${item.class || ""}`}
                         href={item.url}
@@ -224,7 +224,7 @@ setActiveNav({title:category.name,val:category?.routing});
         {
           (sidebarMenu||[]).map((item:any,i:number)=>{
             return(
-              <li className="nav-item">
+              <li className="nav-item" key={"sidebarItems" + i}>
               <a className="nav-link" href={item?.url}>
                 {item?.title}
               </a>

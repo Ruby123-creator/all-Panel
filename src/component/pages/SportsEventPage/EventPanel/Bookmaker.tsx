@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useUI } from "../../../../context/ui.context";
 
 interface DataItem {
@@ -20,17 +20,54 @@ interface DataItem {
   LaySize3: string;
   updateTime?: string;
 }
+type BlinkState = Record<string, boolean>;
 interface Props {
   data: DataItem[];
   updatedTime: string;
 }
 const BookmakerComp: React.FC<Props> = ({ data, updatedTime }) => {
   const {setMatchedBets,betOdds} = useUI();
-  const LayBack = ({item,price,size,className='',eventKey,betType}:any)=>{
+    const [prevData, setPrevData] = useState<DataItem[]>([]);
+    const [blinkFields, setBlinkFields] = useState<BlinkState[]>([]);
+    const getBlinkFields = (
+      currentData: DataItem[],
+      previousData: DataItem[]
+    ): BlinkState[] => {
+      return currentData.map((item, index) => {
+        const changes: BlinkState = {};
+        Object.keys(item).forEach((key) => {
+          changes[key] =
+            item[key as keyof DataItem] !==
+            previousData[index]?.[key as keyof DataItem];
+        });
+        return changes;
+      });
+    };
+  
+    useEffect(() => {
+      if (data && prevData.length === data.length) {
+        const newBlinkFields = getBlinkFields(data, prevData);
+        setBlinkFields(newBlinkFields);
     
+        // Update prevData for next comparison
+        setPrevData([...data]);
+    
+        const timeout = setTimeout(() => {
+          setBlinkFields(data.map(() => ({})));
+        }, 1000);
+    
+        return () => clearTimeout(timeout);
+      } else if (data) {
+        setPrevData([...data]);
+      }
+    }, [data]);
+  
+  const LayBack = ({item,price,size,className='',eventKey,betType,index,sizeKey}:any)=>{
+    const isBlinking =
+    blinkFields[index]?.[eventKey] || blinkFields[index]?.[sizeKey];
     return(
       
-      <div className={`market-odd-box ${className}`}
+      <div className={`market-odd-box ${className} ${isBlinking ? "blink" : ""}`}
       onClick={()=>{
         setMatchedBets({ ...betOdds, odds: price, max: item?.max, runnerName:item?.RunnerName,key:eventKey ,type:betType,betType: "bookmaker",time:updatedTime,min: item?.min})
       }}
@@ -66,8 +103,8 @@ const BookmakerComp: React.FC<Props> = ({ data, updatedTime }) => {
                       <span className="market-nation-name">{item?.RunnerName}</span>
                       <div className="market-nation-book"></div>
                     </div>
-                    <LayBack item={item} price={item?.BackPrice1} size={item?.BackSize1} eventKey="BackPrice1" betType ="back"  className="back"/>
-                    <LayBack item={item} price={item?.LayPrice1} size={item?.LaySize1} eventKey="LayPrice1" betType ="lay"  className="lay"/>
+                    <LayBack item={item} index={i} sizeKey={"BackSize1"} price={item?.BackPrice1} size={item?.BackSize1} eventKey="BackPrice1" betType ="back"  className="back"/>
+                    <LayBack item={item} index={i} sizeKey={"LaySize1"} price={item?.LayPrice1} size={item?.LaySize1} eventKey="LayPrice1" betType ="lay"  className="lay"/>
                    
                   </div>
                 )

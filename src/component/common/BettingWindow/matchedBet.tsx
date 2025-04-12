@@ -123,7 +123,7 @@ const MatchedBets: React.FC<Props> = () => {
               {
                 (data||[]).map((bet:any,i:number)=>{
                   return(
-                    <tr className={bet.betTypes === 'back' ?'back':'lay'}>
+                    <tr key={"matchedBets"+ i} className={bet.betTypes === 'back' ?'back':'lay'}>
                     <td>{bet.nation}</td>
                     <td className="text-end">{bet.userRate}</td>
                     <td className="text-end">₹{bet.amount}</td>

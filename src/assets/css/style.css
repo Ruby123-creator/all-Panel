@@ -2979,7 +2979,7 @@ tr {
 .center-container .nav.sports-tab,
 .center-container .nav.casino-tab,
 .center-container .nav.casino-sub-tab {
-  overflow-x: auto;
+  overflow-x: hidden;
   white-space: nowrap;
   scroll-behavior: smooth;
   flex-wrap: wrap;
@@ -13113,7 +13113,8 @@ padding: 8px;
     position: relative;
     width: 100%;
     margin: 0;
-    overflow-x: auto;
+ 
+
     background-color: var(--bg-secondary);
   }
 
@@ -13228,7 +13229,7 @@ padding: 8px;
   .center-container .nav.sports-tab,
   .center-container .nav.casino-tab,
   .center-container .nav.casino-sub-tab {
-    overflow-x: auto;
+  
     width: 100%;
     flex-wrap: nowrap;
     height: auto;
@@ -14910,4 +14911,19 @@ padding: 8px;
   to {
     transform: rotate(360deg);
   }
+}
+
+
+@keyframes blink {
+  0% { background-color: var(--basketball);
+        border: var(--basketball);
+  }
+  50% { background-color: var(--basketball); }
+  100% { background-color: var(--basketball); 
+     border: var(--basketball);
+  }
+}
+
+.blink {
+  animation: blink 0.2s step-end alternate;
 }
