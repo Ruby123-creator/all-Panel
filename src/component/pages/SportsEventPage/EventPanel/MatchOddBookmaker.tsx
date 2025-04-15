@@ -2,6 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useUI } from "../../../../context/ui.context";
 import BetSlip from "../../../common/BettingWindow/betSlip";
 import { useCurrentBetsData } from "../../../../Framework/placeBet";
+import { Modal } from "antd";
+import BettingWindowModal from "../../../modals/bettingWindowModal";
+import { useBetting } from "../../../../context/bettingContext";
+import BettingWindow from "../../../common/BettingWindow";
+import useWindowWidth from "../../../common/windowWidth";
 
 interface DataItem {
   RunnerName: string;
@@ -31,10 +36,23 @@ interface Props {
 }
 
 const MatchOddBookmaker: React.FC<Props> = ({ data, updatedTime }) => {
-  const { betOdds, betWindow, setBetWindow ,setMatchedBets} = useUI();
+  const {  betWindow, setBetWindow } = useUI();
+  const width = useWindowWidth();
+  const {betOdds,setMatchedBets} = useBetting()
   const [prevData, setPrevData] = useState<DataItem[]>([]);
   const [blinkFields, setBlinkFields] = useState<BlinkState[]>([]);
   const { data: allBets } = useCurrentBetsData();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+ console.log(width,"please check");
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
   const LayBack = ({item,price,size,className='',eventKey,betType,index,sizeKey}:any)=>{
     const isBlinking =
     blinkFields[index]?.[eventKey] || blinkFields[index]?.[sizeKey];
@@ -42,7 +60,11 @@ const MatchOddBookmaker: React.FC<Props> = ({ data, updatedTime }) => {
     return(
       <div className={`market-odd-box ${className} ${isBlinking ? "blink" : ""}`}
       onClick={()=>{
-        setMatchedBets({ ...betOdds, odds: price, max: item?.max, runnerName:item?.RunnerName,key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min})
+        setMatchedBets({ ...betOdds, odds: price, max: item?.max, runnerName:item?.RunnerName,key:eventKey ,type:betType,betType: "odd",time: updatedTime,min: item?.min});
+        if(width<1200){
+          setIsModalOpen(true);
+
+        }
       }}
       >
       <span className="market-odd">{price}</span>
@@ -51,17 +73,7 @@ const MatchOddBookmaker: React.FC<Props> = ({ data, updatedTime }) => {
     )
   }
 
-  const calculateProfitLoss = (type: string) => {
-    if (type === "session") {
-      return ((Number(betOdds.size) * betOdds?.amount) / 100).toFixed(2);
-    } else if (type === "bookmaker") {
-      return ((Number(betOdds.odds) * betOdds?.amount) / 100).toFixed(2);
-    } else {
-      return (Number(betOdds.odds) * betOdds?.amount - betOdds?.amount).toFixed(
-        2
-      );
-    }
-  };
+ 
   // Helper function to compare previous and current data
   const getBlinkFields = (
     currentData: DataItem[],
@@ -141,6 +153,14 @@ const MatchOddBookmaker: React.FC<Props> = ({ data, updatedTime }) => {
         })
       }
       </div>
+      {
+        width<1200 ? <Modal closeIcon={false} footer={null} title={
+          <div className="modal-header"><div className="modal-title h4">Place Bet</div><button type="button" onClick={()=>setIsModalOpen(false)} className="btn-close" aria-label="Close"></button></div>
+        } open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+         <BettingWindowModal/>
+        </Modal>:""
+      }
+      
     </div>
   );
 };

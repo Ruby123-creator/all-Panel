@@ -9,6 +9,7 @@ import { useIPDetails } from "../../../Framework/login";
 import { checkTimeDifference, extractDetails, showToasterMessage } from "../../../Framework/utils/constant";
 import { usePlaceBet } from "../../../Framework/placeBet";
 import { format} from "date-fns";
+import { useBetting } from "../../../context/bettingContext";
 
 
 interface BetOdds {
@@ -33,7 +34,9 @@ interface UserData {
 }
 
 const BetSlip: React.FC = () => {
-  const { betOdds, stacks ,setMatchedBets,userData,setStacks} = useUI();
+  const {casinoOdds,setCasinoBetOdds} = useBetting();
+  const {  stacks ,userData,setStacks} = useUI();
+  const {betOdds , setMatchedBets} = useBetting();
   const { sport, eventId }: any = useParams();
    const [val,setValue] = useState('');
 console.log(betOdds,"Check:::")
@@ -119,7 +122,7 @@ console.log(betOdds,"Check:::")
   
     // Check odds validity
     const currentOdds = parseFloat(checkCurrentBet[`${betOdds?.key}`]);
-    const betOddsValue = parseFloat(betOdds.odds);
+    const betOddsValue = parseFloat(betOdds?.odds);
      const currentsize = parseFloat(checkCurrentBet[`${betOdds?.sizeKey}`])
 
       console.log(betOdds,'BETODDSSS')
@@ -180,16 +183,16 @@ console.log(betOdds,"Check:::")
 
       if(type === "session"){
           return(
-            (Number(betOdds.size) * (sum))/100
+            (Number(betOdds?.size) * (sum))/100
           )
       }
       else if( type === "bookmaker"){
         return(
-          (Number(betOdds.odds) * sum)/100
+          (Number(betOdds?.odds) * sum)/100
         )  
       }
       else{
-         return ( Number(betOdds.odds) * (sum) - (sum));  
+         return ( Number(betOdds?.odds) * (sum) - (sum));  
       }
 
     }
@@ -235,7 +238,7 @@ console.log(betOdds,"Check:::")
         }
       }
     );
-    setMatchedBets({...betOdds,odds:0,amount:0})
+    setMatchedBets({...betOdds,odds:0})
     showToasterMessage({ messageType: "success", description: "Bet placed successfully" });
   };
   
@@ -309,7 +312,7 @@ console.log(betOdds,"Check:::")
            
           </div>
           <div className="place-bet-stake">
-            <input type="number" className="form-control" value={sum||betOdds?.amount} onChange={(e)=>handleStakeChange(e)}/>
+            <input type="number" className="form-control" value={sum} onChange={(e)=>handleStakeChange(e)}/>
           </div>
           <div className="place-bet-profit"> { (calculateProfitLoss(betOdds?.betType)||0).toFixed(2)  }</div>
         </div>
@@ -342,8 +345,8 @@ console.log(betOdds,"Check:::")
             }
             
             <button className="btn btn-sm btn-link text-dark flex-fill text-end" onClick={()=>{
-              setMatchedBets({...betOdds,amount:0});
-            }}>
+setSum(0)
+}}>
               clear
             </button>
           </div>)
@@ -364,7 +367,13 @@ console.log(betOdds,"Check:::")
           
             </div>
           <div>
-            <button className="btn btn-danger me-1" onClick={()=>setMatchedBets({})}>Reset</button>
+            <button className="btn btn-danger me-1" onClick={()=>setMatchedBets({
+              odds: '',
+              runnerName: "",
+              type: "",
+              key: "",
+              betType: ""
+            })}>Reset</button>
             <button className="btn btn-success" onClick={()=>handleConfirmBet()}>Submit</button>
           </div>
         </div>

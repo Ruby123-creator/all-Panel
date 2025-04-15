@@ -5,6 +5,10 @@ import { useUI } from "../../../../context/ui.context";
 import BetSlip from "../../../common/BettingWindow/betSlip";
 import { CiStopwatch } from "react-icons/ci";
 import { useCurrentBetsData } from "../../../../Framework/placeBet";
+import { useBetting } from "../../../../context/bettingContext";
+import useWindowWidth from "../../../common/windowWidth";
+import { Modal } from "antd";
+import BettingWindowModal from "../../../modals/bettingWindowModal";
 interface DataItem {
   RunnerName: string;
   status: string;
@@ -27,11 +31,23 @@ interface DataItem {
 type BlinkState = Record<string, boolean>;
 const FancyComp: React.FC = () => {
   const { sport, eventId }: any = useParams();
-  const { setMatchedBets, betOdds, betWindow, setBetWindow } = useUI();
+  const width = useWindowWidth();
+  const { setMatchedBets, betOdds } = useBetting();
   const { data: currentBets } = useCurrentBetsData();
   const [prevData, setPrevData] = useState<DataItem[]>([]);
   const [blinkFields, setBlinkFields] = useState<BlinkState[]>([]);
   const { data } = useCricketFancyData(eventId);
+   const [isModalOpen, setIsModalOpen] = useState(false);
+  
+   console.log(width,"please check");
+  
+    const handleOk = () => {
+      setIsModalOpen(false);
+    };
+  
+    const handleCancel = () => {
+      setIsModalOpen(false);
+    };
   const getBlinkFields = (
     currentData: DataItem[],
     previousData: DataItem[]
@@ -74,6 +90,7 @@ const FancyComp: React.FC = () => {
       <div className={`market-odd-box ${className} ${isBlinking ? "blink" : ""}`}
       onClick={()=>{
         setMatchedBets({ ...betOdds, odds: price, max: item?.max, runnerName:item?.RunnerName,key:eventKey ,type:betType,betType: "session",time: data?.updateTime,min: item?.min ,size:size,sizeKey:sizeKey})
+      setIsModalOpen(true);
       }}
       >
       <span className="market-odd">{price}</span>
@@ -83,7 +100,7 @@ const FancyComp: React.FC = () => {
   }
   return (
     
-    <div style={{width:`${(data?.session || [])?.length===1 ?"100%":""}`}}>
+    <div style={{width:`${(data?.session || [])?.length===1 ?"100%":""}`}} >
       {(data?.session || [])?.length ? (
         <div className="game-market market-6">
           <div className="market-title">
@@ -158,6 +175,13 @@ const FancyComp: React.FC = () => {
       ) : (
         ""
       )}
+       {
+        width<1200 ? <Modal closeIcon={false} footer={null} title={
+          <div className="modal-header"><div className="modal-title h4">Place Bet</div><button type="button" onClick={()=>setIsModalOpen(false)} className="btn-close" aria-label="Close"></button></div>
+        } open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+         <BettingWindowModal/>
+        </Modal>:""
+      }
     </div>
   );
 };

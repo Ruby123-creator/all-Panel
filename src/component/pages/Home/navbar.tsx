@@ -5,12 +5,14 @@ import { useUI } from '../../../context/ui.context'
 
 const NavbarComp = () => {
   const {activeNav,setActiveNav} = useUI()
-  const Navigate = useNavigate();
+
   console.log(activeNav,"Check:::::::::::::::::::::::::::")
  const tabRefs = useRef<(HTMLDivElement | null)[]>([]);
   return (
-    <ul className="nav nav-pills sports-tab">
-      {
+    <div className='all-sports'>
+
+<ul className="nav nav-pills sports-tab" >
+{
         (navMenu||[]).map((item:any,index:number)=>{
           return(
             <li className="nav-item"  key={item?.title}>
@@ -20,8 +22,7 @@ const NavbarComp = () => {
               setActiveNav({title:item?.title,val:item?.val});
               const tabElement = tabRefs.current[index];
               if (tabElement instanceof HTMLElement) {
-                tabElement.scrollIntoView({ behavior: "smooth", inline: "end", block: "nearest" });
-              }
+                tabElement.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });              }
               }}>
               <div className="d-xl-none">
                 {item?.icons}
@@ -35,6 +36,7 @@ const NavbarComp = () => {
    
 
   </ul>
+  </div>
   )
 }
 

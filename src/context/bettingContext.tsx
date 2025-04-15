@@ -10,10 +10,23 @@ interface CasinoOdds {
   max?:string|undefined;
   eventKey?:string;
 }
-
+interface BetOdds{
+sizeKey?: any;
+odds:any;
+runnerName: string;
+type: string;
+key:string;
+size?:string;
+min?:number|undefined;
+max?:any;
+betType: any ;
+time?:string;
+}
 interface BettingContextType {
   casinoOdds: CasinoOdds | null;
   setCasinoBetOdds: (odds: CasinoOdds | null) => void;
+  betOdds: BetOdds | null;
+  setMatchedBets: (odds: BetOdds | null) => void;
 }
 
 const BettingContext = createContext<BettingContextType | undefined>(undefined);
@@ -32,9 +45,9 @@ interface Props {
 
 export const BettingProvider: React.FC<Props> = ({ children }) => {
   const [casinoOdds, setCasinoBetOdds] = useState<CasinoOdds | null>(null);
-
+  const [betOdds,setMatchedBets] = useState<BetOdds | null>(null)
   return (
-    <BettingContext.Provider value={{ casinoOdds, setCasinoBetOdds }}>
+    <BettingContext.Provider value={{ casinoOdds, setCasinoBetOdds ,betOdds, setMatchedBets}}>
       {children}
     </BettingContext.Provider>
   );

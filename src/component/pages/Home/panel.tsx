@@ -53,7 +53,7 @@ const PanelComp: React.FC = () => {
               const detail = extractEventDetails(item?.eventName);
               return (
                 <div key={index} className="bet-table-row">
-                  
+                 
                   <div className="bet-nation-name">
                     <div className={`bet-nation-game-name ${item?.inPlay === "True" ? "pointer":""}`} onClick={()=>{
                                                    if(item?.inPlay === "True"){
@@ -82,6 +82,9 @@ const PanelComp: React.FC = () => {
                       }
                   
                   </div>
+                  <div className="bet-nation-odd d-xl-none"><b>1</b></div>
+                  <div className="bet-nation-odd d-xl-none"><b>X</b></div>
+                  <div className="bet-nation-odd d-xl-none"><b>2</b></div>
                   <div className="bet-nation-odd">
                     <div className="back odd-box">
                       <span className="bet-odd">

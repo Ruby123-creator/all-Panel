@@ -51,7 +51,8 @@ const AppHeader = () => {
       <div className="header-top">
         <div className="logo-header">
           <a className="d-xl-none" href="/home">
-            <FaHome className="me-1" />
+         
+            <FaHome fill="#ffff" size={25} className="me-1" />
           </a>
           <a href="/home">
             <img

@@ -221,12 +221,13 @@
     }
     .casino-list {
       margin-top: 6px;
+      
     }
     .casino-list-item {
       width: calc(33.33% - 1.4px);
       margin-bottom: 2px;
     }
-    .casino-list-item:nth-child(3n)
+    /* .casino-list-item:nth-child(3n)
     {
         margin-right: 0;
     }
@@ -235,7 +236,7 @@
       }
       .casino-list-item:nth-child(21n) {
         margin-right: 0;
-      }
+      } */
     .casino-list-item.rect {
       width: calc(50% - 10px);
     }
@@ -916,7 +917,7 @@
       padding-right: 0;
     }
     .home-page .casino-list-item {
-      width: calc(25% - 1.5px);
+      /* width: calc(25% - 1.5px); */
     }
     .home-page .casino-list-item:nth-child(3n) {
         margin-right: 2px;
@@ -1370,7 +1371,7 @@
       margin-bottom: 5px;
     }
     .bet-nation-game-name span {
-      width: 100%;
+      width: 80%;
       display: block;
       line-height: normal;
     }
@@ -1593,6 +1594,7 @@
     }
     .bet-nation-name .bet-nation-game-name {
       max-width: calc(100% - 120px);
+      flex-wrap: wrap;
     }
     .bet-nation-game-name span:first-child {
       font-weight: bold;

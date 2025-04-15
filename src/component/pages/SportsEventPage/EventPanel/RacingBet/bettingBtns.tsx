@@ -1,5 +1,6 @@
 import React from 'react';
 import { useUI } from '../../../../../context/ui.context';
+import { useBetting } from '../../../../../context/bettingContext';
 
 interface BettingData {
   key?: string;
@@ -19,7 +20,7 @@ interface Props {
 }
 
 const BettingBtns: React.FC<Props> = ({ data }) => {
-  const { setMatchedBets, betOdds } = useUI();
+  const { setMatchedBets, betOdds } = useBetting();
 
   const handleClick = () => {
     if (!data.result) {
@@ -28,11 +29,10 @@ const BettingBtns: React.FC<Props> = ({ data }) => {
         odds:(data?.price||"").trim(),
         max: data?.max,
         min: data.min,
-        runnerName: data.runnerName,
-        type: data.type,
-        key:data?.key,
+        runnerName: data?.runnerName||'',
+        type: data?.type||'',
+        key:data?.key||'',
         time: data.time,
-        betTrue: true,
         betType:"odd"
       });
     }

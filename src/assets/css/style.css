@@ -1701,6 +1701,7 @@ a {
   text-transform: us;
   position: relative;
   text-align: center;
+  width: 100%;
   text-transform: uppercase;
 }
 
@@ -3064,12 +3065,13 @@ tr {
   padding: 0 5px;
   font-size: 14px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .bet-nation-name .bet-nation-game-name {
   max-width: calc(100% - 210px);
-  display: inline-block;
+  display: flex;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -13084,6 +13086,16 @@ padding: 8px;
     padding: 0 5px;
   }
 
+  .all-sports .sports-tab{
+    width: 100%;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; 
+  }
+
+.sports-tab::-webkit-scrollbar {
+  display: none; /* Hide scrollbar if desired */
+}
+
   .sports-tab .nav-link i,
   .casino-tab .nav-link i {
     font-size: 15px;
@@ -14926,4 +14938,8 @@ padding: 8px;
 
 .blink {
   animation: blink 0.2s step-end alternate;
+}
+
+.betting-window{
+  z-index: 999;
 }

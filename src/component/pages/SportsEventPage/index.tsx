@@ -8,13 +8,14 @@ import BettingWindow from "../../common/BettingWindow";
 import MatchedBets from "../../common/BettingWindow/matchedBet";
 import { FaCircleInfo } from "react-icons/fa6";
 import { useUI } from "../../../context/ui.context";
+import { BettingProvider } from "../../../context/bettingContext";
 
 const SportsEventPage: React.FC = () => {
 
-   const {betOdds} = useUI();
-
+  
 
   return (
+    <BettingProvider>
     <div className="center-main-container detail-page">
       <div className="center-container">
         <EventPanel/>
@@ -24,14 +25,13 @@ const SportsEventPage: React.FC = () => {
       <FaCircleInfo/>
      
       <div>3 Cards Judgement</div></a>
-      {
-        betOdds?.odds ? <BettingWindow/>:""
-      }
+       <BettingWindow/>
+      
       
       <MatchedBets/>
       </div>
     </div>
-   
+    </BettingProvider>
   );
 };
 

@@ -16,14 +16,7 @@ const initialState = {
       : null),
   loginData: {},
   loginModal: false,
-  betOdds: {
-    odds: "",
-    amount: 0,
-  },
-  casinoOdds: {
-    odds: "",
-    amount: "",
-  },
+
   activeNav: { title: "Cricket", val: "cricket" },
   betWindow: "",
   stacks: [
@@ -44,16 +37,8 @@ function uiReducer(state: any, action: { type: string; data: any }) {
       return { ...state, isLogin: action.data };
     case "SET_LOGIN_MODAL":
       return { ...state, loginModal: action.data };
-    case "SET_MATCHED_BET":
-      return {
-        ...state,
-        betOdds: action.data,
-      };
-    case "SET_CASINO_BET_ODDS":
-      return {
-        ...state,
-        casinoOdds: action.data,
-      };
+   
+ 
     case "SET_BET_WINDOW":
       return {
         ...state,
@@ -85,8 +70,7 @@ export function UIProvider({ children }: { children: React.ReactNode }) {
 
   const setLoginModal = (data: any) =>
     dispatch({ type: "SET_LOGIN_MODAL", data });
-  const setMatchedBets = (data: any) =>
-    dispatch({ type: "SET_MATCHED_BET", data });
+
   const setStacks = (data: any) => dispatch({ type: "SET_OPEN_STACKS", data });
   const setBetWindow = (data: any) =>
     dispatch({ type: "SET_BET_WINDOW", data });
@@ -95,19 +79,16 @@ export function UIProvider({ children }: { children: React.ReactNode }) {
   const setUserData = (data: any) => dispatch({ type: "SET_USER_DATA", data });
   const setActiveNav = (data: any) =>
     dispatch({ type: "SET_ACTIVE_NAV", data });
-  const setCasinoBetOdds = (data: any) =>
-    dispatch({ type: "SET_CASINO_BET_ODDS", data });
+
   const value = useMemo(
     () => ({
       ...state,
       setUserData,
       setLoginModal,
-      setMatchedBets,
       setStacks,
       setBetWindow,
       setLoginData,
       setActiveNav,
-      setCasinoBetOdds,
     }),
     [state]
   );

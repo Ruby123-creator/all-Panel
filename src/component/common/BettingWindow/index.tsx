@@ -6,11 +6,12 @@ import BetSlip from "./betSlip";
 import { useUI } from "../../../context/ui.context";
 
 import { useCurrentBetsData } from "../../../Framework/placeBet";
+import { useBetting } from "../../../context/bettingContext";
 
 const BettingWindow: React.FC = () => {
  
  
-  const { betOdds} = useUI();
+  const { betOdds} = useBetting();
   const { data } = useCurrentBetsData();
   console.log(betOdds,"RUBY:::::::::::::::::")
   return (

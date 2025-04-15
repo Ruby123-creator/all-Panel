@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useUI } from "../../../../context/ui.context";
+import { useBetting } from "../../../../context/bettingContext";
+import useWindowWidth from "../../../common/windowWidth";
+import { Modal } from "antd";
+import BettingWindowModal from "../../../modals/bettingWindowModal";
 
 interface DataItem {
   RunnerName: string;
@@ -26,9 +30,21 @@ interface Props {
   updatedTime: string;
 }
 const BookmakerComp: React.FC<Props> = ({ data, updatedTime }) => {
-  const {setMatchedBets,betOdds} = useUI();
+  const {setMatchedBets,betOdds} = useBetting();
+  const width = useWindowWidth();
     const [prevData, setPrevData] = useState<DataItem[]>([]);
     const [blinkFields, setBlinkFields] = useState<BlinkState[]>([]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    console.log(width,"please check");
+   
+     const handleOk = () => {
+       setIsModalOpen(false);
+     };
+   
+     const handleCancel = () => {
+       setIsModalOpen(false);
+     };
     const getBlinkFields = (
       currentData: DataItem[],
       previousData: DataItem[]
@@ -70,6 +86,7 @@ const BookmakerComp: React.FC<Props> = ({ data, updatedTime }) => {
       <div className={`market-odd-box ${className} ${isBlinking ? "blink" : ""}`}
       onClick={()=>{
         setMatchedBets({ ...betOdds, odds: price, max: item?.max, runnerName:item?.RunnerName,key:eventKey ,type:betType,betType: "bookmaker",time:updatedTime,min: item?.min})
+     setIsModalOpen(true);
       }}
       >
       <span className="market-odd">{price}</span>
@@ -118,6 +135,13 @@ const BookmakerComp: React.FC<Props> = ({ data, updatedTime }) => {
           Play World's Fastest Football Game GOAL, Started In Our Exchange!
         </p>
       </div>
+      {
+        width<1200 ? <Modal closeIcon={false} footer={null} title={
+          <div className="modal-header"><div className="modal-title h4">Place Bet</div><button type="button" onClick={()=>setIsModalOpen(false)} className="btn-close" aria-label="Close"></button></div>
+        } open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+         <BettingWindowModal/>
+        </Modal>:""
+      }
     </div>
   );
 };

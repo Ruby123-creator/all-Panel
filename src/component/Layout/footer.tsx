@@ -2,19 +2,29 @@ import React from "react";
 
 const AppFooter = () => {
   return (
-    <section className="footer">
+    <section className="footer footer-login">
       <div className="footer-top">
         <div className="footer-links">
           <nav className="navbar navbar-expand-sm">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="terms-and-conditions" target="_blank" rel="noopener noreferrer">
-                  Terms and Conditions
+                <a
+                  className="nav-link"
+                  href="/terms-and-conditions"
+                  target="_blank"
+                >
+                  {" "}
+                  Terms and Conditions{" "}
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="responsible-gaming" target="_blank" rel="noopener noreferrer">
-                  Responsible Gaming
+                <a
+                  className="nav-link"
+                  href="/responsible-gaming"
+                  target="_blank"
+                >
+                  {" "}
+                  Responsible Gaming{" "}
                 </a>
               </li>
             </ul>
