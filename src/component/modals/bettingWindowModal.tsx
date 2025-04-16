@@ -25,8 +25,12 @@ interface EventData {
   [key: string]: any; // Allow dynamic keys
 }
 
+interface Props{
+  setIsModalOpen:any;
+}
 
-const BettingWindowModal = () => {
+
+const BettingWindowModal:React.FC<Props> = ({setIsModalOpen}) => {
     const {casinoOdds,setCasinoBetOdds} = useBetting();
     const {  stacks ,userData,setStacks} = useUI();
     const {betOdds , setMatchedBets} = useBetting();
@@ -225,6 +229,7 @@ const BettingWindowModal = () => {
         {
           onSuccess: () => {
             isPlacingBet.current = false; // Reset flag after success
+            setIsModalOpen(false)
           },
           onError: () => {
             isPlacingBet.current = false; // Reset flag after failure

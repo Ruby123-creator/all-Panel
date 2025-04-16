@@ -26,7 +26,12 @@ const EventPanel: React.FC = () => {
   const [activeTab, setActiveTab] = useState("Odds");
   return (
     <div className="detail-page-container">
-      {sport === "horse-racing" || sport === "greyhound-racing" ? (
+     
+      {
+        (isError ) ? <div className="game-header">
+        <span>Event is not live yet</span>
+      </div>: <>
+        {sport === "horse-racing" || sport === "greyhound-racing" ? (
         <>
           <RacingBet data={data} />
         </>
@@ -102,6 +107,9 @@ const EventPanel: React.FC = () => {
       ) : (
         ""
       )}
+        </>
+      }
+      
     </div>
   );
 };

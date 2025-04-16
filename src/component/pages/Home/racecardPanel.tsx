@@ -75,7 +75,7 @@ const RaceCardPanel: React.FC = () => {
   console.log(data, countries, activeNav, "RACING_CARD");
 
   return (
-    <div className="tab-content mt-1">
+    <div className="tab-content mt-1 racecard">
       {/* Tab Navigation */}
       <div className="nav nav-pills" role="tablist">
         {countries.map((tab) => (

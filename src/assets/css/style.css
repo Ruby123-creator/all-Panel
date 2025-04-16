@@ -3058,6 +3058,9 @@ tr {
   align-items: center;
   background-color: var(--bg-table-row);
 }
+.racecard .bet-table-row{
+  flex-wrap: nowrap;
+}
 
 .bet-nation-name {
   width: 64%;
@@ -11240,7 +11243,7 @@ padding: 8px;
   }
 
   .card {
-    padding-left: 11px;
+    /* padding-left: 11px; */
   }
 
   p {
@@ -14872,17 +14875,19 @@ padding: 8px;
 }
 .iframe-wrapper {
   position: fixed;
-  top: "110px";
+  top: 110px; /* Match the offset you need */
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 110px);
+  z-index: 999; /* Optional, if it's behind anything */
 }
 
 .game-frame {
+ 
   width: 100%;
   height: 100%;
   border: none;
-  pointer-events: auto; /* Enable interactions inside iframe */
+  pointer-events: auto;
 }
 .ant-modal-content{
   padding: 0 !important;
@@ -14942,3 +14947,61 @@ padding: 8px;
 .betting-window{
   z-index: 999;
 }
+
+
+
+  .ant-notification-notice-wrapper{
+    border-radius: 30px !important;
+
+  }
+ 
+  
+  
+  .ant-notification-notice{
+    background-color: transparent;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px !important;
+    color: white;
+    .anticon{
+      color: white !important;
+    }
+    .ant-notification-notice-message{
+      color: white;
+    }
+    .anticon.ant-notification-notice-icon-success{
+      color: white;
+    }
+    .ant-notification-notice-close{
+      color: white;
+    }
+  }
+  .ant-notification-notice-message{
+      color: white !important;
+  }
+  .ant-notification-notice.error{
+    background-color: #F85353;
+    
+  }
+  
+  .ant-notification-notice.success{
+    background-color: #1CB980;
+  }
+  
+  .ant-notification-notice.warning{
+    background-color: #ffcc00;
+  }
+  .custom-notification .ant-notification-notice {
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    bottom: 0;
+    
+    
+    margin-bottom: 20px; /* Adjust as needed */
+  }

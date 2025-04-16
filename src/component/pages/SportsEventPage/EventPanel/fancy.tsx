@@ -181,7 +181,7 @@ const FancyComp: React.FC = () => {
         width<1200 ? <Modal closeIcon={false} footer={null} title={
           <div className="modal-header"><div className="modal-title h4">Place Bet</div><button type="button" onClick={()=>setIsModalOpen(false)} className="btn-close" aria-label="Close"></button></div>
         } open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-         <BettingWindowModal/>
+         <BettingWindowModal setIsModalOpen={setIsModalOpen}/>
         </Modal>:""
       }
     </div>

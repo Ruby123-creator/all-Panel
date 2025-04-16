@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import HeaderMenu from "./menu";
 import { FaSearchPlus } from "react-icons/fa";
@@ -9,11 +9,31 @@ import { logOut } from "../../Framework/utils/constant";
 import { useUI } from "../../context/ui.context";
 import { Modal } from "antd";
 import GeneralRules from "../modals/generalRules";
+const menuDropdown = [{
+  title:"Account Statement",
+  route:"/account-statement"
+},
 
+{
+  title:"Live Casino Bets",
+  route:"/casino-settlement"
+},{
+  title:"Current Bet",
+  route:"/open-bets"
+},{
+  title:"Casino Result",
+  route:"/casino-report"
+},
+{
+  title:"Change Password",
+  route:"/change-password"
+},
+
+]
 const AppHeader = () => {
   const { userData } = useUI();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  
+  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -148,26 +168,23 @@ const AppHeader = () => {
             </div>
             {isDropdownOpen && (
               <ul className="dropdown-menu show">
-                <Link to="/account-statement">
-                  <li className="dropdown-item">Account Statement</li>
-                </Link>
-                <Link to="/open-bets">
-                  <li className="dropdown-item">Current Bet</li>
-                </Link>
-                <Link to="/casino-report">
-                  <li className="dropdown-item">Casino Results</li>
-                </Link>
-                <Link to="/casino-settlement">
-                  <li className="dropdown-item">Live Casino Bets</li>
-                </Link>
-                <Link to="/change-password">
-                  <li className="dropdown-item">Change Password</li>
-                </Link>
-              
+                {
+                  menuDropdown.map((item,i)=>{
+                    return(
+                      <li onClick={()=>{
+                        navigate(item?.route)
+                        setIsDropdownOpen(false);
+                      }} className="dropdown-item">{item?.title}</li>
+                    )
+                  })
+                }
+                
                 <div
                   className="dropdown-item"
                   onClick={() => {
                     logOut(userData?.UserName);
+                    setIsDropdownOpen(false);
+
                   }}
                 >
                   SignOut

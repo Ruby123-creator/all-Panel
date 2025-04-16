@@ -107,7 +107,7 @@ import axios from "axios";
               console.log('Notification Clicked!');
             },
             duration: 2,
-           
+           placement:"top",
             className: payload.messageType +" "+ 'custom-notification'
           });
 

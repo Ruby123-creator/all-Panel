@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useQtechUrl } from "../../../Framework/casino";
 import { useParams } from "react-router-dom";
 import PageLoader from "../../common/pageLoader";
@@ -7,9 +7,12 @@ const CasinoGames = () => {
   const { casinoType } = useParams();
   const { data ,isLoading,isError} = useQtechUrl();
 
-  if(isLoading){
-    return <PageLoader/>
-  }
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
 
   console.log(data, "GHIKHSI::::");
 
@@ -37,16 +40,17 @@ const CasinoGames = () => {
       className="w-full md:mt-[0px] lg:overflow-auto lg:w-[54%]"
       style={{ minHeight: "calc(-54px + 100dvh)" }}
     >
-        
+       {
+        data?.url ?  
       <div className="iframe-wrapper">
-      {
-        data?.url ?  <iframe
+       <iframe
         src={`${data?.url}/games/wl-${getUrlQueries()}/wl.games.${getUrlQueries()}`}
         className="game-frame"
         title="Casino Games"
-      />:<PageLoader/>
-      } 
-      </div>
+      />
+      </div>:
+         <PageLoader/>
+    } 
     </div>
   );
 };

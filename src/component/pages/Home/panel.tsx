@@ -55,11 +55,10 @@ const PanelComp: React.FC = () => {
                 <div key={index} className="bet-table-row">
                  
                   <div className="bet-nation-name">
-                    <div className={`bet-nation-game-name ${item?.inPlay === "True" ? "pointer":""}`} onClick={()=>{
-                                                   if(item?.inPlay === "True"){
+                    <div className={`bet-nation-game-name pointer`} onClick={()=>{
 
                                                     naviagte(`/event-page/${sportsName || activeNav?.val}/${item?.gameId}`);
-                                                   }
+                                                   
                                                    
                                                 }}>
                       <span>
