@@ -98,6 +98,8 @@ const BookmakerComp: React.FC<Props> = ({ data, updatedTime }) => {
     <div className="game-market market-2 ">
       <div className="market-title">
         <span>Bookmaker IPL CUP</span>
+        <button className="btn btn-success btn-sm">Cashout</button>
+        
       </div>
       <div className="market-header">
         <div className="market-nation-detail">

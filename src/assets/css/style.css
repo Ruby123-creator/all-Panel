@@ -1633,7 +1633,6 @@ a {
 }
 .navbar-nav{
   display: flex;
-  gap: 12px;
 }
 .navbar-expand .navbar-nav .nav-link {
   padding: 0px 15px;
@@ -2620,7 +2619,7 @@ tr {
   padding: 0;
   min-height: calc(100vh - 175px);
   /* width: 280px; */
-  width: 100%;
+  /* width: 100%; */
   margin-top: 5px;
 }
 
@@ -2974,7 +2973,7 @@ tr {
 }
 
 .home-page .casino-list-item {
-  /* width: calc(10% - 10px); */
+  width: calc(10% - 10px);
 }
 
 .center-container .nav.sports-tab,
@@ -3266,7 +3265,7 @@ tr {
   text-align: center;
   margin-right: 4px;
 }
-
+     
 .ball-runs.four {
   background-color: #087f23;
 }

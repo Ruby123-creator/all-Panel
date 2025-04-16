@@ -19,13 +19,13 @@ const ScoreCard: React.FC<ScoreCardProps> = ({ data = {} }) => {
   const ballsColor = (val: string) => {
     switch (val) {
       case "4":
-        return "bg-bg_RefreshBtnBg";
+        return "four";
       case "6":
-        return "purpleball";
+        return "six";
       case "ww":
-        return "bg-bg_Primary";
+        return "wicket";
       default:
-        return "blueballs";
+        return "bg-primary90";
     }
   };
   return (
@@ -54,11 +54,12 @@ const ScoreCard: React.FC<ScoreCardProps> = ({ data = {} }) => {
               </div>
               <div className="row">
                 <div className="col-12">
+                <div className="text-xl-end"><span>ScoreCard</span></div>
                   <p className="text-xl-end ball-by-ball mt-2">
                     {
                       (scorecards||[]).map((item,i:number)=>{
                         return (
-                    <span className="ball-runs">{item}</span>
+                    <span className={`ball-runs ${ballsColor(item)}`}>{item}</span>
 
                         )
                       })

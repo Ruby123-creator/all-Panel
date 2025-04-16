@@ -100,11 +100,13 @@ const FancyComp: React.FC = () => {
   }
   return (
     
-    <div style={{width:`${(data?.session || [])?.length===1 ?"100%":""}`}} >
+    <div style={{width:`${(data?.session || [])?.length===1 ?"100%":"100%"}`}} >
       {(data?.session || [])?.length ? (
         <div className="game-market market-6">
           <div className="market-title">
             <span>Normal</span>
+        <button className="btn btn-success btn-sm">Cashout</button>
+
           </div>
           <div className="row row10">
 

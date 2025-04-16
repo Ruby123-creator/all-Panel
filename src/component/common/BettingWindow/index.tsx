@@ -15,7 +15,7 @@ const BettingWindow: React.FC = () => {
   const { data } = useCurrentBetsData();
   console.log(betOdds,"RUBY:::::::::::::::::")
   return (
-    <div className="sidebar-box place-bet-container">
+    (betOdds?.odds) ? <div className="sidebar-box place-bet-container">
       <div className="sidebar-title">
         <h4>Place Bet</h4>
         <span>Range: {betOdds?.min} to {betOdds?.max}</span>
@@ -30,7 +30,7 @@ const BettingWindow: React.FC = () => {
         <BetSlip/>
       </div>
     </div>
-  
+  :<></>
   );
 };
 
