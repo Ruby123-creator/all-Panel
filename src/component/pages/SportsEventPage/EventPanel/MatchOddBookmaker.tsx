@@ -115,7 +115,7 @@ const MatchOddBookmaker: React.FC<Props> = ({ data, updatedTime }) => {
     <div className="game-market market-4 ">
       <div className="market-title">
         <span>MATCH_ODDS</span>
-        <button className="btn btn-success btn-sm">Cashout</button>
+        {/* <button className="btn btn-success btn-sm">Cashout</button> */}
       </div>
       <div className="market-header">
         <div className="market-nation-detail">

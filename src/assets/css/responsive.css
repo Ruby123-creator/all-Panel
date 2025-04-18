@@ -976,7 +976,8 @@
       padding: 6px 12px;
     }
     .login-page {
-      justify-content: center;
+      display: flex;
+      justify-content: flex-start;
     }
     .odds-title > div {
       margin-right: 20px;
@@ -1370,7 +1371,7 @@
     .deposit-left-payment > div {
       margin-bottom: 5px;
     }
-    .bet-nation-game-name span {
+    .bet-nation-game-name .team {
       width: 80%;
       display: block;
       line-height: normal;
@@ -1856,7 +1857,7 @@
       width: 16px;
     }
     .login-box {
-      margin: 15% 0;
+      margin: 4% 0;
     }
     .login-box img {
       max-height: 70px;

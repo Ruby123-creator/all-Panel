@@ -37,8 +37,7 @@ const UserLogin = () => {
 
         localStorage.setItem('isLoginAsDemo', 'true');
         // window.location.reload();
-
-        Navigate("/home")
+        window.location.href = "/home?fromLogin=true";
         
        
     }
@@ -68,7 +67,7 @@ const UserLogin = () => {
                 <input
                   value={userId}
                   onChange={(e) => setUserId(e.target.value)}
-                  name="username"
+                  // name="username"
                   type="text"
                   className="form-control"
                   placeholder="Username"
@@ -85,7 +84,7 @@ const UserLogin = () => {
                 <input
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  name="password"
+                  // name="password"
                   type={!showPassword ? "password":"text"}
                   className="form-control"
                   placeholder="Password"
@@ -99,12 +98,12 @@ const UserLogin = () => {
 
               {/* Buttons */}
               <div className="d-grid">
-                <button type="submit" className="btn btn-primary btn-block" onClick={(e)=>{handleLogin(e)}}>
+                <button type="button" className="btn btn-primary btn-block" onClick={(e)=>{handleLogin(e)}}>
                   Login
                   <FaSignInAlt className="float-end mt-1" />
                 
                 </button>
-                <button className="btn btn-primary btn-block mt-2" onClick={()=>{logInWithDemo()}}>
+                <button className="btn btn-primary btn-block mt-2" type="button" onClick={()=>{logInWithDemo()}}>
                   Login with demo ID
                   <FaSignInAlt className="float-end mt-1" />
 

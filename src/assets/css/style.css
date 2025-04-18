@@ -2924,7 +2924,7 @@ tr {
     margin-bottom: 0;
 } */
 
-.latest-event-item a {
+.latest-event-item div {
   color: var(--text-secondary);
   font-size: 14px;
   font-weight: bold;
@@ -2935,7 +2935,7 @@ tr {
   width: 100%;
 }
 
-.latest-event-item a span {
+.latest-event-item div span {
   margin-left: 5px;
   white-space: nowrap;
   height: auto;
@@ -3078,6 +3078,11 @@ tr {
   text-overflow: ellipsis;
   white-space: nowrap;
   color: var(--text-table);
+}
+.bet-nation-game-name .nation-dateTime{
+  display: flex;
+  gap: 5px;
+
 }
 
 .bet-nation-name .game-icons {
@@ -13193,11 +13198,11 @@ padding: 8px;
     max-width: calc(100% - 120px);
   }
 
-  .bet-nation-game-name span {
+  /* .bet-nation-game-name span {
     width: 100%;
     display: block;
     line-height: normal;
-  }
+  } */
 
   .bet-nation-game-name span:first-child {
     font-weight: bold;
@@ -13491,7 +13496,7 @@ padding: 8px;
   }
 
   .login-box {
-    margin: 15% 0;
+    margin: 4% 0;
   }
 
   .login-box img {
@@ -15004,4 +15009,8 @@ padding: 8px;
     
     
     margin-bottom: 20px; /* Adjust as needed */
+  }
+
+  .navbar-nav a{
+    color: white;
   }

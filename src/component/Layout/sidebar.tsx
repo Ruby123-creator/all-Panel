@@ -3,9 +3,11 @@ import sidebarAllSports from "../../Framework/utils/sidebarallsports.json";
 import sidebarOthers from "../../Framework/utils/sidebarothers.json";
 import { FaAngleDown } from "react-icons/fa";
 import { FaAngleUp } from "react-icons/fa";
-import { title } from "process";
 import { useUI } from "../../context/ui.context";
 import { useNavigate } from "react-router-dom";
+import { MdSportsCricket } from "react-icons/md";
+import { useSportFixture } from "../../Framework/sportsData";
+import { extractEventDetails } from "../../Framework/utils/constant";
 
 interface SidebarItem {
   name: string;
@@ -51,6 +53,8 @@ const sidebarMenu = [{
 const Sidebar: React.FC = () => {
    const {setActiveNav} = useUI();
    const navigate = useNavigate();
+   const { data, isLoading, isError } = useSportFixture('cricket');
+   const inPlayEvents = (data||[]).filter((item:any)=>item?.inPlay === 'True');
   const [openAccordions, setOpenAccordions] = useState<Record<string, boolean>>(
     {
       racingSports: true,
@@ -188,38 +192,31 @@ setActiveNav({title:category.name,val:category?.routing});
           </div>
         </div>
       </div>
-      {/* <div className="latest-event d-xl-none">
-        <div className="latest-event-item">
-          <a className="blink_me" href="/game-details/4/828856279">
-            <i className="d-icon icon-4"></i>
-            <span>Indian Premier League</span>
-          </a>
-        </div>
-        <div className="latest-event-item">
-          <a className="blink_me" href="/game-details/4/736528123">
-            <i className="d-icon icon-4"></i>
-            <span>Gujarat Titans v Mumbai Indians</span>
-          </a>
-        </div>
-        <div className="latest-event-item">
-          <a className="blink_me" href="/game-details/2/776574280">
-            <i className="d-icon icon-2"></i>
-            <span>A Sabalenka v J Pegula</span>
-          </a>
-        </div>
-        <div className="latest-event-item">
-          <a className="blink_me" href="/game-details/1/534224307">
-            <i className="d-icon icon-1"></i>
-            <span>Fulham v Crystal Palace</span>
-          </a>
-        </div>
-        <div className="latest-event-item">
-          <a className="blink_me" href="/game-details/1/669335147">
-            <i className="d-icon icon-1"></i>
-            <span>Real Sociedad v Valladolid</span>
-          </a>
-        </div>
-      </div> */}
+
+      <div className="latest-event d-xl-none">
+
+        {
+          (inPlayEvents||[]).map((item:any,i:Number)=>{
+            const detail = extractEventDetails(item?.eventName);
+
+            return (
+              <div className="latest-event-item pointer" key={`cricketEvents${i}`}>
+              <div className="blink_me" onClick={()=>{
+                      navigate(`/event-page/cricket/${item?.gameId}`);
+
+              }}>
+    <MdSportsCricket fill="#ffff"/>
+                <span>        
+                                  {detail?.team1} v {detail?.team2}
+                </span>
+              </div>
+            </div>
+            )
+          })
+        }
+      
+      
+      </div>
       <ul className="nav nav-tabs d-xl-none menu-tabs">
         {
           (sidebarMenu||[]).map((item:any,i:number)=>{

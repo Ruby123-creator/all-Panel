@@ -122,7 +122,7 @@ const AppHeader = () => {
                 ₹{" "}
                 {((userData?.Exposure || 0) > 0
                   ? 0
-                  : userData?.Exposure || 0
+                  : Math.abs(userData?.Exposure || 0)
                 ).toFixed(2)}
               </b>
               <div className="dropdown">
@@ -133,28 +133,7 @@ const AppHeader = () => {
               {/* {userData?.UserName ? userData?.UserName : "Demo"} */}
               <FaChevronDown className="ms-1" />
             </div>
-            {/* {isDropdownOpen && (
-              <ul className="dropdown-menu show">
-                <Link to="/account-statement">
-                  <li className="dropdown-item">Account Statement</li>
-                </Link>
-                <Link to="/open-bets">
-                  <li className="dropdown-item">Current Bet</li>
-                </Link>
-                <Link to="/casino-report">
-                  <li className="dropdown-item">Casino Results</li>
-                </Link>
-               
-                <div
-                  className="dropdown-item"
-                  onClick={() => {
-                    logOut(userData?.UserName);
-                  }}
-                >
-                  SignOut
-                </div>
-              </ul>
-            )} */}
+           
           </div>
             </div>
           </div>

@@ -104,8 +104,8 @@ const FancyComp: React.FC = () => {
       {(data?.session || [])?.length ? (
         <div className="game-market market-6">
           <div className="market-title">
-            <span>Normal</span>
-        <button className="btn btn-success btn-sm">Cashout</button>
+            <span>NORMAL</span>
+        {/* <button className="btn btn-success btn-sm">Cashout</button> */}
 
           </div>
           <div className="row row10">

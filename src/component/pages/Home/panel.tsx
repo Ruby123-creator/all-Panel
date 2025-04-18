@@ -10,8 +10,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import { extractEventDetails } from "../../../Framework/utils/constant";
 import PageLoader from "../../common/pageLoader";
 const PanelComp: React.FC = () => {
-  const { isLogin, setLoginModal, activeNav } = useUI();
+  const { activeNav } = useUI();
   const {sportsName} = useParams();
+  console.log(sportsName,"CHECK:::::::::::::::::")
   const naviagte = useNavigate();
   const { data, isLoading, isError } = useSportFixture(
    sportsName|| activeNav?.val
@@ -61,11 +62,12 @@ const PanelComp: React.FC = () => {
                                                    
                                                    
                                                 }}>
-                      <span>
+                      <span className="team">
                         {detail?.team1} v {detail?.team2}
                       </span>
-                      {detail?.date && <span> / {detail?.date}</span>}
-                      {detail?.time && <span> / {detail?.time}</span>}
+                      <span className="nation-dateTime"> {detail?.date && <span>{" "}{detail?.date}</span>}
+                      {detail?.time && <span>{" "}{detail?.time}</span>}</span>
+                     
                     </div>
                     {
                         item?.inPlay === "True" ?   <div className="game-icons">

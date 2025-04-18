@@ -38,7 +38,7 @@ const CasinoGames = () => {
   return (
     <div
       className="w-full md:mt-[0px] lg:overflow-auto lg:w-[54%]"
-      style={{ minHeight: "calc(-54px + 100dvh)" }}
+      style={{ minHeight: "calc(-54px + 100dvh)" ,width:"100%"}}
     >
        {
         data?.url ?  

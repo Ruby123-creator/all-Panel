@@ -21,11 +21,8 @@ const HeaderMenu = () => {
         {
           (headerMenu||[]).map((item:any,i:number)=>{
             return(
-              <div key={"headerElement" + i}  className={`nav-link  pointer ${activeNav?.title === item?.title ? 'active' :''}`} onClick={()=>{
-               console.log("CHECKKKKKSS")
-                Navigate(item?.routing);
-                }} >
-                <span className="title">{item?.title}</span>
+              <div key={"headerElement" + i}  className={`nav-link  pointer ${activeNav?.title === item?.title ? 'active' :''}`}  >
+               <a href={item?.routing}><span className="title">{item?.title}</span></a> 
               </div>
             )
           })

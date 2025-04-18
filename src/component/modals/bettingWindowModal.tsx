@@ -116,7 +116,10 @@ const BettingWindowModal:React.FC<Props> = ({setIsModalOpen}) => {
         showToasterMessage({ messageType: "error", description: "INVALID BET AMOUNT" });
         return false;
       }
-    
+     if(betOdds?.betType === "odd" && Number(betOdds?.odds)>10){
+          showToasterMessage({ messageType: "error", description: "BET ODDS SHOULD BE LESS THAN OR EQUAL TO 10" });
+          return false;
+        }
       // Check odds validity
       const currentOdds = parseFloat(checkCurrentBet[`${betOdds?.key}`]);
       const betOddsValue = parseFloat(betOdds?.odds);
@@ -383,7 +386,7 @@ const BettingWindowModal:React.FC<Props> = ({setIsModalOpen}) => {
             </div>
           </div>
           <div className="LoaderModal" style={{widows:"200px"}}>
-          <Modal open={betProcessed} footer={null} closable={false} centered>
+          {/* <Modal open={betProcessed} footer={null} closable={false} centered>
         <div className="bet-loader text-center p-4">
           <div className="bet-div">
             <div className="position-relative d-flex align-items-center justify-content-center">
@@ -396,7 +399,7 @@ const BettingWindowModal:React.FC<Props> = ({setIsModalOpen}) => {
             <p className="fw-semibold text-muted">Please wait...</p>
           </div>
         </div>
-      </Modal>
+      </Modal> */}
           </div>
          
       </div>

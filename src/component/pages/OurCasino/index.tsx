@@ -7,7 +7,7 @@ const OurCasino = () => {
     <div className="center-main-container list-page own-casino-page">
       <div className="center-container">
         <div className="container-fluid container-fluid-5">
-          <div className="row row5">
+          <div className="row row5 p-1">
           <CasinoTabs/>
           <div className="col-xl-10 col-12">
             <CasinoCards/>

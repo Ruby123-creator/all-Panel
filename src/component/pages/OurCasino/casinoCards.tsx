@@ -27,8 +27,8 @@ const CasinoCards: React.FC = () => {
           
           {(data||[]).map((item, i) => (
             <div
-              key={i}
               className="casino-list-item"
+              key={"casinoTypes2" + i} 
               onClick={() => navigate(item?.path)}
               style={{ width: "120px", height: "120px" }}
             >

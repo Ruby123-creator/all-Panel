@@ -1,11 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Modal } from "antd";
 
 const EventModal: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const fromLogin = params.get("fromLogin");
+
+    if (fromLogin === "true") {
+      setIsModalOpen(true);
+
+      // Clean the URL by removing the query param after showing popup
+    
+    }
+  }, []);
 
   const handleCancel = () => {
     setIsModalOpen(false);
+    const newUrl = window.location.origin + window.location.pathname;
+    window.history.replaceState({}, document.title, newUrl);
   };
 
   return (
